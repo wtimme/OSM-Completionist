@@ -2929,7 +2929,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Go Map!!-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bryceco.GoMap;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.wtimme.osm-completionist";
 				PRODUCT_NAME = "Go Map!!";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Go Map!!-Bridging-Header.h";
@@ -2955,7 +2955,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Go Map!!-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bryceco.GoMap;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.wtimme.osm-completionist";
 				PRODUCT_NAME = "Go Map!!";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Go Map!!-Bridging-Header.h";
