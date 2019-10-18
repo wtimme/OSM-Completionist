@@ -1,7 +1,19 @@
 
-# Go Map!!
+# OSM Completionist
 
-Go Map!! is an iPhone/iPad editor for adding cartographic information to [OpenStreetMap][1].
+OSM Completionist is an iOS companion app that allows [OpenStreetMap][1]
+contributors to complete missing information for objects around them.
+
+Instead of advanced editing possibilities, OSM Completionist uses the concept
+of "quests", analog to [StreetComplete for Android][4].
+
+## Based on GoMap!!
+
+This repository is a fork of [GoMap!!][2], a comprehensive OpenStreetMap editor
+for iPhone/iPad.
+
+If you're looking for **a full OpenStreetMap editor**,
+[download GoMap on the App Store][3].
 
 ## Source code structure
 
@@ -13,3 +25,6 @@ Go Map!! is an iPhone/iPad editor for adding cartographic information to [OpenSt
 * presets - The presets database copied from the iD editor
 
 [1]: https://www.openstreetmap.org
+[2]: https://github.com/bryceco/GoMap
+[3]: https://itunes.apple.com/app/id592990211
+[4]: https://wiki.openstreetmap.org/wiki/StreetComplete/Quests
