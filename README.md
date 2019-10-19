@@ -31,6 +31,15 @@ To create new screenshots, run
 
     % bundle exec fastlane snapshot
 
+## App Icon
+
+The app icon is based on the 1024x1024 PNG file in `fastlane/metadata/app_icon.png`.
+After changing this "master" app icon,
+re-generate the app icons using the
+[fastlane plugin "appicon"][7] like so:
+
+    % bundle exec fastlane run appicon appicon_path:"Go Map\!\!/Images.xcassets"
+
 ## Source code structure
 
 * iOS - Code specific to the iOS app
@@ -46,3 +55,4 @@ To create new screenshots, run
 [4]: https://wiki.openstreetmap.org/wiki/StreetComplete/Quests
 [5]: https://docs.fastlane.tools/actions/match/
 [6]: https://docs.fastlane.tools/actions/snapshot/
+[7]: https://github.com/fastlane-community/fastlane-plugin-appicon
