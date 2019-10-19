@@ -15,6 +15,7 @@ class OverpassQueryFormUITestCase: XCTestCase {
     override func setUp() {
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         app = XCUIApplication()
+        setupSnapshot(app)
         app.launch()
     }
     
@@ -71,6 +72,8 @@ class OverpassQueryFormUITestCase: XCTestCase {
         
         let errorLabel = app.staticTexts["error_message"]
         XCTAssertFalse(errorLabel.exists)
+        
+        snapshot("01OverpassWizardQueryEditor")
     }
     
     func testEnteringQueryAndThenRemovingAllTextShouldHideTheErrorMessageLabel() {

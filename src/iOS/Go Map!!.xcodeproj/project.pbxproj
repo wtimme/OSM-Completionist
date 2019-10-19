@@ -489,6 +489,7 @@
 		02F9A4551BC8348C0013BFBD /* OSM-Logo256.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F9A4541BC8348C0013BFBD /* OSM-Logo256.png */; };
 		02FFCE0B16A7360B001A5B8A /* NSMutableArray+PartialSort.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02FFCE0A16A7360B001A5B8A /* NSMutableArray+PartialSort.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		640B0B752285EAA800D0EE24 /* EditorMapLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640B0B742285EAA800D0EE24 /* EditorMapLayer.swift */; };
+		64338B07235B4357006EE896 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64338B06235B4356006EE896 /* SnapshotHelper.swift */; };
 		64348CED225E7CD900ADE7FB /* GoMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64348CEC225E7CD900ADE7FB /* GoMapTests.swift */; };
 		64348CFB225E867800ADE7FB /* HeadingProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64348CF7225E867800ADE7FB /* HeadingProviderMock.swift */; };
 		64348CFC225E867800ADE7FB /* MeasureDirectionViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64348CF8225E867800ADE7FB /* MeasureDirectionViewModelDelegateMock.swift */; };
@@ -1133,6 +1134,7 @@
 		02FFCE0916A7360B001A5B8A /* NSMutableArray+PartialSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+PartialSort.h"; path = "../Shared/NSMutableArray+PartialSort.h"; sourceTree = "<group>"; };
 		02FFCE0A16A7360B001A5B8A /* NSMutableArray+PartialSort.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "NSMutableArray+PartialSort.mm"; path = "../Shared/NSMutableArray+PartialSort.mm"; sourceTree = "<group>"; };
 		640B0B742285EAA800D0EE24 /* EditorMapLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorMapLayer.swift; sourceTree = "<group>"; };
+		64338B06235B4356006EE896 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		64348CEA225E7CD900ADE7FB /* GoMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64348CEC225E7CD900ADE7FB /* GoMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoMapTests.swift; sourceTree = "<group>"; };
 		64348CEE225E7CD900ADE7FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -2060,6 +2062,7 @@
 		64D64D242280BA180040C67A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				64338B06235B4356006EE896 /* SnapshotHelper.swift */,
 				64D64D252280BA420040C67A /* XCTestCase+UITestHelper.swift */,
 				64972E9F228227B400286157 /* XCUIApplication+TestHelper.swift */,
 				64972EA6228242A800286157 /* XCUIElement+TestHelper.swift */,
@@ -2761,6 +2764,7 @@
 				64972EA7228242A800286157 /* XCUIElement+TestHelper.swift in Sources */,
 				64972EA0228227B400286157 /* XCUIApplication+TestHelper.swift in Sources */,
 				64D64D232280B9EF0040C67A /* OverpassQueryFormUITestCase.swift in Sources */,
+				64338B07235B4357006EE896 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
