@@ -1,0 +1,15 @@
+language: objective-c
+osx_image: xcode11.2
+cache:
+  - bundler
+before_install:
+  - cd src/iOS
+install:
+  - "bundle install"
+
+jobs:
+  include:
+    - stage: "Unit Tests"
+      before_script:
+        - "cd src/iOS"
+      script: "bundle exec fastlane ios pull_request_checks"
