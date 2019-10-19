@@ -5,3 +5,4 @@ vendor/bundle
 fastlane/report.xml
 fastlane/test_output
 fastlane/screenshots
+fastlane/Preview.html
