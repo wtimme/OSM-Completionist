@@ -6,3 +6,9 @@ fastlane/report.xml
 fastlane/test_output
 fastlane/screenshots
 fastlane/Preview.html
+
+# Build/release artifacts
+*.cer
+*.ipa
+*.dSYM.zip
+*.mobileprovision
