@@ -24,6 +24,13 @@ Fetch the certificates for development with
 
     % bundle exec fastlane match development
 
+## Screenshots
+
+Screenshots are taken automatically with [fastlane snapshot][6].
+To create new screenshots, run
+
+    % bundle exec fastlane snapshot
+
 ## Source code structure
 
 * iOS - Code specific to the iOS app
@@ -38,3 +45,4 @@ Fetch the certificates for development with
 [3]: https://itunes.apple.com/app/id592990211
 [4]: https://wiki.openstreetmap.org/wiki/StreetComplete/Quests
 [5]: https://docs.fastlane.tools/actions/match/
+[6]: https://docs.fastlane.tools/actions/snapshot/
