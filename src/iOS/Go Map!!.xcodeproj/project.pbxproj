@@ -2928,7 +2928,7 @@
 				DISPLAY_NAME = "OSM Completionist Debug";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Go Map!!-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/Go Map!!-Info.plist";
+				INFOPLIST_FILE = "Go Map!!-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.wtimme.osm-completionist";
@@ -2956,7 +2956,7 @@
 				DISPLAY_NAME = "OSM Completionist";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Go Map!!-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/Go Map!!-Info.plist";
+				INFOPLIST_FILE = "Go Map!!-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.wtimme.osm-completionist";
