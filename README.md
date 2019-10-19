@@ -15,6 +15,8 @@ for iPhone/iPad.
 If you're looking for **a full OpenStreetMap editor**,
 [download GoMap on the App Store][3].
 
+# Continuous delivery
+
 ## Signing
 
 To automate the signing, this project uses [fastlane match][5].
