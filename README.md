@@ -38,7 +38,7 @@ After changing this "master" app icon,
 re-generate the app icons using the
 [fastlane plugin "appicon"][7] like so:
 
-    % bundle exec fastlane run appicon appicon_path:"Go Map\!\!/Images.xcassets"
+    % bundle exec fastlane regenerate_app_icon
 
 ## Source code structure
 
