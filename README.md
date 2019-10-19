@@ -17,6 +17,9 @@ If you're looking for **a full OpenStreetMap editor**,
 
 # Continuous delivery
 
+OSM Completionist makes use of fastlane.
+For a list of available actions, please refer to [the auto-generated README][8].
+
 ## Signing
 
 To automate the signing, this project uses [fastlane match][5].
@@ -56,3 +59,4 @@ re-generate the app icons using the
 [5]: https://docs.fastlane.tools/actions/match/
 [6]: https://docs.fastlane.tools/actions/snapshot/
 [7]: https://github.com/fastlane-community/fastlane-plugin-appicon
+[8]: src/iOS/fastlane/README.md
