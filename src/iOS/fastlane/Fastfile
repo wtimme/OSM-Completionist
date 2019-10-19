@@ -10,4 +10,11 @@ platform :ios do
     run_tests(scheme: "GoMapTests")
   end
 
+  desc "Uploads a new Beta version to TestFlight"
+  lane :beta do
+    sync_code_signing(type: "appstore")
+    build_app(scheme: "Go Map!!")
+    upload_to_testflight
+  end
+
 end
