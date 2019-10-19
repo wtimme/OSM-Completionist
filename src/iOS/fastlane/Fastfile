@@ -21,10 +21,9 @@ platform :ios do
     build_app(scheme: "Go Map!!")
 
     add_git_tag
+    push_to_git_remote
 
     upload_to_testflight
-
-    push_to_git_remote
   end
 
   desc "Re-generates the app icon from the base app_icon.png in the fastlane metadata directory"
