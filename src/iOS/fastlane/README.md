@@ -26,6 +26,11 @@ Performs basic integration checks to be run before merging
 fastlane ios beta
 ```
 Uploads a new Beta version to TestFlight
+### ios regenerate_app_icon
+```
+fastlane ios regenerate_app_icon
+```
+Re-generates the app icon from the base app_icon.png in the fastlane metadata directory
 
 ----
 
