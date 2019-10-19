@@ -61,7 +61,7 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="m4y-xR-9QV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0jn-li-obP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="m4y-xR-9QV" secondAttribute="trailing" id="BXb-sN-qsY"/>
@@ -69,6 +69,7 @@
                 <constraint firstItem="m4y-xR-9QV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OGX-yA-I4w"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="118"/>
         </view>
     </objects>
 </document>
