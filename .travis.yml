@@ -10,6 +10,4 @@ install:
 jobs:
   include:
     - stage: "Unit Tests"
-      before_script:
-        - "cd src/iOS"
       script: "bundle exec fastlane ios pull_request_checks"
