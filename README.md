@@ -15,6 +15,34 @@ for iPhone/iPad.
 If you're looking for **a full OpenStreetMap editor**,
 [download GoMap on the App Store][3].
 
+# Continuous delivery
+
+OSM Completionist makes use of fastlane.
+For a list of available actions, please refer to [the auto-generated README][8].
+
+## Signing
+
+To automate the signing, this project uses [fastlane match][5].
+Fetch the certificates for development with
+
+    % bundle exec fastlane match development
+
+## Screenshots
+
+Screenshots are taken automatically with [fastlane snapshot][6].
+To create new screenshots, run
+
+    % bundle exec fastlane snapshot
+
+## App Icon
+
+The app icon is based on the 1024x1024 PNG file in `fastlane/metadata/app_icon.png`.
+After changing this "master" app icon,
+re-generate the app icons using the
+[fastlane plugin "appicon"][7] like so:
+
+    % bundle exec fastlane regenerate_app_icon
+
 ## Source code structure
 
 * iOS - Code specific to the iOS app
@@ -28,3 +56,7 @@ If you're looking for **a full OpenStreetMap editor**,
 [2]: https://github.com/bryceco/GoMap
 [3]: https://itunes.apple.com/app/id592990211
 [4]: https://wiki.openstreetmap.org/wiki/StreetComplete/Quests
+[5]: https://docs.fastlane.tools/actions/match/
+[6]: https://docs.fastlane.tools/actions/snapshot/
+[7]: https://github.com/fastlane-community/fastlane-plugin-appicon
+[8]: src/iOS/fastlane/README.md

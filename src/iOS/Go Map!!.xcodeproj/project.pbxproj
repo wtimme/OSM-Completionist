@@ -489,6 +489,7 @@
 		02F9A4551BC8348C0013BFBD /* OSM-Logo256.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F9A4541BC8348C0013BFBD /* OSM-Logo256.png */; };
 		02FFCE0B16A7360B001A5B8A /* NSMutableArray+PartialSort.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02FFCE0A16A7360B001A5B8A /* NSMutableArray+PartialSort.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		640B0B752285EAA800D0EE24 /* EditorMapLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640B0B742285EAA800D0EE24 /* EditorMapLayer.swift */; };
+		64338B07235B4357006EE896 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64338B06235B4356006EE896 /* SnapshotHelper.swift */; };
 		64348CED225E7CD900ADE7FB /* GoMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64348CEC225E7CD900ADE7FB /* GoMapTests.swift */; };
 		64348CFB225E867800ADE7FB /* HeadingProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64348CF7225E867800ADE7FB /* HeadingProviderMock.swift */; };
 		64348CFC225E867800ADE7FB /* MeasureDirectionViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64348CF8225E867800ADE7FB /* MeasureDirectionViewModelDelegateMock.swift */; };
@@ -521,8 +522,8 @@
 		64D64CE2227ECEA20040C67A /* OsmBaseObject+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CE1227ECEA20040C67A /* OsmBaseObject+Make.swift */; };
 		64D64CE9227ECF450040C67A /* BaseObjectMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CE8227ECF450040C67A /* BaseObjectMatching.swift */; };
 		64D64CEC227ED0790040C67A /* KeyExistsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CEB227ED0790040C67A /* KeyExistsQuery.swift */; };
-		64D64CF8227ED2480040C67A /* KeyExistsQueryTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CF7227ED2480040C67A /* KeyExistsQueryTestCase.swift */; };
 		64D64CEE227ED11F0040C67A /* BaseObjectMatcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CED227ED11F0040C67A /* BaseObjectMatcherMock.swift */; };
+		64D64CF8227ED2480040C67A /* KeyExistsQueryTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CF7227ED2480040C67A /* KeyExistsQueryTestCase.swift */; };
 		64D64CFB227ED3340040C67A /* RecursiveQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CFA227ED3340040C67A /* RecursiveQuery.swift */; };
 		64D64CFD227ED3470040C67A /* RecursiveQueryTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CFC227ED3470040C67A /* RecursiveQueryTestCase.swift */; };
 		64D64D00227ED5EB0040C67A /* overpass-query-parser.js in Resources */ = {isa = PBXBuildFile; fileRef = 64D64CFF227ED5EB0040C67A /* overpass-query-parser.js */; };
@@ -1133,6 +1134,7 @@
 		02FFCE0916A7360B001A5B8A /* NSMutableArray+PartialSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+PartialSort.h"; path = "../Shared/NSMutableArray+PartialSort.h"; sourceTree = "<group>"; };
 		02FFCE0A16A7360B001A5B8A /* NSMutableArray+PartialSort.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "NSMutableArray+PartialSort.mm"; path = "../Shared/NSMutableArray+PartialSort.mm"; sourceTree = "<group>"; };
 		640B0B742285EAA800D0EE24 /* EditorMapLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorMapLayer.swift; sourceTree = "<group>"; };
+		64338B06235B4356006EE896 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		64348CEA225E7CD900ADE7FB /* GoMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64348CEC225E7CD900ADE7FB /* GoMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoMapTests.swift; sourceTree = "<group>"; };
 		64348CEE225E7CD900ADE7FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1169,8 +1171,8 @@
 		64D64CE1227ECEA20040C67A /* OsmBaseObject+Make.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OsmBaseObject+Make.swift"; sourceTree = "<group>"; };
 		64D64CE8227ECF450040C67A /* BaseObjectMatching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObjectMatching.swift; sourceTree = "<group>"; };
 		64D64CEB227ED0790040C67A /* KeyExistsQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyExistsQuery.swift; sourceTree = "<group>"; };
-		64D64CF7227ED2480040C67A /* KeyExistsQueryTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyExistsQueryTestCase.swift; sourceTree = "<group>"; };
 		64D64CED227ED11F0040C67A /* BaseObjectMatcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseObjectMatcherMock.swift; sourceTree = "<group>"; };
+		64D64CF7227ED2480040C67A /* KeyExistsQueryTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyExistsQueryTestCase.swift; sourceTree = "<group>"; };
 		64D64CFA227ED3340040C67A /* RecursiveQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecursiveQuery.swift; sourceTree = "<group>"; };
 		64D64CFC227ED3470040C67A /* RecursiveQueryTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecursiveQueryTestCase.swift; sourceTree = "<group>"; };
 		64D64CFF227ED5EB0040C67A /* overpass-query-parser.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "overpass-query-parser.js"; sourceTree = "<group>"; };
@@ -2060,6 +2062,7 @@
 		64D64D242280BA180040C67A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				64338B06235B4356006EE896 /* SnapshotHelper.swift */,
 				64D64D252280BA420040C67A /* XCTestCase+UITestHelper.swift */,
 				64972E9F228227B400286157 /* XCUIApplication+TestHelper.swift */,
 				64972EA6228242A800286157 /* XCUIElement+TestHelper.swift */,
@@ -2761,6 +2764,7 @@
 				64972EA7228242A800286157 /* XCUIElement+TestHelper.swift in Sources */,
 				64972EA0228227B400286157 /* XCUIApplication+TestHelper.swift in Sources */,
 				64D64D232280B9EF0040C67A /* OverpassQueryFormUITestCase.swift in Sources */,
+				64338B07235B4357006EE896 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2917,17 +2921,19 @@
 		02ACBA6216713CCB00BB4414 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Go Map!!/Go Map!!.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = CH829V2QQB;
 				DISPLAY_NAME = "OSM Completionist Debug";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Go Map!!-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/Go Map!!-Info.plist";
+				INFOPLIST_FILE = "Go Map!!-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.wtimme.osm-completionist";
@@ -2936,6 +2942,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Go Map!!-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2943,17 +2950,19 @@
 		02ACBA6316713CCB00BB4414 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Go Map!!/Go Map!!.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = CH829V2QQB;
 				DISPLAY_NAME = "OSM Completionist";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Go Map!!-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/Go Map!!-Info.plist";
+				INFOPLIST_FILE = "Go Map!!-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.wtimme.osm-completionist";
@@ -2961,6 +2970,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Go Map!!-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
