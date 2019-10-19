@@ -12,9 +12,19 @@ platform :ios do
 
   desc "Uploads a new Beta version to TestFlight"
   lane :beta do
+    pull_request_checks
+
+    increment_build_number
+    commit_version_bump(xcodeproj: "Go Map!!.xcodeproj")
+
     sync_code_signing(type: "appstore")
     build_app(scheme: "Go Map!!")
+
+    add_git_tag
+
     upload_to_testflight
+
+    push_to_git_remote
   end
 
   desc "Re-generates the app icon from the base app_icon.png in the fastlane metadata directory"
