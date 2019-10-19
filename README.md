@@ -17,6 +17,9 @@ If you're looking for **a full OpenStreetMap editor**,
 
 # Continuous delivery
 
+OSM Completionist makes use of fastlane.
+For a list of available actions, please refer to [the auto-generated README][8].
+
 ## Signing
 
 To automate the signing, this project uses [fastlane match][5].
@@ -38,7 +41,7 @@ After changing this "master" app icon,
 re-generate the app icons using the
 [fastlane plugin "appicon"][7] like so:
 
-    % bundle exec fastlane run appicon appicon_path:"Go Map\!\!/Images.xcassets"
+    % bundle exec fastlane regenerate_app_icon
 
 ## Source code structure
 
@@ -56,3 +59,4 @@ re-generate the app icons using the
 [5]: https://docs.fastlane.tools/actions/match/
 [6]: https://docs.fastlane.tools/actions/snapshot/
 [7]: https://github.com/fastlane-community/fastlane-plugin-appicon
+[8]: src/iOS/fastlane/README.md
