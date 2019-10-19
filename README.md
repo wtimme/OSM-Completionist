@@ -15,6 +15,13 @@ for iPhone/iPad.
 If you're looking for **a full OpenStreetMap editor**,
 [download GoMap on the App Store][3].
 
+## Signing
+
+To automate the signing, this project uses [fastlane match][5].
+Fetch the certificates for development with
+
+    % bundle exec fastlane match development
+
 ## Source code structure
 
 * iOS - Code specific to the iOS app
@@ -28,3 +35,4 @@ If you're looking for **a full OpenStreetMap editor**,
 [2]: https://github.com/bryceco/GoMap
 [3]: https://itunes.apple.com/app/id592990211
 [4]: https://wiki.openstreetmap.org/wiki/StreetComplete/Quests
+[5]: https://docs.fastlane.tools/actions/match/
