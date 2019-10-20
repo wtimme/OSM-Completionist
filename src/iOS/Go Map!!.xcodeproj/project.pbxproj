@@ -2930,7 +2930,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = CH829V2QQB;
-				DISPLAY_NAME = "OSM Completionist Debug";
+				DISPLAY_NAME = "Completionist Debug";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Go Map!!-Prefix.pch";
 				INFOPLIST_FILE = "Go Map!!-Info.plist";
@@ -2959,7 +2959,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = CH829V2QQB;
-				DISPLAY_NAME = "OSM Completionist";
+				DISPLAY_NAME = Completionist;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Go Map!!-Prefix.pch";
 				INFOPLIST_FILE = "Go Map!!-Info.plist";
