@@ -6,7 +6,7 @@ cache:
 before_install:
   - cd src/iOS
 install:
-  - "bundle install"
+  - "bundle install --deployment"
 
 jobs:
   include:
