@@ -1,11 +1,12 @@
 language: objective-c
 osx_image: xcode11.2
 cache:
-  - bundler
+  directories:
+    - src/iOS/vendor/bundle
 before_install:
   - cd src/iOS
 install:
-  - "bundle install"
+  - "bundle install --deployment"
 
 jobs:
   include:
