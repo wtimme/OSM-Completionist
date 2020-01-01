@@ -24,7 +24,7 @@ extension XCUIElement {
         XCUIApplication().menuItems["Select All"].tap()
         
         // Reset it to an empty string.
-        XCUIApplication().keys["delete"].tap()
+        typeText(XCUIKeyboardKey.delete.rawValue)
     }
     
 }
