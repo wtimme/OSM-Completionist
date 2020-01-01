@@ -8,6 +8,7 @@ platform :ios do
   desc "Performs basic integration checks to be run before merging"
   lane :pull_request_checks do
     run_tests(scheme: "GoMapTests")
+    run_tests(scheme: "GoMapUITests")
   end
 
   desc "Uploads a new Beta version to TestFlight"
