@@ -166,6 +166,18 @@ extension QueryFormViewController: UIGestureRecognizerDelegate {
 }
 
 extension QueryFormViewController: QueryFormViewModelDelegate {
+    var previewCenterCoordinate: CLLocationCoordinate2D? {
+        guard
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+            let mapView = appDelegate.mapView
+        else {
+            /// Without the map view, we cannot get the center coordinate.
+            return nil
+        }
+        
+        return mapView.longitudeLatitude(forScreenPoint: mapView.center, birdsEye: true)
+    }
+    
     func presentPreviewWithOverpassTurbo(url: String) {
         guard let url = URL(string: url) else { return }
         

@@ -159,6 +159,42 @@ class QueryFormViewModelTestCase: XCTestCase {
         XCTAssertEqual(delegateMock.previewURL, expectedURL)
     }
     
+    // MARK: presentPreview and center on coordinate
+    
+    func testPresentPreview_withValidQueryAndWithoutPreviewCenterCoordinate_shouldNotAddLatLonToURL() {
+        /// Given
+        delegateMock.previewCenterCoordinate = nil
+        
+        /// When
+        let query = "type:node and man_made=surveillance and camera:mount=pole"
+        viewModel.evaluateQuery(query)
+        
+        viewModel.presentPreview()
+        
+        /// Then
+        let encodedQuery = "type%3Anode%20and%20man_made%3Dsurveillance%20and%20camera%3Amount%3Dpole"
+        let expectedURL = "https://overpass-turbo.eu?w=\(encodedQuery)&R"
+        XCTAssertEqual(delegateMock.previewURL, expectedURL)
+    }
+    
+    func testPresentPreview_withValidQueryAndPreviewCenterCoordinate_shouldAddLatLonToURL() {
+        /// Given
+        let latitude = 1.234
+        let longitude = 5.678
+        delegateMock.previewCenterCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        
+        /// When
+        let query = "type:node and man_made=surveillance and camera:mount=pole"
+        viewModel.evaluateQuery(query)
+        
+        viewModel.presentPreview()
+        
+        /// Then
+        let encodedQuery = "type%3Anode%20and%20man_made%3Dsurveillance%20and%20camera%3Amount%3Dpole"
+        let expectedURL = "https://overpass-turbo.eu?w=\(encodedQuery)&R&lat=\(latitude)&lon=\(longitude)"
+        XCTAssertEqual(delegateMock.previewURL, expectedURL)
+    }
+    
     // MARK: viewWillDisappear
     
     func testViewWillDisappearShouldSetTheActiveQuestToNilWhenTheQueryIsNotValid() {

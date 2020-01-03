@@ -14,13 +14,19 @@ platform :ios do
   lane :beta do
     pull_request_checks
 
-    increment_build_number
+    increment_build_number(
+      build_number: get_highest_build_number_from_git_tags() + 1
+    )
     commit_version_bump(xcodeproj: "Go Map!!.xcodeproj")
 
     sync_code_signing(type: "appstore")
     build_app(scheme: "Go Map!!")
 
-    add_git_tag
+    # Add a tag like 'builds/beta/1.6.5-12'
+    add_git_tag(
+      tag: "builds/beta/#{get_version_number()}-#{get_build_number()}"
+    )
+
     push_to_git_remote
 
     upload_to_testflight
