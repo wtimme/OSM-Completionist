@@ -49,6 +49,18 @@
 	return 1;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (_searchBar.text.length > 0) {
+        /// Don't display a title above the search results.
+        return nil;
+    } else if (_historyArray.count > 0) {
+        /// The table view contains previous search terms.
+        return @"Recent Searches";
+    }
+    
+    return nil;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	return _searchBar.text.length ? _resultsArray.count : _historyArray.count;
