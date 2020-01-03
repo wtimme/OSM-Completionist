@@ -166,6 +166,11 @@ extension QueryFormViewController: UIGestureRecognizerDelegate {
 }
 
 extension QueryFormViewController: QueryFormViewModelDelegate {
+    var previewCenterCoordinate: CLLocationCoordinate2D? {
+        /// TODO: Implement me
+        return nil
+    }
+    
     func presentPreviewWithOverpassTurbo(url: String) {
         guard let url = URL(string: url) else { return }
         
