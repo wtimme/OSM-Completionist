@@ -171,6 +171,16 @@ class OverpassQueryFormUITestCase: XCTestCase {
         wait(for: [elementExistsExpectation], timeout: 3)
     }
     
+    func testTappingOnHelpButton_shouldPresentTheOpenStreetMapWiki() {
+        goToOverpassQueryViewController()
+        
+        app.buttons["help"].tap()
+        
+        let elementExistsExpectation = expectation(for: NSPredicate(format: "exists == 1"),
+                                                   evaluatedWith: app.webViews.firstMatch)
+        wait(for: [elementExistsExpectation], timeout: 3)
+    }
+    
     // MARK: Persistence
     
     func testTappingBackWhenAValidQueryIsEnteredShouldSaveTheQuery() {
