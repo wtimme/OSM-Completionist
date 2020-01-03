@@ -20,7 +20,11 @@ platform :ios do
     sync_code_signing(type: "appstore")
     build_app(scheme: "Go Map!!")
 
-    add_git_tag
+    # Add a tag like 'builds/beta/1.6.5-12'
+    add_git_tag(
+      tag: "builds/beta/#{get_version_number()}-#{get_build_number()}"
+    )
+
     push_to_git_remote
 
     upload_to_testflight
