@@ -9,6 +9,9 @@
 import Foundation
 
 protocol QueryFormViewModelDelegate: class {
+    /// The coordinate that the Overpass Turbo preview should centered on
+    var previewCenterCoordinate: CLLocationCoordinate2D? { get }
+    
     /// Asks the delegate to present the preview with the given URL string.
     ///
     /// - Parameter url: The URL of the preview address as a string.
@@ -91,7 +94,15 @@ class QueryFormViewModel: NSObject {
             return
         }
         
-        let previewURL = "https://overpass-turbo.eu?w=\(escapedQuery)&R"
+        /// Attempt to center the preview's map on a specific coordinate.
+        let centerCoordinateURLPart: String
+        if let coordinate = delegate?.previewCenterCoordinate {
+            centerCoordinateURLPart = "&lat=\(coordinate.latitude)&lon=\(coordinate.longitude)"
+        } else {
+            centerCoordinateURLPart = ""
+        }
+        
+        let previewURL = "https://overpass-turbo.eu?w=\(escapedQuery)&R\(centerCoordinateURLPart)"
         delegate?.presentPreviewWithOverpassTurbo(url: previewURL)
     }
     

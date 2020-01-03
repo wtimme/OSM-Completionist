@@ -10,6 +10,8 @@ import Foundation
 @testable import Go_Map__
 
 class QueryFormViewModelDelegateMock: NSObject {
+    var previewCenterCoordinate: CLLocationCoordinate2D?
+    
     var didCallPresentPreview = false
     var previewURL: String?
 }
