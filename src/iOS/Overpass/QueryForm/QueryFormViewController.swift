@@ -24,7 +24,7 @@ class QueryFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Overpass Query"
+        title = "Overpass Query Wizard"
         
         textView.delegate = self
         

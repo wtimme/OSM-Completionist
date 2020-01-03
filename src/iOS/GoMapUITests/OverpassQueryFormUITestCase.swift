@@ -189,14 +189,14 @@ class OverpassQueryFormUITestCase: XCTestCase {
         
         // Go back to the query form.
         app.cells["overpass_query"].tap()
-        waitForViewController("Overpass Query")
+        waitForViewController("Overpass Query Wizard")
         
         // Tap the back button.
         app.tapBackButton()
         
         // Go back to the query form.
         app.cells["overpass_query"].tap()
-        waitForViewController("Overpass Query")
+        waitForViewController("Overpass Query Wizard")
         
         XCTAssertEqual(app.textViews["query_text_view"].value as? String, query)
     }
@@ -217,7 +217,7 @@ class OverpassQueryFormUITestCase: XCTestCase {
         
         // Go back to the query form.
         app.cells["overpass_query"].tap()
-        waitForViewController("Overpass Query")
+        waitForViewController("Overpass Query Wizard")
         
         XCTAssertTrue((app.textViews["query_text_view"].value as? String)?.isEmpty ?? false)
     }
@@ -238,7 +238,7 @@ class OverpassQueryFormUITestCase: XCTestCase {
         
         // Go back to the query form.
         app.cells["overpass_query"].tap()
-        waitForViewController("Overpass Query")
+        waitForViewController("Overpass Query Wizard")
         
         XCTAssertTrue(app.buttons["preview_button"].isEnabled)
     }
@@ -253,7 +253,7 @@ class OverpassQueryFormUITestCase: XCTestCase {
         
         app.cells["overpass_query"].tap()
         
-        waitForViewController("Overpass Query")
+        waitForViewController("Overpass Query Wizard")
     }
 
 }
