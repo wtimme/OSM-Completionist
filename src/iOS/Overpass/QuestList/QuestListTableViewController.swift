@@ -50,6 +50,13 @@ class QuestListTableViewController: UITableViewController {
         
         cell.textLabel?.text = item.title
         cell.detailTextLabel?.text = item.subtitle
+        
+        switch item.accessory {
+        case .checkmark:
+            cell.accessoryType = .checkmark
+        case .none:
+            cell.accessoryType = .none
+        }
 
         return cell
     }
