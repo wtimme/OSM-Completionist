@@ -53,7 +53,7 @@ class QuestListViewModelTestCase: XCTestCase {
     
     func testItemAtIndex_whenProvidedWithAValidIndex_shouldReturnItemWithTheQuestQuestionAsTitle() {
         let question = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        questProviderMock.quests = [Quest(question: question, overpassWizardQuery: "")]
+        questProviderMock.quests = [Quest.makeQuest(question: question)]
         
         let item = viewModel.item(at: 0)
         XCTAssertEqual(item?.title, question)
@@ -61,7 +61,7 @@ class QuestListViewModelTestCase: XCTestCase {
     
     func testItemAtIndex_whenProvidedWithAValidIndex_shouldReturnItemWithTheQuestQueryAsSubtitle() {
         let overpassWizardQuery = "type:node"
-        questProviderMock.quests = [Quest(question: "", overpassWizardQuery: overpassWizardQuery)]
+        questProviderMock.quests = [Quest.makeQuest(overpassWizardQuery: overpassWizardQuery)]
         
         let item = viewModel.item(at: 0)
         XCTAssertEqual(item?.subtitle, overpassWizardQuery)
