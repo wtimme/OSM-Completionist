@@ -52,6 +52,12 @@ extension StaticQuestProvider: QuestProviding {
     }
     
     func isQuestActive(_ quest: Quest) -> Bool {
-        return false
+        guard
+            let activeQuestIdentifiers = userDefaults.object(forKey: activeQuestIdentifierUserDefaultsKey) as? [String]
+        else {
+            return false
+        }
+        
+        return activeQuestIdentifiers.contains(quest.identifier)
     }
 }

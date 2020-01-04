@@ -34,5 +34,44 @@ class StaticQuestProviderTestCase: XCTestCase {
         
         super.tearDown()
     }
+    
+    // MARK: isQuestActive(_:)
+    
+    func testIsQuestActive_shouldInitiallyReturnFalseForAllQuests() {
+        questProvider.quests.forEach { quest in
+            XCTAssertFalse(questProvider.isQuestActive(quest))
+        }
+    }
+    
+    func testIsQuestActive_whenTheQuestIdentifierIsPartOfTheUserDefaults_shouldReturnTrue() {
+        /// Just use the first quest as an example.
+        guard let firstQuest = questProvider.quests.first else {
+            XCTFail()
+            return
+        }
+        
+        /// Store the identifier in the `UserDefaults`.
+        userDefaults.set([firstQuest.identifier], forKey: activeQuestIdentifierUserDefaultsKey)
+        
+        XCTAssertTrue(questProvider.isQuestActive(firstQuest))
+    }
+    
+    /// This method makes sure that the values are persisted in the `UserDefaults`, and that when a second `StaticQuestProvider` is initialized
+    /// with the same `UserDefaults` and the same `activeQuestIdentifierUserDefaultsKey`, a `Quest` is still considered "active".
+    func testIsQuestActive_whenUsingTheSameUserDefaultsAndTheSameUserDefaultsKey_shouldStillReturnTrue() {
+        /// Just use the first quest as an example.
+        guard let firstQuest = questProvider.quests.first else {
+            XCTFail()
+            return
+        }
+        
+        /// Store the identifier in the `UserDefaults`.
+        userDefaults.set([firstQuest.identifier], forKey: activeQuestIdentifierUserDefaultsKey)
+        
+        /// Create a second `StaticQuestProvider` with the same values.
+        let secondQuestProvider = StaticQuestProvider(userDefaults: userDefaults,
+                                                      activeQuestIdentifierUserDefaultsKey: activeQuestIdentifierUserDefaultsKey)
+        XCTAssertTrue(secondQuestProvider.isQuestActive(firstQuest))
+    }
 
 }
