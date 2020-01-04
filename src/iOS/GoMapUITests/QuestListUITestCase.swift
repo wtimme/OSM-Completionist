@@ -23,5 +23,22 @@ class QuestListUITestCase: XCTestCase {
         app.terminate()
         app = nil
     }
+    
+    func testTapOnQuestsMenuItemInDisplayOptionsShouldShowQuestListViewController() {
+        goToQuestListViewController()
+    }
+    
+    // MARK: Helper methods
+    
+    private func goToQuestListViewController() {
+        let button = app.buttons["display_options_button"]
+        button.press(forDuration: 1.0)
+        
+        waitForViewController("Display")
+        
+        app.cells["quests"].tap()
+        
+        waitForViewController("Quests")
+    }
 
 }
