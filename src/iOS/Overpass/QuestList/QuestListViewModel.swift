@@ -26,6 +26,10 @@ class QuestListViewModel {
         let accessory: Accessory
     }
     
+    // MARK: Public properties
+    
+    weak var delegate: QuestListViewModelDelegate?
+    
     // MARK: Private properties
     
     /// An object that provides the `Quest` instances that are displayed in the list
@@ -78,5 +82,7 @@ class QuestListViewModel {
         } else {
             questProvider.activateQuest(quest)
         }
+        
+        delegate?.reloadItem(at: index)
     }
 }

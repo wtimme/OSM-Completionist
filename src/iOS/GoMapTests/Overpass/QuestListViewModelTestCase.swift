@@ -130,6 +130,18 @@ class QuestListViewModelTestCase: XCTestCase {
         XCTAssertFalse(questProviderMock.deactivateQuestCalled)
     }
     
+    func testSelectItemAtIndex_whenProvidedWithAValidIndex_shouldAskDelegateToReloadTheItemAtThatPath() {
+        let firstQuest = Quest.makeQuest()
+        let secondQuest = Quest.makeQuest()
+        questProviderMock.quests = [firstQuest, secondQuest]
+        
+        let itemIndex = 1
+        viewModel.selectItem(at: itemIndex)
+        
+        XCTAssertTrue(delegateMock.reloadItemCalled)
+        XCTAssertEqual(delegateMock.reloadItemIndex, itemIndex)
+    }
+    
     func testSelectItemAtIndex_whenProvidedWithAValidIndex_shouldAskQuestProviderIfTheQuestAtTheGivenIndexWasActive() {
         let firstQuest = Quest.makeQuest()
         let secondQuest = Quest.makeQuest()
