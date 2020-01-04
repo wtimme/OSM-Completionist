@@ -11,8 +11,13 @@ class QuestListViewModel {
     
     /// An item in the list.
     struct Item {
+        enum Accessory {
+            case none, checkmark
+        }
+        
         let title: String
         let subtitle: String
+        let accessory: Accessory
     }
     
     // MARK: Private properties
@@ -48,6 +53,7 @@ class QuestListViewModel {
         _ = questProvider.isQuestActive(quest)
         
         return Item(title: quest.question,
-                    subtitle: quest.overpassWizardQuery)
+                    subtitle: quest.overpassWizardQuery,
+                    accessory: .none)
     }
 }
