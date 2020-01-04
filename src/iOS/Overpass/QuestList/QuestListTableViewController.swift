@@ -43,10 +43,13 @@ class QuestListTableViewController: UITableViewController {
             cell.detailTextLabel?.numberOfLines = 0
         }
         
-        let item = viewModel.item(at: indexPath.row)
+        guard let item = viewModel.item(at: indexPath.row) else {
+            /// Without an `Item`, we cannot configure the cell.
+            return cell
+        }
         
-        cell.textLabel?.text = item?.title
-        cell.detailTextLabel?.text = item?.subtitle
+        cell.textLabel?.text = item.title
+        cell.detailTextLabel?.text = item.subtitle
 
         return cell
     }
