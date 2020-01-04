@@ -6,6 +6,12 @@
 //  Copyright © 2020 Bryce. All rights reserved.
 //
 
+protocol QuestListViewModelDelegate: class {
+    /// Asks the delegate to reload the item at the given index.
+    /// - Parameter index: The index at which to reload the item.
+    func reloadItem(at index: Int)
+}
+
 class QuestListViewModel {
     // MARK: Types
     
