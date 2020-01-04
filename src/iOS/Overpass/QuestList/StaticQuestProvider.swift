@@ -52,12 +52,16 @@ extension StaticQuestProvider: QuestProviding {
     }
     
     func isQuestActive(_ quest: Quest) -> Bool {
+        return activeQuestIdentifiersFromUserDefaults().contains(quest.identifier)
+    }
+    
+    private func activeQuestIdentifiersFromUserDefaults() -> [String] {
         guard
             let activeQuestIdentifiers = userDefaults.object(forKey: activeQuestIdentifierUserDefaultsKey) as? [String]
         else {
-            return false
+            return []
         }
         
-        return activeQuestIdentifiers.contains(quest.identifier)
+        return activeQuestIdentifiers
     }
 }
