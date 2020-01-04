@@ -68,6 +68,14 @@ extension StaticQuestProvider: QuestProviding {
         userDefaults.set(identifiers, forKey: activeQuestIdentifierUserDefaultsKey)
     }
     
+    func deactivateQuest(_ quest: Quest) {
+        var identifiers = activeQuestIdentifiersFromUserDefaults()
+        
+        identifiers.removeAll(where: { $0 == quest.identifier })
+        
+        userDefaults.set(identifiers, forKey: activeQuestIdentifierUserDefaultsKey)
+    }
+    
     private func activeQuestIdentifiersFromUserDefaults() -> [String] {
         guard
             let activeQuestIdentifiers = userDefaults.object(forKey: activeQuestIdentifierUserDefaultsKey) as? [String]

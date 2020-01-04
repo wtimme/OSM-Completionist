@@ -115,5 +115,28 @@ class StaticQuestProviderTestCase: XCTestCase {
         
         XCTAssertEqual(activeQuestIdentifiers.filter({ $0 == firstQuest.identifier }).count, 1)
     }
+    
+    // MARK: deactivateQuest(_:)
+    
+    func testDeactiveQuest_shouldRemoveTheQuestIdentifierFromUserDefaults() {
+        /// Just use the first quest as an example.
+        guard let firstQuest = questProvider.quests.first else {
+            XCTFail()
+            return
+        }
+        
+        userDefaults.set([firstQuest.identifier], forKey: activeQuestIdentifierUserDefaultsKey)
+        
+        questProvider.deactivateQuest(firstQuest)
+        
+        guard
+            let activeQuestIdentifiers = userDefaults.object(forKey: activeQuestIdentifierUserDefaultsKey) as? [String]
+        else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssertFalse(activeQuestIdentifiers.contains(firstQuest.identifier))
+    }
 
 }

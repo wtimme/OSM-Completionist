@@ -17,4 +17,8 @@ protocol QuestProviding {
     /// Activates the given quest.
     /// - Parameter quest: The quest to activate.
     func activateQuest(_ quest: Quest)
+    
+    /// Deactivates the given quest.
+    /// - Parameter quest: The quest to deactivate.
+    func deactivateQuest(_ quest: Quest)
 }

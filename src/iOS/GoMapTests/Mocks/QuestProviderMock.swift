@@ -28,4 +28,11 @@ class QuestProviderMock: QuestProviding {
         activateQuestCalled = true
         activateQuestQuest = quest
     }
+    
+    var deactivateQuestCalled = false
+    var deactivateQuestQuest: Quest?
+    func deactivateQuest(_ quest: Quest) {
+        deactivateQuestCalled = true
+        deactivateQuestQuest = quest
+    }
 }
