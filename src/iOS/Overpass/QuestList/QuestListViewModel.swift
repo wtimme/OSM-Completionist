@@ -7,6 +7,14 @@
 //
 
 class QuestListViewModel {
+    // MARK: Types
+    
+    /// An item in the list.
+    struct Item {
+        let title: String
+        let subtitle: String
+    }
+    
     // MARK: Private properties
     
     /// An object that provides the `Quest` instances that are displayed in the list
