@@ -7,5 +7,14 @@
 //
 
 class QuestListViewModel {
-
+    // MARK: Private properties
+    
+    /// An object that provides the `Quest` instances that are displayed in the list
+    private let questProvider: QuestProviding
+    
+    // MARK: Initializer
+    
+    init(questProvider: QuestProviding = StaticQuestProvider()) {
+        self.questProvider = questProvider
+    }
 }
