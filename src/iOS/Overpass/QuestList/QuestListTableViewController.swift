@@ -17,6 +17,8 @@ class QuestListTableViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.delegate = self
 
         title = NSLocalizedString("Quests",
                                   comment: "Title of the quest list")
@@ -77,5 +79,21 @@ class QuestListTableViewController: UITableViewController {
         case .none:
             cell.accessoryType = .none
         }
+    }
+}
+
+extension QuestListTableViewController: QuestListViewModelDelegate {
+    func reloadItem(at index: Int) {
+        let indexPath = IndexPath(row: index, section: 0)
+        
+        guard
+            let cell = tableView.cellForRow(at: indexPath),
+            let item = viewModel.item(at: index)
+        else {
+            /// Without a cell, there's nothing we can reload.
+            return
+        }
+        
+        configure(cell: cell, with: item)
     }
 }
