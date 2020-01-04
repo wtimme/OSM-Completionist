@@ -13,15 +13,18 @@ import XCTest
 class QuestListViewModelTestCase: XCTestCase {
     
     var viewModel: QuestListViewModel!
+    var questProviderMock: QuestProviderMock!
 
     override func setUp() {
         super.setUp()
         
-        viewModel = QuestListViewModel()
+        questProviderMock = QuestProviderMock()
+        viewModel = QuestListViewModel(questProvider: questProviderMock)
     }
 
     override func tearDown() {
         viewModel = nil
+        questProviderMock = nil
         
         super.tearDown()
     }
