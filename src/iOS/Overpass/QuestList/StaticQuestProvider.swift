@@ -55,6 +55,19 @@ extension StaticQuestProvider: QuestProviding {
         return activeQuestIdentifiersFromUserDefaults().contains(quest.identifier)
     }
     
+    func activateQuest(_ quest: Quest) {
+        var identifiers = activeQuestIdentifiersFromUserDefaults()
+        
+        guard !identifiers.contains(quest.identifier) else {
+            /// The quest is already active; ignore the call.
+            return
+        }
+        
+        identifiers.append(quest.identifier)
+        
+        userDefaults.set(identifiers, forKey: activeQuestIdentifierUserDefaultsKey)
+    }
+    
     private func activeQuestIdentifiersFromUserDefaults() -> [String] {
         guard
             let activeQuestIdentifiers = userDefaults.object(forKey: activeQuestIdentifierUserDefaultsKey) as? [String]

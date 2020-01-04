@@ -21,4 +21,11 @@ class QuestProviderMock: QuestProviding {
         
         return isQuestActiveMockedReturnValue
     }
+    
+    var activateQuestCalled = false
+    var activateQuestQuest: Quest?
+    func activateQuest(_ quest: Quest) {
+        activateQuestCalled = true
+        activateQuestQuest = quest
+    }
 }

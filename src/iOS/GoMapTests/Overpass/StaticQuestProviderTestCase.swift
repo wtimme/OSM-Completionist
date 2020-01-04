@@ -73,5 +73,47 @@ class StaticQuestProviderTestCase: XCTestCase {
                                                       activeQuestIdentifierUserDefaultsKey: activeQuestIdentifierUserDefaultsKey)
         XCTAssertTrue(secondQuestProvider.isQuestActive(firstQuest))
     }
+    
+    // MARK: activateQuest(_:)
+    
+    func testActiveQuest_shouldStoreQuestIdentifierInUserDefaults() {
+        /// Just use the first quest as an example.
+        guard let firstQuest = questProvider.quests.first else {
+            XCTFail()
+            return
+        }
+        
+        questProvider.activateQuest(firstQuest)
+        
+        guard
+            let activeQuestIdentifiers = userDefaults.object(forKey: activeQuestIdentifierUserDefaultsKey) as? [String]
+        else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssertTrue(activeQuestIdentifiers.contains(firstQuest.identifier))
+    }
+    
+    func testActiveQuest_shouldStoreQuestIdentifierInUserDefaultsOnlyOnce() {
+        /// Just use the first quest as an example.
+        guard let firstQuest = questProvider.quests.first else {
+            XCTFail()
+            return
+        }
+        
+        for _ in 1...10 {
+            questProvider.activateQuest(firstQuest)
+        }
+        
+        guard
+            let activeQuestIdentifiers = userDefaults.object(forKey: activeQuestIdentifierUserDefaultsKey) as? [String]
+        else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssertEqual(activeQuestIdentifiers.filter({ $0 == firstQuest.identifier }).count, 1)
+    }
 
 }

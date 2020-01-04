@@ -13,4 +13,8 @@ protocol QuestProviding {
     /// Determines whether the given `Quest` is active.
     /// - Parameter quest: The quest to check.
     func isQuestActive(_ quest: Quest) -> Bool
+    
+    /// Activates the given quest.
+    /// - Parameter quest: The quest to activate.
+    func activateQuest(_ quest: Quest)
 }
