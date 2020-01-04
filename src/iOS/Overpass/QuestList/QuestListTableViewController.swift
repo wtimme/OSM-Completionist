@@ -48,15 +48,7 @@ class QuestListTableViewController: UITableViewController {
             return cell
         }
         
-        cell.textLabel?.text = item.title
-        cell.detailTextLabel?.text = item.subtitle
-        
-        switch item.accessory {
-        case .checkmark:
-            cell.accessoryType = .checkmark
-        case .none:
-            cell.accessoryType = .none
-        }
+        configure(cell: cell, with: item)
 
         return cell
     }
@@ -71,5 +63,17 @@ class QuestListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    private func configure(cell: UITableViewCell, with item: QuestListViewModel.Item) {
+        cell.textLabel?.text = item.title
+        cell.detailTextLabel?.text = item.subtitle
+        
+        switch item.accessory {
+        case .checkmark:
+            cell.accessoryType = .checkmark
+        case .none:
+            cell.accessoryType = .none
+        }
     }
 }
