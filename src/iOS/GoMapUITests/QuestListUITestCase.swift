@@ -28,6 +28,12 @@ class QuestListUITestCase: XCTestCase {
         goToQuestListViewController()
     }
     
+    func testQuestList_shouldNotBeEmpty() {
+        goToQuestListViewController()
+        
+        XCTAssert(app.tables.children(matching: .cell).count > 0)
+    }
+    
     // MARK: Helper methods
     
     private func goToQuestListViewController() {
