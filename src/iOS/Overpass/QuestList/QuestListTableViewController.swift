@@ -38,6 +38,9 @@ class QuestListTableViewController: UITableViewController {
             cell = dequeuedCell
         } else {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: itemCellReuseIdentifier)
+            
+            cell.textLabel?.numberOfLines = 0
+            cell.detailTextLabel?.numberOfLines = 0
         }
         
         let item = viewModel.item(at: indexPath.row)
@@ -46,5 +49,13 @@ class QuestListTableViewController: UITableViewController {
         cell.detailTextLabel?.text = item?.subtitle
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 42
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
