@@ -13,6 +13,9 @@ class StaticQuestProvider {
     /// The `UserDefaults` instances for persisting the active quests.
     private let userDefaults: UserDefaults
     
+    /// Key for when storing the identifiers of the active quests in the `UserDefaults`.
+    private let activeQuestIdentifierUserDefaultsKey: String
+    
     private var accessibleToiletsQuest: Quest {
         let identifier = "accessible_toilets"
         let question = "Are these toilets wheelchair accessible?"
@@ -35,8 +38,10 @@ class StaticQuestProvider {
     
     // MARK: Initializer
     
-    init(userDefaults: UserDefaults = .standard) {
+    init(userDefaults: UserDefaults = .standard,
+         activeQuestIdentifierUserDefaultsKey: String = "active_quest_identifiers") {
         self.userDefaults = userDefaults
+        self.activeQuestIdentifierUserDefaultsKey = activeQuestIdentifierUserDefaultsKey
     }
 }
 
