@@ -519,6 +519,7 @@
 		64C072FA226227D500598078 /* CommonTagKeyTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C072F9226227D500598078 /* CommonTagKeyTestCase.swift */; };
 		64C072FE22622B9C00598078 /* Require.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C072FD22622B9C00598078 /* Require.swift */; };
 		64C968452261ED3100351C0C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64C968442261ED3100351C0C /* Media.xcassets */; };
+		64CCF4CF23C0B052006164D3 /* QuestListUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4CE23C0B052006164D3 /* QuestListUITestCase.swift */; };
 		64CCF4D323C0B182006164D3 /* QuestListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4D123C0B182006164D3 /* QuestListTableViewController.swift */; };
 		64CCF4D423C0B182006164D3 /* QuestListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64CCF4D223C0B182006164D3 /* QuestListTableViewController.xib */; };
 		64D64CE2227ECEA20040C67A /* OsmBaseObject+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CE1227ECEA20040C67A /* OsmBaseObject+Make.swift */; };
@@ -1170,6 +1171,7 @@
 		64C072F9226227D500598078 /* CommonTagKeyTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTagKeyTestCase.swift; sourceTree = "<group>"; };
 		64C072FD22622B9C00598078 /* Require.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Require.swift; sourceTree = "<group>"; };
 		64C968442261ED3100351C0C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		64CCF4CE23C0B052006164D3 /* QuestListUITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestListUITestCase.swift; sourceTree = "<group>"; };
 		64CCF4D123C0B182006164D3 /* QuestListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestListTableViewController.swift; sourceTree = "<group>"; };
 		64CCF4D223C0B182006164D3 /* QuestListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestListTableViewController.xib; sourceTree = "<group>"; };
 		64D64CE1227ECEA20040C67A /* OsmBaseObject+Make.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OsmBaseObject+Make.swift"; sourceTree = "<group>"; };
@@ -1968,6 +1970,7 @@
 				64348D0C225EA24E00ADE7FB /* Info.plist */,
 				64348D12225EAA5D00ADE7FB /* MapViewUITestCase.swift */,
 				64D64D222280B9EF0040C67A /* OverpassQueryFormUITestCase.swift */,
+				64CCF4CE23C0B052006164D3 /* QuestListUITestCase.swift */,
 			);
 			path = GoMapUITests;
 			sourceTree = "<group>";
@@ -2781,6 +2784,7 @@
 				64972EA0228227B400286157 /* XCUIApplication+TestHelper.swift in Sources */,
 				64D64D232280B9EF0040C67A /* OverpassQueryFormUITestCase.swift in Sources */,
 				64338B07235B4357006EE896 /* SnapshotHelper.swift in Sources */,
+				64CCF4CF23C0B052006164D3 /* QuestListUITestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
