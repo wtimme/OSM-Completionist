@@ -9,4 +9,8 @@
 /// Protocol for an object that provides `Quest` instances
 protocol QuestProviding {
     var quests: [Quest] { get }
+    
+    /// Determines whether the given `Quest` is active.
+    /// - Parameter quest: The quest to check.
+    func isQuestActive(_ quest: Quest) -> Bool
 }

@@ -66,5 +66,25 @@ class QuestListViewModelTestCase: XCTestCase {
         let item = viewModel.item(at: 0)
         XCTAssertEqual(item?.subtitle, overpassWizardQuery)
     }
+    
+    func testItemAtIndex_whenProvidedWithAValidIndex_shouldAskQuestProviderIfQuestWasActive() {
+        let quest = Quest.makeQuest()
+        questProviderMock.quests = [quest]
+        
+        _ = viewModel.item(at: 0)
+        
+        XCTAssertTrue(questProviderMock.isQuestActiveCalled)
+    }
+    
+    func testItemAtIndex_whenProvidedWithAValidIndex_shouldAskQuestProviderIfTheQuestAtTheGivenIndexWasActive() {
+        let firstQuest = Quest.makeQuest()
+        let secondQuest = Quest.makeQuest()
+        questProviderMock.quests = [firstQuest, secondQuest]
+        
+        _ = viewModel.item(at: 1)
+        
+        XCTAssertEqual(questProviderMock.isQuestActiveQuest?.identifier,
+                       secondQuest.identifier, "The view model should ask the quest provider if that particular quest was active")
+    }
 
 }

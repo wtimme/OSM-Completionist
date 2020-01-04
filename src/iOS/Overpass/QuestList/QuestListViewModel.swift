@@ -45,6 +45,8 @@ class QuestListViewModel {
         
         let quest = allQuests[index]
         
+        _ = questProvider.isQuestActive(quest)
+        
         return Item(title: quest.question,
                     subtitle: quest.overpassWizardQuery)
     }

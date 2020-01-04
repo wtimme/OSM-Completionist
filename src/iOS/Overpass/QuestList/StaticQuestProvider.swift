@@ -34,4 +34,8 @@ extension StaticQuestProvider: QuestProviding {
         [accessibleToiletsQuest,
          parkingFeeQuest]
     }
+    
+    func isQuestActive(_ quest: Quest) -> Bool {
+        return false
+    }
 }
