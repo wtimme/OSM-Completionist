@@ -8,6 +8,8 @@
 
 /// Provides static `Quest`s that are compiled into the app.
 class StaticQuestProvider {
+    // MARK: Private properties
+    
     private var accessibleToiletsQuest: Quest {
         let identifier = "accessible_toilets"
         let question = "Are these toilets wheelchair accessible?"
