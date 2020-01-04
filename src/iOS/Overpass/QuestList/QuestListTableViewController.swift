@@ -62,6 +62,8 @@ class QuestListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.selectItem(at: indexPath.row)
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
