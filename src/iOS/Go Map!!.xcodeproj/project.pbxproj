@@ -530,6 +530,7 @@
 		64CCF4E123C0C04C006164D3 /* QuestProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4E023C0C04C006164D3 /* QuestProviderMock.swift */; };
 		64CCF4E323C0C1BF006164D3 /* Quest+MakeQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4E223C0C1BF006164D3 /* Quest+MakeQuest.swift */; };
 		64CCF4E523C0DC2E006164D3 /* StaticQuestProviderTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4E423C0DC2E006164D3 /* StaticQuestProviderTestCase.swift */; };
+		64CCF4E723C13F67006164D3 /* QuestListViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4E623C13F67006164D3 /* QuestListViewModelDelegateMock.swift */; };
 		64D64CE2227ECEA20040C67A /* OsmBaseObject+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CE1227ECEA20040C67A /* OsmBaseObject+Make.swift */; };
 		64D64CE9227ECF450040C67A /* BaseObjectMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CE8227ECF450040C67A /* BaseObjectMatching.swift */; };
 		64D64CEC227ED0790040C67A /* KeyExistsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CEB227ED0790040C67A /* KeyExistsQuery.swift */; };
@@ -1190,6 +1191,7 @@
 		64CCF4E023C0C04C006164D3 /* QuestProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestProviderMock.swift; sourceTree = "<group>"; };
 		64CCF4E223C0C1BF006164D3 /* Quest+MakeQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quest+MakeQuest.swift"; sourceTree = "<group>"; };
 		64CCF4E423C0DC2E006164D3 /* StaticQuestProviderTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticQuestProviderTestCase.swift; sourceTree = "<group>"; };
+		64CCF4E623C13F67006164D3 /* QuestListViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestListViewModelDelegateMock.swift; sourceTree = "<group>"; };
 		64D64CE1227ECEA20040C67A /* OsmBaseObject+Make.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OsmBaseObject+Make.swift"; sourceTree = "<group>"; };
 		64D64CE8227ECF450040C67A /* BaseObjectMatching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObjectMatching.swift; sourceTree = "<group>"; };
 		64D64CEB227ED0790040C67A /* KeyExistsQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyExistsQuery.swift; sourceTree = "<group>"; };
@@ -1976,6 +1978,7 @@
 				64972EA3228230F000286157 /* QuestManagerMock.swift */,
 				64D64CED227ED11F0040C67A /* BaseObjectMatcherMock.swift */,
 				64CCF4E023C0C04C006164D3 /* QuestProviderMock.swift */,
+				64CCF4E623C13F67006164D3 /* QuestListViewModelDelegateMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -2779,6 +2782,7 @@
 				64C072FA226227D500598078 /* CommonTagKeyTestCase.swift in Sources */,
 				64D64CF8227ED2480040C67A /* KeyExistsQueryTestCase.swift in Sources */,
 				64D64CEE227ED11F0040C67A /* BaseObjectMatcherMock.swift in Sources */,
+				64CCF4E723C13F67006164D3 /* QuestListViewModelDelegateMock.swift in Sources */,
 				64972EA222822BDB00286157 /* QuestManagerTestCase.swift in Sources */,
 				64CCF4E123C0C04C006164D3 /* QuestProviderMock.swift in Sources */,
 				64972EA4228230F000286157 /* QuestManagerMock.swift in Sources */,
