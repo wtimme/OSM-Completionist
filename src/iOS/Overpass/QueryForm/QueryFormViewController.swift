@@ -24,12 +24,13 @@ class QueryFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Overpass Query"
+        title = "Overpass Query Wizard"
         
         textView.delegate = self
         
         bindToViewModel()
         
+        setupHelpButton()
         startListeningForKeyboardNotifications()
         setupKeyboardDismissOnTapGestureRecognizer()
     }
@@ -138,6 +139,26 @@ class QueryFormViewController: UIViewController {
     
     @objc private func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    // MARK: Help Button
+    
+    private func setupHelpButton() {
+        let infoButton = UIButton(type: .infoLight)
+        infoButton.accessibilityIdentifier = "help"
+        infoButton.addTarget(self,
+                             action: #selector(openOverpassTurboWizardHelpPage),
+                             for: .touchUpInside)
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
+    }
+    
+    @IBAction private func openOverpassTurboWizardHelpPage() {
+        guard let url = URL(string: "https://wiki.openstreetmap.org/wiki/Overpass_turbo/Wizard#Purpose") else { return }
+        
+        let viewController = SFSafariViewController(url: url,
+                                                    entersReaderIfAvailable: true)
+        present(viewController, animated: true)
     }
     
     // MARK: Preview Button
