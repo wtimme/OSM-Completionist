@@ -106,5 +106,74 @@ class QuestListViewModelTestCase: XCTestCase {
         let item = viewModel.item(at: 0)
         XCTAssertEqual(item?.accessory, QuestListViewModel.Item.Accessory.checkmark)
     }
+    
+    // MARK: selectItem(at:)
+    
+    func testSelectItemAtIndex_whenProvidedWithANegativeIndex_shouldNotCallQuestProvider() {
+        viewModel.selectItem(at: -1)
+        
+        XCTAssertFalse(questProviderMock.activateQuestCalled)
+        XCTAssertFalse(questProviderMock.deactivateQuestCalled)
+    }
+    
+    func testSelectItemAtIndex_whenProvidedWithAnIndexThatIsOutOfRange_shouldNotCallQuestProvider() {
+        questProviderMock.quests = [Quest.makeQuest()]
+        
+        viewModel.selectItem(at: 42)
+        
+        XCTAssertFalse(questProviderMock.activateQuestCalled)
+        XCTAssertFalse(questProviderMock.deactivateQuestCalled)
+    }
+    
+    func testSelectItemAtIndex_whenProvidedWithAValidIndex_shouldAskQuestProviderIfTheQuestAtTheGivenIndexWasActive() {
+        let firstQuest = Quest.makeQuest()
+        let secondQuest = Quest.makeQuest()
+        questProviderMock.quests = [firstQuest, secondQuest]
+        
+        viewModel.selectItem(at: 1)
+        
+        XCTAssertEqual(questProviderMock.isQuestActiveQuest?.identifier,
+                       secondQuest.identifier, "The view model should ask the quest provider if that particular quest was active")
+    }
+    
+    func testSelectItemAtIndex_whenProvidedWithAValidIndexThatTheQuestProviderReportedAsNotActive_shouldAskQuestProviderToActivateTheQuest() {
+        questProviderMock.quests = [Quest.makeQuest()]
+        questProviderMock.isQuestActiveMockedReturnValue = false
+        
+        viewModel.selectItem(at: 0)
+        
+        XCTAssertTrue(questProviderMock.activateQuestCalled)
+    }
+    
+    func testSelectItemAtIndex_whenProvidedWithAValidIndexThatTheQuestProviderReportedAsNotActive_shouldAskQuestProviderToActivateThatParticularQuest() {
+        let firstQuest = Quest.makeQuest()
+        let secondQuest = Quest.makeQuest()
+        questProviderMock.quests = [firstQuest, secondQuest]
+        questProviderMock.isQuestActiveMockedReturnValue = false
+        
+        viewModel.selectItem(at: 1)
+        
+        XCTAssertEqual(questProviderMock.activateQuestQuest?.identifier, secondQuest.identifier)
+    }
+    
+    func testSelectItemAtIndex_whenProvidedWithAValidIndexThatTheQuestProviderReportedAsActive_shouldAskQuestProviderToDeactivateTheQuest() {
+        questProviderMock.quests = [Quest.makeQuest()]
+        questProviderMock.isQuestActiveMockedReturnValue = true
+        
+        viewModel.selectItem(at: 0)
+        
+        XCTAssertTrue(questProviderMock.deactivateQuestCalled)
+    }
+    
+    func testSelectItemAtIndex_whenProvidedWithAValidIndexThatTheQuestProviderReportedAsActive_shouldAskQuestProviderToDeactivateThatParticularQuest() {
+        let firstQuest = Quest.makeQuest()
+        let secondQuest = Quest.makeQuest()
+        questProviderMock.quests = [firstQuest, secondQuest]
+        questProviderMock.isQuestActiveMockedReturnValue = true
+        
+        viewModel.selectItem(at: 1)
+        
+        XCTAssertEqual(questProviderMock.deactivateQuestQuest?.identifier, secondQuest.identifier)
+    }
 
 }

@@ -56,4 +56,21 @@ class QuestListViewModel {
                     subtitle: quest.overpassWizardQuery,
                     accessory: accessory)
     }
+    
+    func selectItem(at index: Int) {
+        let allQuests = questProvider.quests
+        
+        guard allQuests.indices.contains(index) else {
+            /// The index is out-of-range.
+            return
+        }
+        
+        let quest = allQuests[index]
+        
+        if questProvider.isQuestActive(quest) {
+            questProvider.deactivateQuest(quest)
+        } else {
+            questProvider.activateQuest(quest)
+        }
+    }
 }
