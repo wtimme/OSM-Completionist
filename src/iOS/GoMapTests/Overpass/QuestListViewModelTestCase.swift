@@ -38,5 +38,33 @@ class QuestListViewModelTestCase: XCTestCase {
         questProviderMock.quests = [Quest.makeQuest(), Quest.makeQuest()]
         XCTAssertEqual(viewModel.numberOfItems(), 2)
     }
+    
+    // MARK: item(at:)
+    
+    func testItemAtIndex_whenProvidedWithNegativeIndex_shouldReturnNil() {
+        XCTAssertNil(viewModel.item(at: -1))
+    }
+    
+    func testItemAtIndex_whenProvidedWithAnIndexThatIsOutOfRange_shouldReturnNil() {
+        questProviderMock.quests = [Quest.makeQuest()]
+        
+        XCTAssertNil(viewModel.item(at: 42))
+    }
+    
+    func testItemAtIndex_whenProvidedWithAValidIndex_shouldReturnItemWithTheQuestQuestionAsTitle() {
+        let question = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        questProviderMock.quests = [Quest(question: question, overpassWizardQuery: "")]
+        
+        let item = viewModel.item(at: 0)
+        XCTAssertEqual(item?.title, question)
+    }
+    
+    func testItemAtIndex_whenProvidedWithAValidIndex_shouldReturnItemWithTheQuestQueryAsSubtitle() {
+        let overpassWizardQuery = "type:node"
+        questProviderMock.quests = [Quest(question: "", overpassWizardQuery: overpassWizardQuery)]
+        
+        let item = viewModel.item(at: 0)
+        XCTAssertEqual(item?.subtitle, overpassWizardQuery)
+    }
 
 }

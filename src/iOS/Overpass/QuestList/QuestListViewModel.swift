@@ -32,4 +32,18 @@ class QuestListViewModel {
     func numberOfItems() -> Int {
         return questProvider.quests.count
     }
+    
+    /// Determines the `Item` to display at the given `index`.
+    /// - Parameter index: The index of the item.
+    func item(at index: Int) -> Item? {
+        let allQuests = questProvider.quests
+        
+        guard allQuests.indices.contains(index) else {
+            /// The index is out-of-range.
+            return nil
+        }
+        
+        return Item(title: allQuests[index].question,
+                    subtitle: allQuests[index].overpassWizardQuery)
+    }
 }
