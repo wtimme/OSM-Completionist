@@ -43,7 +43,9 @@ class QuestListViewModel {
             return nil
         }
         
-        return Item(title: allQuests[index].question,
-                    subtitle: allQuests[index].overpassWizardQuery)
+        let quest = allQuests[index]
+        
+        return Item(title: quest.question,
+                    subtitle: quest.overpassWizardQuery)
     }
 }
