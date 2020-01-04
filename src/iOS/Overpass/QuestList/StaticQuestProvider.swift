@@ -10,6 +10,9 @@
 class StaticQuestProvider {
     // MARK: Private properties
     
+    /// The `UserDefaults` instances for persisting the active quests.
+    private let userDefaults: UserDefaults
+    
     private var accessibleToiletsQuest: Quest {
         let identifier = "accessible_toilets"
         let question = "Are these toilets wheelchair accessible?"
@@ -28,6 +31,12 @@ class StaticQuestProvider {
         return Quest(identifier: identifier,
                      question: question,
                      overpassWizardQuery: query)
+    }
+    
+    // MARK: Initializer
+    
+    init(userDefaults: UserDefaults = .standard) {
+        self.userDefaults = userDefaults
     }
 }
 
