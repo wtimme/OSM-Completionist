@@ -526,6 +526,7 @@
 		64CCF4D923C0B708006164D3 /* QuestListViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4D823C0B708006164D3 /* QuestListViewModelTestCase.swift */; };
 		64CCF4DB23C0B8D0006164D3 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4DA23C0B8D0006164D3 /* Quest.swift */; };
 		64CCF4DD23C0BDDF006164D3 /* QuestProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4DC23C0BDDF006164D3 /* QuestProviding.swift */; };
+		64CCF4DF23C0BEC0006164D3 /* StaticQuestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4DE23C0BEC0006164D3 /* StaticQuestProvider.swift */; };
 		64D64CE2227ECEA20040C67A /* OsmBaseObject+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CE1227ECEA20040C67A /* OsmBaseObject+Make.swift */; };
 		64D64CE9227ECF450040C67A /* BaseObjectMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CE8227ECF450040C67A /* BaseObjectMatching.swift */; };
 		64D64CEC227ED0790040C67A /* KeyExistsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CEB227ED0790040C67A /* KeyExistsQuery.swift */; };
@@ -1182,6 +1183,7 @@
 		64CCF4D823C0B708006164D3 /* QuestListViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestListViewModelTestCase.swift; sourceTree = "<group>"; };
 		64CCF4DA23C0B8D0006164D3 /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		64CCF4DC23C0BDDF006164D3 /* QuestProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestProviding.swift; sourceTree = "<group>"; };
+		64CCF4DE23C0BEC0006164D3 /* StaticQuestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticQuestProvider.swift; sourceTree = "<group>"; };
 		64D64CE1227ECEA20040C67A /* OsmBaseObject+Make.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OsmBaseObject+Make.swift"; sourceTree = "<group>"; };
 		64D64CE8227ECF450040C67A /* BaseObjectMatching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObjectMatching.swift; sourceTree = "<group>"; };
 		64D64CEB227ED0790040C67A /* KeyExistsQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyExistsQuery.swift; sourceTree = "<group>"; };
@@ -2021,6 +2023,7 @@
 				64CCF4D223C0B182006164D3 /* QuestListTableViewController.xib */,
 				64CCF4D523C0B6B8006164D3 /* QuestListViewModel.swift */,
 				64CCF4DC23C0BDDF006164D3 /* QuestProviding.swift */,
+				64CCF4DE23C0BEC0006164D3 /* StaticQuestProvider.swift */,
 			);
 			path = QuestList;
 			sourceTree = "<group>";
@@ -2743,6 +2746,7 @@
 				02FFCE0B16A7360B001A5B8A /* NSMutableArray+PartialSort.mm in Sources */,
 				027EDC73206F3EED00D349D6 /* DDXMLDocument.m in Sources */,
 				028F504519B949780093C423 /* CommonTagList.m in Sources */,
+				64CCF4DF23C0BEC0006164D3 /* StaticQuestProvider.swift in Sources */,
 				024ADF3C16B1B38B00875658 /* PathUtil.m in Sources */,
 				02CB5B6516BF1F9C00432914 /* AutocompleteTextField.m in Sources */,
 				02F04AD21BC4D3B50044FD95 /* GpxConfigureViewController.m in Sources */,
