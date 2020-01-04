@@ -28,5 +28,15 @@ class QuestListViewModelTestCase: XCTestCase {
         
         super.tearDown()
     }
+    
+    // MARK: numberOfItems
+    
+    func testNumberOfItems_shouldMatchTheNumberOfQuests() {
+        questProviderMock.quests = []
+        XCTAssertEqual(viewModel.numberOfItems(), 0)
+        
+        questProviderMock.quests = [Quest.makeQuest(), Quest.makeQuest()]
+        XCTAssertEqual(viewModel.numberOfItems(), 2)
+    }
 
 }

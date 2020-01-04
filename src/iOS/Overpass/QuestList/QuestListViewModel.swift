@@ -17,4 +17,11 @@ class QuestListViewModel {
     init(questProvider: QuestProviding = StaticQuestProvider()) {
         self.questProvider = questProvider
     }
+    
+    // MARK: Public methods
+    
+    /// The number of items visible in the list
+    func numberOfItems() -> Int {
+        return questProvider.quests.count
+    }
 }
