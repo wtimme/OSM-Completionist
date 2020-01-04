@@ -14,17 +14,22 @@ class QuestListViewModelTestCase: XCTestCase {
     
     var viewModel: QuestListViewModel!
     var questProviderMock: QuestProviderMock!
+    var delegateMock: QuestListViewModelDelegateMock!
 
     override func setUp() {
         super.setUp()
         
         questProviderMock = QuestProviderMock()
         viewModel = QuestListViewModel(questProvider: questProviderMock)
+        
+        delegateMock = QuestListViewModelDelegateMock()
+        viewModel.delegate = delegateMock
     }
 
     override func tearDown() {
         viewModel = nil
         questProviderMock = nil
+        delegateMock = nil
         
         super.tearDown()
     }
