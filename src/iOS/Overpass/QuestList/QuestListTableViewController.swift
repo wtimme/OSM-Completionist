@@ -9,6 +9,10 @@
 import UIKit
 
 class QuestListTableViewController: UITableViewController {
+    
+    // MARK: Private properties
+    
+    private let viewModel = QuestListViewModel()
         
     override func viewDidLoad() {
         super.viewDidLoad()
