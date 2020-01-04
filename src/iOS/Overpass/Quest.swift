@@ -10,6 +10,10 @@
 ///
 /// The name stems from the Android app [StreetComplete](https://wiki.openstreetmap.org/wiki/StreetComplete/Quests).
 struct Quest {
+    /// A unique string that identifies this `Quest`.
+    /// This is used to refer to it when saving its `isActive` state.
+    let identifier: String
+    
     /// The question that the user is asked when encountering a map item for this quest.
     let question: String
     

@@ -9,10 +9,12 @@
 /// Provides static `Quest`s that are compiled into the app.
 class StaticQuestProvider {
     private var accessibleToiletsQuest: Quest {
+        let identifier = "accessible_toilets"
         let question = "Are these toilets wheelchair accessible?"
         let query = "(type:node or type:way) and amenity=toilets and access !~ \"private|customers\" and wheelchair!=*"
         
-        return Quest(question: question,
+        return Quest(identifier: identifier,
+                     question: question,
                      overpassWizardQuery: query)
     }
 }

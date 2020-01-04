@@ -10,9 +10,11 @@
 
 extension Quest {
     /// Convenience method for creating a `Quest` for testing
-    static func makeQuest(question: String = "Lorem ipsum?",
+    static func makeQuest(identifier: String = UUID().uuidString,
+                          question: String = "Lorem ipsum?",
                           overpassWizardQuery: String = "dolor_sit:amet") -> Quest {
-        return Quest(question: question,
+        return Quest(identifier: identifier,
+                     question: question,
                      overpassWizardQuery: overpassWizardQuery)
     }
 }
