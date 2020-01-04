@@ -13,15 +13,24 @@ import XCTest
 class StaticQuestProviderTestCase: XCTestCase {
     
     var questProvider: QuestProviding!
+    
+    var userDefaults: UserDefaults!
+    let userDefaultsSuiteName = "TestDefaults"
+    let activeQuestIdentifierUserDefaultsKey = "identifiers"
 
     override func setUp() {
         super.setUp()
         
-        questProvider = StaticQuestProvider()
+        UserDefaults().removePersistentDomain(forName: userDefaultsSuiteName)
+        userDefaults = UserDefaults(suiteName: userDefaultsSuiteName)
+        
+        questProvider = StaticQuestProvider(userDefaults: userDefaults,
+                                            activeQuestIdentifierUserDefaultsKey: activeQuestIdentifierUserDefaultsKey)
     }
 
     override func tearDown() {
         questProvider = nil
+        userDefaults = nil
         
         super.tearDown()
     }
