@@ -86,5 +86,25 @@ class QuestListViewModelTestCase: XCTestCase {
         XCTAssertEqual(questProviderMock.isQuestActiveQuest?.identifier,
                        secondQuest.identifier, "The view model should ask the quest provider if that particular quest was active")
     }
+    
+    func testItemAtIndex_whenProvidedWithAValidIndex_shouldReturnItemWithAccessoryNoneIfQuestWasNotActive() {
+        questProviderMock.quests = [Quest.makeQuest()]
+        
+        /// Act as if the quest was not active.
+        questProviderMock.isQuestActiveMockedReturnValue = false
+        
+        let item = viewModel.item(at: 0)
+        XCTAssertEqual(item?.accessory, QuestListViewModel.Item.Accessory.none)
+    }
+    
+    func testItemAtIndex_whenProvidedWithAValidIndex_shouldReturnItemWithAccessoryCheckmarkIfQuestWasActive() {
+        questProviderMock.quests = [Quest.makeQuest()]
+        
+        /// Act as if the quest was not active.
+        questProviderMock.isQuestActiveMockedReturnValue = true
+        
+        let item = viewModel.item(at: 0)
+        XCTAssertEqual(item?.accessory, QuestListViewModel.Item.Accessory.checkmark)
+    }
 
 }

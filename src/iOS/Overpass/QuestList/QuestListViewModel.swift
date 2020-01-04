@@ -50,10 +50,10 @@ class QuestListViewModel {
         
         let quest = allQuests[index]
         
-        _ = questProvider.isQuestActive(quest)
+        let accessory: Item.Accessory = questProvider.isQuestActive(quest) ? .checkmark : .none
         
         return Item(title: quest.question,
                     subtitle: quest.overpassWizardQuery,
-                    accessory: .none)
+                    accessory: accessory)
     }
 }
