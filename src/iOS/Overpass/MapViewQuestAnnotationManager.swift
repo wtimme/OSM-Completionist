@@ -25,7 +25,9 @@ import Foundation
     
     // MARK: Initializer
     
-    init(questManager: QuestManaging, questProvider: QuestProviding, queryParser: OverpassQueryParsing) {
+    init(questManager: QuestManaging,
+         questProvider: QuestProviding,
+         queryParser: OverpassQueryParsing) {
         self.questManager = questManager
         self.questProvider = questProvider
         self.queryParser = queryParser
