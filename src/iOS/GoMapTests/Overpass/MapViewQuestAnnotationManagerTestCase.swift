@@ -54,7 +54,7 @@ class MapViewQuestAnnotationManagerTestCase: XCTestCase {
         _ = manager.shouldShowQuestAnnotation(for: object)
         
         XCTAssertEqual(queryParserMock.parseCallCounter, 1)
-        XCTAssertEqual(queryParserMock.query, query)
+        XCTAssertEqual(queryParserMock.queries.first, query)
     }
     
     func testShowAnnotationWithActiveQueryThatIsValidShouldOnlyAskParserToParseIfQueryWasChanged() {
