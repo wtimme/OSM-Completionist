@@ -26,6 +26,8 @@ class QuestListUITestCase: XCTestCase {
     
     func testTapOnQuestsMenuItemInDisplayOptionsShouldShowQuestListViewController() {
         goToQuestListViewController()
+        
+        snapshot("02QuestList")
     }
     
     func testQuestList_shouldNotBeEmpty() {
