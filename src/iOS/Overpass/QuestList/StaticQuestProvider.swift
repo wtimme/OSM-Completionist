@@ -18,16 +18,6 @@ class StaticQuestProvider {
     
     private let notificationCenter: NotificationCenter
     
-    private var accessibleToiletsQuest: Quest {
-        let identifier = "accessible_toilets"
-        let question = "Are these toilets wheelchair accessible?"
-        let query = "(type:node or type:way) and amenity=toilets and access !~ \"private|customers\" and wheelchair!=*"
-        
-        return Quest(identifier: identifier,
-                     question: question,
-                     overpassWizardQuery: query)
-    }
-    
     private var parkingFeeQuest: Quest {
         let identifier = "parking_fee"
         let question = "Does it cost a fee to park here? "
@@ -51,7 +41,7 @@ class StaticQuestProvider {
 
 extension StaticQuestProvider: QuestProviding {
     var quests: [Quest] {
-        [accessibleToiletsQuest,
+        [Quest.makeAccessibleToiletsQuest(),
          parkingFeeQuest]
     }
     
