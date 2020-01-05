@@ -40,6 +40,8 @@ class MapViewQuestAnnotationManagerTestCase: XCTestCase {
         super.tearDown()
     }
     
+    // MARK: shouldShowQuestAnnotation(for:)
+    
     func testShowAnnotationWithoutActiveQueryShouldNotAskParserToParse() {
         let query: String? = nil
         questManagerMock.activeQuestQuery = query
