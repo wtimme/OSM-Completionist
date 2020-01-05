@@ -16,6 +16,7 @@ class MapViewQuestAnnotationManagerTestCase: XCTestCase {
     var questManagerMock: QuestManagerMock!
     var questProviderMock: QuestProviderMock!
     var queryParserMock: OverpassQueryParserMock!
+    var notificationCenter: NotificationCenter!
 
     override func setUp() {
         super.setUp()
@@ -23,15 +24,18 @@ class MapViewQuestAnnotationManagerTestCase: XCTestCase {
         questManagerMock = QuestManagerMock()
         questProviderMock = QuestProviderMock()
         queryParserMock = OverpassQueryParserMock()
+        notificationCenter = NotificationCenter()
         manager = MapViewQuestAnnotationManager(questManager: questManagerMock,
                                                 questProvider: questProviderMock,
-                                                queryParser: queryParserMock)
+                                                queryParser: queryParserMock,
+                                                notificationCenter: notificationCenter)
     }
 
     override func tearDown() {
         manager = nil
         questManagerMock = nil
         queryParserMock = nil
+        notificationCenter = nil
         
         super.tearDown()
     }

@@ -19,6 +19,7 @@ import Foundation
     private let questManager: QuestManaging
     private let questProvider: QuestProviding
     private let queryParser: OverpassQueryParsing
+    private let notificationCenter: NotificationCenter
     
     private var lastParsedQuery: String?
     private var lastMatcher: BaseObjectMatching?
@@ -27,10 +28,12 @@ import Foundation
     
     init(questManager: QuestManaging,
          questProvider: QuestProviding,
-         queryParser: OverpassQueryParsing) {
+         queryParser: OverpassQueryParsing,
+         notificationCenter: NotificationCenter = .default) {
         self.questManager = questManager
         self.questProvider = questProvider
         self.queryParser = queryParser
+        self.notificationCenter = notificationCenter
     }
     
     convenience override init() {
