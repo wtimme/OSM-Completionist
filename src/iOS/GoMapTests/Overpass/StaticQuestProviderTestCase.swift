@@ -17,6 +17,7 @@ class StaticQuestProviderTestCase: XCTestCase {
     var userDefaults: UserDefaults!
     let userDefaultsSuiteName = "TestDefaults"
     let activeQuestIdentifierUserDefaultsKey = "identifiers"
+    var notificationCenter: NotificationCenter!
 
     override func setUp() {
         super.setUp()
@@ -24,13 +25,17 @@ class StaticQuestProviderTestCase: XCTestCase {
         UserDefaults().removePersistentDomain(forName: userDefaultsSuiteName)
         userDefaults = UserDefaults(suiteName: userDefaultsSuiteName)
         
+        notificationCenter = NotificationCenter()
+        
         questProvider = StaticQuestProvider(userDefaults: userDefaults,
-                                            activeQuestIdentifierUserDefaultsKey: activeQuestIdentifierUserDefaultsKey)
+                                            activeQuestIdentifierUserDefaultsKey: activeQuestIdentifierUserDefaultsKey,
+                                            notificationCenter: notificationCenter)
     }
 
     override func tearDown() {
         questProvider = nil
         userDefaults = nil
+        notificationCenter = nil
         
         super.tearDown()
     }
