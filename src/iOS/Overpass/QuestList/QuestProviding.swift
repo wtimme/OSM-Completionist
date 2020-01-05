@@ -10,6 +10,9 @@
 protocol QuestProviding {
     var quests: [Quest] { get }
     
+    /// The quests that are currently active.
+    var activeQuests: [Quest] { get }
+    
     /// Determines whether the given `Quest` is active.
     /// - Parameter quest: The quest to check.
     func isQuestActive(_ quest: Quest) -> Bool

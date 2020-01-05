@@ -11,6 +11,7 @@ import Foundation
 
 class QuestProviderMock: QuestProviding {
     var quests = [Quest]()
+    var activeQuests = [Quest]()
     
     private(set) var isQuestActiveCalled = false
     private(set) var isQuestActiveQuest: Quest?

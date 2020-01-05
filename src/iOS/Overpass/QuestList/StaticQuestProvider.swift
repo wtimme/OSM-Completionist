@@ -37,6 +37,12 @@ class StaticQuestProvider {
 
 extension StaticQuestProvider: QuestProviding {
     
+    var activeQuests: [Quest] {
+        let identifiersOfActiveQuests = activeQuestIdentifiersFromUserDefaults()
+        
+        return quests.filter { identifiersOfActiveQuests.contains($0.identifier) }
+    }
+    
     func isQuestActive(_ quest: Quest) -> Bool {
         return activeQuestIdentifiersFromUserDefaults().contains(quest.identifier)
     }

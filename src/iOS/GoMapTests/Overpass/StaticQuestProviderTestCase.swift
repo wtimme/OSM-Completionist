@@ -47,6 +47,36 @@ class StaticQuestProviderTestCase: XCTestCase {
                                             notificationCenter: notificationCenter)
     }
     
+    // MARK: activeQuests
+    
+    func testActiveQuests_whenQuestIdentifierIsStoredInUserDefaults_shouldReturnQuest() {
+        /// Given
+        let questIdentifier = "lorem_ipsum"
+        let quest = Quest.makeQuest(identifier: questIdentifier)
+        
+        setupQuestProvider(quests: [quest])
+        
+        /// When
+        userDefaults.set([questIdentifier], forKey: activeQuestIdentifierUserDefaultsKey)
+        
+        /// Then
+        XCTAssertTrue(questProvider.activeQuests.contains(where: { $0.identifier == questIdentifier }))
+    }
+    
+    func testActiveQuests_whenQuestIdentifierIsNotStoredInUserDefaults_shouldNotReturnQuest() {
+        /// Given
+        let questIdentifier = "lorem_ipsum"
+        let quest = Quest.makeQuest(identifier: questIdentifier)
+        
+        setupQuestProvider(quests: [quest])
+        
+        /// When
+        userDefaults.set([], forKey: activeQuestIdentifierUserDefaultsKey)
+        
+        /// Then
+        XCTAssertTrue(questProvider.activeQuests.isEmpty)
+    }
+    
     // MARK: isQuestActive(_:)
     
     func testIsQuestActive_shouldInitiallyReturnFalse() {
