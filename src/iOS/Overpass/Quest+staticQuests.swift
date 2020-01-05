@@ -29,4 +29,14 @@ extension Quest {
                      overpassWizardQuery: query)
     }
     
+    static func makeBenchBackrestQuest() -> Quest {
+        let identifier = "bench_backrest"
+        let question = "Does this bench have a backrest?"
+        let query = "(type:node) and amenity=bench and backrest!=*"
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query)
+    }
+    
 }
