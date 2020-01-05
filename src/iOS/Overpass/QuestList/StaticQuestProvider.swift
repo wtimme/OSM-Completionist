@@ -62,7 +62,7 @@ extension StaticQuestProvider: QuestProviding {
     func activateQuest(_ quest: Quest) {
         var identifiers = activeQuestIdentifiersFromUserDefaults()
         
-        guard !identifiers.contains(quest.identifier) else {
+        guard !isQuestActive(quest) else {
             /// The quest is already active; ignore the call.
             return
         }
