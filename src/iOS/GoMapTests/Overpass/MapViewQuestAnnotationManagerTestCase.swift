@@ -14,14 +14,17 @@ class MapViewQuestAnnotationManagerTestCase: XCTestCase {
     
     var manager: MapViewQuestAnnotationManaging!
     var questManagerMock: QuestManagerMock!
+    var questProviderMock: QuestProviderMock!
     var queryParserMock: OverpassQueryParserMock!
 
     override func setUp() {
         super.setUp()
         
         questManagerMock = QuestManagerMock()
+        questProviderMock = QuestProviderMock()
         queryParserMock = OverpassQueryParserMock()
         manager = MapViewQuestAnnotationManager(questManager: questManagerMock,
+                                                questProvider: questProviderMock,
                                                 queryParser: queryParserMock)
     }
 

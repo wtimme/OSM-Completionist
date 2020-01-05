@@ -17,6 +17,7 @@ import Foundation
     // MARK: Private properties
     
     private let questManager: QuestManaging
+    private let questProvider: QuestProviding
     private let queryParser: OverpassQueryParsing
     
     private var lastParsedQuery: String?
@@ -24,18 +25,20 @@ import Foundation
     
     // MARK: Initializer
     
-    init(questManager: QuestManaging, queryParser: OverpassQueryParsing) {
+    init(questManager: QuestManaging, questProvider: QuestProviding, queryParser: OverpassQueryParsing) {
         self.questManager = questManager
+        self.questProvider = questProvider
         self.queryParser = queryParser
     }
     
     convenience override init() {
         let questManager = QuestManager()
+        let questProvider = StaticQuestProvider()
         
         let parser = OverpassQueryParser()
         assert(parser != nil, "Unable to create the query parser.")
         
-        self.init(questManager: questManager, queryParser: parser!)
+        self.init(questManager: questManager, questProvider: questProvider, queryParser: parser!)
     }
     
     // MARK: MapViewQuestAnnotationManaging
