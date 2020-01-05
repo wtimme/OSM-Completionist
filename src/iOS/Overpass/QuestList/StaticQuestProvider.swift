@@ -18,11 +18,17 @@ class StaticQuestProvider {
     
     private let notificationCenter: NotificationCenter
     
+    // MARK: Public properties
+    
+    let quests: [Quest]
+    
     // MARK: Initializer
     
-    init(userDefaults: UserDefaults = .standard,
+    init(quests: [Quest] = [Quest.makeAccessibleToiletsQuest(), Quest.makeParkingFeeQuest()],
+         userDefaults: UserDefaults = .standard,
          activeQuestIdentifierUserDefaultsKey: String = "active_quest_identifiers",
          notificationCenter: NotificationCenter = .default) {
+        self.quests = quests
         self.userDefaults = userDefaults
         self.activeQuestIdentifierUserDefaultsKey = activeQuestIdentifierUserDefaultsKey
         self.notificationCenter = notificationCenter
@@ -30,10 +36,6 @@ class StaticQuestProvider {
 }
 
 extension StaticQuestProvider: QuestProviding {
-    var quests: [Quest] {
-        [Quest.makeAccessibleToiletsQuest(),
-         Quest.makeParkingFeeQuest()]
-    }
     
     func isQuestActive(_ quest: Quest) -> Bool {
         return activeQuestIdentifiersFromUserDefaults().contains(quest.identifier)
