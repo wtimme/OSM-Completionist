@@ -15,6 +15,11 @@ for iPhone/iPad.
 If you're looking for **a full OpenStreetMap editor**,
 [download GoMap on the App Store][3].
 
+# Join our TestFlight beta!
+
+Do you want to help testing pre-releases of OSM Completionist?
+[Become a TestFlight tester][9] today! 🚀
+
 # Continuous delivery
 
 OSM Completionist makes use of fastlane.
@@ -60,3 +65,4 @@ re-generate the app icons using the
 [6]: https://docs.fastlane.tools/actions/snapshot/
 [7]: https://github.com/fastlane-community/fastlane-plugin-appicon
 [8]: src/iOS/fastlane/README.md
+[9]: https://testflight.apple.com/join/v1tyM5yU
