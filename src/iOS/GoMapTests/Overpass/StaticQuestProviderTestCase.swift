@@ -27,9 +27,7 @@ class StaticQuestProviderTestCase: XCTestCase {
         
         notificationCenter = NotificationCenter()
         
-        questProvider = StaticQuestProvider(userDefaults: userDefaults,
-                                            activeQuestIdentifierUserDefaultsKey: activeQuestIdentifierUserDefaultsKey,
-                                            notificationCenter: notificationCenter)
+        setupQuestProvider()
     }
 
     override func tearDown() {
@@ -38,6 +36,14 @@ class StaticQuestProviderTestCase: XCTestCase {
         notificationCenter = nil
         
         super.tearDown()
+    }
+    
+    // MARK: Helper methods
+    
+    private func setupQuestProvider() {
+        questProvider = StaticQuestProvider(userDefaults: userDefaults,
+                                            activeQuestIdentifierUserDefaultsKey: activeQuestIdentifierUserDefaultsKey,
+                                            notificationCenter: notificationCenter)
     }
     
     // MARK: isQuestActive(_:)
