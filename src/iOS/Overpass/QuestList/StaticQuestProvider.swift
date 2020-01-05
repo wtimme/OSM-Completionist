@@ -86,6 +86,9 @@ extension StaticQuestProvider: QuestProviding {
         identifiers.removeAll(where: { $0 == quest.identifier })
         
         userDefaults.set(identifiers, forKey: activeQuestIdentifierUserDefaultsKey)
+        
+        /// Post a notification.
+        notificationCenter.post(name: .QuestManagerDidUpdateActiveQuests, object: self)
     }
     
     private func activeQuestIdentifiersFromUserDefaults() -> [String] {
