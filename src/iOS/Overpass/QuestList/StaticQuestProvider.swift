@@ -18,16 +18,6 @@ class StaticQuestProvider {
     
     private let notificationCenter: NotificationCenter
     
-    private var parkingFeeQuest: Quest {
-        let identifier = "parking_fee"
-        let question = "Does it cost a fee to park here? "
-        let query = "(type:node or type:way) and amenity=parking and fee!=* and access~\"yes|customers|public\""
-        
-        return Quest(identifier: identifier,
-                     question: question,
-                     overpassWizardQuery: query)
-    }
-    
     // MARK: Initializer
     
     init(userDefaults: UserDefaults = .standard,
@@ -42,7 +32,7 @@ class StaticQuestProvider {
 extension StaticQuestProvider: QuestProviding {
     var quests: [Quest] {
         [Quest.makeAccessibleToiletsQuest(),
-         parkingFeeQuest]
+         Quest.makeParkingFeeQuest()]
     }
     
     func isQuestActive(_ quest: Quest) -> Bool {

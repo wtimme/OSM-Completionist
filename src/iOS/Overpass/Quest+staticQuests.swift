@@ -19,4 +19,14 @@ extension Quest {
                      overpassWizardQuery: query)
     }
     
+    static func makeParkingFeeQuest() -> Quest {
+        let identifier = "parking_fee"
+        let question = "Does it cost a fee to park here? "
+        let query = "(type:node or type:way) and amenity=parking and fee!=* and access~\"yes|customers|public\""
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query)
+    }
+    
 }
