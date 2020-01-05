@@ -25,10 +25,8 @@ class MapViewQuestAnnotationManagerTestCase: XCTestCase {
         questProviderMock = QuestProviderMock()
         queryParserMock = OverpassQueryParserMock()
         notificationCenter = NotificationCenter()
-        manager = MapViewQuestAnnotationManager(questManager: questManagerMock,
-                                                questProvider: questProviderMock,
-                                                queryParser: queryParserMock,
-                                                notificationCenter: notificationCenter)
+        
+        setupManager()
     }
 
     override func tearDown() {
@@ -38,6 +36,15 @@ class MapViewQuestAnnotationManagerTestCase: XCTestCase {
         notificationCenter = nil
         
         super.tearDown()
+    }
+    
+    // MARK: Private methods
+    
+    private func setupManager() {
+        manager = MapViewQuestAnnotationManager(questManager: questManagerMock,
+                                                questProvider: questProviderMock,
+                                                queryParser: queryParserMock,
+                                                notificationCenter: notificationCenter)
     }
     
     // MARK: shouldShowQuestAnnotation(for:)
