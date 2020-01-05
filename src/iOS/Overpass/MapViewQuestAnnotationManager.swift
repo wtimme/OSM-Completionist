@@ -49,14 +49,25 @@ import Foundation
     // MARK: MapViewQuestAnnotationManaging
     
     func shouldShowQuestAnnotation(for baseObject: OsmBaseObject) -> Bool {
-        guard let activeQuery = questManager.activeQuestQuery else {
-            // Without an active query, there's no need to show an annotation.
+        guard let overpassTurboWizardQueryMatcher = matcherFromOverpassTurboWizardQuery() else {
+            /// Without a matcher, there's no need to show a quest annotation.
             return false
+        }
+        
+        return overpassTurboWizardQueryMatcher.matches(baseObject)
+    }
+    
+    /// Uses the Overpass Turbo Wizard Query that the user entered and attempts to create a matcher from it.
+    private func matcherFromOverpassTurboWizardQuery() -> BaseObjectMatching? {
+        guard let activeQuery = questManager.activeQuestQuery else {
+            /// Without an active query, there's no matcher.
+            return nil
         }
         
         guard activeQuery != lastParsedQuery else {
             // We've already parsed this query before, and there's no need to do it again.
-            return lastMatcher?.matches(baseObject) ?? false
+            /// Use the existing matcher.
+            return lastMatcher
         }
         
         // Remember the query that was parsed last.
@@ -68,13 +79,13 @@ import Foundation
         else {
             lastMatcher = nil
             
-            return false
+            return nil
         }
         
         // Remember the parsed matcher.
         lastMatcher = matcher
         
-        return matcher.matches(baseObject)
+        return matcher
     }
 
 }
