@@ -501,6 +501,7 @@
 		6442666722540EDF00C0D545 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6442666422540EDF00C0D545 /* Lock.swift */; };
 		6442666822540EDF00C0D545 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6442666522540EDF00C0D545 /* Disposable.swift */; };
 		6442666922540EDF00C0D545 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6442666622540EDF00C0D545 /* Observable.swift */; };
+		6470F70723C21587003A463A /* Quest+staticQuests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470F70623C21587003A463A /* Quest+staticQuests.swift */; };
 		647F46CE2253EA4C00CEC482 /* MeasureDirectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */; };
 		647F46D12253F08200CEC482 /* HeadingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F46D02253F08200CEC482 /* HeadingProvider.swift */; };
 		64972E9922820ACD00286157 /* QueryFormViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64972E9822820ACD00286157 /* QueryFormViewModelDelegateMock.swift */; };
@@ -1162,6 +1163,7 @@
 		6442666422540EDF00C0D545 /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		6442666522540EDF00C0D545 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		6442666622540EDF00C0D545 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		6470F70623C21587003A463A /* Quest+staticQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quest+staticQuests.swift"; sourceTree = "<group>"; };
 		647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureDirectionViewModel.swift; sourceTree = "<group>"; };
 		647F46D02253F08200CEC482 /* HeadingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingProvider.swift; sourceTree = "<group>"; };
 		64972E9822820ACD00286157 /* QueryFormViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryFormViewModelDelegateMock.swift; sourceTree = "<group>"; };
@@ -2049,6 +2051,7 @@
 				64972E9C22821AE300286157 /* QuestManager.swift */,
 				64972EA822858C9000286157 /* MapViewQuestAnnotationManager.swift */,
 				64CCF4DA23C0B8D0006164D3 /* Quest.swift */,
+				6470F70623C21587003A463A /* Quest+staticQuests.swift */,
 			);
 			path = Overpass;
 			sourceTree = "<group>";
@@ -2757,6 +2760,7 @@
 				640B0B752285EAA800D0EE24 /* EditorMapLayer.swift in Sources */,
 				02FFCE0B16A7360B001A5B8A /* NSMutableArray+PartialSort.mm in Sources */,
 				027EDC73206F3EED00D349D6 /* DDXMLDocument.m in Sources */,
+				6470F70723C21587003A463A /* Quest+staticQuests.swift in Sources */,
 				028F504519B949780093C423 /* CommonTagList.m in Sources */,
 				64CCF4DF23C0BEC0006164D3 /* StaticQuestProvider.swift in Sources */,
 				024ADF3C16B1B38B00875658 /* PathUtil.m in Sources */,
