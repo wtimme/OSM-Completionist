@@ -121,6 +121,42 @@ class StaticQuestProviderTestCase: XCTestCase {
         XCTAssertEqual(activeQuestIdentifiers.filter({ $0 == firstQuest.identifier }).count, 1)
     }
     
+    func testActivateQuest_whenQuestWasNotActiveBefore_shouldPostNotification() {
+        /// Just use the first quest as an example.
+        guard let firstQuest = questProvider.quests.first else {
+            XCTFail()
+            return
+        }
+        
+        _ = expectation(forNotification: .QuestManagerDidUpdateActiveQuests,
+                        object: questProvider,
+                        notificationCenter: notificationCenter)
+        
+        questProvider.activateQuest(firstQuest)
+        
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testActivateQuest_whenQuestWasActiveBefore_shouldNotPostNotification() {
+        /// Just use the first quest as an example.
+        guard let firstQuest = questProvider.quests.first else {
+            XCTFail()
+            return
+        }
+        
+        /// Act as if the quest was active.
+        userDefaults.set([firstQuest.identifier], forKey: activeQuestIdentifierUserDefaultsKey)
+        
+        let notificationExpectation = expectation(forNotification: .QuestManagerDidUpdateActiveQuests,
+                                                  object: questProvider,
+                                                  notificationCenter: notificationCenter)
+        notificationExpectation.isInverted = true
+        
+        questProvider.activateQuest(firstQuest)
+        
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
     // MARK: deactivateQuest(_:)
     
     func testDeactiveQuest_shouldRemoveTheQuestIdentifierFromUserDefaults() {

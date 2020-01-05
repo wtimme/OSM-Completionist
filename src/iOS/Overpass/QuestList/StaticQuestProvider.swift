@@ -70,6 +70,9 @@ extension StaticQuestProvider: QuestProviding {
         identifiers.append(quest.identifier)
         
         userDefaults.set(identifiers, forKey: activeQuestIdentifierUserDefaultsKey)
+        
+        /// Post a notification.
+        notificationCenter.post(name: .QuestManagerDidUpdateActiveQuests, object: self)
     }
     
     func deactivateQuest(_ quest: Quest) {
