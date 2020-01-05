@@ -39,4 +39,14 @@ extension Quest {
                      overpassWizardQuery: query)
     }
     
+    static func makePlaygroundAccessQuest() -> Quest {
+        let identifier = "playground_access"
+        let question = "Is this playground generally accessible?"
+        let query = "leisure=playground and (access!=* or access=unknown)"
+        
+        return Quest(identifier: identifier,
+        question: question,
+        overpassWizardQuery: query)
+    }
+    
 }
