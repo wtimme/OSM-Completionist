@@ -57,7 +57,7 @@ class QuestManagerTestCase: XCTestCase {
     func testSetActiveQuestQueryShouldPostNotification() {
         manager.activeQuestQuery = "camera:mount = pole"
         
-        let notificationExpectation = expectation(forNotification: .QuestManagerDidUpdateActiveQuest,
+        let notificationExpectation = expectation(forNotification: .QuestManagerDidUpdateActiveQuests,
                                                   object: manager,
                                                   notificationCenter: notificationCenter,
                                                   handler: nil)
@@ -70,7 +70,7 @@ class QuestManagerTestCase: XCTestCase {
     func testSetActiveQuestQueryToTheSameShouldNotPostNotification() {
         manager.activeQuestQuery = "camera:mount = pole"
         
-        let notificationExpectation = expectation(forNotification: .QuestManagerDidUpdateActiveQuest,
+        let notificationExpectation = expectation(forNotification: .QuestManagerDidUpdateActiveQuests,
                                                   object: manager,
                                                   notificationCenter: notificationCenter,
                                                   handler: nil)
