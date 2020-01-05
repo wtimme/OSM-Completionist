@@ -78,6 +78,11 @@ extension StaticQuestProvider: QuestProviding {
     func deactivateQuest(_ quest: Quest) {
         var identifiers = activeQuestIdentifiersFromUserDefaults()
         
+        guard isQuestActive(quest) else {
+            /// The quest is not active; ignore the call.
+            return
+        }
+        
         identifiers.removeAll(where: { $0 == quest.identifier })
         
         userDefaults.set(identifiers, forKey: activeQuestIdentifierUserDefaultsKey)
