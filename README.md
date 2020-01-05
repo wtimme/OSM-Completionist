@@ -7,7 +7,7 @@ contributors to complete missing information for objects around them.
 Instead of advanced editing possibilities, OSM Completionist uses the concept
 of "quests", analog to [StreetComplete for Android][4].
 
-## Based on GoMap!!
+## Based on GoMap
 
 This repository is a fork of [GoMap!!][2], a comprehensive OpenStreetMap editor
 for iPhone/iPad.
