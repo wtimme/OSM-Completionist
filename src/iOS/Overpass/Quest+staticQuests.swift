@@ -49,4 +49,14 @@ extension Quest {
         overpassWizardQuery: query)
     }
     
+    static func makeToiletQuest() -> Quest {
+        let identifier = "toilet"
+        let question = "Does this place have a toilet?"
+        let query = "(type:node or type:way) and ( (shop ~= \"mall|department_store\" and name = *) or (highway~\"services|rest_area\") ) and toilets != *"
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query)
+    }
+    
 }
