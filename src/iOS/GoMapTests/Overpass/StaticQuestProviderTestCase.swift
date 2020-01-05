@@ -50,44 +50,44 @@ class StaticQuestProviderTestCase: XCTestCase {
     // MARK: isQuestActive(_:)
     
     func testIsQuestActive_shouldInitiallyReturnFalse() {
-        let firstQuest = Quest.makeQuest()
-        setupQuestProvider(quests: [firstQuest])
+        let quest = Quest.makeQuest()
+        setupQuestProvider(quests: [quest])
         
-        XCTAssertFalse(questProvider.isQuestActive(firstQuest))
+        XCTAssertFalse(questProvider.isQuestActive(quest))
     }
     
     func testIsQuestActive_whenTheQuestIdentifierIsPartOfTheUserDefaults_shouldReturnTrue() {
-        let firstQuest = Quest.makeQuest()
-        setupQuestProvider(quests: [firstQuest])
+        let quest = Quest.makeQuest()
+        setupQuestProvider(quests: [quest])
         
         /// Store the identifier in the `UserDefaults`.
-        userDefaults.set([firstQuest.identifier], forKey: activeQuestIdentifierUserDefaultsKey)
+        userDefaults.set([quest.identifier], forKey: activeQuestIdentifierUserDefaultsKey)
         
-        XCTAssertTrue(questProvider.isQuestActive(firstQuest))
+        XCTAssertTrue(questProvider.isQuestActive(quest))
     }
     
     /// This method makes sure that the values are persisted in the `UserDefaults`, and that when a second `StaticQuestProvider` is initialized
     /// with the same `UserDefaults` and the same `activeQuestIdentifierUserDefaultsKey`, a `Quest` is still considered "active".
     func testIsQuestActive_whenUsingTheSameUserDefaultsAndTheSameUserDefaultsKey_shouldStillReturnTrue() {
-        let firstQuest = Quest.makeQuest()
-        setupQuestProvider(quests: [firstQuest])
+        let quest = Quest.makeQuest()
+        setupQuestProvider(quests: [quest])
         
         /// Store the identifier in the `UserDefaults`.
-        userDefaults.set([firstQuest.identifier], forKey: activeQuestIdentifierUserDefaultsKey)
+        userDefaults.set([quest.identifier], forKey: activeQuestIdentifierUserDefaultsKey)
         
         /// Create a second `StaticQuestProvider` with the same values.
         let secondQuestProvider = StaticQuestProvider(userDefaults: userDefaults,
                                                       activeQuestIdentifierUserDefaultsKey: activeQuestIdentifierUserDefaultsKey)
-        XCTAssertTrue(secondQuestProvider.isQuestActive(firstQuest))
+        XCTAssertTrue(secondQuestProvider.isQuestActive(quest))
     }
     
     // MARK: activateQuest(_:)
     
     func testActiveQuest_shouldStoreQuestIdentifierInUserDefaults() {
-        let firstQuest = Quest.makeQuest()
-        setupQuestProvider(quests: [firstQuest])
+        let quest = Quest.makeQuest()
+        setupQuestProvider(quests: [quest])
         
-        questProvider.activateQuest(firstQuest)
+        questProvider.activateQuest(quest)
         
         guard
             let activeQuestIdentifiers = userDefaults.object(forKey: activeQuestIdentifierUserDefaultsKey) as? [String]
@@ -96,15 +96,15 @@ class StaticQuestProviderTestCase: XCTestCase {
             return
         }
         
-        XCTAssertTrue(activeQuestIdentifiers.contains(firstQuest.identifier))
+        XCTAssertTrue(activeQuestIdentifiers.contains(quest.identifier))
     }
     
     func testActiveQuest_shouldStoreQuestIdentifierInUserDefaultsOnlyOnce() {
-        let firstQuest = Quest.makeQuest()
-        setupQuestProvider(quests: [firstQuest])
+        let quest = Quest.makeQuest()
+        setupQuestProvider(quests: [quest])
         
         for _ in 1...10 {
-            questProvider.activateQuest(firstQuest)
+            questProvider.activateQuest(quest)
         }
         
         guard
@@ -114,35 +114,35 @@ class StaticQuestProviderTestCase: XCTestCase {
             return
         }
         
-        XCTAssertEqual(activeQuestIdentifiers.filter({ $0 == firstQuest.identifier }).count, 1)
+        XCTAssertEqual(activeQuestIdentifiers.filter({ $0 == quest.identifier }).count, 1)
     }
     
     func testActivateQuest_whenQuestWasNotActiveBefore_shouldPostNotification() {
-        let firstQuest = Quest.makeQuest()
-        setupQuestProvider(quests: [firstQuest])
+        let quest = Quest.makeQuest()
+        setupQuestProvider(quests: [quest])
         
         _ = expectation(forNotification: .QuestManagerDidUpdateActiveQuests,
                         object: questProvider,
                         notificationCenter: notificationCenter)
         
-        questProvider.activateQuest(firstQuest)
+        questProvider.activateQuest(quest)
         
         waitForExpectations(timeout: 1.0, handler: nil)
     }
     
     func testActivateQuest_whenQuestWasActiveBefore_shouldNotPostNotification() {
-        let firstQuest = Quest.makeQuest()
-        setupQuestProvider(quests: [firstQuest])
+        let quest = Quest.makeQuest()
+        setupQuestProvider(quests: [quest])
         
         /// Act as if the quest was active.
-        userDefaults.set([firstQuest.identifier], forKey: activeQuestIdentifierUserDefaultsKey)
+        userDefaults.set([quest.identifier], forKey: activeQuestIdentifierUserDefaultsKey)
         
         let notificationExpectation = expectation(forNotification: .QuestManagerDidUpdateActiveQuests,
                                                   object: questProvider,
                                                   notificationCenter: notificationCenter)
         notificationExpectation.isInverted = true
         
-        questProvider.activateQuest(firstQuest)
+        questProvider.activateQuest(quest)
         
         waitForExpectations(timeout: 1.0, handler: nil)
     }
@@ -150,12 +150,12 @@ class StaticQuestProviderTestCase: XCTestCase {
     // MARK: deactivateQuest(_:)
     
     func testDeactiveQuest_shouldRemoveTheQuestIdentifierFromUserDefaults() {
-        let firstQuest = Quest.makeQuest()
-        setupQuestProvider(quests: [firstQuest])
+        let quest = Quest.makeQuest()
+        setupQuestProvider(quests: [quest])
         
-        userDefaults.set([firstQuest.identifier], forKey: activeQuestIdentifierUserDefaultsKey)
+        userDefaults.set([quest.identifier], forKey: activeQuestIdentifierUserDefaultsKey)
         
-        questProvider.deactivateQuest(firstQuest)
+        questProvider.deactivateQuest(quest)
         
         guard
             let activeQuestIdentifiers = userDefaults.object(forKey: activeQuestIdentifierUserDefaultsKey) as? [String]
@@ -164,35 +164,35 @@ class StaticQuestProviderTestCase: XCTestCase {
             return
         }
         
-        XCTAssertFalse(activeQuestIdentifiers.contains(firstQuest.identifier))
+        XCTAssertFalse(activeQuestIdentifiers.contains(quest.identifier))
     }
     
     func testDeactivateQuest_whenQuestWasActiveBefore_shouldPostNotification() {
-        let firstQuest = Quest.makeQuest()
-        setupQuestProvider(quests: [firstQuest])
+        let quest = Quest.makeQuest()
+        setupQuestProvider(quests: [quest])
         
         /// Act as if the quest was active.
-        userDefaults.set([firstQuest.identifier], forKey: activeQuestIdentifierUserDefaultsKey)
+        userDefaults.set([quest.identifier], forKey: activeQuestIdentifierUserDefaultsKey)
         
         _ = expectation(forNotification: .QuestManagerDidUpdateActiveQuests,
                         object: questProvider,
                         notificationCenter: notificationCenter)
         
-        questProvider.deactivateQuest(firstQuest)
+        questProvider.deactivateQuest(quest)
         
         waitForExpectations(timeout: 1.0, handler: nil)
     }
     
     func testDeactivateQuest_whenQuestWasNotActiveBefore_shouldNotPostNotification() {
-        let firstQuest = Quest.makeQuest()
-        setupQuestProvider(quests: [firstQuest])
+        let quest = Quest.makeQuest()
+        setupQuestProvider(quests: [quest])
         
         let notificationExpectation = expectation(forNotification: .QuestManagerDidUpdateActiveQuests,
                                                   object: questProvider,
                                                   notificationCenter: notificationCenter)
         notificationExpectation.isInverted = true
         
-        questProvider.deactivateQuest(firstQuest)
+        questProvider.deactivateQuest(quest)
         
         waitForExpectations(timeout: 1.0, handler: nil)
     }
