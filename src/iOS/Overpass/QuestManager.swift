@@ -12,6 +12,7 @@ protocol QuestManaging {
 
 extension NSNotification.Name {
     static let QuestManagerDidUpdateActiveQuest = Notification.Name("QuestManagerDidUpdateActiveQuest")
+    static let QuestManagerDidUpdateActiveQuests = Notification.Name("QuestManagerDidUpdateActiveQuests")
 }
 
 final class QuestManager: NSObject, QuestManaging {
