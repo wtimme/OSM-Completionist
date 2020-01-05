@@ -40,8 +40,9 @@ class StaticQuestProviderTestCase: XCTestCase {
     
     // MARK: Helper methods
     
-    private func setupQuestProvider() {
-        questProvider = StaticQuestProvider(userDefaults: userDefaults,
+    private func setupQuestProvider(quests: [Quest] = [Quest.makeQuest()]) {
+        questProvider = StaticQuestProvider(quests: quests,
+                                            userDefaults: userDefaults,
                                             activeQuestIdentifierUserDefaultsKey: activeQuestIdentifierUserDefaultsKey,
                                             notificationCenter: notificationCenter)
     }
