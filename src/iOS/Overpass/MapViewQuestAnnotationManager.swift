@@ -24,6 +24,9 @@ import Foundation
     private var lastParsedQuery: String?
     private var lastMatcher: BaseObjectMatching?
     
+    /// The `BaseObjectMatching` to match objects against quests that were provided by the `questProvider`.
+    private var questMatchers = [BaseObjectMatching]()
+    
     // MARK: Initializer
     
     init(questManager: QuestManaging,
@@ -34,6 +37,15 @@ import Foundation
         self.questProvider = questProvider
         self.queryParser = queryParser
         self.notificationCenter = notificationCenter
+        
+        super.init()
+        
+        notificationCenter.addObserver(self,
+                                       selector: #selector(reloadMatchers),
+                                       name: .QuestManagerDidUpdateActiveQuests,
+                                       object: nil)
+        
+        reloadMatchers()
     }
     
     convenience override init() {
@@ -49,6 +61,12 @@ import Foundation
     // MARK: MapViewQuestAnnotationManaging
     
     func shouldShowQuestAnnotation(for baseObject: OsmBaseObject) -> Bool {
+        for matcher in questMatchers {
+            if matcher.matches(baseObject) {
+                return true
+            }
+        }
+        
         guard let overpassTurboWizardQueryMatcher = matcherFromOverpassTurboWizardQuery() else {
             /// Without a matcher, there's no need to show a quest annotation.
             return false
@@ -86,6 +104,23 @@ import Foundation
         lastMatcher = matcher
         
         return matcher
+    }
+    
+    // MARK: Private methods
+    
+    /// Reloads the matchers that are used to determine whether to display annotations.
+    @objc private func reloadMatchers() {
+        questMatchers = questProvider.activeQuests.compactMap { [weak self] quest in
+            guard let self = self else { return nil }
+            
+            let parserResult = self.queryParser.parse(quest.overpassWizardQuery)
+            switch parserResult {
+            case let .success(matcher):
+                return matcher
+            case .error(_):
+                return nil
+            }
+        }
     }
 
 }
