@@ -1101,6 +1101,10 @@
 			"label": "Levels",
 			"placeholder": "2, 4, 6..."
 		},
+		"part": {
+			"key": "building:part",
+			"type": "check",
+		},
 		"lit": {
 			"key": "lit",
 			"type": "check",
