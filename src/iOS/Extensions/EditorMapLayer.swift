@@ -10,12 +10,12 @@
     
     func observeQuestChanges() {
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(didReceiveActiveQuestChangedNotification(_:)),
-                                               name: .QuestManagerDidUpdateActiveQuest,
+                                               selector: #selector(didReceiveActiveQuestsChangedNotification(_:)),
+                                               name: .QuestManagerDidUpdateActiveQuests,
                                                object: nil)
     }
     
-    func didReceiveActiveQuestChangedNotification(_ note: Notification) {
+    func didReceiveActiveQuestsChangedNotification(_ note: Notification) {
         resetDisplayLayers()
     }
     

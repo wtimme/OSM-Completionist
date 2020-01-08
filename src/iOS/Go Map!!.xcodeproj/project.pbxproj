@@ -501,6 +501,7 @@
 		6442666722540EDF00C0D545 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6442666422540EDF00C0D545 /* Lock.swift */; };
 		6442666822540EDF00C0D545 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6442666522540EDF00C0D545 /* Disposable.swift */; };
 		6442666922540EDF00C0D545 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6442666622540EDF00C0D545 /* Observable.swift */; };
+		6470F70723C21587003A463A /* Quest+staticQuests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470F70623C21587003A463A /* Quest+staticQuests.swift */; };
 		647F46CE2253EA4C00CEC482 /* MeasureDirectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */; };
 		647F46D12253F08200CEC482 /* HeadingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F46D02253F08200CEC482 /* HeadingProvider.swift */; };
 		64972E9922820ACD00286157 /* QueryFormViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64972E9822820ACD00286157 /* QueryFormViewModelDelegateMock.swift */; };
@@ -519,6 +520,18 @@
 		64C072FA226227D500598078 /* CommonTagKeyTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C072F9226227D500598078 /* CommonTagKeyTestCase.swift */; };
 		64C072FE22622B9C00598078 /* Require.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C072FD22622B9C00598078 /* Require.swift */; };
 		64C968452261ED3100351C0C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64C968442261ED3100351C0C /* Media.xcassets */; };
+		64CCF4CF23C0B052006164D3 /* QuestListUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4CE23C0B052006164D3 /* QuestListUITestCase.swift */; };
+		64CCF4D323C0B182006164D3 /* QuestListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4D123C0B182006164D3 /* QuestListTableViewController.swift */; };
+		64CCF4D423C0B182006164D3 /* QuestListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64CCF4D223C0B182006164D3 /* QuestListTableViewController.xib */; };
+		64CCF4D623C0B6B8006164D3 /* QuestListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4D523C0B6B8006164D3 /* QuestListViewModel.swift */; };
+		64CCF4D923C0B708006164D3 /* QuestListViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4D823C0B708006164D3 /* QuestListViewModelTestCase.swift */; };
+		64CCF4DB23C0B8D0006164D3 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4DA23C0B8D0006164D3 /* Quest.swift */; };
+		64CCF4DD23C0BDDF006164D3 /* QuestProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4DC23C0BDDF006164D3 /* QuestProviding.swift */; };
+		64CCF4DF23C0BEC0006164D3 /* StaticQuestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4DE23C0BEC0006164D3 /* StaticQuestProvider.swift */; };
+		64CCF4E123C0C04C006164D3 /* QuestProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4E023C0C04C006164D3 /* QuestProviderMock.swift */; };
+		64CCF4E323C0C1BF006164D3 /* Quest+MakeQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4E223C0C1BF006164D3 /* Quest+MakeQuest.swift */; };
+		64CCF4E523C0DC2E006164D3 /* StaticQuestProviderTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4E423C0DC2E006164D3 /* StaticQuestProviderTestCase.swift */; };
+		64CCF4E723C13F67006164D3 /* QuestListViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4E623C13F67006164D3 /* QuestListViewModelDelegateMock.swift */; };
 		64D64CE2227ECEA20040C67A /* OsmBaseObject+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CE1227ECEA20040C67A /* OsmBaseObject+Make.swift */; };
 		64D64CE9227ECF450040C67A /* BaseObjectMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CE8227ECF450040C67A /* BaseObjectMatching.swift */; };
 		64D64CEC227ED0790040C67A /* KeyExistsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CEB227ED0790040C67A /* KeyExistsQuery.swift */; };
@@ -1150,6 +1163,7 @@
 		6442666422540EDF00C0D545 /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		6442666522540EDF00C0D545 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		6442666622540EDF00C0D545 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		6470F70623C21587003A463A /* Quest+staticQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quest+staticQuests.swift"; sourceTree = "<group>"; };
 		647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureDirectionViewModel.swift; sourceTree = "<group>"; };
 		647F46D02253F08200CEC482 /* HeadingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingProvider.swift; sourceTree = "<group>"; };
 		64972E9822820ACD00286157 /* QueryFormViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryFormViewModelDelegateMock.swift; sourceTree = "<group>"; };
@@ -1168,6 +1182,18 @@
 		64C072F9226227D500598078 /* CommonTagKeyTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTagKeyTestCase.swift; sourceTree = "<group>"; };
 		64C072FD22622B9C00598078 /* Require.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Require.swift; sourceTree = "<group>"; };
 		64C968442261ED3100351C0C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		64CCF4CE23C0B052006164D3 /* QuestListUITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestListUITestCase.swift; sourceTree = "<group>"; };
+		64CCF4D123C0B182006164D3 /* QuestListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestListTableViewController.swift; sourceTree = "<group>"; };
+		64CCF4D223C0B182006164D3 /* QuestListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestListTableViewController.xib; sourceTree = "<group>"; };
+		64CCF4D523C0B6B8006164D3 /* QuestListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestListViewModel.swift; sourceTree = "<group>"; };
+		64CCF4D823C0B708006164D3 /* QuestListViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestListViewModelTestCase.swift; sourceTree = "<group>"; };
+		64CCF4DA23C0B8D0006164D3 /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
+		64CCF4DC23C0BDDF006164D3 /* QuestProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestProviding.swift; sourceTree = "<group>"; };
+		64CCF4DE23C0BEC0006164D3 /* StaticQuestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticQuestProvider.swift; sourceTree = "<group>"; };
+		64CCF4E023C0C04C006164D3 /* QuestProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestProviderMock.swift; sourceTree = "<group>"; };
+		64CCF4E223C0C1BF006164D3 /* Quest+MakeQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quest+MakeQuest.swift"; sourceTree = "<group>"; };
+		64CCF4E423C0DC2E006164D3 /* StaticQuestProviderTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticQuestProviderTestCase.swift; sourceTree = "<group>"; };
+		64CCF4E623C13F67006164D3 /* QuestListViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestListViewModelDelegateMock.swift; sourceTree = "<group>"; };
 		64D64CE1227ECEA20040C67A /* OsmBaseObject+Make.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OsmBaseObject+Make.swift"; sourceTree = "<group>"; };
 		64D64CE8227ECF450040C67A /* BaseObjectMatching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObjectMatching.swift; sourceTree = "<group>"; };
 		64D64CEB227ED0790040C67A /* KeyExistsQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyExistsQuery.swift; sourceTree = "<group>"; };
@@ -1953,6 +1979,8 @@
 				64972E9822820ACD00286157 /* QueryFormViewModelDelegateMock.swift */,
 				64972EA3228230F000286157 /* QuestManagerMock.swift */,
 				64D64CED227ED11F0040C67A /* BaseObjectMatcherMock.swift */,
+				64CCF4E023C0C04C006164D3 /* QuestProviderMock.swift */,
+				64CCF4E623C13F67006164D3 /* QuestListViewModelDelegateMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1964,6 +1992,7 @@
 				64348D0C225EA24E00ADE7FB /* Info.plist */,
 				64348D12225EAA5D00ADE7FB /* MapViewUITestCase.swift */,
 				64D64D222280B9EF0040C67A /* OverpassQueryFormUITestCase.swift */,
+				64CCF4CE23C0B052006164D3 /* QuestListUITestCase.swift */,
 			);
 			path = GoMapUITests;
 			sourceTree = "<group>";
@@ -1999,15 +2028,30 @@
 			path = Vendor;
 			sourceTree = "<group>";
 		};
+		64CCF4D023C0B152006164D3 /* QuestList */ = {
+			isa = PBXGroup;
+			children = (
+				64CCF4D123C0B182006164D3 /* QuestListTableViewController.swift */,
+				64CCF4D223C0B182006164D3 /* QuestListTableViewController.xib */,
+				64CCF4D523C0B6B8006164D3 /* QuestListViewModel.swift */,
+				64CCF4DC23C0BDDF006164D3 /* QuestProviding.swift */,
+				64CCF4DE23C0BEC0006164D3 /* StaticQuestProvider.swift */,
+			);
+			path = QuestList;
+			sourceTree = "<group>";
+		};
 		64D64CE6227ECF450040C67A /* Overpass */ = {
 			isa = PBXGroup;
 			children = (
+				64CCF4D023C0B152006164D3 /* QuestList */,
 				64D64D1D2280B5020040C67A /* QueryForm */,
 				64D64CFF227ED5EB0040C67A /* overpass-query-parser.js */,
 				64D64D02227ED7470040C67A /* OverpassQueryParser.swift */,
 				64D64CE7227ECF450040C67A /* Queries */,
 				64972E9C22821AE300286157 /* QuestManager.swift */,
 				64972EA822858C9000286157 /* MapViewQuestAnnotationManager.swift */,
+				64CCF4DA23C0B8D0006164D3 /* Quest.swift */,
+				6470F70623C21587003A463A /* Quest+staticQuests.swift */,
 			);
 			path = Overpass;
 			sourceTree = "<group>";
@@ -2033,6 +2077,8 @@
 				64B2AD182280E5E500204F8B /* QueryFormViewModelTestCase.swift */,
 				64972EA122822BDB00286157 /* QuestManagerTestCase.swift */,
 				64972EAA22858FDF00286157 /* MapViewQuestAnnotationManagerTestCase.swift */,
+				64CCF4D823C0B708006164D3 /* QuestListViewModelTestCase.swift */,
+				64CCF4E423C0DC2E006164D3 /* StaticQuestProviderTestCase.swift */,
 			);
 			path = Overpass;
 			sourceTree = "<group>";
@@ -2086,6 +2132,7 @@
 			isa = PBXGroup;
 			children = (
 				64E21EB722651F2D004605D7 /* XCTestCase+UserDefaults.swift */,
+				64CCF4E223C0C1BF006164D3 /* Quest+MakeQuest.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2369,6 +2416,7 @@
 				02ACBC5716713F2B00BB4414 /* power_station_coal.p.64.png in Resources */,
 				02ACBC5816713F2B00BB4414 /* power_station_gas.p.64.png in Resources */,
 				02ACBC5916713F2B00BB4414 /* power_station_solar.p.64.png in Resources */,
+				64CCF4D423C0B182006164D3 /* QuestListTableViewController.xib in Resources */,
 				02ACBC5A16713F2B00BB4414 /* power_station_water.p.64.png in Resources */,
 				02ACBC5B16713F2B00BB4414 /* power_station_wind.p.64.png in Resources */,
 				02072AD41BD454E800F1CAB4 /* 751-eye-toolbar@3x.png in Resources */,
@@ -2641,6 +2689,7 @@
 				02ACBBCB16713F2B00BB4414 /* MercatorTileLayer.m in Sources */,
 				02ACBBCC16713F2B00BB4414 /* OsmMapData.m in Sources */,
 				027EDC71206F3EED00D349D6 /* DDXMLElementAdditions.m in Sources */,
+				64CCF4D623C0B6B8006164D3 /* QuestListViewModel.swift in Sources */,
 				02BF745420793F0A0028ED6A /* TurnRestrictController.m in Sources */,
 				02ACBBCD16713F2B00BB4414 /* OsmObjects.m in Sources */,
 				02ACBCF816713F2B00BB4414 /* QuadMap.m in Sources */,
@@ -2684,6 +2733,7 @@
 				02DBB4451A1C884F00732D53 /* HeightViewController.m in Sources */,
 				02B69D101BF5A66B002605A3 /* LanguageTableViewController.m in Sources */,
 				02BED98A168B6F2F00357B94 /* WebPageViewController.m in Sources */,
+				64CCF4DB23C0B8D0006164D3 /* Quest.swift in Sources */,
 				64D64D16227F3C200040C67A /* RegularExpressionQuery.swift in Sources */,
 				02BED98E168BF87200357B94 /* NearbyMappersViewController.m in Sources */,
 				02C3C73719A5D679003B6783 /* AerialEditViewController.m in Sources */,
@@ -2705,13 +2755,17 @@
 				0259E4081BCAEC88006C354C /* MyApplication.m in Sources */,
 				022ABCA120C1AACF002D4977 /* MultilineTableViewCell.m in Sources */,
 				02F371B416A4F3E6003E9548 /* HelpViewController.m in Sources */,
+				64CCF4DD23C0BDDF006164D3 /* QuestProviding.swift in Sources */,
 				640B0B752285EAA800D0EE24 /* EditorMapLayer.swift in Sources */,
 				02FFCE0B16A7360B001A5B8A /* NSMutableArray+PartialSort.mm in Sources */,
 				027EDC73206F3EED00D349D6 /* DDXMLDocument.m in Sources */,
+				6470F70723C21587003A463A /* Quest+staticQuests.swift in Sources */,
 				028F504519B949780093C423 /* CommonTagList.m in Sources */,
+				64CCF4DF23C0BEC0006164D3 /* StaticQuestProvider.swift in Sources */,
 				024ADF3C16B1B38B00875658 /* PathUtil.m in Sources */,
 				02CB5B6516BF1F9C00432914 /* AutocompleteTextField.m in Sources */,
 				02F04AD21BC4D3B50044FD95 /* GpxConfigureViewController.m in Sources */,
+				64CCF4D323C0B182006164D3 /* QuestListTableViewController.swift in Sources */,
 				0260484219E66C8700415CB1 /* DisplayLink.m in Sources */,
 				027EDC70206F3EED00D349D6 /* DDXMLElement.m in Sources */,
 				6442666722540EDF00C0D545 /* Lock.swift in Sources */,
@@ -2731,7 +2785,9 @@
 				64C072FA226227D500598078 /* CommonTagKeyTestCase.swift in Sources */,
 				64D64CF8227ED2480040C67A /* KeyExistsQueryTestCase.swift in Sources */,
 				64D64CEE227ED11F0040C67A /* BaseObjectMatcherMock.swift in Sources */,
+				64CCF4E723C13F67006164D3 /* QuestListViewModelDelegateMock.swift in Sources */,
 				64972EA222822BDB00286157 /* QuestManagerTestCase.swift in Sources */,
+				64CCF4E123C0C04C006164D3 /* QuestProviderMock.swift in Sources */,
 				64972EA4228230F000286157 /* QuestManagerMock.swift in Sources */,
 				64348CFC225E867800ADE7FB /* MeasureDirectionViewModelDelegateMock.swift in Sources */,
 				64348CED225E7CD900ADE7FB /* GoMapTests.swift in Sources */,
@@ -2740,6 +2796,8 @@
 				64D64D0A227EF3790040C67A /* TypeQueryTestCase.swift in Sources */,
 				64972EAB22858FDF00286157 /* MapViewQuestAnnotationManagerTestCase.swift in Sources */,
 				64D64D05227ED75A0040C67A /* OverpassQueryParserTestCase.swift in Sources */,
+				64CCF4E323C0C1BF006164D3 /* Quest+MakeQuest.swift in Sources */,
+				64CCF4E523C0DC2E006164D3 /* StaticQuestProviderTestCase.swift in Sources */,
 				64348CFB225E867800ADE7FB /* HeadingProviderMock.swift in Sources */,
 				64E21EB822651F2D004605D7 /* XCTestCase+UserDefaults.swift in Sources */,
 				64D64CE2227ECEA20040C67A /* OsmBaseObject+Make.swift in Sources */,
@@ -2747,6 +2805,7 @@
 				64972E9922820ACD00286157 /* QueryFormViewModelDelegateMock.swift in Sources */,
 				64B2AD1B2280EAAB00204F8B /* OverpassQueryParserMock.swift in Sources */,
 				64C072FE22622B9C00598078 /* Require.swift in Sources */,
+				64CCF4D923C0B708006164D3 /* QuestListViewModelTestCase.swift in Sources */,
 				64348CFD225E867800ADE7FB /* CLHeadingMock.swift in Sources */,
 				64348D03225E8E4300ADE7FB /* OsmNode_DirectionTestCase.swift in Sources */,
 				64E21EB522651C06004605D7 /* OSMMapDataTestCase.swift in Sources */,
@@ -2764,6 +2823,7 @@
 				64972EA0228227B400286157 /* XCUIApplication+TestHelper.swift in Sources */,
 				64D64D232280B9EF0040C67A /* OverpassQueryFormUITestCase.swift in Sources */,
 				64338B07235B4357006EE896 /* SnapshotHelper.swift in Sources */,
+				64CCF4CF23C0B052006164D3 /* QuestListUITestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2927,7 +2987,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = CH829V2QQB;
 				DISPLAY_NAME = "Completionist Debug";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2956,7 +3016,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = CH829V2QQB;
 				DISPLAY_NAME = Completionist;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

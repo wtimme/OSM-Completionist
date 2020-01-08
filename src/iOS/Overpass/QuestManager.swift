@@ -11,7 +11,7 @@ protocol QuestManaging {
 }
 
 extension NSNotification.Name {
-    static let QuestManagerDidUpdateActiveQuest = Notification.Name("QuestManagerDidUpdateActiveQuest")
+    static let QuestManagerDidUpdateActiveQuests = Notification.Name("QuestManagerDidUpdateActiveQuests")
 }
 
 final class QuestManager: NSObject, QuestManaging {
@@ -40,7 +40,7 @@ final class QuestManager: NSObject, QuestManaging {
             userDefaults.set(newValue, forKey: activeQueryUserDefaultsKey)
             
             if isUpdatedValue {
-                notificationCenter.post(name: .QuestManagerDidUpdateActiveQuest, object: self)
+                notificationCenter.post(name: .QuestManagerDidUpdateActiveQuests, object: self)
             }
         }
     }

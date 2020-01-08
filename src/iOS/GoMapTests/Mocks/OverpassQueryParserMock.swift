@@ -11,7 +11,7 @@ import Foundation
 
 class OverpassQueryParserMock: NSObject {
     var parseCallCounter = 0
-    var query: String?
+    var queries = [String]()
     var mockedResult: OverpassQueryParserResult = .success(BaseObjectMatcherMock())
 }
 
@@ -19,7 +19,7 @@ extension OverpassQueryParserMock: OverpassQueryParsing {
     
     func parse(_ query: String) -> OverpassQueryParserResult {
         parseCallCounter += 1
-        self.query = query
+        queries.append(query)
         
         return mockedResult
     }

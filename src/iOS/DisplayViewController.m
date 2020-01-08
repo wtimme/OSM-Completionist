@@ -143,6 +143,8 @@ static const NSInteger FILTER_SECTION = 3;
 
     } else if (indexPath.section == FILTER_SECTION && indexPath.row == 1) {
         [self presentOverpassQueryViewController];
+    } else if (indexPath.section == FILTER_SECTION && indexPath.row == 2) {
+        [self presentQuestListViewController];
     }
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 
