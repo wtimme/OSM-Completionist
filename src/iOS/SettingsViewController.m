@@ -205,7 +205,7 @@
 	if ( cell == _sendMailCell ) {
 
 		if ( [MFMailComposeViewController canSendMail] ) {
-            NSString *emailAddress = @"bryceco@yahoo.com";
+            NSString *emailAddress = [@[@"bryceco", @"yahoo.com"] componentsJoinedByString:@"@"];
 			AppDelegate * appDelegate = [AppDelegate getAppDelegate];
 			MFMailComposeViewController * mail = [[MFMailComposeViewController alloc] init];
 			mail.mailComposeDelegate = self;
