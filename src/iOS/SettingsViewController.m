@@ -205,11 +205,12 @@
 	if ( cell == _sendMailCell ) {
 
 		if ( [MFMailComposeViewController canSendMail] ) {
+            NSString *emailAddress = @"bryceco@yahoo.com";
 			AppDelegate * appDelegate = [AppDelegate getAppDelegate];
 			MFMailComposeViewController * mail = [[MFMailComposeViewController alloc] init];
 			mail.mailComposeDelegate = self;
 			[mail setSubject:[NSString stringWithFormat:@"%@ %@ feedback", appDelegate.appName, appDelegate.appVersion]];
-			[mail setToRecipients:@[@"bryceco@yahoo.com"]];
+			[mail setToRecipients:@[emailAddress]];
 			NSMutableString * body = [NSMutableString stringWithFormat:@"Device: %@\n", [self deviceModel]];
 			[body appendString:[NSString stringWithFormat:@"iOS version: %@\n", [[UIDevice currentDevice] systemVersion]]];
 			if ( appDelegate.userName.length ) {
