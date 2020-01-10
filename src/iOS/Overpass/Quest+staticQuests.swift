@@ -13,50 +13,65 @@ extension Quest {
         let identifier = "accessible_toilets"
         let question = "Are these toilets wheelchair accessible?"
         let query = "(type:node or type:way) and amenity=toilets and access !~ \"private|customers\" and wheelchair!=*"
+        let answers = [Answer(title: "Yes", key: "wheelchair", value: "yes"),
+                       Answer(title: "No", key: "wheelchair", value: "no")]
         
         return Quest(identifier: identifier,
                      question: question,
-                     overpassWizardQuery: query)
+                     overpassWizardQuery: query,
+                     answers: answers)
     }
     
     static func makeParkingFeeQuest() -> Quest {
         let identifier = "parking_fee"
         let question = "Does it cost a fee to park here? "
         let query = "(type:node or type:way) and amenity=parking and fee!=* and access~\"yes|customers|public\""
+        let answers = [Answer(title: "Yes", key: "fee", value: "yes"),
+                       Answer(title: "No", key: "fee", value: "no")]
         
         return Quest(identifier: identifier,
                      question: question,
-                     overpassWizardQuery: query)
+                     overpassWizardQuery: query,
+                     answers: answers)
     }
     
     static func makeBenchBackrestQuest() -> Quest {
         let identifier = "bench_backrest"
         let question = "Does this bench have a backrest?"
         let query = "(type:node) and amenity=bench and backrest!=*"
+        let answers = [Answer(title: "Yes", key: "backrest", value: "yes"),
+                       Answer(title: "No", key: "backrest", value: "no")]
         
         return Quest(identifier: identifier,
                      question: question,
-                     overpassWizardQuery: query)
+                     overpassWizardQuery: query,
+                     answers: answers)
     }
     
     static func makePlaygroundAccessQuest() -> Quest {
         let identifier = "playground_access"
         let question = "Is this playground generally accessible?"
         let query = "leisure=playground and (access!=* or access=unknown)"
+        let answers = [Answer(title: "Yes", key: "access", value: "yes"),
+                       Answer(title: "No", key: "access", value: "private")]
         
         return Quest(identifier: identifier,
                      question: question,
-                     overpassWizardQuery: query)
+                     overpassWizardQuery: query,
+                     answers: answers)
     }
     
     static func makeToiletQuest() -> Quest {
         let identifier = "toilet"
         let question = "Does this place have a toilet?"
         let query = "(type:node or type:way) and ( (shop ~= \"mall|department_store\" and name = *) or (highway~\"services|rest_area\") ) and toilets != *"
+        let answers = [Answer(title: "Yes", key: "toilets", value: "yes"),
+                       Answer(title: "No", key: "toilets", value: "no")]
         
         return Quest(identifier: identifier,
                      question: question,
-                     overpassWizardQuery: query)
+                     overpassWizardQuery: query,
+                     answers: answers)
     }
     
 }

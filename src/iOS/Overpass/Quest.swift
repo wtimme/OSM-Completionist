@@ -33,4 +33,7 @@ struct Quest {
     ///
     /// Uses the [Overpass Turbo Wizard](https://wiki.openstreetmap.org/wiki/Overpass_turbo/Wizard) format.
     let overpassWizardQuery: String
+    
+    /// A list of answers between the user can choose when encountering items of this quest.
+    let answers: [Answer]
 }
