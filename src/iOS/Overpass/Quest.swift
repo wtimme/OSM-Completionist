@@ -10,6 +10,18 @@
 ///
 /// The name stems from the Android app [StreetComplete](https://wiki.openstreetmap.org/wiki/StreetComplete/Quests).
 struct Quest {
+    /// An answer that the user can choose.
+    struct Answer {
+        /// Title of the answer. Should be human-readable and easy to understand.
+        let title: String
+        
+        /// The key to update when the user selects this answer.
+        let key: String
+        
+        /// The value to set the `key` to when the user selects this answer.
+        let value: String
+    }
+    
     /// A unique string that identifies this `Quest`.
     /// This is used to refer to it when saving its `isActive` state.
     let identifier: String
