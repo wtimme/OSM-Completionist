@@ -45,8 +45,8 @@ extension Quest {
         let query = "leisure=playground and (access!=* or access=unknown)"
         
         return Quest(identifier: identifier,
-        question: question,
-        overpassWizardQuery: query)
+                     question: question,
+                     overpassWizardQuery: query)
     }
     
     static func makeToiletQuest() -> Quest {
