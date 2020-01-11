@@ -49,6 +49,92 @@ class MapViewQuestAnnotationManagerTestCase: XCTestCase {
     
     // MARK: shouldShowQuestAnnotation(for:)
     
+    func testShouldShowQuestAnnotation_whenThereAreNoActiveQuests_shouldReturnFalse() {
+        /// Given
+        let baseObject = OsmBaseObject()
+        questProviderMock.activeQuests = []
+        
+        /// Then
+        XCTAssertFalse(manager.shouldShowQuestAnnotation(for: baseObject))
+    }
+    
+    func testShouldShowQuestAnnotation_whenTheActiveQuestHasNilBaseObjectMatcher_shouldReturnFalse() {
+        /// Given
+        let baseObject = OsmBaseObject()
+        questProviderMock.activeQuests = [Quest.makeQuest(baseObjectMatcher: nil)]
+        
+        /// Then
+        XCTAssertFalse(manager.shouldShowQuestAnnotation(for: baseObject))
+    }
+    
+    func testShouldShowQuestAnnotation_whenTheActiveQuestHasBaseObjectMatcher_shouldAskMatcherIfItMatchesWithBaseObject() {
+        /// Given
+        let baseObject = OsmBaseObject()
+        let baseObjectMatcherMock = BaseObjectMatcherMock()
+        questProviderMock.activeQuests = [Quest.makeQuest(baseObjectMatcher: baseObjectMatcherMock)]
+        
+        /// When
+        _ = manager.shouldShowQuestAnnotation(for: baseObject)
+        
+        /// Then
+        XCTAssertEqual(baseObjectMatcherMock.object, baseObject)
+    }
+    
+    func testShouldShowQuestAnnotation_whenThereIsNoMatchingActiveQuest_shouldReturnFalse() {
+        /// Given
+        let baseObject = OsmBaseObject()
+        questProviderMock.activeQuests = [Quest.makeQuest(baseObjectMatcher: BaseObjectMatcherMock(doesMatch: false)),
+                                          Quest.makeQuest(baseObjectMatcher: BaseObjectMatcherMock(doesMatch: false))]
+        
+        /// Then
+        XCTAssertFalse(manager.shouldShowQuestAnnotation(for: baseObject))
+    }
+    
+    func testShouldShowQuestAnnotation_whenThereIsAMatchingActiveQuest_shouldReturnTrue() {
+        /// Given
+        let baseObject = OsmBaseObject()
+        let baseObjectMatcherMock = BaseObjectMatcherMock(doesMatch: true)
+        questProviderMock.activeQuests = [Quest.makeQuest(baseObjectMatcher: baseObjectMatcherMock)]
+        
+        /// Then
+        XCTAssertTrue(manager.shouldShowQuestAnnotation(for: baseObject))
+    }
+    
+    func testShouldShowQuestAnnotation_whenQuestDoesNotMatch_shouldAskNextQuest() {
+        /// Given
+        let baseObject = OsmBaseObject()
+        
+        let firstBaseObjectMatcherMock = BaseObjectMatcherMock(doesMatch: false)
+        let secondBaseObjectMatcherMock = BaseObjectMatcherMock()
+        questProviderMock.activeQuests = [Quest.makeQuest(baseObjectMatcher: firstBaseObjectMatcherMock),
+                                          Quest.makeQuest(baseObjectMatcher: secondBaseObjectMatcherMock)]
+        
+        /// When
+        _ = manager.shouldShowQuestAnnotation(for: baseObject)
+        
+        /// Then
+        XCTAssertEqual(secondBaseObjectMatcherMock.object,
+                       baseObject,
+                       "The second quest's matcher should have been asked whether it matches the given base object.")
+    }
+    
+    func testShouldShowQuestAnnotation_whenQuestMatches_shouldNotAskRemainingQuests() {
+        /// Given
+        let baseObject = OsmBaseObject()
+        
+        let firstBaseObjectMatcherMock = BaseObjectMatcherMock(doesMatch: true)
+        let secondBaseObjectMatcherMock = BaseObjectMatcherMock()
+        questProviderMock.activeQuests = [Quest.makeQuest(baseObjectMatcher: firstBaseObjectMatcherMock),
+                                          Quest.makeQuest(baseObjectMatcher: secondBaseObjectMatcherMock)]
+        
+        /// When
+        _ = manager.shouldShowQuestAnnotation(for: baseObject)
+        
+        /// Then
+        XCTAssertNil(secondBaseObjectMatcherMock.object,
+                    "Since the first quest matches, the second one should not have been asked whether it matches.")
+    }
+    
     func testShowAnnotationWithoutActiveQueryShouldNotAskParserToParse() {
         let query: String? = nil
         questManagerMock.activeQuestQuery = query
