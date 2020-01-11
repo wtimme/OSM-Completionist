@@ -10,6 +10,9 @@ import Foundation
 @testable import Go_Map__
 
 class BaseObjectMatcherMock: NSObject {
+    /// Is used to compare mocks.
+    let identifier = UUID()
+    
     var object: OsmBaseObject?
     var doesMatch = false
 }
