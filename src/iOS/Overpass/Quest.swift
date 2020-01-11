@@ -36,4 +36,27 @@ struct Quest {
     
     /// A list of answers between the user can choose when encountering items of this quest.
     let answers: [Answer]
+    
+    /// An object that allows
+    let baseObjectMatcher: BaseObjectMatching?
+    
+    init(identifier: String,
+         question: String,
+         overpassWizardQuery: String,
+         answers: [Answer],
+         queryParser: OverpassQueryParsing? = OverpassQueryParser()) {
+        self.identifier = identifier
+        self.question = question
+        self.overpassWizardQuery = overpassWizardQuery
+        self.answers = answers
+        
+        switch queryParser?.parse(overpassWizardQuery) {
+        case .error(_):
+            self.baseObjectMatcher = nil
+        case let .success(baseObjectMatcher):
+            self.baseObjectMatcher = baseObjectMatcher
+        case nil:
+            self.baseObjectMatcher = nil            
+        }
+    }
 }
