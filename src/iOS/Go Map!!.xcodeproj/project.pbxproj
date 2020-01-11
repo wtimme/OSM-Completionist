@@ -505,6 +505,8 @@
 		644AC0D723C94C1B00E2B1E4 /* Quest+staticQuestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0D623C94C1B00E2B1E4 /* Quest+staticQuestsTestCase.swift */; };
 		644AC0D923C957EB00E2B1E4 /* MapViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0D823C957EB00E2B1E4 /* MapViewViewModel.swift */; };
 		644AC0DB23C9592A00E2B1E4 /* MapViewViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0DA23C9592A00E2B1E4 /* MapViewViewModelTestCase.swift */; };
+		644AC0DD23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0DC23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift */; };
+		644AC0DF23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0DE23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift */; };
 		6470F70723C21587003A463A /* Quest+staticQuests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470F70623C21587003A463A /* Quest+staticQuests.swift */; };
 		647F46CE2253EA4C00CEC482 /* MeasureDirectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */; };
 		647F46D12253F08200CEC482 /* HeadingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F46D02253F08200CEC482 /* HeadingProvider.swift */; };
@@ -1171,6 +1173,8 @@
 		644AC0D623C94C1B00E2B1E4 /* Quest+staticQuestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quest+staticQuestsTestCase.swift"; sourceTree = "<group>"; };
 		644AC0D823C957EB00E2B1E4 /* MapViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewModel.swift; sourceTree = "<group>"; };
 		644AC0DA23C9592A00E2B1E4 /* MapViewViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewModelTestCase.swift; sourceTree = "<group>"; };
+		644AC0DC23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuestsBaseObjectMatcher.swift; sourceTree = "<group>"; };
+		644AC0DE23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuestsBaseObjectMatcherTestCase.swift; sourceTree = "<group>"; };
 		6470F70623C21587003A463A /* Quest+staticQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quest+staticQuests.swift"; sourceTree = "<group>"; };
 		647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureDirectionViewModel.swift; sourceTree = "<group>"; };
 		647F46D02253F08200CEC482 /* HeadingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingProvider.swift; sourceTree = "<group>"; };
@@ -2075,6 +2079,7 @@
 				64D64D07227EF2B00040C67A /* TypeQuery.swift */,
 				64D64CFA227ED3340040C67A /* RecursiveQuery.swift */,
 				64D64D15227F3C200040C67A /* RegularExpressionQuery.swift */,
+				644AC0DC23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -2091,6 +2096,7 @@
 				64CCF4E423C0DC2E006164D3 /* StaticQuestProviderTestCase.swift */,
 				644AC0D423C9464E00E2B1E4 /* QuestTestCase.swift */,
 				644AC0D623C94C1B00E2B1E4 /* Quest+staticQuestsTestCase.swift */,
+				644AC0DE23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift */,
 			);
 			path = Overpass;
 			sourceTree = "<group>";
@@ -2686,6 +2692,7 @@
 			files = (
 				02ACBA4016713CCB00BB4414 /* main.m in Sources */,
 				02ACBA4416713CCB00BB4414 /* AppDelegate.m in Sources */,
+				644AC0DD23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift in Sources */,
 				647F46CE2253EA4C00CEC482 /* MeasureDirectionViewModel.swift in Sources */,
 				02ACBA5316713CCB00BB4414 /* MapViewController.m in Sources */,
 				02ACBA5A16713CCB00BB4414 /* SettingsViewController.m in Sources */,
@@ -2826,6 +2833,7 @@
 				64E21EB522651C06004605D7 /* OSMMapDataTestCase.swift in Sources */,
 				644AC0D723C94C1B00E2B1E4 /* Quest+staticQuestsTestCase.swift in Sources */,
 				64B2AD192280E5E500204F8B /* QueryFormViewModelTestCase.swift in Sources */,
+				644AC0DF23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
