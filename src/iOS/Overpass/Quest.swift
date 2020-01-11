@@ -44,6 +44,18 @@ struct Quest {
          question: String,
          overpassWizardQuery: String,
          answers: [Answer],
+         baseObjectMatcher: BaseObjectMatching?) {
+        self.identifier = identifier
+        self.question = question
+        self.overpassWizardQuery = overpassWizardQuery
+        self.answers = answers
+        self.baseObjectMatcher = baseObjectMatcher
+    }
+    
+    init(identifier: String,
+         question: String,
+         overpassWizardQuery: String,
+         answers: [Answer],
          queryParser: OverpassQueryParsing? = OverpassQueryParser()) {
         self.identifier = identifier
         self.question = question
