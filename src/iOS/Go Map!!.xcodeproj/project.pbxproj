@@ -501,6 +501,7 @@
 		6442666722540EDF00C0D545 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6442666422540EDF00C0D545 /* Lock.swift */; };
 		6442666822540EDF00C0D545 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6442666522540EDF00C0D545 /* Disposable.swift */; };
 		6442666922540EDF00C0D545 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6442666622540EDF00C0D545 /* Observable.swift */; };
+		644AC0D523C9464E00E2B1E4 /* QuestTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0D423C9464E00E2B1E4 /* QuestTestCase.swift */; };
 		6470F70723C21587003A463A /* Quest+staticQuests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470F70623C21587003A463A /* Quest+staticQuests.swift */; };
 		647F46CE2253EA4C00CEC482 /* MeasureDirectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */; };
 		647F46D12253F08200CEC482 /* HeadingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F46D02253F08200CEC482 /* HeadingProvider.swift */; };
@@ -1163,6 +1164,7 @@
 		6442666422540EDF00C0D545 /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		6442666522540EDF00C0D545 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		6442666622540EDF00C0D545 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		644AC0D423C9464E00E2B1E4 /* QuestTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestTestCase.swift; sourceTree = "<group>"; };
 		6470F70623C21587003A463A /* Quest+staticQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quest+staticQuests.swift"; sourceTree = "<group>"; };
 		647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureDirectionViewModel.swift; sourceTree = "<group>"; };
 		647F46D02253F08200CEC482 /* HeadingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingProvider.swift; sourceTree = "<group>"; };
@@ -2079,6 +2081,7 @@
 				64972EAA22858FDF00286157 /* MapViewQuestAnnotationManagerTestCase.swift */,
 				64CCF4D823C0B708006164D3 /* QuestListViewModelTestCase.swift */,
 				64CCF4E423C0DC2E006164D3 /* StaticQuestProviderTestCase.swift */,
+				644AC0D423C9464E00E2B1E4 /* QuestTestCase.swift */,
 			);
 			path = Overpass;
 			sourceTree = "<group>";
@@ -2783,6 +2786,7 @@
 			files = (
 				64348CFE225E867800ADE7FB /* MeasureDirectionViewModelTestCase.swift in Sources */,
 				64C072FA226227D500598078 /* CommonTagKeyTestCase.swift in Sources */,
+				644AC0D523C9464E00E2B1E4 /* QuestTestCase.swift in Sources */,
 				64D64CF8227ED2480040C67A /* KeyExistsQueryTestCase.swift in Sources */,
 				64D64CEE227ED11F0040C67A /* BaseObjectMatcherMock.swift in Sources */,
 				64CCF4E723C13F67006164D3 /* QuestListViewModelDelegateMock.swift in Sources */,
