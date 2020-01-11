@@ -9,4 +9,13 @@
 import Foundation
 
 class MapViewViewModel: NSObject {
+    // MARK: Private properties
+    
+    private let activeQuestBaseObjectMatcher: ActiveQuestBaseObjectMatching
+    
+    // MARK: Initializer
+    
+    init(activeQuestBaseObjectMatcher: ActiveQuestBaseObjectMatching) {
+        self.activeQuestBaseObjectMatcher = activeQuestBaseObjectMatcher
+    }
 }
