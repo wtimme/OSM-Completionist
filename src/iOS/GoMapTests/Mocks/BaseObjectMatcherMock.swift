@@ -14,7 +14,11 @@ class BaseObjectMatcherMock: NSObject {
     let identifier = UUID()
     
     var object: OsmBaseObject?
-    var doesMatch = false
+    var doesMatch: Bool
+    
+    init(doesMatch: Bool = false) {
+        self.doesMatch = doesMatch
+    }
 }
 
 extension BaseObjectMatcherMock: BaseObjectMatching {
