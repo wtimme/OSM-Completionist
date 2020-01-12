@@ -17,6 +17,10 @@ struct Quest {
     enum Solution {
         /// The user can choose from a list of pre-defined answers.
         case multipleChoice([Answer])
+        
+        /// The user can enter a number.
+        /// The associated `Key` value is the key of the tag that the number will be assigned to.
+        case numeric(Key)
     }
     
     /// An answer that the user can choose.
