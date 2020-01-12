@@ -154,6 +154,23 @@ class OverpassQueryParserTestCase: XCTestCase {
         XCTAssertEqual(regularExpressionQuery.value, ".*ll.*")
     }
     
+    func testParserQueryWithNegatedRegularExpressionQuery() {
+        let queryString = "access!~\"private|no\""
+        let result = parser.parse(queryString)
+        
+        guard case let .success(query) = result else {
+            XCTFail("The parser should have successfully parsed the query.")
+            return
+        }
+        
+        guard let regularExpressionQuery = query as? RegularExpressionQuery else {
+            XCTFail("The parser should have returned a regular expression query.")
+            return
+        }
+        
+        XCTAssertTrue(regularExpressionQuery.isNegated)
+    }
+    
     func testParseQueryForExistinceOfAKey() {
         let queryString = "capacity = *"
         let result = parser.parse(queryString)
