@@ -9,7 +9,8 @@
 import Foundation
 
 @objc protocol MapViewModelDelegate: class {
-    func askMultipleChoiceQuestion(question: String, choices: [String])
+    func askMultipleChoiceQuestion(question: String,
+                                   choices: [String])
 }
 
 class MapViewModel: NSObject {
