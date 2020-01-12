@@ -3351,6 +3351,7 @@ static NSString * const DisplayLinkPanning	= @"Panning";
 		UIAlertController * multiSelectSheet = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Select Object",nil) message:nil preferredStyle:UIAlertControllerStyleActionSheet];
 		for ( OsmBaseObject * object in objects ) {
 			NSString * title = object.friendlyDescription;
+            __weak typeof(self) weakSelf = self;
 			[multiSelectSheet addAction:[UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
 				// processing for selecting one of multipe objects
 				[_editorLayer setSelectedNode:nil];
@@ -3372,6 +3373,8 @@ static NSString * const DisplayLinkPanning	= @"Panning";
 				}
 				CGPoint pos = [self pointOnObject:object forPoint:point];
 				[self placePushpinAtPoint:pos object:object];
+                
+                [weakSelf.viewModel presentQuestInterfaceFor:object];
 			}]];
 		}
 		[multiSelectSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel",nil) style:UIAlertActionStyleCancel handler:nil]];
