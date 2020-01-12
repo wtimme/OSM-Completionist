@@ -71,6 +71,7 @@ static const CGFloat Z_FLASH			= 110;
 
 @interface MapView ()
 @property (strong,nonatomic) IBOutlet UIView	*	statusBarBackground;
+@property (nonatomic, readonly) MapViewViewModel *viewModel;
 @end
 
 @implementation MapView
@@ -101,6 +102,7 @@ const CGFloat kEditControlCornerRadius = 4;
 #endif
 
 	if (self) {
+        _viewModel = [[MapViewViewModel alloc] init];
 #if !TARGET_OS_IPHONE
 		self.wantsLayer = YES;
 #endif
