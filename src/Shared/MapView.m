@@ -3570,8 +3570,9 @@ static NSString * const DisplayLinkPanning	= @"Panning";
         [alertController addAction:choiceAction];
     }];
     
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel",
-                                                                                   @"Title of the button when canceling questions")
+    NSString *cancelActionTitle = NSLocalizedString(@"Cancel",
+                                                    @"Title of the button when canceling questions");
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelActionTitle
                                                            style:UIAlertActionStyleCancel
                                                          handler:nil];
     [alertController addAction:cancelAction];
