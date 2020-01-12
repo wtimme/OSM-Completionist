@@ -37,6 +37,15 @@ class MapViewModel: NSObject {
     // MARK: Public methods
     
     @objc func presentQuestInterface(for baseObject: OsmBaseObject) -> Bool {
-        return !activeQuestBaseObjectMatcher.quests(matching: baseObject).isEmpty
+        let quests = activeQuestBaseObjectMatcher.quests(matching: baseObject)
+        
+        guard let firstQuest = quests.first else {
+            /// We cannot display a quest interface if there were no quests for the given object.
+            return false
+        }
+        
+        delegate?.askMultipleChoiceQuestion(question: firstQuest.question)
+        
+        return true
     }
 }

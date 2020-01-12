@@ -62,5 +62,19 @@ class MapViewModelTestCase: XCTestCase {
         /// Then
         XCTAssertTrue(viewModel.presentQuestInterface(for: OsmBaseObject()))
     }
+    
+    func testPresentQuestInterface_whenBaseObjectDoesMatchQuests_shouldTellDelegateToAskTheQuestionOfFirstQuest() {
+        /// Given
+        let firstQuestion = "Does this bench have a backrest?"
+        let secondQuestion = "Are these toilets wheelchair accessible?"
+        activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(question: firstQuestion),
+                                                           Quest.makeQuest(question: secondQuestion)]
+        
+        /// When
+        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        
+        /// Then
+        XCTAssertEqual(delegateMock.question, firstQuestion)
+    }
 
 }
