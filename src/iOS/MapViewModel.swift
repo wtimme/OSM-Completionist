@@ -11,12 +11,15 @@ import Foundation
 @objc protocol MapViewModelDelegate: class {
     /// Asks the delegate to ask a multiple choice question.
     /// The delegate should allow the user to choose from one of the `choices`.
+    /// Once the user made their choice, the delegate should execute the given `selectionHandler`, letting the view model take over again.
     ///
     /// - Parameters:
     ///   - question: The question to ask.
     ///   - choices: A list of answers to present.
+    ///   - selectionHandler: Closure to execute when the user made their choice.
     func askMultipleChoiceQuestion(question: String,
-                                   choices: [String])
+                                   choices: [String],
+                                   selectionHandler: @escaping (Int) -> Void)
 }
 
 class MapViewModel: NSObject {
@@ -56,7 +59,10 @@ class MapViewModel: NSObject {
         }
         
         delegate?.askMultipleChoiceQuestion(question: firstQuest.question,
-                                            choices: choices)
+                                            choices: choices,
+                                            selectionHandler: { _ in
+                                                /// TODO: Implement me.
+        })
         
         return true
     }
