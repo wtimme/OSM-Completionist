@@ -55,7 +55,9 @@ import Foundation
         let parser = OverpassQueryParser()
         assert(parser != nil, "Unable to create the query parser.")
         
-        self.init(questManager: questManager, questProvider: questProvider, queryParser: parser!)
+        self.init(questManager: questManager,
+                  questProvider: questProvider,
+                  queryParser: parser!)
     }
     
     // MARK: MapViewQuestAnnotationManaging
