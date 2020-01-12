@@ -21,6 +21,18 @@ import Foundation
                                    choices: [String],
                                    selectionHandler: @escaping (Int) -> Void)
     
+    /// Asks the delegate to ask a question for which the user should enter a numerical value.
+    /// The delegate does not need to validate whether the `String` that the user put in is a valid number; this will be done by the view model.
+    /// Once the user has entered something, the delegate should execute the given `handler`, letting the view model take over again.
+    /// 
+    /// - Parameters:
+    ///   - question: The question to ask.
+    ///   - key: The key of the tag that will be updated with the number. Can be used as a placeholder.
+    ///   - handler: Closure to execute when the user has entered a `String`.
+    func askNumericQuestion(question: String,
+                            key: Quest.Key,
+                            handler: @escaping (String?) -> Void)
+    
     /// Asks the delegate to finish the quest for the object that is currently selected by applying a tag.
     /// - Parameters:
     ///   - key: The key of the tag.
