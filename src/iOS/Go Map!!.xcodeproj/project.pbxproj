@@ -508,6 +508,7 @@
 		644AC0DD23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0DC23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift */; };
 		644AC0DF23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0DE23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift */; };
 		644AC0E123C9645A00E2B1E4 /* ActiveQuestBaseObjectMatcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0E023C9645A00E2B1E4 /* ActiveQuestBaseObjectMatcherMock.swift */; };
+		644AC0E323CB48F800E2B1E4 /* MapViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0E223CB48F800E2B1E4 /* MapViewModelDelegateMock.swift */; };
 		6470F70723C21587003A463A /* Quest+staticQuests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470F70623C21587003A463A /* Quest+staticQuests.swift */; };
 		647F46CE2253EA4C00CEC482 /* MeasureDirectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */; };
 		647F46D12253F08200CEC482 /* HeadingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F46D02253F08200CEC482 /* HeadingProvider.swift */; };
@@ -1177,6 +1178,7 @@
 		644AC0DC23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuestsBaseObjectMatcher.swift; sourceTree = "<group>"; };
 		644AC0DE23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuestsBaseObjectMatcherTestCase.swift; sourceTree = "<group>"; };
 		644AC0E023C9645A00E2B1E4 /* ActiveQuestBaseObjectMatcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuestBaseObjectMatcherMock.swift; sourceTree = "<group>"; };
+		644AC0E223CB48F800E2B1E4 /* MapViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelDelegateMock.swift; sourceTree = "<group>"; };
 		6470F70623C21587003A463A /* Quest+staticQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quest+staticQuests.swift"; sourceTree = "<group>"; };
 		647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureDirectionViewModel.swift; sourceTree = "<group>"; };
 		647F46D02253F08200CEC482 /* HeadingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingProvider.swift; sourceTree = "<group>"; };
@@ -1998,6 +2000,7 @@
 				64CCF4E023C0C04C006164D3 /* QuestProviderMock.swift */,
 				64CCF4E623C13F67006164D3 /* QuestListViewModelDelegateMock.swift */,
 				644AC0E023C9645A00E2B1E4 /* ActiveQuestBaseObjectMatcherMock.swift */,
+				644AC0E223CB48F800E2B1E4 /* MapViewModelDelegateMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -2822,6 +2825,7 @@
 				64972EAB22858FDF00286157 /* MapViewQuestAnnotationManagerTestCase.swift in Sources */,
 				64D64D05227ED75A0040C67A /* OverpassQueryParserTestCase.swift in Sources */,
 				64CCF4E323C0C1BF006164D3 /* Quest+MakeQuest.swift in Sources */,
+				644AC0E323CB48F800E2B1E4 /* MapViewModelDelegateMock.swift in Sources */,
 				64CCF4E523C0DC2E006164D3 /* StaticQuestProviderTestCase.swift in Sources */,
 				64348CFB225E867800ADE7FB /* HeadingProviderMock.swift in Sources */,
 				64E21EB822651F2D004605D7 /* XCTestCase+UserDefaults.swift in Sources */,
