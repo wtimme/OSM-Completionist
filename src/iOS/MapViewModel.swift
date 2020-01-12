@@ -1,5 +1,5 @@
 //
-//  MapViewViewModel.swift
+//  MapViewModel.swift
 //  Go Map!!
 //
 //  Created by Wolfgang Timme on 1/11/20.
@@ -12,7 +12,7 @@ import Foundation
     func askMultipleChoiceQuestion(question: String)
 }
 
-class MapViewViewModel: NSObject {
+class MapViewModel: NSObject {
     // MARK: Private properties
     
     private let activeQuestBaseObjectMatcher: ActiveQuestBaseObjectMatching

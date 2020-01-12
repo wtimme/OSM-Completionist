@@ -503,8 +503,8 @@
 		6442666922540EDF00C0D545 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6442666622540EDF00C0D545 /* Observable.swift */; };
 		644AC0D523C9464E00E2B1E4 /* QuestTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0D423C9464E00E2B1E4 /* QuestTestCase.swift */; };
 		644AC0D723C94C1B00E2B1E4 /* Quest+staticQuestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0D623C94C1B00E2B1E4 /* Quest+staticQuestsTestCase.swift */; };
-		644AC0D923C957EB00E2B1E4 /* MapViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0D823C957EB00E2B1E4 /* MapViewViewModel.swift */; };
-		644AC0DB23C9592A00E2B1E4 /* MapViewViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0DA23C9592A00E2B1E4 /* MapViewViewModelTestCase.swift */; };
+		644AC0D923C957EB00E2B1E4 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0D823C957EB00E2B1E4 /* MapViewModel.swift */; };
+		644AC0DB23C9592A00E2B1E4 /* MapViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0DA23C9592A00E2B1E4 /* MapViewModelTestCase.swift */; };
 		644AC0DD23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0DC23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift */; };
 		644AC0DF23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0DE23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift */; };
 		644AC0E123C9645A00E2B1E4 /* ActiveQuestBaseObjectMatcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0E023C9645A00E2B1E4 /* ActiveQuestBaseObjectMatcherMock.swift */; };
@@ -1173,8 +1173,8 @@
 		6442666622540EDF00C0D545 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		644AC0D423C9464E00E2B1E4 /* QuestTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestTestCase.swift; sourceTree = "<group>"; };
 		644AC0D623C94C1B00E2B1E4 /* Quest+staticQuestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quest+staticQuestsTestCase.swift"; sourceTree = "<group>"; };
-		644AC0D823C957EB00E2B1E4 /* MapViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewModel.swift; sourceTree = "<group>"; };
-		644AC0DA23C9592A00E2B1E4 /* MapViewViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewModelTestCase.swift; sourceTree = "<group>"; };
+		644AC0D823C957EB00E2B1E4 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		644AC0DA23C9592A00E2B1E4 /* MapViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTestCase.swift; sourceTree = "<group>"; };
 		644AC0DC23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuestsBaseObjectMatcher.swift; sourceTree = "<group>"; };
 		644AC0DE23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuestsBaseObjectMatcherTestCase.swift; sourceTree = "<group>"; };
 		644AC0E023C9645A00E2B1E4 /* ActiveQuestBaseObjectMatcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuestBaseObjectMatcherMock.swift; sourceTree = "<group>"; };
@@ -1557,7 +1557,7 @@
 				02BED988168B6F2F00357B94 /* WebPageViewController.h */,
 				02BED989168B6F2F00357B94 /* WebPageViewController.m */,
 				64C968442261ED3100351C0C /* Media.xcassets */,
-				644AC0D823C957EB00E2B1E4 /* MapViewViewModel.swift */,
+				644AC0D823C957EB00E2B1E4 /* MapViewModel.swift */,
 			);
 			name = "Go Map!";
 			sourceTree = "<group>";
@@ -1981,7 +1981,7 @@
 				64C072FC22622B9C00598078 /* Vendor */,
 				64348CEE225E7CD900ADE7FB /* Info.plist */,
 				64E21EB422651C06004605D7 /* OSMMapDataTestCase.swift */,
-				644AC0DA23C9592A00E2B1E4 /* MapViewViewModelTestCase.swift */,
+				644AC0DA23C9592A00E2B1E4 /* MapViewModelTestCase.swift */,
 			);
 			path = GoMapTests;
 			sourceTree = "<group>";
@@ -2741,7 +2741,7 @@
 				64D64D03227ED7470040C67A /* OverpassQueryParser.swift in Sources */,
 				02695B8D1A08C1DB0028D95E /* NotesTableViewController.m in Sources */,
 				022ABCA420C3750A002D4977 /* Buildings3DView.m in Sources */,
-				644AC0D923C957EB00E2B1E4 /* MapViewViewModel.swift in Sources */,
+				644AC0D923C957EB00E2B1E4 /* MapViewModel.swift in Sources */,
 				647F46D12253F08200CEC482 /* HeadingProvider.swift in Sources */,
 				029043A31682797A00BE3480 /* LoginViewController.m in Sources */,
 				64348D01225E8D3F00ADE7FB /* OsmNode+Direction.swift in Sources */,
@@ -2835,7 +2835,7 @@
 				64B2AD1B2280EAAB00204F8B /* OverpassQueryParserMock.swift in Sources */,
 				64C072FE22622B9C00598078 /* Require.swift in Sources */,
 				64CCF4D923C0B708006164D3 /* QuestListViewModelTestCase.swift in Sources */,
-				644AC0DB23C9592A00E2B1E4 /* MapViewViewModelTestCase.swift in Sources */,
+				644AC0DB23C9592A00E2B1E4 /* MapViewModelTestCase.swift in Sources */,
 				64348CFD225E867800ADE7FB /* CLHeadingMock.swift in Sources */,
 				64348D03225E8E4300ADE7FB /* OsmNode_DirectionTestCase.swift in Sources */,
 				64E21EB522651C06004605D7 /* OSMMapDataTestCase.swift in Sources */,

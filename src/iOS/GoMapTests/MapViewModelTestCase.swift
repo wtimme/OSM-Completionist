@@ -1,5 +1,5 @@
 //
-//  MapViewViewModelTestCase.swift
+//  MapViewModelTestCase.swift
 //  GoMapTests
 //
 //  Created by Wolfgang Timme on 1/11/20.
@@ -9,16 +9,16 @@
 import XCTest
 @testable import Go_Map__
 
-class MapViewViewModelTestCase: XCTestCase {
+class MapViewModelTestCase: XCTestCase {
     
-    var viewModel: MapViewViewModel!
+    var viewModel: MapViewModel!
     var activeQuestBaseObjectMatcherMock: ActiveQuestBaseObjectMatcherMock!
     
     override func setUp() {
         super.setUp()
         
         activeQuestBaseObjectMatcherMock = ActiveQuestBaseObjectMatcherMock()
-        viewModel = MapViewViewModel(activeQuestBaseObjectMatcher: activeQuestBaseObjectMatcherMock)
+        viewModel = MapViewModel(activeQuestBaseObjectMatcher: activeQuestBaseObjectMatcherMock)
     }
 
     override func tearDown() {
