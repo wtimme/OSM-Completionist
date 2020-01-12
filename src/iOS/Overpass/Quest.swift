@@ -10,6 +10,9 @@
 ///
 /// The name stems from the Android app [StreetComplete](https://wiki.openstreetmap.org/wiki/StreetComplete/Quests).
 struct Quest {
+    /// The key of a tag.
+    typealias Key = String
+    
     /// Ways that the question can be answered.
     enum Solution {
         /// The user can choose from a list of pre-defined answers.
@@ -22,7 +25,7 @@ struct Quest {
         let title: String
         
         /// The key to update when the user selects this answer.
-        let key: String
+        let key: Key
         
         /// The value to set the `key` to when the user selects this answer.
         let value: String
