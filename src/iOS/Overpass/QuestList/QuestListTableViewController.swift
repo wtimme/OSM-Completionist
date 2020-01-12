@@ -95,5 +95,9 @@ extension QuestListTableViewController: QuestListViewModelDelegate {
         }
         
         configure(cell: cell, with: item)
+        
+        /// Selecting/deselecting a quest might cell its cell's size. Make sure all cells have the size they need.
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 }
