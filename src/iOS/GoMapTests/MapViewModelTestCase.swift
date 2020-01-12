@@ -76,5 +76,18 @@ class MapViewModelTestCase: XCTestCase {
         /// Then
         XCTAssertEqual(delegateMock.question, firstQuestion)
     }
+    
+    func testPresentQuestInterface_whenBaseObjectDoesMatchQuests_shouldTellDelegateToProvideTheChoicesFromFirstQuest() {
+        /// Given
+        let firstAnswer = Quest.Answer(title: "Yes", key: "backrest", value: "true")
+        let secondAnswer = Quest.Answer(title: "No", key: "backrest", value: "false")
+        activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(answers: [firstAnswer, secondAnswer])]
+        
+        /// When
+        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        
+        /// Then
+        XCTAssertEqual(delegateMock.choices, ["Yes (backrest=true)", "No (backrest=false)"])
+    }
 
 }

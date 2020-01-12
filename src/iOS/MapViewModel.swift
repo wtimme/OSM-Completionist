@@ -9,7 +9,7 @@
 import Foundation
 
 @objc protocol MapViewModelDelegate: class {
-    func askMultipleChoiceQuestion(question: String)
+    func askMultipleChoiceQuestion(question: String, choices: [String])
 }
 
 class MapViewModel: NSObject {
@@ -44,7 +44,12 @@ class MapViewModel: NSObject {
             return false
         }
         
-        delegate?.askMultipleChoiceQuestion(question: firstQuest.question)
+        let choices: [String] = firstQuest.answers.map { answer in
+            "\(answer.title) (\(answer.key)=\(answer.value))"
+        }
+        
+        delegate?.askMultipleChoiceQuestion(question: firstQuest.question,
+                                            choices: choices)
         
         return true
     }

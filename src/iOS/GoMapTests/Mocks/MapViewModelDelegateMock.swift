@@ -11,10 +11,12 @@ import Foundation
 
 class MapViewModelDelegateMock {
     private(set) var question: String?
+    private(set) var choices = [String]()
 }
 
 extension MapViewModelDelegateMock: MapViewModelDelegate {
-    func askMultipleChoiceQuestion(question: String) {
+    func askMultipleChoiceQuestion(question: String, choices: [String]) {
         self.question = question
+        self.choices = choices
     }
 }
