@@ -13,6 +13,10 @@ import Foundation
 }
 
 class MapViewModel: NSObject {
+    // MARK: Public properties
+    
+    @objc weak var delegate: MapViewModelDelegate?
+    
     // MARK: Private properties
     
     private let activeQuestBaseObjectMatcher: ActiveQuestBaseObjectMatching

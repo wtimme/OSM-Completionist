@@ -13,17 +13,22 @@ class MapViewModelTestCase: XCTestCase {
     
     var viewModel: MapViewModel!
     var activeQuestBaseObjectMatcherMock: ActiveQuestBaseObjectMatcherMock!
+    var delegateMock: MapViewModelDelegateMock!
     
     override func setUp() {
         super.setUp()
         
         activeQuestBaseObjectMatcherMock = ActiveQuestBaseObjectMatcherMock()
         viewModel = MapViewModel(activeQuestBaseObjectMatcher: activeQuestBaseObjectMatcherMock)
+        
+        delegateMock = MapViewModelDelegateMock()
+        viewModel.delegate = delegateMock
     }
 
     override func tearDown() {
         viewModel = nil
         activeQuestBaseObjectMatcherMock = nil
+        delegateMock = nil
         
         super.tearDown()
     }
