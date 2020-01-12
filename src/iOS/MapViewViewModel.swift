@@ -18,4 +18,11 @@ class MapViewViewModel: NSObject {
     init(activeQuestBaseObjectMatcher: ActiveQuestBaseObjectMatching) {
         self.activeQuestBaseObjectMatcher = activeQuestBaseObjectMatcher
     }
+    
+    override convenience init() {
+        let staticQuestProvider = StaticQuestProvider()
+        let activeQuestBaseObjectMatcher = ActiveQuestsBaseObjectMatcher(questProvider: staticQuestProvider)
+        
+        self.init(activeQuestBaseObjectMatcher: activeQuestBaseObjectMatcher)
+    }
 }
