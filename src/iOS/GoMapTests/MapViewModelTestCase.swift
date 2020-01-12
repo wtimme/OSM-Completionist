@@ -117,5 +117,77 @@ class MapViewModelTestCase: XCTestCase {
         XCTAssertEqual(delegateMock.didFinishQuestTag?.0, key)
         XCTAssertEqual(delegateMock.didFinishQuestTag?.1, value)
     }
+    
+    // MARK: Numeric
+    
+    func testPresentQuestInterface_whenBaseObjectDoesMatchQuestsWithNumericSolution_shouldTellDelegateToAskNumericQuestion() {
+        /// Given
+        let question = "How many bikes can be parked here?"
+        let solution = Quest.Solution.numeric("")
+        activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(question: question, solution: solution)]
+        
+        /// When
+        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        
+        /// Then
+        XCTAssertTrue(delegateMock.didCallAskNumericQuestion)
+        XCTAssertEqual(delegateMock.question, question)
+    }
+    
+    func testPresentQuestInterface_whenBaseObjectDoesMatchQuestsWithNumericSolution_shouldTellDelegateToAskNumericQuestionWithTheKey() {
+        /// Given
+        let key = "capacity"
+        let solution = Quest.Solution.numeric(key)
+        activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(solution: solution)]
+        
+        /// When
+        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        
+        /// Then
+        XCTAssertEqual(delegateMock.key, key)
+    }
+    
+    func testPresentQuestInterface_whenExecutingHandlerWithNil_shouldNotAskDelegateToFinishQuest() {
+        /// Given
+        let solution = Quest.Solution.numeric("")
+        activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(solution: solution)]
+        
+        /// When
+        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        delegateMock.numericHandler?(nil)
+        
+        /// Then
+        XCTAssertFalse(delegateMock.didCallFinishQuest)
+    }
+    
+    func testPresentQuestInterface_whenExecutingHandlerWithANonNumericString_shouldNotAskDelegateToFinishQuest() {
+        /// Given
+        let solution = Quest.Solution.numeric("")
+        activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(solution: solution)]
+        
+        /// When
+        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        delegateMock.numericHandler?("this is not a number")
+        
+        /// Then
+        XCTAssertFalse(delegateMock.didCallFinishQuest)
+    }
+    
+    func testPresentQuestInterface_whenExecutingHandlerWithNumericString_shouldAskDelegateToFinishQuest() {
+        /// Given
+        let key = "capacity"
+        let numericAnswer = "8"
+        let solution = Quest.Solution.numeric(key)
+        activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(solution: solution)]
+        
+        /// When
+        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        delegateMock.numericHandler?(numericAnswer)
+        
+        /// Then
+        XCTAssertTrue(delegateMock.didCallFinishQuest)
+        XCTAssertEqual(delegateMock.didFinishQuestTag?.0, key)
+        XCTAssertEqual(delegateMock.didFinishQuestTag?.1, numericAnswer)
+    }
 
 }

@@ -76,8 +76,7 @@ class MapViewModel: NSObject {
         case .multipleChoice(_):
             presentMultipleChoiceQuestInterface(firstQuest)
         case .numeric(_):
-            /// At the moment, the app only supports multiple choice quests.
-            print("Numeric quest are not supported at the moment.")
+            presentNumericQuestInterface(firstQuest)
         }
     }
     
@@ -102,6 +101,19 @@ class MapViewModel: NSObject {
                                                 
                                                 self?.delegate?.finishQuestForSelectedObjectByApplyingTag(key: selectedAnswer.key,
                                                                                                           value: selectedAnswer.value)
+        })
+    }
+    
+    private func presentNumericQuestInterface(_ quest: Quest) {
+        guard case let .numeric(key) = quest.solution else { return }
+        
+        delegate?.askNumericQuestion(question: quest.question, key: key, handler: { [weak self] answer in
+            guard let value = answer, Int(value) != nil else {
+                /// The answer is not a valid integer. Ignore this solution.
+                return
+            }
+            
+            self?.delegate?.finishQuestForSelectedObjectByApplyingTag(key: key, value: value)
         })
     }
 }
