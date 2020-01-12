@@ -14,17 +14,15 @@ class MapViewQuestAnnotationManagerTestCase: XCTestCase {
     
     var manager: MapViewQuestAnnotationManaging!
     var questManagerMock: QuestManagerMock!
-    var questProviderMock: QuestProviderMock!
     var queryParserMock: OverpassQueryParserMock!
-    var notificationCenter: NotificationCenter!
+    var activeQuestsBaseObjectMatcherMock: ActiveQuestBaseObjectMatcherMock!
 
     override func setUp() {
         super.setUp()
         
         questManagerMock = QuestManagerMock()
-        questProviderMock = QuestProviderMock()
         queryParserMock = OverpassQueryParserMock()
-        notificationCenter = NotificationCenter()
+        activeQuestsBaseObjectMatcherMock = ActiveQuestBaseObjectMatcherMock()
         
         setupManager()
     }
@@ -33,7 +31,7 @@ class MapViewQuestAnnotationManagerTestCase: XCTestCase {
         manager = nil
         questManagerMock = nil
         queryParserMock = nil
-        notificationCenter = nil
+        activeQuestsBaseObjectMatcherMock = nil
         
         super.tearDown()
     }
@@ -42,12 +40,39 @@ class MapViewQuestAnnotationManagerTestCase: XCTestCase {
     
     private func setupManager() {
         manager = MapViewQuestAnnotationManager(questManager: questManagerMock,
-                                                questProvider: questProviderMock,
                                                 queryParser: queryParserMock,
-                                                notificationCenter: notificationCenter)
+                                                activeQuestsBaseObjectMatcher: activeQuestsBaseObjectMatcherMock)
     }
     
     // MARK: shouldShowQuestAnnotation(for:)
+    
+    func testShouldShowQuestAnnotation_whenInvoked_shouldAskActiveQuestBaseObjectMatcherUsingTheGivenBaseObject() {
+        /// Given
+        let baseObject = OsmBaseObject()
+        activeQuestsBaseObjectMatcherMock.questsToReturn = []
+        
+        /// When
+        _ = manager.shouldShowQuestAnnotation(for: baseObject)
+        
+        /// Then
+        XCTAssertEqual(activeQuestsBaseObjectMatcherMock.baseObject, baseObject)
+    }
+    
+    func testShouldShowQuestAnnotation_whenBaseObjectDoesNotMatchAnyQuest_shouldReturnFalse() {
+        /// Given
+        activeQuestsBaseObjectMatcherMock.questsToReturn = []
+        
+        /// Then
+        XCTAssertFalse(manager.shouldShowQuestAnnotation(for: OsmBaseObject()))
+    }
+    
+    func testShouldShowQuestAnnotation_whenBaseObjectDoesMatchAQuest_shouldReturnTrue() {
+        /// Given
+        activeQuestsBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest()]
+        
+        /// Then
+        XCTAssertTrue(manager.shouldShowQuestAnnotation(for: OsmBaseObject()))
+    }
     
     func testShowAnnotationWithoutActiveQueryShouldNotAskParserToParse() {
         let query: String? = nil
@@ -128,92 +153,6 @@ class MapViewQuestAnnotationManagerTestCase: XCTestCase {
         XCTAssertFalse(manager.shouldShowQuestAnnotation(for: object))
         
         XCTAssertEqual(matcher.object, object)
-    }
-    
-    // MARK: Initial loading of quests
-    
-    func testManager_whenInitialized_shouldAskParserToParseQueriesOfActiveQuests() {
-        /// Given
-        let firstQuery = "man_made = surveillance"
-        let secondQuery = "backrest is null"
-        questProviderMock.activeQuests = [Quest.makeQuest(overpassWizardQuery: firstQuery),
-                                           Quest.makeQuest(overpassWizardQuery: secondQuery)]
-
-        /// When
-        setupManager()
-
-        /// Then
-        XCTAssertEqual(queryParserMock.queries, [firstQuery, secondQuery],
-                       "The annotation manager should've asked the parser to parse the queries")
-    }
-    
-    func testManager_whenInitialized_shouldUseTheMatchersTheParserReturnedForTheActiveQuests() {
-        /// Given
-        questProviderMock.activeQuests = [Quest.makeQuest(overpassWizardQuery: "backrest is null")]
-        questManagerMock.activeQuestQuery = "man_made = surveillance"
-        
-        let firstMatcher = BaseObjectMatcherMock()
-        queryParserMock.mockedResult = .success(firstMatcher)
-        
-        let object = OsmBaseObject()
-        
-        /// During initialization, the manager will parse the quests provided by the `QuestProviding` object.
-        setupManager()
-        
-        /// Create a second matcher that will be returned when the `MapViewQuestAnnotationManager` asks the parser
-        /// to parse the `QuestManager`'s `activeQuestQuery`.
-        /// We do this in order to make sure that the `MapViewQuestAnnotationManager` uses _both_ matchers.
-        let secondMatcher = BaseObjectMatcherMock()
-        queryParserMock.mockedResult = .success(secondMatcher)
-        
-        /// When
-        _ = manager.shouldShowQuestAnnotation(for: object)
-        
-        /// Then
-        XCTAssertEqual(firstMatcher.object, object,
-                       "The annotation manager should've checked the object against the first matcher")
-    }
-    
-    // MARK: QuestManagerDidUpdateActiveQuests notification
-    
-    func testManager_whenReceivingQuestManagerDidUpdateActiveQuestsNotification_shouldAskParserToParseQueriesOfActiveQuests() {
-        /// Given
-        let firstQuery = "man_made = surveillance"
-        let secondQuery = "backrest is null"
-        questProviderMock.activeQuests = [Quest.makeQuest(overpassWizardQuery: firstQuery),
-                                          Quest.makeQuest(overpassWizardQuery: secondQuery)]
-        
-        /// When
-        notificationCenter.post(name: .QuestManagerDidUpdateActiveQuests,
-                                object: questProviderMock)
-        
-        /// Then
-        XCTAssertEqual(queryParserMock.queries, [firstQuery, secondQuery],
-                       "The annotation manager should've asked the parser to parse the queries")
-    }
-    
-    func testManager_whenReceivingQuestManagerDidUpdateActiveQuestsNotification_shouldUseTheMatchersTheParserReturnedForTheActiveQuests() {
-        /// Given
-        let object = OsmBaseObject()
-        
-        /// During initialization, the manager will parse the quests provided by the `QuestProviding` object.
-        setupManager()
-        
-        /// Create a matcher _after_ initialization.
-        /// We do this in order to make sure that the `MapViewQuestAnnotationManager` uses that one after receiving the notification.
-        let matcher = BaseObjectMatcherMock()
-        queryParserMock.mockedResult = .success(matcher)
-        
-        questProviderMock.activeQuests = [Quest.makeQuest(overpassWizardQuery: "backrest is null")]
-        notificationCenter.post(name: .QuestManagerDidUpdateActiveQuests,
-                                object: questProviderMock)
-        
-        /// When
-        _ = manager.shouldShowQuestAnnotation(for: object)
-        
-        /// Then
-        XCTAssertEqual(matcher.object, object,
-                       "The annotation manager should've checked the object against the matcher")
     }
 
 }

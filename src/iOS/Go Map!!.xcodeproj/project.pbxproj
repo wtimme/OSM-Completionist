@@ -501,6 +501,14 @@
 		6442666722540EDF00C0D545 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6442666422540EDF00C0D545 /* Lock.swift */; };
 		6442666822540EDF00C0D545 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6442666522540EDF00C0D545 /* Disposable.swift */; };
 		6442666922540EDF00C0D545 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6442666622540EDF00C0D545 /* Observable.swift */; };
+		644AC0D523C9464E00E2B1E4 /* QuestTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0D423C9464E00E2B1E4 /* QuestTestCase.swift */; };
+		644AC0D723C94C1B00E2B1E4 /* Quest+staticQuestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0D623C94C1B00E2B1E4 /* Quest+staticQuestsTestCase.swift */; };
+		644AC0D923C957EB00E2B1E4 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0D823C957EB00E2B1E4 /* MapViewModel.swift */; };
+		644AC0DB23C9592A00E2B1E4 /* MapViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0DA23C9592A00E2B1E4 /* MapViewModelTestCase.swift */; };
+		644AC0DD23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0DC23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift */; };
+		644AC0DF23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0DE23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift */; };
+		644AC0E123C9645A00E2B1E4 /* ActiveQuestBaseObjectMatcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0E023C9645A00E2B1E4 /* ActiveQuestBaseObjectMatcherMock.swift */; };
+		644AC0E323CB48F800E2B1E4 /* MapViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0E223CB48F800E2B1E4 /* MapViewModelDelegateMock.swift */; };
 		6470F70723C21587003A463A /* Quest+staticQuests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470F70623C21587003A463A /* Quest+staticQuests.swift */; };
 		647F46CE2253EA4C00CEC482 /* MeasureDirectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */; };
 		647F46D12253F08200CEC482 /* HeadingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F46D02253F08200CEC482 /* HeadingProvider.swift */; };
@@ -1163,6 +1171,14 @@
 		6442666422540EDF00C0D545 /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		6442666522540EDF00C0D545 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		6442666622540EDF00C0D545 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		644AC0D423C9464E00E2B1E4 /* QuestTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestTestCase.swift; sourceTree = "<group>"; };
+		644AC0D623C94C1B00E2B1E4 /* Quest+staticQuestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quest+staticQuestsTestCase.swift"; sourceTree = "<group>"; };
+		644AC0D823C957EB00E2B1E4 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		644AC0DA23C9592A00E2B1E4 /* MapViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTestCase.swift; sourceTree = "<group>"; };
+		644AC0DC23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuestsBaseObjectMatcher.swift; sourceTree = "<group>"; };
+		644AC0DE23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuestsBaseObjectMatcherTestCase.swift; sourceTree = "<group>"; };
+		644AC0E023C9645A00E2B1E4 /* ActiveQuestBaseObjectMatcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuestBaseObjectMatcherMock.swift; sourceTree = "<group>"; };
+		644AC0E223CB48F800E2B1E4 /* MapViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelDelegateMock.swift; sourceTree = "<group>"; };
 		6470F70623C21587003A463A /* Quest+staticQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quest+staticQuests.swift"; sourceTree = "<group>"; };
 		647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureDirectionViewModel.swift; sourceTree = "<group>"; };
 		647F46D02253F08200CEC482 /* HeadingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingProvider.swift; sourceTree = "<group>"; };
@@ -1541,6 +1557,7 @@
 				02BED988168B6F2F00357B94 /* WebPageViewController.h */,
 				02BED989168B6F2F00357B94 /* WebPageViewController.m */,
 				64C968442261ED3100351C0C /* Media.xcassets */,
+				644AC0D823C957EB00E2B1E4 /* MapViewModel.swift */,
 			);
 			name = "Go Map!";
 			sourceTree = "<group>";
@@ -1964,6 +1981,7 @@
 				64C072FC22622B9C00598078 /* Vendor */,
 				64348CEE225E7CD900ADE7FB /* Info.plist */,
 				64E21EB422651C06004605D7 /* OSMMapDataTestCase.swift */,
+				644AC0DA23C9592A00E2B1E4 /* MapViewModelTestCase.swift */,
 			);
 			path = GoMapTests;
 			sourceTree = "<group>";
@@ -1981,6 +1999,8 @@
 				64D64CED227ED11F0040C67A /* BaseObjectMatcherMock.swift */,
 				64CCF4E023C0C04C006164D3 /* QuestProviderMock.swift */,
 				64CCF4E623C13F67006164D3 /* QuestListViewModelDelegateMock.swift */,
+				644AC0E023C9645A00E2B1E4 /* ActiveQuestBaseObjectMatcherMock.swift */,
+				644AC0E223CB48F800E2B1E4 /* MapViewModelDelegateMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -2065,6 +2085,7 @@
 				64D64D07227EF2B00040C67A /* TypeQuery.swift */,
 				64D64CFA227ED3340040C67A /* RecursiveQuery.swift */,
 				64D64D15227F3C200040C67A /* RegularExpressionQuery.swift */,
+				644AC0DC23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -2079,6 +2100,9 @@
 				64972EAA22858FDF00286157 /* MapViewQuestAnnotationManagerTestCase.swift */,
 				64CCF4D823C0B708006164D3 /* QuestListViewModelTestCase.swift */,
 				64CCF4E423C0DC2E006164D3 /* StaticQuestProviderTestCase.swift */,
+				644AC0D423C9464E00E2B1E4 /* QuestTestCase.swift */,
+				644AC0D623C94C1B00E2B1E4 /* Quest+staticQuestsTestCase.swift */,
+				644AC0DE23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift */,
 			);
 			path = Overpass;
 			sourceTree = "<group>";
@@ -2674,6 +2698,7 @@
 			files = (
 				02ACBA4016713CCB00BB4414 /* main.m in Sources */,
 				02ACBA4416713CCB00BB4414 /* AppDelegate.m in Sources */,
+				644AC0DD23C95B6500E2B1E4 /* ActiveQuestsBaseObjectMatcher.swift in Sources */,
 				647F46CE2253EA4C00CEC482 /* MeasureDirectionViewModel.swift in Sources */,
 				02ACBA5316713CCB00BB4414 /* MapViewController.m in Sources */,
 				02ACBA5A16713CCB00BB4414 /* SettingsViewController.m in Sources */,
@@ -2716,6 +2741,7 @@
 				64D64D03227ED7470040C67A /* OverpassQueryParser.swift in Sources */,
 				02695B8D1A08C1DB0028D95E /* NotesTableViewController.m in Sources */,
 				022ABCA420C3750A002D4977 /* Buildings3DView.m in Sources */,
+				644AC0D923C957EB00E2B1E4 /* MapViewModel.swift in Sources */,
 				647F46D12253F08200CEC482 /* HeadingProvider.swift in Sources */,
 				029043A31682797A00BE3480 /* LoginViewController.m in Sources */,
 				64348D01225E8D3F00ADE7FB /* OsmNode+Direction.swift in Sources */,
@@ -2783,6 +2809,7 @@
 			files = (
 				64348CFE225E867800ADE7FB /* MeasureDirectionViewModelTestCase.swift in Sources */,
 				64C072FA226227D500598078 /* CommonTagKeyTestCase.swift in Sources */,
+				644AC0D523C9464E00E2B1E4 /* QuestTestCase.swift in Sources */,
 				64D64CF8227ED2480040C67A /* KeyExistsQueryTestCase.swift in Sources */,
 				64D64CEE227ED11F0040C67A /* BaseObjectMatcherMock.swift in Sources */,
 				64CCF4E723C13F67006164D3 /* QuestListViewModelDelegateMock.swift in Sources */,
@@ -2793,10 +2820,12 @@
 				64348CED225E7CD900ADE7FB /* GoMapTests.swift in Sources */,
 				64D64D14227F36E50040C67A /* KeyValueQueryTestCase.swift in Sources */,
 				64D64D18227F3CFB0040C67A /* RegularExpressionQueryTestCase.swift in Sources */,
+				644AC0E123C9645A00E2B1E4 /* ActiveQuestBaseObjectMatcherMock.swift in Sources */,
 				64D64D0A227EF3790040C67A /* TypeQueryTestCase.swift in Sources */,
 				64972EAB22858FDF00286157 /* MapViewQuestAnnotationManagerTestCase.swift in Sources */,
 				64D64D05227ED75A0040C67A /* OverpassQueryParserTestCase.swift in Sources */,
 				64CCF4E323C0C1BF006164D3 /* Quest+MakeQuest.swift in Sources */,
+				644AC0E323CB48F800E2B1E4 /* MapViewModelDelegateMock.swift in Sources */,
 				64CCF4E523C0DC2E006164D3 /* StaticQuestProviderTestCase.swift in Sources */,
 				64348CFB225E867800ADE7FB /* HeadingProviderMock.swift in Sources */,
 				64E21EB822651F2D004605D7 /* XCTestCase+UserDefaults.swift in Sources */,
@@ -2806,10 +2835,13 @@
 				64B2AD1B2280EAAB00204F8B /* OverpassQueryParserMock.swift in Sources */,
 				64C072FE22622B9C00598078 /* Require.swift in Sources */,
 				64CCF4D923C0B708006164D3 /* QuestListViewModelTestCase.swift in Sources */,
+				644AC0DB23C9592A00E2B1E4 /* MapViewModelTestCase.swift in Sources */,
 				64348CFD225E867800ADE7FB /* CLHeadingMock.swift in Sources */,
 				64348D03225E8E4300ADE7FB /* OsmNode_DirectionTestCase.swift in Sources */,
 				64E21EB522651C06004605D7 /* OSMMapDataTestCase.swift in Sources */,
+				644AC0D723C94C1B00E2B1E4 /* Quest+staticQuestsTestCase.swift in Sources */,
 				64B2AD192280E5E500204F8B /* QueryFormViewModelTestCase.swift in Sources */,
+				644AC0DF23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2987,7 +3019,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = CH829V2QQB;
 				DISPLAY_NAME = "Completionist Debug";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3016,7 +3048,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = CH829V2QQB;
 				DISPLAY_NAME = Completionist;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
