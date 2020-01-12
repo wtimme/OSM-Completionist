@@ -47,20 +47,15 @@ class MapViewModelTestCase: XCTestCase {
         XCTAssertEqual(activeQuestBaseObjectMatcherMock.baseObject, baseObject)
     }
     
-    func testPresentQuestInterface_whenBaseObjectDoesNotMatchAnyQuest_shouldReturnFalse() {
+    func testPresentQuestInterface_whenBaseObjectDoesNotMatchAnyQuest_shouldTellDelegateToAskAQuestion() {
         /// Given
         activeQuestBaseObjectMatcherMock.questsToReturn = []
         
-        /// Then
-        XCTAssertFalse(viewModel.presentQuestInterface(for: OsmBaseObject()))
-    }
-    
-    func testPresentQuestInterface_whenBaseObjectDoesMatchAQuest_shouldReturnTrue() {
-        /// Given
-        activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest()]
+        /// When
+        viewModel.presentQuestInterface(for: OsmBaseObject())
         
         /// Then
-        XCTAssertTrue(viewModel.presentQuestInterface(for: OsmBaseObject()))
+        XCTAssertNil(delegateMock.question)
     }
     
     func testPresentQuestInterface_whenBaseObjectDoesMatchQuests_shouldTellDelegateToAskTheQuestionOfFirstQuest() {

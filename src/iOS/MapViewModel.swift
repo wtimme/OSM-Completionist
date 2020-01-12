@@ -52,12 +52,12 @@ class MapViewModel: NSObject {
     
     // MARK: Public methods
     
-    @objc func presentQuestInterface(for baseObject: OsmBaseObject) -> Bool {
+    @objc func presentQuestInterface(for baseObject: OsmBaseObject) {
         let quests = activeQuestBaseObjectMatcher.quests(matching: baseObject)
         
         guard let firstQuest = quests.first else {
             /// We cannot display a quest interface if there were no quests for the given object.
-            return false
+            return
         }
         
         let choices: [String] = firstQuest.answers.map { answer in
@@ -77,7 +77,5 @@ class MapViewModel: NSObject {
                                                 self?.delegate?.finishQuestForSelectedObjectByApplyingTag(key: selectedAnswer.key,
                                                                                                           value: selectedAnswer.value)
         })
-        
-        return true
     }
 }
