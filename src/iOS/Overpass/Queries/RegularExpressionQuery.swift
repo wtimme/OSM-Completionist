@@ -9,10 +9,12 @@
 struct RegularExpressionQuery {
     let key: String
     let value: String
+    let isNegated: Bool
     
-    init(key: String, value: String) {
+    init(key: String, value: String, isNegated: Bool = false) {
         self.key = key
         self.value = value
+        self.isNegated = isNegated
     }
 }
 
@@ -21,9 +23,15 @@ extension RegularExpressionQuery: BaseObjectMatching {
     func matches(_ object: OsmBaseObject) -> Bool {
         guard let tags = object.tags as? [String: String] else { return false }
         
-        return tags.first { tagKey, tagValue in
+        let regularExpressionDoesMatch = tags.first { tagKey, tagValue in
             return tagKey.range(of: key, options: .regularExpression) != nil && tagValue.range(of: value, options: .regularExpression) != nil
         } != nil
+        
+        if isNegated {
+            return !regularExpressionDoesMatch
+        } else {
+            return regularExpressionDoesMatch
+        }
     }
     
 }
