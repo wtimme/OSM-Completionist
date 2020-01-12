@@ -89,5 +89,34 @@ class MapViewModelTestCase: XCTestCase {
         /// Then
         XCTAssertEqual(delegateMock.choices, ["Yes (backrest=true)", "No (backrest=false)"])
     }
+    
+    func testPresentQuestInterface_whenExecutingSelectionHandlerWithInvalidIndex_shouldNotCallFinishQuest() {
+        /// Given
+        activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest()]
+        
+        /// When
+        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        delegateMock.selectionHandler?(999)
+        
+        /// Then
+        XCTAssertFalse(delegateMock.didCallFinishQuest)
+    }
+    
+    func testPresentQuestInterface_whenExecutingSelectionHandlerWithValidIndex_shouldAskDelegateToFinishQuest() {
+        /// Given
+        let key = "backrest"
+        let value = "true"
+        let answer = Quest.Answer(title: "", key: key, value: value)
+        activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(answers: [answer])]
+        
+        /// When
+        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        delegateMock.selectionHandler?(0)
+        
+        /// Then
+        XCTAssertTrue(delegateMock.didCallFinishQuest)
+        XCTAssertEqual(delegateMock.didFinishQuestTag?.0, key)
+        XCTAssertEqual(delegateMock.didFinishQuestTag?.1, value)
+    }
 
 }

@@ -20,6 +20,12 @@ import Foundation
     func askMultipleChoiceQuestion(question: String,
                                    choices: [String],
                                    selectionHandler: @escaping (Int) -> Void)
+    
+    /// Asks the delegate to finish the quest for the object that is currently selected by applying a tag.
+    /// - Parameters:
+    ///   - key: The key of the tag.
+    ///   - value: The value of the tag.
+    func finishQuestForSelectedObjectByApplyingTag(key: String, value: String)
 }
 
 class MapViewModel: NSObject {
@@ -60,8 +66,16 @@ class MapViewModel: NSObject {
         
         delegate?.askMultipleChoiceQuestion(question: firstQuest.question,
                                             choices: choices,
-                                            selectionHandler: { _ in
-                                                /// TODO: Implement me.
+                                            selectionHandler: { [weak self] indexOfSelectedAnswer in
+                                                guard firstQuest.answers.indices.contains(indexOfSelectedAnswer) else {
+                                                    /// The index is out of range; ignore.
+                                                    return
+                                                }
+                                                
+                                                let selectedAnswer = firstQuest.answers[indexOfSelectedAnswer]
+                                                
+                                                self?.delegate?.finishQuestForSelectedObjectByApplyingTag(key: selectedAnswer.key,
+                                                                                                          value: selectedAnswer.value)
         })
         
         return true

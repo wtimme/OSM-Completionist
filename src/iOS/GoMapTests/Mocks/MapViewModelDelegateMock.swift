@@ -13,6 +13,9 @@ class MapViewModelDelegateMock {
     private(set) var question: String?
     private(set) var choices = [String]()
     private(set) var selectionHandler: ((Int) -> Void)?
+    
+    private(set) var didCallFinishQuest = false
+    private(set) var didFinishQuestTag: (String, String)?
 }
 
 extension MapViewModelDelegateMock: MapViewModelDelegate {
@@ -20,5 +23,11 @@ extension MapViewModelDelegateMock: MapViewModelDelegate {
         self.question = question
         self.choices = choices
         self.selectionHandler = selectionHandler
+    }
+    
+    func finishQuestForSelectedObjectByApplyingTag(key: String, value: String) {
+        didCallFinishQuest = true
+        
+        didFinishQuestTag = (key, value)
     }
 }
