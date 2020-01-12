@@ -9,6 +9,12 @@
 import Foundation
 
 @objc protocol MapViewModelDelegate: class {
+    /// Asks the delegate to ask a multiple choice question.
+    /// The delegate should allow the user to choose from one of the `choices`.
+    ///
+    /// - Parameters:
+    ///   - question: The question to ask.
+    ///   - choices: A list of answers to present.
     func askMultipleChoiceQuestion(question: String,
                                    choices: [String])
 }
