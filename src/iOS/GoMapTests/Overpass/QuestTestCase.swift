@@ -19,7 +19,7 @@ class QuestTestCase: XCTestCase {
         let quest = Quest(identifier: "",
                           question: "",
                           overpassWizardQuery: "",
-                          answers: [],
+                          solution: .multipleChoice([]),
                           queryParser: queryParser)
         
         /// Then
@@ -35,7 +35,7 @@ class QuestTestCase: XCTestCase {
         let quest = Quest(identifier: "",
                           question: "",
                           overpassWizardQuery: "",
-                          answers: [],
+                          solution: .multipleChoice([]),
                           queryParser: queryParserMock)
         
         /// Then
@@ -51,7 +51,7 @@ class QuestTestCase: XCTestCase {
         let quest = Quest(identifier: "",
                           question: "",
                           overpassWizardQuery: "",
-                          answers: [],
+                          solution: .multipleChoice([]),
                           queryParser: queryParserMock)
         
         /// Then
@@ -68,7 +68,7 @@ class QuestTestCase: XCTestCase {
         let quest = Quest(identifier: "",
                           question: "",
                           overpassWizardQuery: "",
-                          answers: [],
+                          solution: .multipleChoice([]),
                           queryParser: queryParserMock)
         
         /// Then

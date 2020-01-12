@@ -13,12 +13,12 @@ extension Quest {
     static func makeQuest(identifier: String = UUID().uuidString,
                           question: String = "Lorem ipsum?",
                           overpassWizardQuery: String = "dolor_sit:amet",
-                          answers: [Answer] = [],
+                          solution: Solution = .multipleChoice([]),
                           baseObjectMatcher: BaseObjectMatching? = nil) -> Quest {
         return Quest(identifier: identifier,
                      question: question,
                      overpassWizardQuery: overpassWizardQuery,
-                     answers: answers,
+                     solution: solution,
                      baseObjectMatcher: baseObjectMatcher)
     }
 }

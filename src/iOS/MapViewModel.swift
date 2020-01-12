@@ -60,19 +60,24 @@ class MapViewModel: NSObject {
             return
         }
         
-        let choices: [String] = firstQuest.answers.map { answer in
+        guard case let .multipleChoice(answers) = firstQuest.solution else {
+            /// At the moment, the app only supports multiple choice quests.
+            return
+        }
+        
+        let choices: [String] = answers.map { answer in
             "\(answer.title) (\(answer.key)=\(answer.value))"
         }
         
         delegate?.askMultipleChoiceQuestion(question: firstQuest.question,
                                             choices: choices,
                                             selectionHandler: { [weak self] indexOfSelectedAnswer in
-                                                guard firstQuest.answers.indices.contains(indexOfSelectedAnswer) else {
+                                                guard answers.indices.contains(indexOfSelectedAnswer) else {
                                                     /// The index is out of range; ignore.
                                                     return
                                                 }
                                                 
-                                                let selectedAnswer = firstQuest.answers[indexOfSelectedAnswer]
+                                                let selectedAnswer = answers[indexOfSelectedAnswer]
                                                 
                                                 self?.delegate?.finishQuestForSelectedObjectByApplyingTag(key: selectedAnswer.key,
                                                                                                           value: selectedAnswer.value)

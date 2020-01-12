@@ -76,7 +76,8 @@ class MapViewModelTestCase: XCTestCase {
         /// Given
         let firstAnswer = Quest.Answer(title: "Yes", key: "backrest", value: "true")
         let secondAnswer = Quest.Answer(title: "No", key: "backrest", value: "false")
-        activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(answers: [firstAnswer, secondAnswer])]
+        let solution = Quest.Solution.multipleChoice([firstAnswer, secondAnswer])
+        activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(solution: solution)]
         
         /// When
         _ = viewModel.presentQuestInterface(for: OsmBaseObject())
@@ -102,7 +103,8 @@ class MapViewModelTestCase: XCTestCase {
         let key = "backrest"
         let value = "true"
         let answer = Quest.Answer(title: "", key: key, value: value)
-        activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(answers: [answer])]
+        let solution = Quest.Solution.multipleChoice([answer])
+        activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(solution: solution)]
         
         /// When
         _ = viewModel.presentQuestInterface(for: OsmBaseObject())

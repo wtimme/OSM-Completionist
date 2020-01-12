@@ -10,6 +10,12 @@
 ///
 /// The name stems from the Android app [StreetComplete](https://wiki.openstreetmap.org/wiki/StreetComplete/Quests).
 struct Quest {
+    /// Ways that the question can be answered.
+    enum Solution {
+        /// The user can choose from a list of pre-defined answers.
+        case multipleChoice([Answer])
+    }
+    
     /// An answer that the user can choose.
     struct Answer {
         /// Title of the answer. Should be human-readable and easy to understand.
@@ -34,8 +40,8 @@ struct Quest {
     /// Uses the [Overpass Turbo Wizard](https://wiki.openstreetmap.org/wiki/Overpass_turbo/Wizard) format.
     let overpassWizardQuery: String
     
-    /// A list of answers between the user can choose when encountering items of this quest.
-    let answers: [Answer]
+    /// The way that this quest can be resolved.
+    let solution: Solution
     
     /// An object that allows for the quest to be matched against `OsmBaseObject` instances.
     let baseObjectMatcher: BaseObjectMatching?
@@ -43,24 +49,24 @@ struct Quest {
     init(identifier: String,
          question: String,
          overpassWizardQuery: String,
-         answers: [Answer],
+         solution: Solution,
          baseObjectMatcher: BaseObjectMatching?) {
         self.identifier = identifier
         self.question = question
         self.overpassWizardQuery = overpassWizardQuery
-        self.answers = answers
+        self.solution = solution
         self.baseObjectMatcher = baseObjectMatcher
     }
     
     init(identifier: String,
          question: String,
          overpassWizardQuery: String,
-         answers: [Answer],
+         solution: Solution,
          queryParser: OverpassQueryParsing? = OverpassQueryParser()) {
         self.identifier = identifier
         self.question = question
         self.overpassWizardQuery = overpassWizardQuery
-        self.answers = answers
+        self.solution = solution
         
         switch queryParser?.parse(overpassWizardQuery) {
         case .error(_):
