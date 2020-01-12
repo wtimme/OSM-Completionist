@@ -17,7 +17,6 @@ import Foundation
     // MARK: Private properties
     
     private let questManager: QuestManaging
-    private let questProvider: QuestProviding
     private let queryParser: OverpassQueryParsing
     private let activeQuestsBaseObjectMatcher: ActiveQuestBaseObjectMatching
     private let notificationCenter: NotificationCenter
@@ -25,30 +24,16 @@ import Foundation
     private var lastParsedQuery: String?
     private var lastMatcher: BaseObjectMatching?
     
-    /// The `BaseObjectMatching` to match objects against quests that were provided by the `questProvider`.
-    private var questMatchers = [BaseObjectMatching]()
-    
     // MARK: Initializer
     
     init(questManager: QuestManaging,
-         questProvider: QuestProviding,
          queryParser: OverpassQueryParsing,
          activeQuestsBaseObjectMatcher: ActiveQuestBaseObjectMatching,
          notificationCenter: NotificationCenter = .default) {
         self.questManager = questManager
-        self.questProvider = questProvider
         self.queryParser = queryParser
         self.activeQuestsBaseObjectMatcher = activeQuestsBaseObjectMatcher
         self.notificationCenter = notificationCenter
-        
-        super.init()
-        
-        notificationCenter.addObserver(self,
-                                       selector: #selector(reloadMatchers),
-                                       name: .QuestManagerDidUpdateActiveQuests,
-                                       object: nil)
-        
-        reloadMatchers()
     }
     
     convenience override init() {
@@ -60,7 +45,6 @@ import Foundation
         assert(parser != nil, "Unable to create the query parser.")
         
         self.init(questManager: questManager,
-                  questProvider: questProvider,
                   queryParser: parser!,
                   activeQuestsBaseObjectMatcher: activeQuestsBaseObjectMatcher)
     }
@@ -70,18 +54,6 @@ import Foundation
     func shouldShowQuestAnnotation(for baseObject: OsmBaseObject) -> Bool {
         if !activeQuestsBaseObjectMatcher.quests(matching: baseObject).isEmpty {
             return true
-        }
-        
-        for quest in questProvider.activeQuests {
-            if let baseObjectMatcher = quest.baseObjectMatcher, baseObjectMatcher.matches(baseObject) {
-                return true
-            }
-        }
-        
-        for matcher in questMatchers {
-            if matcher.matches(baseObject) {
-                return true
-            }
         }
         
         guard let overpassTurboWizardQueryMatcher = matcherFromOverpassTurboWizardQuery() else {
@@ -121,23 +93,6 @@ import Foundation
         lastMatcher = matcher
         
         return matcher
-    }
-    
-    // MARK: Private methods
-    
-    /// Reloads the matchers that are used to determine whether to display annotations.
-    @objc private func reloadMatchers() {
-        questMatchers = questProvider.activeQuests.compactMap { [weak self] quest in
-            guard let self = self else { return nil }
-            
-            let parserResult = self.queryParser.parse(quest.overpassWizardQuery)
-            switch parserResult {
-            case let .success(matcher):
-                return matcher
-            case .error(_):
-                return nil
-            }
-        }
     }
 
 }
