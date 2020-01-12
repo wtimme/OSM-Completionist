@@ -60,16 +60,25 @@ class MapViewModel: NSObject {
             return
         }
         
-        guard case let .multipleChoice(answers) = firstQuest.solution else {
+        switch firstQuest.solution {
+        case .multipleChoice(_):
+            presentMultipleChoiceQuestInterface(firstQuest)
+        case .numeric(_):
             /// At the moment, the app only supports multiple choice quests.
-            return
+            print("Numeric quest are not supported at the moment.")
         }
+    }
+    
+    // MARK: Private methods
+    
+    private func presentMultipleChoiceQuestInterface(_ quest: Quest) {
+        guard case let .multipleChoice(answers) = quest.solution else { return }
         
         let choices: [String] = answers.map { answer in
             "\(answer.title) (\(answer.key)=\(answer.value))"
         }
         
-        delegate?.askMultipleChoiceQuestion(question: firstQuest.question,
+        delegate?.askMultipleChoiceQuestion(question: quest.question,
                                             choices: choices,
                                             selectionHandler: { [weak self] indexOfSelectedAnswer in
                                                 guard answers.indices.contains(indexOfSelectedAnswer) else {
