@@ -69,7 +69,7 @@ static const CGFloat Z_FLASH			= 110;
 
 
 
-@interface MapView ()
+@interface MapView () <MapViewModelDelegate>
 @property (strong,nonatomic) IBOutlet UIView	*	statusBarBackground;
 @property (nonatomic, readonly) MapViewModel *viewModel;
 @end
@@ -390,6 +390,8 @@ const CGFloat kEditControlCornerRadius = 4;
 	[self updateNotesFromServerWithDelay:0];
 
 	[self updateAerialAttributionButton];
+    
+    self.viewModel.delegate = self;
 	
 #if FRAMERATE_TEST
 	// automaatically scroll view for frame rate testing
@@ -3474,6 +3476,9 @@ static NSString * const DisplayLinkPanning	= @"Panning";
 		// hit test anything
 		hit = [_editorLayer osmHitTest:point radius:DefaultHitTestRadius testNodes:NO ignoreList:nil segment:NULL];
 		if ( hit ) {
+            /// Present quest interface, if applicable.
+            [self.viewModel presentQuestInterfaceFor:hit];
+            
 			if ( hit.isNode ) {
 				_editorLayer.selectedNode = (id)hit;
 				_editorLayer.selectedWay = nil;
@@ -3547,6 +3552,46 @@ static NSString * const DisplayLinkPanning	= @"Panning";
     } else {
         [self.viewController performSegueWithIdentifier:@"CalculateHeightSegue" sender:nil];
     }
+}
+
+#pragma mark - MapViewModelDelegate
+
+- (void)askMultipleChoiceQuestionWithQuestion:(NSString *)question
+                                      choices:(NSArray<NSString *> *)choices
+                             selectionHandler:(void (^)(NSInteger))selectionHandler {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:question
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [choices enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIAlertAction *choiceAction = [UIAlertAction actionWithTitle:obj style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            selectionHandler(idx);
+        }];
+        [alertController addAction:choiceAction];
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel",
+                                                                                   @"Title of the button when canceling questions")
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    [alertController addAction:cancelAction];
+    
+    [self.viewController presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)finishQuestForSelectedObjectByApplyingTagWithKey:(NSString *)key value:(NSString *)value {
+    OsmBaseObject *selectedObject = self.editorLayer.selectedPrimary;
+    
+    NSMutableDictionary *tags = [NSMutableDictionary dictionaryWithDictionary:selectedObject.tags];
+    [tags setObject:value forKey:key];
+    
+    [self setTagsForCurrentObject:tags];
+    
+    self.editorLayer.selectedNode = nil;
+    self.editorLayer.selectedWay = nil;
+    self.editorLayer.selectedRelation = nil;
+    
+    [self removePin];
 }
 
 @end
