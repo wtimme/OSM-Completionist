@@ -95,6 +95,11 @@ class OverpassQueryParser: OverpassQueryParsing {
                 let valueDetails = keyValuePairs["val"] as? [String: String],
                 let valueRegularExpression = valueDetails["regex"] {
                 return RegularExpressionQuery(key: key, value: valueRegularExpression)
+            } else if ["notlike"].contains(queryOperation),
+                let key = keyValuePairs["key"] as? String,
+                let valueDetails = keyValuePairs["val"] as? [String: String],
+                let valueRegularExpression = valueDetails["regex"] {
+                return RegularExpressionQuery(key: key, value: valueRegularExpression, isNegated: true)
             } else if queryOperation == "substr", let key = keyValuePairs["key"] as? String, let value = keyValuePairs["val"] as? String {
                 return RegularExpressionQuery(key: key, value: ".*\(value).*")
             }

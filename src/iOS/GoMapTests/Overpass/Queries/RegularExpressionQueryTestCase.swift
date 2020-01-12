@@ -35,5 +35,13 @@ class RegularExpressionQueryTestCase: XCTestCase {
         
         XCTAssertTrue(query.matches(object))
     }
+    
+    func testMatchesWithMatchingKeyValueCombinationWhenIsNegatedShouldReturnFalse() {
+        let query = RegularExpressionQuery(key: "man_*", value: "pier|surveillance", isNegated: true)
+        
+        let object = OsmBaseObject.makeBaseObjectWithTag("man_made", "surveillance")
+        
+        XCTAssertFalse(query.matches(object))
+    }
 
 }
