@@ -68,6 +68,10 @@ import Foundation
     // MARK: MapViewQuestAnnotationManaging
     
     func shouldShowQuestAnnotation(for baseObject: OsmBaseObject) -> Bool {
+        if !activeQuestsBaseObjectMatcher.quests(matching: baseObject).isEmpty {
+            return true
+        }
+        
         for quest in questProvider.activeQuests {
             if let baseObjectMatcher = quest.baseObjectMatcher, baseObjectMatcher.matches(baseObject) {
                 return true
