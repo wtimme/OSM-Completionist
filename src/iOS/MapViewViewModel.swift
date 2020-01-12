@@ -8,6 +8,10 @@
 
 import Foundation
 
+@objc protocol MapViewModelDelegate: class {
+    func askMultipleChoiceQuestion(question: String)
+}
+
 class MapViewViewModel: NSObject {
     // MARK: Private properties
     
