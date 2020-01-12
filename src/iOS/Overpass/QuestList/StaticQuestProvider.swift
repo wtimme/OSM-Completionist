@@ -28,7 +28,8 @@ class StaticQuestProvider {
                             Quest.makeParkingFeeQuest(),
                             Quest.makeBenchBackrestQuest(),
                             Quest.makePlaygroundAccessQuest(),
-                            Quest.makeToiletQuest()],
+                            Quest.makeToiletQuest(),
+                            Quest.makeBicycleParkingQuest()],
          userDefaults: UserDefaults = .standard,
          activeQuestIdentifierUserDefaultsKey: String = "active_quest_identifiers",
          notificationCenter: NotificationCenter = .default) {
