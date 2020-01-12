@@ -37,7 +37,7 @@ struct Quest {
     /// A list of answers between the user can choose when encountering items of this quest.
     let answers: [Answer]
     
-    /// An object that allows
+    /// An object that allows for the quest to be matched against `OsmBaseObject` instances.
     let baseObjectMatcher: BaseObjectMatching?
     
     init(identifier: String,
