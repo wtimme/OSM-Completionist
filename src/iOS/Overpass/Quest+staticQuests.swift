@@ -91,4 +91,16 @@ extension Quest {
                      solution: solution)
     }
     
+    static func makeMotorcycleParkingQuest() -> Quest {
+        let identifier = "motorcycle_parking"
+        let question = "How many motorcycles can be parked here?"
+        let query = "(type:node or type:way) and amenity=motorcycle_parking and capacity!=*  and (access!~\"private|no\")"
+        let solution = Quest.Solution.numeric("capacity")
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query,
+                     solution: solution)
+    }
+    
 }
