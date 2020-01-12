@@ -72,6 +72,8 @@ class MapViewModelTestCase: XCTestCase {
         XCTAssertEqual(delegateMock.question, firstQuestion)
     }
     
+    // MARK: Multiple Choice
+    
     func testPresentQuestInterface_whenBaseObjectDoesMatchQuests_shouldTellDelegateToProvideTheChoicesFromFirstQuest() {
         /// Given
         let firstAnswer = Quest.Answer(title: "Yes", key: "backrest", value: "true")
