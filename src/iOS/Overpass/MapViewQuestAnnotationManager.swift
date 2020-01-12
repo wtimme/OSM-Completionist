@@ -19,6 +19,7 @@ import Foundation
     private let questManager: QuestManaging
     private let questProvider: QuestProviding
     private let queryParser: OverpassQueryParsing
+    private let activeQuestsBaseObjectMatcher: ActiveQuestBaseObjectMatching
     private let notificationCenter: NotificationCenter
     
     private var lastParsedQuery: String?
@@ -32,10 +33,12 @@ import Foundation
     init(questManager: QuestManaging,
          questProvider: QuestProviding,
          queryParser: OverpassQueryParsing,
+         activeQuestsBaseObjectMatcher: ActiveQuestBaseObjectMatching,
          notificationCenter: NotificationCenter = .default) {
         self.questManager = questManager
         self.questProvider = questProvider
         self.queryParser = queryParser
+        self.activeQuestsBaseObjectMatcher = activeQuestsBaseObjectMatcher
         self.notificationCenter = notificationCenter
         
         super.init()
@@ -51,13 +54,15 @@ import Foundation
     convenience override init() {
         let questManager = QuestManager()
         let questProvider = StaticQuestProvider()
+        let activeQuestsBaseObjectMatcher = ActiveQuestsBaseObjectMatcher(questProvider: questProvider)
         
         let parser = OverpassQueryParser()
         assert(parser != nil, "Unable to create the query parser.")
         
         self.init(questManager: questManager,
                   questProvider: questProvider,
-                  queryParser: parser!)
+                  queryParser: parser!,
+                  activeQuestsBaseObjectMatcher: activeQuestsBaseObjectMatcher)
     }
     
     // MARK: MapViewQuestAnnotationManaging
