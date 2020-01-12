@@ -25,4 +25,10 @@ class MapViewViewModel: NSObject {
         
         self.init(activeQuestBaseObjectMatcher: activeQuestBaseObjectMatcher)
     }
+    
+    // MARK: Public methods
+    
+    @objc func presentQuestInterface(for baseObject: OsmBaseObject) -> Bool {
+        return !activeQuestBaseObjectMatcher.quests(matching: baseObject).isEmpty
+    }
 }
