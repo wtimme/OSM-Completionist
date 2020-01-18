@@ -12,3 +12,4 @@
 #import "DisplayViewController.h"
 #import "EditorMapLayer.h"
 #import "MapView.h"
+#import "OsmNode.h"

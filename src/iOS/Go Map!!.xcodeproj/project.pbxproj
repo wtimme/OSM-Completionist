@@ -510,6 +510,7 @@
 		644AC0E123C9645A00E2B1E4 /* ActiveQuestBaseObjectMatcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0E023C9645A00E2B1E4 /* ActiveQuestBaseObjectMatcherMock.swift */; };
 		644AC0E323CB48F800E2B1E4 /* MapViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AC0E223CB48F800E2B1E4 /* MapViewModelDelegateMock.swift */; };
 		6453776623D38D4600656A1C /* OsmBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453776523D38D4600656A1C /* OsmBaseObject.m */; };
+		6453776A23D38FA200656A1C /* OsmNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453776923D38FA200656A1C /* OsmNode.m */; };
 		6470F70723C21587003A463A /* Quest+staticQuests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470F70623C21587003A463A /* Quest+staticQuests.swift */; };
 		647F46CE2253EA4C00CEC482 /* MeasureDirectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */; };
 		647F46D12253F08200CEC482 /* HeadingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F46D02253F08200CEC482 /* HeadingProvider.swift */; };
@@ -1182,6 +1183,8 @@
 		644AC0E223CB48F800E2B1E4 /* MapViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelDelegateMock.swift; sourceTree = "<group>"; };
 		6453776423D38D4600656A1C /* OsmBaseObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OsmBaseObject.h; sourceTree = "<group>"; };
 		6453776523D38D4600656A1C /* OsmBaseObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OsmBaseObject.m; sourceTree = "<group>"; };
+		6453776823D38FA200656A1C /* OsmNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OsmNode.h; sourceTree = "<group>"; };
+		6453776923D38FA200656A1C /* OsmNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OsmNode.m; sourceTree = "<group>"; };
 		6470F70623C21587003A463A /* Quest+staticQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quest+staticQuests.swift"; sourceTree = "<group>"; };
 		647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureDirectionViewModel.swift; sourceTree = "<group>"; };
 		647F46D02253F08200CEC482 /* HeadingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingProvider.swift; sourceTree = "<group>"; };
@@ -2037,6 +2040,8 @@
 			children = (
 				6453776423D38D4600656A1C /* OsmBaseObject.h */,
 				6453776523D38D4600656A1C /* OsmBaseObject.m */,
+				6453776823D38FA200656A1C /* OsmNode.h */,
+				6453776923D38FA200656A1C /* OsmNode.m */,
 			);
 			path = OSMModels;
 			sourceTree = "<group>";
@@ -2732,6 +2737,7 @@
 				02BF745420793F0A0028ED6A /* TurnRestrictController.m in Sources */,
 				02ACBBCD16713F2B00BB4414 /* OsmObjects.m in Sources */,
 				02ACBCF816713F2B00BB4414 /* QuadMap.m in Sources */,
+				6453776A23D38FA200656A1C /* OsmNode.m in Sources */,
 				02ACBCF916713F2B00BB4414 /* RulerLayer.m in Sources */,
 				02ACBCFA16713F2B00BB4414 /* SpeechBalloonLayer.m in Sources */,
 				024B4CA219BBE67400BBA60B /* CustomPresetListViewController.m in Sources */,
