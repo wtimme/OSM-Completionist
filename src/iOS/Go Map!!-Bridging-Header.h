@@ -14,3 +14,4 @@
 #import "MapView.h"
 #import "OsmNode.h"
 #import "OsmWay.h"
+#import "OsmRelation.h"
