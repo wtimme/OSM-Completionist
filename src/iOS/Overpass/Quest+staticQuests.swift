@@ -15,11 +15,12 @@ extension Quest {
         let query = "(type:node or type:way) and amenity=toilets and access !~ \"private|customers\" and wheelchair!=*"
         let answers = [Answer(title: "Yes", key: "wheelchair", value: "yes"),
                        Answer(title: "No", key: "wheelchair", value: "no")]
+        let solution = Quest.Solution.multipleChoice(answers)
         
         return Quest(identifier: identifier,
                      question: question,
                      overpassWizardQuery: query,
-                     answers: answers)
+                     solution: solution)
     }
     
     static func makeParkingFeeQuest() -> Quest {
@@ -28,11 +29,12 @@ extension Quest {
         let query = "(type:node or type:way) and amenity=parking and fee!=* and access~\"yes|customers|public\""
         let answers = [Answer(title: "Yes", key: "fee", value: "yes"),
                        Answer(title: "No", key: "fee", value: "no")]
+        let solution = Quest.Solution.multipleChoice(answers)
         
         return Quest(identifier: identifier,
                      question: question,
                      overpassWizardQuery: query,
-                     answers: answers)
+                     solution: solution)
     }
     
     static func makeBenchBackrestQuest() -> Quest {
@@ -41,11 +43,12 @@ extension Quest {
         let query = "(type:node) and amenity=bench and backrest!=*"
         let answers = [Answer(title: "Yes", key: "backrest", value: "yes"),
                        Answer(title: "No", key: "backrest", value: "no")]
+        let solution = Quest.Solution.multipleChoice(answers)
         
         return Quest(identifier: identifier,
                      question: question,
                      overpassWizardQuery: query,
-                     answers: answers)
+                     solution: solution)
     }
     
     static func makePlaygroundAccessQuest() -> Quest {
@@ -54,11 +57,12 @@ extension Quest {
         let query = "leisure=playground and (access!=* or access=unknown)"
         let answers = [Answer(title: "Yes", key: "access", value: "yes"),
                        Answer(title: "No", key: "access", value: "private")]
+        let solution = Quest.Solution.multipleChoice(answers)
         
         return Quest(identifier: identifier,
                      question: question,
                      overpassWizardQuery: query,
-                     answers: answers)
+                     solution: solution)
     }
     
     static func makeToiletQuest() -> Quest {
@@ -67,11 +71,36 @@ extension Quest {
         let query = "(type:node or type:way) and ( (shop ~= \"mall|department_store\" and name = *) or (highway~\"services|rest_area\") ) and toilets != *"
         let answers = [Answer(title: "Yes", key: "toilets", value: "yes"),
                        Answer(title: "No", key: "toilets", value: "no")]
+        let solution = Quest.Solution.multipleChoice(answers)
         
         return Quest(identifier: identifier,
                      question: question,
                      overpassWizardQuery: query,
-                     answers: answers)
+                     solution: solution)
+    }
+    
+    static func makeBicycleParkingQuest() -> Quest {
+        let identifier = "bicycle_parking"
+        let question = "How many bikes can be parked here?"
+        let query = "(type:node or type:way) and amenity=bicycle_parking and capacity!=*  and (access!~\"private|no\")"
+        let solution = Quest.Solution.numeric("capacity")
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query,
+                     solution: solution)
+    }
+    
+    static func makeMotorcycleParkingQuest() -> Quest {
+        let identifier = "motorcycle_parking"
+        let question = "How many motorcycles can be parked here?"
+        let query = "(type:node or type:way) and amenity=motorcycle_parking and capacity!=*  and (access!~\"private|no\")"
+        let solution = Quest.Solution.numeric("capacity")
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query,
+                     solution: solution)
     }
     
 }

@@ -3570,8 +3570,45 @@ static NSString * const DisplayLinkPanning	= @"Panning";
         [alertController addAction:choiceAction];
     }];
     
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel",
-                                                                                   @"Title of the button when canceling questions")
+    NSString *cancelActionTitle = NSLocalizedString(@"Cancel",
+                                                    @"Title of the button when canceling questions");
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelActionTitle
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    [alertController addAction:cancelAction];
+    
+    [self.viewController presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)askNumericQuestionWithQuestion:(NSString *)question
+                                   key:(NSString *)key
+                               handler:(void (^)(NSString * _Nullable))handler {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:question
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    __block __weak UITextField *answerTextField;
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        /// Configure the text field for numeric input.
+        textField.keyboardType = UIKeyboardTypeNumberPad;
+        textField.placeholder = key;
+        
+        /// Keep a reference to the text field so that we can later get the text that the user put in.
+        answerTextField = textField;
+    }];
+    
+    NSString *confirmActionTitle = NSLocalizedString(@"Confirm",
+                                                     @"Title of the button when finishing the input of numeric quest answers");
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:confirmActionTitle
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * _Nonnull action) {
+        handler(answerTextField.text);
+    }];
+    [alertController addAction:confirmAction];
+    
+    NSString *cancelActionTitle = NSLocalizedString(@"Cancel",
+                                                    @"Title of the button when canceling questions");
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelActionTitle
                                                            style:UIAlertActionStyleCancel
                                                          handler:nil];
     [alertController addAction:cancelAction];

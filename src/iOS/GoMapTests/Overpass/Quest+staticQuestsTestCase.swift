@@ -16,7 +16,9 @@ class Quest_staticQuestsTestCase: XCTestCase {
                                Quest.makeParkingFeeQuest(),
                                Quest.makeBenchBackrestQuest(),
                                Quest.makePlaygroundAccessQuest(),
-                               Quest.makeToiletQuest()]
+                               Quest.makeToiletQuest(),
+                               Quest.makeBicycleParkingQuest(),
+                               Quest.makeMotorcycleParkingQuest()]
         
         allStaticQuests.forEach { quest in
             XCTAssertNotNil(quest.baseObjectMatcher)
