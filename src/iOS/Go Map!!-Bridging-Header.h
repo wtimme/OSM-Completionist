@@ -13,3 +13,4 @@
 #import "EditorMapLayer.h"
 #import "MapView.h"
 #import "OsmNode.h"
+#import "OsmWay.h"
