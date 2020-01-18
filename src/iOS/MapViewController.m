@@ -15,6 +15,7 @@
 #import "NotesTableViewController.h"
 #import "OsmMapData.h"
 #import "PushPinView.h"
+#import "FpsLabel.h"
 
 @interface MapViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsBarButtonItem;
@@ -132,6 +133,8 @@
 	[self installLocationLongPressGestureRecognizer:YES];
 
 	_toolbar.layer.zPosition = 9000;
+    
+    self.mapView.fpsLabel.showFPS = [NSUserDefaults.standardUserDefaults boolForKey:SettingsViewController.showFPSLabelUserDefaultsKey];
 }
 
 -(void)setGpsState:(GPS_STATE)state

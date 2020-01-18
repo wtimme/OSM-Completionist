@@ -17,7 +17,6 @@
 #import "DisplayLink.h"
 #import "DLog.h"
 #import "EditorMapLayer.h"
-#import "FpsLabel.h"
 #import "GpxLayer.h"
 #import "MapView.h"
 #import "MercatorTileLayer.h"
@@ -2502,8 +2501,6 @@ NSString * ActionTitle( EDIT_ACTION action, BOOL abbrev )
 		if ( [feature isEqualToString:@"showtouchcircles"] ) {
 			MyApplication * app = (id)[UIApplication sharedApplication];
 			app.showTouchCircles = YES;
-		} else if ( [feature isEqualToString:@"fps"] ) {
-			self.fpsLabel.showFPS = YES;
 		}
 	}
 #endif
