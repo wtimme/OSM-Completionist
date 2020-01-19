@@ -3559,9 +3559,14 @@ static NSString * const DisplayLinkPanning	= @"Panning";
 - (void)askMultipleChoiceQuestionWithQuestion:(NSString *)question
                                       choices:(NSArray<NSString *> *)choices
                              selectionHandler:(void (^)(NSInteger))selectionHandler {
+    UIAlertControllerStyle alertStyle = UIAlertControllerStyleActionSheet;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        alertStyle = UIAlertControllerStyleAlert;
+    }
+    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:question
                                                                              message:nil
-                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+                                                                      preferredStyle:alertStyle];
     
     [choices enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIAlertAction *choiceAction = [UIAlertAction actionWithTitle:obj style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -3583,9 +3588,14 @@ static NSString * const DisplayLinkPanning	= @"Panning";
 - (void)askNumericQuestionWithQuestion:(NSString *)question
                                    key:(NSString *)key
                                handler:(void (^)(NSString * _Nullable))handler {
+    UIAlertControllerStyle alertStyle = UIAlertControllerStyleActionSheet;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        alertStyle = UIAlertControllerStyleAlert;
+    }
+    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:question
                                                                              message:nil
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
+                                                                      preferredStyle:alertStyle];
     
     __block __weak UITextField *answerTextField;
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
