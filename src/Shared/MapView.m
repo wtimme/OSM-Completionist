@@ -695,23 +695,6 @@ const CGFloat kEditControlCornerRadius = 4;
 	}
 }
 
--(void)showInAppStore
-{
-#if 1
-	NSString * urlText = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", @592990211];
-	NSURL * url = [NSURL URLWithString:urlText];
-	[[UIApplication sharedApplication] openURL:url];
-#else
-	SKStoreProductViewController * spvc = [SKStoreProductViewController new];
-	spvc.delegate = self; //self is the view controller to present spvc
-	[spvc loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier:@592990211}
-					completionBlock:^(BOOL result, NSError * error){
-						if (result) {
-							[self.viewController presentViewController:spvc animated:YES completion:nil];
-						}
-					}];
-#endif
-}
 -(void)productViewControllerDidFinish:(SKStoreProductViewController*)viewController
 {
 	[(UIViewController*)viewController.delegate dismissViewControllerAnimated:YES completion:nil];
