@@ -695,20 +695,6 @@ const CGFloat kEditControlCornerRadius = 4;
 	}
 }
 
-
--(void)askToRate:(NSInteger)uploadCount
-{
-	double countLog10 = log10(uploadCount);
-	if ( uploadCount > 1 && countLog10 == floor(countLog10) ) {
-		NSString * title = [NSString stringWithFormat:NSLocalizedString(@"You've uploaded %ld changesets with this version of Go Map!!\n\nRate this app?",nil), (long)uploadCount];
-        UIAlertController * alertViewRateApp = [UIAlertController alertControllerWithTitle:title message:NSLocalizedString(@"Rating this app makes it easier for other mappers to discover it and increases the visibility of OpenStreetMap.",nil) preferredStyle:UIAlertControllerStyleAlert];
-        [alertViewRateApp addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Maybe later...",nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {}]];
-        [alertViewRateApp addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"I'll do it!",nil)    style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-			[self showInAppStore];
-        }]];
-        [self.viewController presentViewController:alertViewRateApp animated:YES completion:nil];
-	}
-}
 -(void)showInAppStore
 {
 #if 1

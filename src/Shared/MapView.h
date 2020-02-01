@@ -235,6 +235,4 @@ typedef enum {
 -(void)updateNotesFromServerWithDelay:(CGFloat)delay;
 -(void)refreshNoteButtonsFromDatabase;
 
--(void)askToRate:(NSInteger)uploadCount;
-
 @end

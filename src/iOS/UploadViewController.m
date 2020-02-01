@@ -146,7 +146,6 @@
 				NSInteger editCount = [[NSUserDefaults standardUserDefaults] integerForKey:uploadKey];
 				++editCount;
 				[[NSUserDefaults standardUserDefaults] setInteger:editCount forKey:uploadKey];
-				[appDelegate.mapView askToRate:editCount];
 			});
 		}
 	};
