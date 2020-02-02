@@ -140,13 +140,6 @@
 			dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC));
 			dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 				[appDelegate.mapView flashMessage:NSLocalizedString(@"Upload complete!",nil) duration:1.5];
-
-				// record number of uploads
-				NSString * uploadKey = [NSString stringWithFormat:@"uploadCount-%@", appDelegate.appVersion];
-				NSInteger editCount = [[NSUserDefaults standardUserDefaults] integerForKey:uploadKey];
-				++editCount;
-				[[NSUserDefaults standardUserDefaults] setInteger:editCount forKey:uploadKey];
-				[appDelegate.mapView askToRate:editCount];
 			});
 		}
 	};
