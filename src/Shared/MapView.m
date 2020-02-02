@@ -3414,10 +3414,6 @@ static NSString * const DisplayLinkPanning	= @"Panning";
 	}
 }
 
-
-- (void)updateSpeechBalloonPosition
-{
-}
 #endif
 
 
