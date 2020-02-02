@@ -3596,9 +3596,12 @@ static NSString * const DisplayLinkPanning	= @"Panning";
 }
 
 - (void)finishQuestForSelectedObjectByApplyingTagWithKey:(NSString *)key value:(NSString *)value {
-    OsmBaseObject *selectedObject = self.editorLayer.selectedPrimary;
+    NSMutableDictionary *tags = [NSMutableDictionary dictionary];
     
-    NSMutableDictionary *tags = [NSMutableDictionary dictionaryWithDictionary:selectedObject.tags];
+    if (self.editorLayer.selectedPrimary.tags.count > 0) {
+        [tags addEntriesFromDictionary:self.editorLayer.selectedPrimary.tags];
+    }
+    
     [tags setObject:value forKey:key];
     
     [self setTagsForCurrentObject:tags];
