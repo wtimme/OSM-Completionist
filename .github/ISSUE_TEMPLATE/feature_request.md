@@ -9,7 +9,7 @@ assignees: ''
 
 # User Story
 
-> As [stakeholder], I want [action, so that [benefit]
+> As [stakeholder], I want [action], so that [benefit]
 
 # Acceptance Criterias
 
