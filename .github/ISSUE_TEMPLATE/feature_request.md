@@ -7,14 +7,22 @@ assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+# User Story
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+> As [stakeholder], I want [action, so that [benefit]
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+# Acceptance Criterias
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+_Which criterias need to be fulfilled so that this can be considered "Accepted"?_
+
+# Alternatives Considered
+
+_Have you thought about other approaches to this issue?_
+
+# Unhappy Cases
+
+_Are there downsides we need to consider? Might some users be unhappy about these changes?_
+
+# Technical Steps (optional)
+
+_Do you already know what to do?_
