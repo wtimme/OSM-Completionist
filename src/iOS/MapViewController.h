@@ -15,7 +15,6 @@
 
 @interface MapViewController : UIViewController <UIActionSheetDelegate,UIGestureRecognizerDelegate>
 {
-	IBOutlet UIToolbar		*	_toolbar;
 	IBOutlet UIBarButtonItem *	_uploadButton;
 	IBOutlet UIBarButtonItem *	_undoButton;
 	IBOutlet UIBarButtonItem *	_redoButton;
@@ -23,6 +22,7 @@
 
 @property (assign,nonatomic) IBOutlet MapView		*	mapView;
 @property (assign,nonatomic) IBOutlet UIBarButtonItem * locationButton;
+@property (assign,nonatomic) IBOutlet UIToolbar *toolbar;
 
 -(IBAction)toggleLocation:(id)sender;
 -(void)setGpsState:(GPS_STATE)state;
