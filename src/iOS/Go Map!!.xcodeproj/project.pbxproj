@@ -514,6 +514,7 @@
 		6453777023D3913100656A1C /* OsmRelation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453776F23D3913100656A1C /* OsmRelation.m */; };
 		6453777323D391CC00656A1C /* OsmMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453777223D391CC00656A1C /* OsmMember.m */; };
 		6453777623D3959500656A1C /* IsOsmBooleanFalse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453777523D3959500656A1C /* IsOsmBooleanFalse.m */; };
+		6463E3C223F74D4A00E4F6ED /* MapRouletteLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6463E3C123F74D4A00E4F6ED /* MapRouletteLayerView.swift */; };
 		6463E3C423F7501100E4F6ED /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6463E3C323F7501100E4F6ED /* MapView.swift */; };
 		6470F70723C21587003A463A /* Quest+staticQuests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470F70623C21587003A463A /* Quest+staticQuests.swift */; };
 		647F46CE2253EA4C00CEC482 /* MeasureDirectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */; };
@@ -1195,6 +1196,7 @@
 		6453777223D391CC00656A1C /* OsmMember.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OsmMember.m; sourceTree = "<group>"; };
 		6453777423D3959500656A1C /* IsOsmBooleanFalse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsOsmBooleanFalse.h; sourceTree = "<group>"; };
 		6453777523D3959500656A1C /* IsOsmBooleanFalse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsOsmBooleanFalse.m; sourceTree = "<group>"; };
+		6463E3C123F74D4A00E4F6ED /* MapRouletteLayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouletteLayerView.swift; sourceTree = "<group>"; };
 		6463E3C323F7501100E4F6ED /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		6470F70623C21587003A463A /* Quest+staticQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quest+staticQuests.swift"; sourceTree = "<group>"; };
 		647F46CD2253EA4C00CEC482 /* MeasureDirectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureDirectionViewModel.swift; sourceTree = "<group>"; };
@@ -2068,6 +2070,7 @@
 		6463E3C023F74D1F00E4F6ED /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				6463E3C123F74D4A00E4F6ED /* MapRouletteLayerView.swift */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -2813,6 +2816,7 @@
 				02C3C73719A5D679003B6783 /* AerialEditViewController.m in Sources */,
 				64D74BF32253DF49004FFD20 /* DirectionViewController.swift in Sources */,
 				027EDC74206F3EED00D349D6 /* NSString+DDXML.m in Sources */,
+				6463E3C223F74D4A00E4F6ED /* MapRouletteLayerView.swift in Sources */,
 				64972EA922858C9000286157 /* MapViewQuestAnnotationManager.swift in Sources */,
 				02C3C73A19A6DCEA003B6783 /* AerialList.m in Sources */,
 				02BED99C168CBC5400357B94 /* LocationBallLayer.m in Sources */,
