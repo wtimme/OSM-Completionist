@@ -68,7 +68,7 @@ static const CGFloat Z_FLASH			= 110;
 
 
 
-@interface MapView () <MapViewModelDelegate>
+@interface MapView () <MapViewModelDelegate, LayerViewDelegate>
 @property (strong,nonatomic) IBOutlet UIView	*	statusBarBackground;
 @property (nonatomic, readonly) MapViewModel *viewModel;
 @end
