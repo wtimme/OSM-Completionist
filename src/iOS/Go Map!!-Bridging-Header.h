@@ -15,3 +15,4 @@
 #import "OsmWay.h"
 #import "OsmRelation.h"
 #import "MapViewController.h"
+#import "VectorMath.h"
