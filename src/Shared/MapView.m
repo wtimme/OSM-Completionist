@@ -1166,6 +1166,14 @@ static inline ViewOverlayMask OverlaysFor(MapViewState state, ViewOverlayMask ma
 	return [self boundingMapRectForScreenRect:rc];
 }
 
+- (BOOL)isLayerVisible:(id<LayerView>)layerView {
+    if (layerView == self.mapRouletteLayerView) {
+        return [NSUserDefaults.standardUserDefaults boolForKey:@"isMapRouletteLayerEnabled"];
+    }
+    
+    return NO;
+}
+
 -(OSMRect)screenLongitudeLatitude
 {
 #if 1
