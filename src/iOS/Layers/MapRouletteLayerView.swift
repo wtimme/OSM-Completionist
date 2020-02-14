@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol LayerViewDelegate: class {
+@objc protocol LayerViewDelegate: class {
     var screenLongitudeLatitude: OSMRect { get }
 }
 
-class MapRouletteLayerView: UIView {
+@objcMembers class MapRouletteLayerView: UIView {
     
     // MARK: Public properties
     
