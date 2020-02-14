@@ -4671,6 +4671,7 @@ This Privacy Policy may be updated from time to time for any reason. We will not
                         <outlet property="_birdsEyeSwitch" destination="IuS-7H-TV3" id="qn2-l1-Fvx"/>
                         <outlet property="_gpsTraceSwitch" destination="hvT-hi-s8k" id="aav-pU-882"/>
                         <outlet property="_gpxLoggingSwitch" destination="1jq-Mx-hmn" id="Xjp-YQ-1CM"/>
+                        <outlet property="_mapRouletteSwitch" destination="Kqb-kd-i4g" id="eqf-UD-fbx"/>
                         <outlet property="_notesSwitch" destination="fC8-R7-fUP" id="1ot-P9-Y8q"/>
                         <outlet property="_objectFiltersSwitch" destination="sdA-WB-aRv" id="Gfo-Ch-zqZ"/>
                         <outlet property="_rotationSwitch" destination="H71-wV-6i5" id="ayi-ju-aO9"/>

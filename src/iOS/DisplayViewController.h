@@ -21,6 +21,7 @@
 	IBOutlet UISwitch *	_gpxLoggingSwitch;
 	IBOutlet UISwitch * _turnRestrictionSwitch;
 	IBOutlet UISwitch * _objectFiltersSwitch;
+    IBOutlet UISwitch * _mapRouletteSwitch;
 }
 
 -(void)applyChanges;
