@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol LayerViewDelegate: class {
+    var screenLongitudeLatitude: OSMRect { get }
+}
+
 class MapRouletteLayerView: UIView {
+    
+    // MARK: Public properties
+    
+    weak var delegate: LayerViewDelegate?
     
     // MARK: Initializer
     
