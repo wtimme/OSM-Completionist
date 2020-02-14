@@ -1485,6 +1485,7 @@
 		02ACBA3916713CCB00BB4414 /* Go Map! */ = {
 			isa = PBXGroup;
 			children = (
+				6463E3C023F74D1F00E4F6ED /* Layers */,
 				64D64CE6227ECF450040C67A /* Overpass */,
 				64981F1D22667D7700178476 /* Extensions */,
 				64D74BF02253DF39004FFD20 /* Direction */,
@@ -2059,6 +2060,13 @@
 				6453777223D391CC00656A1C /* OsmMember.m */,
 			);
 			path = OSMModels;
+			sourceTree = "<group>";
+		};
+		6463E3C023F74D1F00E4F6ED /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Layers;
 			sourceTree = "<group>";
 		};
 		64981F1D22667D7700178476 /* Extensions */ = {
