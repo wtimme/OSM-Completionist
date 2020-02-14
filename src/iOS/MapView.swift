@@ -7,4 +7,17 @@
 //
 
 @objc extension MapView {
+    func setupMapRouletteLayer() {
+        let layerView = MapRouletteLayerView()
+        layerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(layerView)
+        
+        NSLayoutConstraint.activate([
+            layerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            layerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            layerView.topAnchor.constraint(equalTo: self.topAnchor),
+            layerView.bottomAnchor.constraint(equalTo: viewController.toolbar.topAnchor)
+        ])
+    }
 }

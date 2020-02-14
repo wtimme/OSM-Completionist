@@ -356,6 +356,8 @@ const CGFloat kEditControlCornerRadius = 4;
 	if ( !first )
 		return;
 	first = NO;
+    
+    [self setupMapRouletteLayer];
 
 	// these need to be loaded late because assigning to them changes the view
 	self.viewState				= (MapViewState)	[[NSUserDefaults standardUserDefaults] integerForKey:@"mapViewState"];
