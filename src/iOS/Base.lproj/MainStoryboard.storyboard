@@ -4503,6 +4503,32 @@ This Privacy Policy may be updated from time to time for any reason. We will not
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="lmb-HT-wVB">
+                                        <rect key="frame" x="0.0" y="591.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lmb-HT-wVB" id="dXv-l8-B8y">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kqb-kd-i4g">
+                                                    <rect key="frame" x="253" y="6.5" width="51" height="31"/>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MapRoulette" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqk-aJ-COa">
+                                                    <rect key="frame" x="15" y="11.5" width="237" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Kqb-kd-i4g" firstAttribute="leading" secondItem="kqk-aJ-COa" secondAttribute="trailing" constant="1" id="0zV-aO-jnl"/>
+                                                <constraint firstItem="Kqb-kd-i4g" firstAttribute="centerY" secondItem="kqk-aJ-COa" secondAttribute="centerY" id="2Fs-uz-6zp"/>
+                                                <constraint firstItem="kqk-aJ-COa" firstAttribute="leading" secondItem="dXv-l8-B8y" secondAttribute="leading" constant="15" id="92K-CZ-dj3"/>
+                                                <constraint firstItem="Kqb-kd-i4g" firstAttribute="centerY" secondItem="dXv-l8-B8y" secondAttribute="centerY" id="FcJ-dr-4tE"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Kqb-kd-i4g" secondAttribute="trailing" constant="10" id="Pjp-bT-eZH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Filter Objects" id="scg-Po-M3L">
