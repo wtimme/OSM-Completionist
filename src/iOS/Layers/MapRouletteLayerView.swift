@@ -13,11 +13,11 @@ import UIKit
     var screenLongitudeLatitude: OSMRect { get }
 }
 
-@objcMembers class MapRouletteLayerView: UIView {
-    
-    // MARK: Public properties
-    
-    weak var delegate: LayerViewDelegate?
+@objc protocol LayerView: class {
+    var delegate: LayerViewDelegate? { get set }
+}
+
+@objcMembers class MapRouletteLayerView: UIView, LayerView {
     
     // MARK: Initializer
     
@@ -32,6 +32,10 @@ import UIKit
         
         setup()
     }
+    
+    // MARK: LayerView
+    
+    weak var delegate: LayerViewDelegate?
     
     // MARK: Private methods
     
