@@ -35,6 +35,7 @@
 @class OsmBaseObject;
 @class PushPinView;
 @class RulerLayer;
+@class MapRouletteLayerView;
 
 typedef enum _MapViewState {
 	MAPVIEW_NONE = -1,
@@ -173,6 +174,8 @@ typedef enum {
 @property (readonly,nonatomic)	NSString					*	countryCodeForLocation;
 
 @property (readonly,nonatomic)	CGPoint							pushpinPosition;
+
+@property (assign,nonatomic) MapRouletteLayerView *mapRouletteLayerView;
 
 -(void)updateAerialAttributionButton;
 -(void)updateEditControl;				// show/hide edit control based on selection
