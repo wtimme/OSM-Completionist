@@ -69,6 +69,7 @@ static const NSInteger FILTER_SECTION = 3;
 		_gpxLoggingSwitch.on		= mapView.enableGpxLogging;
 		_turnRestrictionSwitch.on	= mapView.enableTurnRestriction;
 		_objectFiltersSwitch.on		= mapView.editorLayer.enableObjectFilters;
+        _mapRouletteSwitch.on = [NSUserDefaults.standardUserDefaults boolForKey:@"isMapRouletteLayerEnabled"];
 
 	} else {
 
@@ -103,6 +104,8 @@ static const NSInteger FILTER_SECTION = 3;
 	mapView.enableUnnamedRoadHalo	= _unnamedRoadSwitch.on;
 	mapView.enableGpxLogging		= _gpxLoggingSwitch.on;
 	mapView.enableTurnRestriction	= _turnRestrictionSwitch.on;
+    
+    [NSUserDefaults.standardUserDefaults setBool:_mapRouletteSwitch.on forKey:@"isMapRouletteLayerEnabled"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
