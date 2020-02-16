@@ -162,4 +162,18 @@ extension Quest {
                      solution: solution)
     }
     
+    static func makeStepsHandrailQuest() -> Quest {
+        let identifier = "steps_handrail"
+        let question = "Do these steps have a handrail?"
+        let query = "type:way and highway=steps and handrail!=* and handrail:left!=* and handrail:center!=* and handrail:right!=*"
+        let answers = [Answer(title: "Yes", key: "handrail", value: "yes"),
+                       Answer(title: "No", key: "handrail", value: "no")]
+        let solution = Quest.Solution.multipleChoice(answers)
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query,
+                     solution: solution)
+    }
+    
 }
