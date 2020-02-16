@@ -79,6 +79,20 @@ extension Quest {
                      solution: solution)
     }
     
+    static func makeBicycleParkingCoveredQuest() -> Quest {
+        let identifier = "bicycle_parking_covered"
+        let question = "Is this bicycle parking covered (protected from rain)?"
+        let query = "(type:node or type:way) and amenity=bicycle_parking and access!~\"private|no\" and covered!=* and bicycle_parking !~ \"shed|lockers|building\""
+        let answers = [Answer(title: "Yes", key: "covered", value: "yes"),
+                       Answer(title: "No", key: "covered", value: "no")]
+        let solution = Quest.Solution.multipleChoice(answers)
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query,
+                     solution: solution)
+    }
+    
     static func makeBicycleParkingQuest() -> Quest {
         let identifier = "bicycle_parking"
         let question = "How many bikes can be parked here?"

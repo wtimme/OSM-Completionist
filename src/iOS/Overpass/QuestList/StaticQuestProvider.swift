@@ -30,6 +30,7 @@ class StaticQuestProvider {
                             Quest.makePlaygroundAccessQuest(),
                             Quest.makeToiletQuest(),
                             Quest.makeBicycleParkingQuest(),
+                            Quest.makeBicycleParkingCoveredQuest(),
                             Quest.makeMotorcycleParkingQuest()],
          userDefaults: UserDefaults = .standard,
          activeQuestIdentifierUserDefaultsKey: String = "active_quest_identifiers",
