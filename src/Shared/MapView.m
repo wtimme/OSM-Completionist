@@ -3557,14 +3557,9 @@ static NSString * const DisplayLinkPanning	= @"Panning";
 - (void)askNumericQuestionWithQuestion:(NSString *)question
                                    key:(NSString *)key
                                handler:(void (^)(NSString * _Nullable))handler {
-    UIAlertControllerStyle alertStyle = UIAlertControllerStyleActionSheet;
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        alertStyle = UIAlertControllerStyleAlert;
-    }
-    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:question
                                                                              message:nil
-                                                                      preferredStyle:alertStyle];
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
     
     __block __weak UITextField *answerTextField;
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
