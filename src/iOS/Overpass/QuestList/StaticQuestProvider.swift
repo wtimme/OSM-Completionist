@@ -29,6 +29,7 @@ class StaticQuestProvider {
                             Quest.makeBenchBackrestQuest(),
                             Quest.makePlaygroundAccessQuest(),
                             Quest.makeToiletQuest(),
+                            Quest.makeToiletFeeQuest(),
                             Quest.makeBicycleParkingQuest(),
                             Quest.makeBicycleParkingCoveredQuest(),
                             Quest.makeBicycleParkingTypeQuest(),

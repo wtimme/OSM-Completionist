@@ -79,6 +79,20 @@ extension Quest {
                      solution: solution)
     }
     
+    static func makeToiletFeeQuest() -> Quest {
+        let identifier = "toilet_fee"
+        let question = "Do these toilets require a fee?"
+        let query = "(type:node or type:way) and amenity = toilets and access !~ \"private|customers\" and fee!=*"
+        let answers = [Answer(title: "Yes", key: "fee", value: "yes"),
+                       Answer(title: "No", key: "fee", value: "no")]
+        let solution = Quest.Solution.multipleChoice(answers)
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query,
+                     solution: solution)
+    }
+    
     static func makeBicycleParkingCoveredQuest() -> Quest {
         let identifier = "bicycle_parking_covered"
         let question = "Is this bicycle parking covered (protected from rain)?"
