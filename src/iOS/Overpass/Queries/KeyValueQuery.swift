@@ -22,7 +22,13 @@ extension KeyValueQuery: BaseObjectMatching {
     
     func matches(_ object: OsmBaseObject) -> Bool {
         guard let valueOfObject = object.tags?[key] as? String else {
-            return false
+            /// The object does not have a tag with the given key.
+            if isNegated {
+                /// Treat the absence of a tag with the given key as a match when the query is negated.
+                return true
+            } else {
+                return false
+            }
         }
         
         return valueOfObject == value

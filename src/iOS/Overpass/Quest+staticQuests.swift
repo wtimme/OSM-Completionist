@@ -79,6 +79,51 @@ extension Quest {
                      solution: solution)
     }
     
+    static func makeToiletFeeQuest() -> Quest {
+        let identifier = "toilet_fee"
+        let question = "Do these toilets require a fee?"
+        let query = "(type:node or type:way) and amenity = toilets and access !~ \"private|customers\" and fee!=*"
+        let answers = [Answer(title: "Yes", key: "fee", value: "yes"),
+                       Answer(title: "No", key: "fee", value: "no")]
+        let solution = Quest.Solution.multipleChoice(answers)
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query,
+                     solution: solution)
+    }
+    
+    static func makeBicycleParkingCoveredQuest() -> Quest {
+        let identifier = "bicycle_parking_covered"
+        let question = "Is this bicycle parking covered (protected from rain)?"
+        let query = "(type:node or type:way) and amenity=bicycle_parking and access!~\"private|no\" and covered!=* and bicycle_parking !~ \"shed|lockers|building\""
+        let answers = [Answer(title: "Yes", key: "covered", value: "yes"),
+                       Answer(title: "No", key: "covered", value: "no")]
+        let solution = Quest.Solution.multipleChoice(answers)
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query,
+                     solution: solution)
+    }
+    
+    static func makeBicycleParkingTypeQuest() -> Quest {
+        let identifier = "bicycle_parking_type"
+        let question = "What is the type of this bicycle parking?"
+        let query = "(type:node or type:way) and amenity=bicycle_parking and bicycle_parking!=* and access!=private"
+        let answers = [Answer(title: "Building", key: "bicycle_parking", value: "building"),
+                       Answer(title: "Locker", key: "bicycle_parking", value: "lockers"),
+                       Answer(title: "Shed", key: "bicycle_parking", value: "shed"),
+                       Answer(title: "Stand", key: "bicycle_parking", value: "stands"),
+                       Answer(title: "Wheelbender", key: "bicycle_parking", value: "wall_loops")]
+        let solution = Quest.Solution.multipleChoice(answers)
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query,
+                     solution: solution)
+    }
+    
     static func makeBicycleParkingQuest() -> Quest {
         let identifier = "bicycle_parking"
         let question = "How many bikes can be parked here?"
@@ -96,6 +141,34 @@ extension Quest {
         let question = "How many motorcycles can be parked here?"
         let query = "(type:node or type:way) and amenity=motorcycle_parking and capacity!=*  and (access!~\"private|no\")"
         let solution = Quest.Solution.numeric("capacity")
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query,
+                     solution: solution)
+    }
+    
+    static func makeBusStopShelterQuest() -> Quest {
+        let identifier = "bus_stop_shelter"
+        let question = "Does this bus stop have a shelter?"
+        let query = "type:node and (public_transport=platform or (highway=bus_stop and public_transport!=stop_position)) and shelter!=*"
+        let answers = [Answer(title: "Yes", key: "shelter", value: "yes"),
+                       Answer(title: "No", key: "shelter", value: "no")]
+        let solution = Quest.Solution.multipleChoice(answers)
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query,
+                     solution: solution)
+    }
+    
+    static func makeStepsHandrailQuest() -> Quest {
+        let identifier = "steps_handrail"
+        let question = "Do these steps have a handrail?"
+        let query = "type:way and highway=steps and handrail!=* and handrail:left!=* and handrail:center!=* and handrail:right!=*"
+        let answers = [Answer(title: "Yes", key: "handrail", value: "yes"),
+                       Answer(title: "No", key: "handrail", value: "no")]
+        let solution = Quest.Solution.multipleChoice(answers)
         
         return Quest(identifier: identifier,
                      question: question,
