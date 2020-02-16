@@ -36,5 +36,14 @@ class KeyValueQueryTestCase: XCTestCase {
         let query = KeyValueQuery(key: key, value: value)
         XCTAssertTrue(query.matches(object))
     }
+    
+    func testMatches_whenObjectDoesDoesNotHaveTagWithTheGivenKeyButIsNegated_shouldReturnTrue() {
+        let key = "access"
+        let value = "private"
+        let object = OsmBaseObject()
+        
+        let query = KeyValueQuery(key: key, value: value, isNegated: true)
+        XCTAssertTrue(query.matches(object))
+    }
 
 }
