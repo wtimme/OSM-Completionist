@@ -93,6 +93,23 @@ extension Quest {
                      solution: solution)
     }
     
+    static func makeBicycleParkingTypeQuest() -> Quest {
+        let identifier = "bicycle_parking_type"
+        let question = "What is the type of this bicycle parking?"
+        let query = "(type:node or type:way) and amenity=bicycle_parking and bicycle_parking!=* and access!=private"
+        let answers = [Answer(title: "Building", key: "bicycle_parking", value: "building"),
+                       Answer(title: "Locker", key: "bicycle_parking", value: "lockers"),
+                       Answer(title: "Shed", key: "bicycle_parking", value: "shed"),
+                       Answer(title: "Stand", key: "bicycle_parking", value: "stands"),
+                       Answer(title: "Wheelbender", key: "bicycle_parking", value: "wall_loops")]
+        let solution = Quest.Solution.multipleChoice(answers)
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query,
+                     solution: solution)
+    }
+    
     static func makeBicycleParkingQuest() -> Quest {
         let identifier = "bicycle_parking"
         let question = "How many bikes can be parked here?"
