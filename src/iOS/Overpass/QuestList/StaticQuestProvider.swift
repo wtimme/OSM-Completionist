@@ -32,7 +32,8 @@ class StaticQuestProvider {
                             Quest.makeBicycleParkingQuest(),
                             Quest.makeBicycleParkingCoveredQuest(),
                             Quest.makeBicycleParkingTypeQuest(),
-                            Quest.makeMotorcycleParkingQuest()],
+                            Quest.makeMotorcycleParkingQuest(),
+                            Quest.makeBusStopShelterQuest()],
          userDefaults: UserDefaults = .standard,
          activeQuestIdentifierUserDefaultsKey: String = "active_quest_identifiers",
          notificationCenter: NotificationCenter = .default) {

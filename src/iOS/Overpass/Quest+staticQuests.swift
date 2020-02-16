@@ -134,4 +134,18 @@ extension Quest {
                      solution: solution)
     }
     
+    static func makeBusStopShelterQuest() -> Quest {
+        let identifier = "bus_stop_shelter"
+        let question = "Does this bus stop have a shelter?"
+        let query = "type:node and (public_transport=platform or (highway=bus_stop and public_transport!=stop_position)) and shelter!=*"
+        let answers = [Answer(title: "Yes", key: "shelter", value: "yes"),
+                       Answer(title: "No", key: "shelter", value: "no")]
+        let solution = Quest.Solution.multipleChoice(answers)
+        
+        return Quest(identifier: identifier,
+                     question: question,
+                     overpassWizardQuery: query,
+                     solution: solution)
+    }
+    
 }
