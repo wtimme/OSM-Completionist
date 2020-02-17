@@ -49,6 +49,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_bench",
                      overpassWizardQuery: query,
                      solution: solution)
     }
