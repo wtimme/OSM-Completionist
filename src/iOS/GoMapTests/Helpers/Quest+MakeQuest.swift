@@ -12,11 +12,13 @@ extension Quest {
     /// Convenience method for creating a `Quest` for testing
     static func makeQuest(identifier: String = UUID().uuidString,
                           question: String = "Lorem ipsum?",
+                          iconImageName: String? = nil,
                           overpassWizardQuery: String = "dolor_sit:amet",
                           solution: Solution = .multipleChoice([]),
                           baseObjectMatcher: BaseObjectMatching? = nil) -> Quest {
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: iconImageName,
                      overpassWizardQuery: overpassWizardQuery,
                      solution: solution,
                      baseObjectMatcher: baseObjectMatcher)

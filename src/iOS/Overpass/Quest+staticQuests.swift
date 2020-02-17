@@ -19,6 +19,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_toilets_wheelchair",
                      overpassWizardQuery: query,
                      solution: solution)
     }
@@ -33,6 +34,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_parking_fee",
                      overpassWizardQuery: query,
                      solution: solution)
     }
@@ -47,6 +49,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_bench",
                      overpassWizardQuery: query,
                      solution: solution)
     }
@@ -61,6 +64,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_playground",
                      overpassWizardQuery: query,
                      solution: solution)
     }
@@ -75,6 +79,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_toilets",
                      overpassWizardQuery: query,
                      solution: solution)
     }
@@ -89,6 +94,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_toilet_fee",
                      overpassWizardQuery: query,
                      solution: solution)
     }
@@ -103,6 +109,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_bicycle_parking_cover",
                      overpassWizardQuery: query,
                      solution: solution)
     }
@@ -120,6 +127,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_bicycle_parking",
                      overpassWizardQuery: query,
                      solution: solution)
     }
@@ -132,6 +140,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_bicycle_parking_capacity",
                      overpassWizardQuery: query,
                      solution: solution)
     }
@@ -144,6 +153,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_motorcycle_parking_capacity",
                      overpassWizardQuery: query,
                      solution: solution)
     }
@@ -158,6 +168,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_bus_stop_shelter",
                      overpassWizardQuery: query,
                      solution: solution)
     }
@@ -172,6 +183,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_handrail",
                      overpassWizardQuery: query,
                      solution: solution)
     }

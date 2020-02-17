@@ -23,6 +23,7 @@ class QuestListViewModel {
         
         let title: String
         let subtitle: String
+        let imageName: String?
         let accessory: Accessory
     }
     
@@ -64,6 +65,7 @@ class QuestListViewModel {
         
         return Item(title: quest.question,
                     subtitle: quest.overpassWizardQuery,
+                    imageName: quest.iconImageName,
                     accessory: accessory)
     }
     

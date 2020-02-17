@@ -72,6 +72,14 @@ class QuestListViewModelTestCase: XCTestCase {
         XCTAssertEqual(item?.subtitle, overpassWizardQuery)
     }
     
+    func testItemAtIndex_whenProvidedWithAValidIndex_shouldReturnItemWithTheIconImageNameAsTheImageName() {
+        let iconImageName = "ic_quest_foobar"
+        questProviderMock.quests = [Quest.makeQuest(iconImageName: iconImageName)]
+        
+        let item = viewModel.item(at: 0)
+        XCTAssertEqual(item?.imageName, iconImageName)
+    }
+    
     func testItemAtIndex_whenProvidedWithAValidIndex_shouldAskQuestProviderIfQuestWasActive() {
         let quest = Quest.makeQuest()
         questProviderMock.quests = [quest]
