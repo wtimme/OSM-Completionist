@@ -183,6 +183,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_handrail",
                      overpassWizardQuery: query,
                      solution: solution)
     }
