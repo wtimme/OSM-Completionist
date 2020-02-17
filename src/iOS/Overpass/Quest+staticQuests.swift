@@ -64,6 +64,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_playground",
                      overpassWizardQuery: query,
                      solution: solution)
     }
