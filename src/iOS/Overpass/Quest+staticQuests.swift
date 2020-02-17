@@ -168,6 +168,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_bus_stop_shelter",
                      overpassWizardQuery: query,
                      solution: solution)
     }
