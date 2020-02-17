@@ -19,6 +19,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_toilets_wheelchair",
                      overpassWizardQuery: query,
                      solution: solution)
     }
