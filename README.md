@@ -57,6 +57,17 @@ re-generate the app icons using the
 * png/poi/Maki/iD SVG POI - Icons used for map elements (POIs, etc)
 * presets - The presets database copied from the iD editor
 
+## Assets
+
+The icons for the quests were retrieved from
+[rugk/streetcomplete-quest-svgs][10] and then converted to PDF using
+[CairoSVG][11]:
+
+    % cairosvg $path -o $pdf_path
+
+For details on the license of the icons, please refer to [authors.txt][12]
+in the StreetComplete repository.
+
 [1]: https://www.openstreetmap.org
 [2]: https://github.com/bryceco/GoMap
 [3]: https://itunes.apple.com/app/id592990211
@@ -66,3 +77,6 @@ re-generate the app icons using the
 [7]: https://github.com/fastlane-community/fastlane-plugin-appicon
 [8]: src/iOS/fastlane/README.md
 [9]: https://testflight.apple.com/join/v1tyM5yU
+[10]: https://github.com/rugk/streetcomplete-quest-svgs
+[11]: https://cairosvg.org/
+[12]: https://github.com/westnordost/StreetComplete/blob/master/res/authors.txt
