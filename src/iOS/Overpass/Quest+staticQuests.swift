@@ -79,6 +79,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_toilets",
                      overpassWizardQuery: query,
                      solution: solution)
     }
