@@ -73,6 +73,10 @@ class QuestListTableViewController: UITableViewController {
         cell.textLabel?.text = item.title
         cell.detailTextLabel?.text = item.subtitle
         
+        if let imageName = item.imageName {
+            cell.imageView?.image = UIImage(named: imageName)
+        }
+        
         switch item.accessory {
         case .checkmark:
             cell.accessoryType = .checkmark
