@@ -140,6 +140,7 @@ extension Quest {
         
         return Quest(identifier: identifier,
                      question: question,
+                     iconImageName: "ic_quest_bicycle_parking_capacity",
                      overpassWizardQuery: query,
                      solution: solution)
     }
