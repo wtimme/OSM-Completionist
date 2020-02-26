@@ -10,6 +10,7 @@ import Foundation
 
 @objc enum FeedbackType: Int {
     case error, success
+    case light
 }
 
 @objc protocol FeedbackGenerating {
@@ -34,6 +35,9 @@ extension FeedbackGenerator: FeedbackGenerating {
         case .success:
             let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(.success)
+        case .light:
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
         }
     }
 }
