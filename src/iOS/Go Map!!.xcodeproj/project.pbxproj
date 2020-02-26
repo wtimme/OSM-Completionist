@@ -576,6 +576,7 @@
 		64E21EB322651620004605D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E21EB222651620004605D7 /* LoginViewController.swift */; };
 		64E21EB522651C06004605D7 /* OSMMapDataTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E21EB422651C06004605D7 /* OSMMapDataTestCase.swift */; };
 		64E21EB822651F2D004605D7 /* XCTestCase+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E21EB722651F2D004605D7 /* XCTestCase+UserDefaults.swift */; };
+		64F59A4E240721820093DCDB /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F59A4D240721820093DCDB /* FeedbackGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1264,6 +1265,7 @@
 		64E21EB222651620004605D7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		64E21EB422651C06004605D7 /* OSMMapDataTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSMMapDataTestCase.swift; sourceTree = "<group>"; };
 		64E21EB722651F2D004605D7 /* XCTestCase+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserDefaults.swift"; sourceTree = "<group>"; };
+		64F59A4D240721820093DCDB /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1589,6 +1591,7 @@
 				644AC0D823C957EB00E2B1E4 /* MapViewModel.swift */,
 				6463E3C923F948FE00E4F6ED /* GeekbenchScoreProvider.h */,
 				6463E3CA23F948FE00E4F6ED /* GeekbenchScoreProvider.m */,
+				64F59A4D240721820093DCDB /* FeedbackGenerator.swift */,
 			);
 			name = "Go Map!";
 			sourceTree = "<group>";
@@ -2828,6 +2831,7 @@
 				6453777623D3959500656A1C /* IsOsmBooleanFalse.m in Sources */,
 				6453777023D3913100656A1C /* OsmRelation.m in Sources */,
 				64CCF4DB23C0B8D0006164D3 /* Quest.swift in Sources */,
+				64F59A4E240721820093DCDB /* FeedbackGenerator.swift in Sources */,
 				64D64D16227F3C200040C67A /* RegularExpressionQuery.swift in Sources */,
 				02BED98E168BF87200357B94 /* NearbyMappersViewController.m in Sources */,
 				02C3C73719A5D679003B6783 /* AerialEditViewController.m in Sources */,

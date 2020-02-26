@@ -93,6 +93,7 @@
 -(void)search:(UILongPressGestureRecognizer *)recognizer
 {
 	if ( recognizer.state == UIGestureRecognizerStateBegan ) {
+        [FeedbackGenerator.shared generateFeedbackWithType:FeedbackTypeLight];
 		[self performSegueWithIdentifier:@"searchSegue" sender:recognizer];
 	}
 }
