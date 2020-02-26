@@ -61,6 +61,7 @@
 			}
 			UIAlertController * alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Bad login",nil) message:errorMessage preferredStyle:UIAlertControllerStyleAlert];
 			[alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK",nil) style:UIAlertActionStyleCancel handler:nil]];
+            [FeedbackGenerator.shared generateFeedbackWithType:FeedbackTypeError];
 			[self presentViewController:alert animated:YES completion:nil];
 		} else {
 			// verifying credentials may update the appDelegate values when we subsitute name for correct case:
@@ -75,6 +76,7 @@
 			[alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK",nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
 				[self.navigationController popToRootViewControllerAnimated:YES];
 			}]];
+            [FeedbackGenerator.shared generateFeedbackWithType:FeedbackTypeSuccess];
 			[self presentViewController:alert animated:YES completion:nil];
 		}
 	}];
