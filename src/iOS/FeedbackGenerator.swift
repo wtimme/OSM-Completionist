@@ -27,16 +27,13 @@ extension FeedbackGenerator: FeedbackGenerating {
             return
         }
         
-        let generator = UINotificationFeedbackGenerator()
-        
-        let notificationType: UINotificationFeedbackGenerator.FeedbackType
         switch type {
         case .error:
-            notificationType = .error
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.error)
         case .success:
-            notificationType = .success
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
         }
-        
-        generator.notificationOccurred(notificationType)
     }
 }
