@@ -398,7 +398,7 @@
 			return;	// should never happen
 		NSSet * set = [CommonTagList allTagValuesForKey:key];
 		AppDelegate * appDelegate = [AppDelegate getAppDelegate];
-		NSMutableSet * values = [appDelegate.mapView.editorLayer.mapData tagValuesForKey:key];
+		NSMutableSet<NSString *> * values = [appDelegate.mapView.editorLayer.mapData tagValuesForKey:key];
 		[values addObjectsFromArray:[set allObjects]];
 		NSArray * list = [values allObjects];
 		[(AutocompleteTextField *)textField setCompletions:list];
@@ -433,6 +433,17 @@
     }
     
     _saveButton.enabled = [tabController isTagDictChanged];
+}
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+	const int MAX_LENGTH = 256;
+    NSUInteger oldLength = [textField.text length];
+    NSUInteger replacementLength = [string length];
+    NSUInteger rangeLength = range.length;
+    NSUInteger newLength = oldLength - rangeLength + replacementLength;
+    BOOL returnKey = [string rangeOfString: @"\n"].location != NSNotFound;
+    return newLength <= MAX_LENGTH || returnKey;
 }
 
 /**

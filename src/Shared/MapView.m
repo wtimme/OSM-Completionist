@@ -1875,7 +1875,7 @@ static NSString * const DisplayLinkHeading	= @"Heading";
     }
 
 	if ( _editorLayer.selectedPrimary.tags.count > 0 ) {
-		NSString * question = [NSString stringWithFormat:@"Pasting %lu tag(s)", copyPasteTags.count];
+		NSString * question = [NSString stringWithFormat:@"Pasting %ld tag(s)", (long)copyPasteTags.count];
 		UIAlertController * alertPaste = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Paste",nil) message:question preferredStyle:UIAlertControllerStyleAlert];
 		[alertPaste addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel",nil) style:UIAlertActionStyleCancel handler:nil]];
 		[alertPaste addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Merge Tags",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * alertAction) {
@@ -2058,7 +2058,7 @@ NSString * ActionTitle( EDIT_ACTION action, BOOL abbrev )
 	if ( _editorLayer.selectedWay ) {
 		if ( _editorLayer.selectedNode ) {
 			// node in way
-			NSArray * parentWays = [_editorLayer.mapData waysContainingNode:_editorLayer.selectedNode];
+			NSArray<OsmWay *> * parentWays = [_editorLayer.mapData waysContainingNode:_editorLayer.selectedNode];
             BOOL disconnect		= parentWays.count > 1 || _editorLayer.selectedNode.hasInterestingTags;
 			BOOL split 			= _editorLayer.selectedWay.isClosed || (_editorLayer.selectedNode != _editorLayer.selectedWay.nodes[0] && _editorLayer.selectedNode != _editorLayer.selectedWay.nodes.lastObject);
 			BOOL join 			= parentWays.count > 1;
@@ -2430,7 +2430,7 @@ NSString * ActionTitle( EDIT_ACTION action, BOOL abbrev )
 
 	NSArray<OsmBaseObject *> * ignoreList = nil;
 	NSInteger index = [way.nodes indexOfObject:node];
-	NSArray * parentWays = node.wayCount == 1 ? @[ way ] : [_editorLayer.mapData waysContainingNode:node];
+	NSArray<OsmWay *> * parentWays = node.wayCount == 1 ? @[ way ] : [_editorLayer.mapData waysContainingNode:node];
 	if ( way.nodes.count < 3 ) {
 		ignoreList = [parentWays arrayByAddingObjectsFromArray:way.nodes];
 	} else if ( index == 0 ) {
