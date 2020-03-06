@@ -25,6 +25,25 @@ final class MapRouletteClient {
     // MARK: Public properties
     
     static let shared = MapRouletteClient()
+    
+    // MARK: Private properties
+    
+    private let maximumBoundingBoxSizeInSquareKilometers: Double
+    
+    // MARK: Initializer
+    
+    init(maximumBoundingBoxSizeInSquareKilometers: Double = 10.0) {
+        self.maximumBoundingBoxSizeInSquareKilometers = maximumBoundingBoxSizeInSquareKilometers
+    }
+    
+    // MARK: Private methods
+    
+    private func isRectTooLargeForDownload(_ rect: OSMRect) -> Bool {
+        let rectAreaSizeInMeters = SurfaceArea(rect)
+        let maximumAreaSizeInMeters = maximumBoundingBoxSizeInSquareKilometers * 1000 * 1000
+        
+        return rectAreaSizeInMeters > maximumAreaSizeInMeters
+    }
 }
 
 extension MapRouletteClient: MapRouletteClientProtocol {
