@@ -14,11 +14,11 @@ public struct OrgMaprouletteModelsTaskReviewFields: Codable {
     public var reviewStatus: Int?
     public var reviewRequestedBy: Int64?
     public var reviewedBy: Int64?
-    public var reviewedAt: Int?
-    public var reviewStartedAt: Int?
+    public var reviewedAt: String?
+    public var reviewStartedAt: String?
     public var reviewClaimedBy: Int64?
 
-    public init(reviewStatus: Int?, reviewRequestedBy: Int64?, reviewedBy: Int64?, reviewedAt: Int?, reviewStartedAt: Int?, reviewClaimedBy: Int64?) {
+    public init(reviewStatus: Int?, reviewRequestedBy: Int64?, reviewedBy: Int64?, reviewedAt: String?, reviewStartedAt: String?, reviewClaimedBy: Int64?) {
         self.reviewStatus = reviewStatus
         self.reviewRequestedBy = reviewRequestedBy
         self.reviewedBy = reviewedBy

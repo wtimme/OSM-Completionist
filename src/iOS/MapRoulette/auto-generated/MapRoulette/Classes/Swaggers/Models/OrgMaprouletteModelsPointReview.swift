@@ -14,10 +14,10 @@ public struct OrgMaprouletteModelsPointReview: Codable {
     public var reviewStatus: Int?
     public var reviewRequestedBy: Int64?
     public var reviewedBy: Int64?
-    public var reviewedAt: Int?
-    public var reviewStartedAt: Int?
+    public var reviewedAt: String?
+    public var reviewStartedAt: String?
 
-    public init(reviewStatus: Int?, reviewRequestedBy: Int64?, reviewedBy: Int64?, reviewedAt: Int?, reviewStartedAt: Int?) {
+    public init(reviewStatus: Int?, reviewRequestedBy: Int64?, reviewedBy: Int64?, reviewedAt: String?, reviewStartedAt: String?) {
         self.reviewStatus = reviewStatus
         self.reviewRequestedBy = reviewRequestedBy
         self.reviewedBy = reviewedBy

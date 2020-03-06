@@ -221,48 +221,48 @@ open class ChallengeAPI {
      - PUT /challenge/{id}/clone/{name}
 
      - examples: [{contentType=application/json, example={
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -270,7 +270,7 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }}]
      - parameter _id: (path) The id of the Challenge to clone. 
      - parameter name: (path) The name of the new challenge 
@@ -319,48 +319,48 @@ open class ChallengeAPI {
      - POST /challenge
 
      - examples: [{contentType=application/json, example={
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -368,7 +368,7 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }}]
      - parameter body: (body) The JSON structure for the Challenge body, include the key &quot;children&quot; to create Task children objects. Although the model schema shows a hierarchy include &quot;general&quot;, &quot;creation&quot;, &quot;priority&quot; and &quot;extra&quot; this JSON structure can be flatten and you can exclude those top level keys and have the children in the root level. 
      - parameter apiKey: (header) The user&#x27;s apiKey to authorize the request 
@@ -673,48 +673,48 @@ open class ChallengeAPI {
      - GET /challenge/{id}/children
 
      - examples: [{contentType=application/json, example=[ {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -722,50 +722,50 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }, {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -773,7 +773,7 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 } ]}]
      - parameter _id: (path) The id of the parent Challenge. 
      - parameter limit: (query) Limit the number of results returned in the response. Default value is 10. (optional)
@@ -827,48 +827,48 @@ open class ChallengeAPI {
      - GET /challenges/extendedFind
 
      - examples: [{contentType=application/json, example=[ {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -876,50 +876,50 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }, {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -927,7 +927,7 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 } ]}]
      - parameter limit: (query) Limit the number of results returned in the response. Default value is 10. (optional)
      - parameter page: (query) Used in conjunction with the limit parameter to page through X number of responses. Default value is 0, ie. first page. (optional)
@@ -1135,48 +1135,48 @@ open class ChallengeAPI {
      - GET /challenges/find
 
      - examples: [{contentType=application/json, example=[ {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -1184,50 +1184,50 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }, {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -1235,7 +1235,7 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 } ]}]
      - parameter q: (query) The search string used to match the Challenge names. Default value is empty string, ie. will match everything. (optional)
      - parameter parentId: (query) This field will be ignored for this request (optional)
@@ -1335,13 +1335,13 @@ open class ChallengeAPI {
 
      - examples: [{contentType=application/json, example=[ {
   "owner" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 7,
+  "mappedOn" : "mappedOn",
+  "bundleId" : 1,
   "suggestedFix" : "suggestedFix",
   "title" : "title",
   "blurb" : "blurb",
-  "type" : 9,
-  "priority" : 6,
+  "type" : 7,
+  "priority" : 7,
   "parentId" : 1,
   "point" : {
     "lng" : 5.637376656633329,
@@ -1349,28 +1349,28 @@ open class ChallengeAPI {
   },
   "isBundlePrimary" : true,
   "bounding" : "bounding",
-  "difficulty" : 7,
+  "difficulty" : 2,
   "parentName" : "parentName",
   "ownerName" : "ownerName",
   "pointReview" : {
-    "reviewRequestedBy" : 7,
-    "reviewedAt" : 1,
-    "reviewStartedAt" : 1,
-    "reviewStatus" : 4,
-    "reviewedBy" : 1
+    "reviewRequestedBy" : 2,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 3,
+    "reviewedBy" : 4
   },
-  "modified" : 2,
+  "modified" : "modified",
   "id" : 0,
-  "status" : 3
+  "status" : 9
 }, {
   "owner" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 7,
+  "mappedOn" : "mappedOn",
+  "bundleId" : 1,
   "suggestedFix" : "suggestedFix",
   "title" : "title",
   "blurb" : "blurb",
-  "type" : 9,
-  "priority" : 6,
+  "type" : 7,
+  "priority" : 7,
   "parentId" : 1,
   "point" : {
     "lng" : 5.637376656633329,
@@ -1378,19 +1378,19 @@ open class ChallengeAPI {
   },
   "isBundlePrimary" : true,
   "bounding" : "bounding",
-  "difficulty" : 7,
+  "difficulty" : 2,
   "parentName" : "parentName",
   "ownerName" : "ownerName",
   "pointReview" : {
-    "reviewRequestedBy" : 7,
-    "reviewedAt" : 1,
-    "reviewStartedAt" : 1,
-    "reviewStatus" : 4,
-    "reviewedBy" : 1
+    "reviewRequestedBy" : 2,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 3,
+    "reviewedBy" : 4
   },
-  "modified" : 2,
+  "modified" : "modified",
   "id" : 0,
-  "status" : 3
+  "status" : 9
 } ]}]
      - parameter _id: (path) The id of the parent project. 
      - parameter filter: (query) Can filter the Tasks returned by the status of the Task. 0 - Created, 1 - Fixed, 2 - False Positive, 3 - Skipped, 4 - Deleted, 5 - Already Fixed, 6 - Too Hard (optional)
@@ -1437,48 +1437,48 @@ open class ChallengeAPI {
      - GET /challenges/featured
 
      - examples: [{contentType=application/json, example=[ {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -1486,50 +1486,50 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }, {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -1537,7 +1537,7 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 } ]}]
      - parameter limit: (query) Limit the number of results returned in the response. Default value is 10. (optional)
      - parameter page: (query) Used in conjunction with the limit parameter to page through X number of responses. Default value is 0, ie. first page. (optional)
@@ -1578,48 +1578,48 @@ open class ChallengeAPI {
      - GET /challenges/hot
 
      - examples: [{contentType=application/json, example=[ {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -1627,50 +1627,50 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }, {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -1678,7 +1678,7 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 } ]}]
      - parameter limit: (query) Limit the number of results returned in the response. Default value is 10. (optional)
      - parameter page: (query) Used in conjunction with the limit parameter to page through X number of responses. Default value is 0, ie. first page. (optional)
@@ -1720,48 +1720,48 @@ open class ChallengeAPI {
      - GET /challenges/tags
 
      - examples: [{contentType=application/json, example=[ {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -1769,50 +1769,50 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }, {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -1820,7 +1820,7 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 } ]}]
      - parameter tags: (query) A comma separated list of tags (optional)
      - parameter limit: (query) Limit the number of results returned in the response. Default value is 10. (optional)
@@ -1866,89 +1866,89 @@ open class ChallengeAPI {
      - GET /challenge/{cid}/tasksNearby/{proximityId}
 
      - examples: [{contentType=application/json, example=[ {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }, {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 } ]}]
      - parameter cid: (path)  
      - parameter proximityId: (path)  
@@ -2038,89 +2038,89 @@ open class ChallengeAPI {
      - GET /challenge/{cid}/tasks/random
 
      - examples: [{contentType=application/json, example=[ {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }, {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 } ]}]
      - parameter cid: (path) The id of the parent Challenge limiting the tasks to only a descendent of that Challenge. 
      - parameter s: (query) The task search string. Retrieve only tasks that contain the search string in the task name. Match is case insensitive. (optional)
@@ -2172,89 +2172,89 @@ open class ChallengeAPI {
      - GET /challenge/{cid}/tasks/prioritizedTasks
 
      - examples: [{contentType=application/json, example=[ {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }, {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 } ]}]
      - parameter cid: (path) The id of the parent Challenge limiting the tasks to only a descendent of that Challenge. 
      - parameter s: (query) The task search string. Retrieve only tasks that contain the search string in the task name. Match is case insensitive. (optional)
@@ -2306,89 +2306,89 @@ open class ChallengeAPI {
      - GET /challenge/{cid}/tasks/randomTasks
 
      - examples: [{contentType=application/json, example=[ {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }, {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 } ]}]
      - parameter cid: (path) The id of the parent Challenge limiting the tasks to only a descendent of that Challenge. 
      - parameter s: (query) The task search string. Retrieve only tasks that contain the search string in the task name. Match is case insensitive. (optional)
@@ -2438,47 +2438,47 @@ open class ChallengeAPI {
      - GET /challenge/{cid}/nextTask/{id}
 
      - examples: [{contentType=application/json, example={
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }}]
      - parameter cid: (path) The id of the parent Challenge. 
      - parameter _id: (path) The id of the current task being viewed, so that we can get context of what the next task should be 
@@ -2526,47 +2526,47 @@ open class ChallengeAPI {
      - GET /challenge/{cid}/previousTask/{id}
 
      - examples: [{contentType=application/json, example={
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }}]
      - parameter cid: (path) The id of the parent Challenge. 
      - parameter _id: (path) The id of the current task being viewed, so that we can get context of what the next task should be 
@@ -2612,18 +2612,18 @@ open class ChallengeAPI {
      - GET /challenge/{id}/tags
 
      - examples: [{contentType=application/json, example=[ {
-  "created" : 6,
+  "created" : "created",
   "name" : "name",
   "tagType" : "tagType",
   "description" : "description",
-  "modified" : 1,
+  "modified" : "modified",
   "id" : 0
 }, {
-  "created" : 6,
+  "created" : "created",
   "name" : "name",
   "tagType" : "tagType",
   "description" : "description",
-  "modified" : 1,
+  "modified" : "modified",
   "id" : 0
 } ]}]
      - parameter _id: (path) The ID of the challenge 
@@ -2728,13 +2728,13 @@ open class ChallengeAPI {
 
      - examples: [{contentType=application/json, example=[ {
   "owner" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 7,
+  "mappedOn" : "mappedOn",
+  "bundleId" : 1,
   "suggestedFix" : "suggestedFix",
   "title" : "title",
   "blurb" : "blurb",
-  "type" : 9,
-  "priority" : 6,
+  "type" : 7,
+  "priority" : 7,
   "parentId" : 1,
   "point" : {
     "lng" : 5.637376656633329,
@@ -2742,28 +2742,28 @@ open class ChallengeAPI {
   },
   "isBundlePrimary" : true,
   "bounding" : "bounding",
-  "difficulty" : 7,
+  "difficulty" : 2,
   "parentName" : "parentName",
   "ownerName" : "ownerName",
   "pointReview" : {
-    "reviewRequestedBy" : 7,
-    "reviewedAt" : 1,
-    "reviewStartedAt" : 1,
-    "reviewStatus" : 4,
-    "reviewedBy" : 1
+    "reviewRequestedBy" : 2,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 3,
+    "reviewedBy" : 4
   },
-  "modified" : 2,
+  "modified" : "modified",
   "id" : 0,
-  "status" : 3
+  "status" : 9
 }, {
   "owner" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 7,
+  "mappedOn" : "mappedOn",
+  "bundleId" : 1,
   "suggestedFix" : "suggestedFix",
   "title" : "title",
   "blurb" : "blurb",
-  "type" : 9,
-  "priority" : 6,
+  "type" : 7,
+  "priority" : 7,
   "parentId" : 1,
   "point" : {
     "lng" : 5.637376656633329,
@@ -2771,19 +2771,19 @@ open class ChallengeAPI {
   },
   "isBundlePrimary" : true,
   "bounding" : "bounding",
-  "difficulty" : 7,
+  "difficulty" : 2,
   "parentName" : "parentName",
   "ownerName" : "ownerName",
   "pointReview" : {
-    "reviewRequestedBy" : 7,
-    "reviewedAt" : 1,
-    "reviewStartedAt" : 1,
-    "reviewStatus" : 4,
-    "reviewedBy" : 1
+    "reviewRequestedBy" : 2,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 3,
+    "reviewedBy" : 4
   },
-  "modified" : 2,
+  "modified" : "modified",
   "id" : 0,
-  "status" : 3
+  "status" : 9
 } ]}]
      - parameter clusterId: (path) The id of the single cluster. 
      - parameter _id: (path) The id of the parent project. 
@@ -2831,48 +2831,48 @@ open class ChallengeAPI {
      - GET /challenges
 
      - examples: [{contentType=application/json, example=[ {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -2880,50 +2880,50 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }, {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -2931,7 +2931,7 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 } ]}]
      - parameter limit: (query) Limit the number of results returned in the response. Default value is 10. (optional)
      - parameter page: (query) Used in conjunction with the limit parameter to page through X number of responses. Default value is 0, ie. first page. (optional)
@@ -2975,89 +2975,89 @@ open class ChallengeAPI {
      - GET /challenge/{id}/tasks
 
      - examples: [{contentType=application/json, example=[ {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }, {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 } ]}]
      - parameter _id: (path) The project ID. 
      - parameter limit: (query) Limit the number of results returned in the response. Default value is 10. (optional)
@@ -3204,18 +3204,18 @@ open class ChallengeAPI {
      - POST /challenge/{id}/project/{projectId}
 
      - examples: [{contentType=application/json, example=[ {
-  "created" : 6,
+  "created" : "created",
   "name" : "name",
   "tagType" : "tagType",
   "description" : "description",
-  "modified" : 1,
+  "modified" : "modified",
   "id" : 0
 }, {
-  "created" : 6,
+  "created" : "created",
   "name" : "name",
   "tagType" : "tagType",
   "description" : "description",
-  "modified" : 1,
+  "modified" : "modified",
   "id" : 0
 } ]}]
      - parameter projectId: (path) The ID of the project you are moving the challenge too. 
@@ -3259,48 +3259,48 @@ open class ChallengeAPI {
      - GET /challenge/{id}
 
      - examples: [{contentType=application/json, example={
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -3308,7 +3308,7 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }}]
      - parameter _id: (path) The id of the Challenge to retrieve 
 
@@ -3348,48 +3348,48 @@ open class ChallengeAPI {
      - GET /project/{id}/challenge/{name}
 
      - examples: [{contentType=application/json, example={
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -3397,7 +3397,7 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }}]
      - parameter _id: (path) The id of the parent Project of the Challenge 
      - parameter name: (path) The name of the Challenge being retrieved 
@@ -3587,48 +3587,48 @@ open class ChallengeAPI {
      - PUT /challenge/{id}/undelete
 
      - examples: [{contentType=application/json, example={
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -3636,7 +3636,7 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }}]
      - parameter _id: (path) The id of the Project being deleted 
      - parameter apiKey: (header) The user&#x27;s apiKey to authorize the request 
@@ -3682,48 +3682,48 @@ open class ChallengeAPI {
      - PUT /challenge/{id}
 
      - examples: [{contentType=application/json, example={
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -3731,7 +3731,7 @@ open class ChallengeAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }}]
      - parameter body: (body) The JSON structure for the Challenge body, include the key &quot;children&quot; to create or update Task children objects. 
      - parameter _id: (path) The ID of the Challenge that is being updated 

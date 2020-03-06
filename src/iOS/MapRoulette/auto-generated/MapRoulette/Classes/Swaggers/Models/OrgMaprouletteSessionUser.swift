@@ -12,8 +12,8 @@ import Foundation
 public struct OrgMaprouletteSessionUser: Codable {
 
     public var _id: Int64
-    public var created: Int
-    public var modified: Int
+    public var created: String
+    public var modified: String
     public var osmProfile: OrgMaprouletteSessionOSMProfile
     public var groups: [OrgMaprouletteSessionGroup]
     public var apiKey: String?
@@ -22,7 +22,7 @@ public struct OrgMaprouletteSessionUser: Codable {
     public var properties: String?
     public var score: Int?
 
-    public init(_id: Int64, created: Int, modified: Int, osmProfile: OrgMaprouletteSessionOSMProfile, groups: [OrgMaprouletteSessionGroup], apiKey: String?, guest: Bool, settings: OrgMaprouletteSessionUserSettings, properties: String?, score: Int?) {
+    public init(_id: Int64, created: String, modified: String, osmProfile: OrgMaprouletteSessionOSMProfile, groups: [OrgMaprouletteSessionGroup], apiKey: String?, guest: Bool, settings: OrgMaprouletteSessionUserSettings, properties: String?, score: Int?) {
         self._id = _id
         self.created = created
         self.modified = modified

@@ -115,11 +115,11 @@ open class KeywordAPI {
      - POST /keyword
 
      - examples: [{contentType=application/json, example={
-  "created" : 6,
+  "created" : "created",
   "name" : "name",
   "tagType" : "tagType",
   "description" : "description",
-  "modified" : 1,
+  "modified" : "modified",
   "id" : 0
 }}]
      - parameter body: (body) The JSON structure for the Keyword body. 
@@ -214,18 +214,18 @@ open class KeywordAPI {
      - GET /keywords
 
      - examples: [{contentType=application/json, example=[ {
-  "created" : 6,
+  "created" : "created",
   "name" : "name",
   "tagType" : "tagType",
   "description" : "description",
-  "modified" : 1,
+  "modified" : "modified",
   "id" : 0
 }, {
-  "created" : 6,
+  "created" : "created",
   "name" : "name",
   "tagType" : "tagType",
   "description" : "description",
-  "modified" : 1,
+  "modified" : "modified",
   "id" : 0
 } ]}]
      - parameter _prefix: (query) The prefix for the Keywords you are looking for (optional)
@@ -270,11 +270,11 @@ open class KeywordAPI {
      - GET /keyword/{id}
 
      - examples: [{contentType=application/json, example={
-  "created" : 6,
+  "created" : "created",
   "name" : "name",
   "tagType" : "tagType",
   "description" : "description",
-  "modified" : 1,
+  "modified" : "modified",
   "id" : 0
 }}]
      - parameter _id: (path) The id of the Keyword to retrieve 
@@ -316,11 +316,11 @@ open class KeywordAPI {
      - PUT /keyword/{id}
 
      - examples: [{contentType=application/json, example={
-  "created" : 6,
+  "created" : "created",
   "name" : "name",
   "tagType" : "tagType",
   "description" : "description",
-  "modified" : 1,
+  "modified" : "modified",
   "id" : 0
 }}]
      - parameter body: (body) The JSON structure for the Keyword body. 

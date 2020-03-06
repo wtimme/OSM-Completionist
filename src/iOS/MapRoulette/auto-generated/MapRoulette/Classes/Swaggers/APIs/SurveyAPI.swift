@@ -175,48 +175,48 @@ open class SurveyAPI {
      - POST /survey
 
      - examples: [{contentType=application/json, example={
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -224,7 +224,7 @@ open class SurveyAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }}]
      - parameter body: (body) The JSON structure for the Survey body, include the key &quot;children&quot; to create Task children objects. The survey object is just a special type of Challenge object, and is identical to the Challenge object other than including the &quot;answers&quot; key. Although the model schema for the Challenge shows a hierarchy include &quot;general&quot;, &quot;creation&quot;, &quot;priority&quot; and &quot;extra&quot; this JSON structure can be flattened and you can exclude those top level keys and have the children in the root level. 
      - parameter apiKey: (header) The user&#x27;s apiKey to authorize the request 
@@ -269,89 +269,89 @@ open class SurveyAPI {
      - GET /survey/{cid}/tasks/random
 
      - examples: [{contentType=application/json, example=[ {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }, {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 } ]}]
      - parameter cid: (query) The id of the parent Survey limiting the tasks to only a descendent of that Survey. 
      - parameter s: (query) The task search string. Retrieve only tasks that contain the search string in the task name. Match is case insensitive. (optional)
@@ -399,48 +399,48 @@ open class SurveyAPI {
      - PUT /survey/{id}
 
      - examples: [{contentType=application/json, example={
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -448,7 +448,7 @@ open class SurveyAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }}]
      - parameter body: (body) The JSON structure for the Survey body, include the key &quot;children&quot; to create or update Task children objects. 
      - parameter _id: (path) The ID of the Survey that is being updated 

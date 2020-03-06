@@ -229,50 +229,50 @@ open class UserAPI {
 
      - examples: [{contentType=application/json, example={
   "settings" : {
-    "needsReview" : 2,
+    "needsReview" : 7,
     "defaultBasemapId" : "defaultBasemapId",
     "leaderboardOptOut" : true,
     "isReviewer" : true,
     "emailOptIn" : true,
-    "theme" : 4,
-    "defaultBasemap" : 3,
+    "theme" : 9,
+    "defaultBasemap" : 2,
     "customBasemap" : "customBasemap",
     "locale" : "locale",
     "email" : "email",
-    "defaultEditor" : 9
+    "defaultEditor" : 5
   },
-  "score" : 7,
+  "score" : 3,
   "apiKey" : "apiKey",
-  "created" : 6,
-  "modified" : 1,
+  "created" : "created",
+  "modified" : "modified",
   "groups" : [ {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   }, {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   } ],
   "guest" : true,
   "id" : 0,
   "osmProfile" : {
     "avatarURL" : "avatarURL",
     "displayName" : "displayName",
-    "created" : 7,
+    "created" : "created",
     "homeLocation" : {
-      "latitude" : 5.637376656633329,
+      "latitude" : 1.4658129805029452,
       "name" : "name",
-      "longitude" : 2.3021358869347655
+      "longitude" : 5.962133916683182
     },
     "description" : "description",
-    "id" : 5
+    "id" : 6
   },
   "properties" : "properties"
 }}]
@@ -356,50 +356,50 @@ open class UserAPI {
 
      - examples: [{contentType=application/json, example={
   "settings" : {
-    "needsReview" : 2,
+    "needsReview" : 7,
     "defaultBasemapId" : "defaultBasemapId",
     "leaderboardOptOut" : true,
     "isReviewer" : true,
     "emailOptIn" : true,
-    "theme" : 4,
-    "defaultBasemap" : 3,
+    "theme" : 9,
+    "defaultBasemap" : 2,
     "customBasemap" : "customBasemap",
     "locale" : "locale",
     "email" : "email",
-    "defaultEditor" : 9
+    "defaultEditor" : 5
   },
-  "score" : 7,
+  "score" : 3,
   "apiKey" : "apiKey",
-  "created" : 6,
-  "modified" : 1,
+  "created" : "created",
+  "modified" : "modified",
   "groups" : [ {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   }, {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   } ],
   "guest" : true,
   "id" : 0,
   "osmProfile" : {
     "avatarURL" : "avatarURL",
     "displayName" : "displayName",
-    "created" : 7,
+    "created" : "created",
     "homeLocation" : {
-      "latitude" : 5.637376656633329,
+      "latitude" : 1.4658129805029452,
       "name" : "name",
-      "longitude" : 2.3021358869347655
+      "longitude" : 5.962133916683182
     },
     "description" : "description",
-    "id" : 5
+    "id" : 6
   },
   "properties" : "properties"
 }}]
@@ -441,50 +441,50 @@ open class UserAPI {
 
      - examples: [{contentType=application/json, example={
   "settings" : {
-    "needsReview" : 2,
+    "needsReview" : 7,
     "defaultBasemapId" : "defaultBasemapId",
     "leaderboardOptOut" : true,
     "isReviewer" : true,
     "emailOptIn" : true,
-    "theme" : 4,
-    "defaultBasemap" : 3,
+    "theme" : 9,
+    "defaultBasemap" : 2,
     "customBasemap" : "customBasemap",
     "locale" : "locale",
     "email" : "email",
-    "defaultEditor" : 9
+    "defaultEditor" : 5
   },
-  "score" : 7,
+  "score" : 3,
   "apiKey" : "apiKey",
-  "created" : 6,
-  "modified" : 1,
+  "created" : "created",
+  "modified" : "modified",
   "groups" : [ {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   }, {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   } ],
   "guest" : true,
   "id" : 0,
   "osmProfile" : {
     "avatarURL" : "avatarURL",
     "displayName" : "displayName",
-    "created" : 7,
+    "created" : "created",
     "homeLocation" : {
-      "latitude" : 5.637376656633329,
+      "latitude" : 1.4658129805029452,
       "name" : "name",
-      "longitude" : 2.3021358869347655
+      "longitude" : 5.962133916683182
     },
     "description" : "description",
-    "id" : 5
+    "id" : 6
   },
   "properties" : "properties"
 }}]
@@ -528,48 +528,48 @@ open class UserAPI {
      - GET /user/{userId}/saved
 
      - examples: [{contentType=application/json, example=[ {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -577,50 +577,50 @@ open class UserAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 }, {
-  "created" : 6,
+  "created" : "created",
   "description" : "description",
   "priority" : {
     "lowPriorityRule" : "lowPriorityRule",
-    "defaultPriority" : 3,
+    "defaultPriority" : 7,
     "highPriorityRule" : "highPriorityRule",
     "mediumPriorityRule" : "mediumPriorityRule"
   },
   "statusMessage" : "statusMessage",
   "bounding" : "bounding",
   "general" : {
-    "owner" : 5,
-    "difficulty" : 2,
-    "parent" : 5,
+    "owner" : 6,
+    "difficulty" : 5,
+    "parent" : 1,
     "featured" : true,
     "instruction" : "instruction",
-    "popularity" : 9,
+    "popularity" : 2,
     "checkinComment" : "checkinComment",
     "checkinSource" : "checkinSource",
-    "challengeType" : 7,
+    "challengeType" : 5,
     "blurb" : "blurb",
     "enabled" : true,
     "hasSuggestedFixes" : true
   },
   "deleted" : true,
-  "dataOriginDate" : 6,
+  "dataOriginDate" : "dataOriginDate",
   "extra" : {
     "preferredTags" : "preferredTags",
     "exportableProperties" : "exportableProperties",
-    "defaultZoom" : 2,
+    "defaultZoom" : 9,
     "taskStyles" : "taskStyles",
-    "maxZoom" : 7,
+    "maxZoom" : 2,
     "defaultBasemapId" : "defaultBasemapId",
-    "minZoom" : 4,
-    "defaultBasemap" : 1,
+    "minZoom" : 3,
+    "defaultBasemap" : 4,
     "customBasemap" : "customBasemap",
     "updateTasks" : true,
     "osmIdProperty" : "osmIdProperty"
   },
   "name" : "name",
-  "modified" : 1,
-  "lastTaskRefresh" : 1,
+  "modified" : "modified",
+  "lastTaskRefresh" : "lastTaskRefresh",
   "location" : "location",
   "id" : 0,
   "creation" : {
@@ -628,7 +628,7 @@ open class UserAPI {
     "overpassQL" : "overpassQL"
   },
   "infoLink" : "infoLink",
-  "status" : 1
+  "status" : 7
 } ]}]
      - parameter userId: (path) The id of the user to retrieve the challenges for 
      - parameter apiKey: (header) The user&#x27;s apiKey to authorize the request 
@@ -681,89 +681,89 @@ open class UserAPI {
      - GET /user/{userId}/savedTasks
 
      - examples: [{contentType=application/json, example=[ {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }, {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 } ]}]
      - parameter userId: (path) The id of the user to retrieve the challenges for 
      - parameter apiKey: (header) The user&#x27;s apiKey to authorize the request 
@@ -816,50 +816,50 @@ open class UserAPI {
 
      - examples: [{contentType=application/json, example={
   "settings" : {
-    "needsReview" : 2,
+    "needsReview" : 7,
     "defaultBasemapId" : "defaultBasemapId",
     "leaderboardOptOut" : true,
     "isReviewer" : true,
     "emailOptIn" : true,
-    "theme" : 4,
-    "defaultBasemap" : 3,
+    "theme" : 9,
+    "defaultBasemap" : 2,
     "customBasemap" : "customBasemap",
     "locale" : "locale",
     "email" : "email",
-    "defaultEditor" : 9
+    "defaultEditor" : 5
   },
-  "score" : 7,
+  "score" : 3,
   "apiKey" : "apiKey",
-  "created" : 6,
-  "modified" : 1,
+  "created" : "created",
+  "modified" : "modified",
   "groups" : [ {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   }, {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   } ],
   "guest" : true,
   "id" : 0,
   "osmProfile" : {
     "avatarURL" : "avatarURL",
     "displayName" : "displayName",
-    "created" : 7,
+    "created" : "created",
     "homeLocation" : {
-      "latitude" : 5.637376656633329,
+      "latitude" : 1.4658129805029452,
       "name" : "name",
-      "longitude" : 2.3021358869347655
+      "longitude" : 5.962133916683182
     },
     "description" : "description",
-    "id" : 5
+    "id" : 6
   },
   "properties" : "properties"
 }}]
@@ -907,50 +907,50 @@ open class UserAPI {
 
      - examples: [{contentType=application/json, example={
   "settings" : {
-    "needsReview" : 2,
+    "needsReview" : 7,
     "defaultBasemapId" : "defaultBasemapId",
     "leaderboardOptOut" : true,
     "isReviewer" : true,
     "emailOptIn" : true,
-    "theme" : 4,
-    "defaultBasemap" : 3,
+    "theme" : 9,
+    "defaultBasemap" : 2,
     "customBasemap" : "customBasemap",
     "locale" : "locale",
     "email" : "email",
-    "defaultEditor" : 9
+    "defaultEditor" : 5
   },
-  "score" : 7,
+  "score" : 3,
   "apiKey" : "apiKey",
-  "created" : 6,
-  "modified" : 1,
+  "created" : "created",
+  "modified" : "modified",
   "groups" : [ {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   }, {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   } ],
   "guest" : true,
   "id" : 0,
   "osmProfile" : {
     "avatarURL" : "avatarURL",
     "displayName" : "displayName",
-    "created" : 7,
+    "created" : "created",
     "homeLocation" : {
-      "latitude" : 5.637376656633329,
+      "latitude" : 1.4658129805029452,
       "name" : "name",
-      "longitude" : 2.3021358869347655
+      "longitude" : 5.962133916683182
     },
     "description" : "description",
-    "id" : 5
+    "id" : 6
   },
   "properties" : "properties"
 }}]
@@ -1004,37 +1004,37 @@ open class UserAPI {
      - GET /user/{userId}/notifications
 
      - examples: [{contentType=application/json, example=[ {
-  "targetId" : 2,
-  "created" : 5,
+  "targetId" : 9,
+  "created" : "created",
   "isRead" : true,
   "description" : "description",
   "notificationType" : 1,
   "userId" : 6,
-  "emailStatus" : 2,
-  "challengeId" : 9,
+  "emailStatus" : 5,
+  "challengeId" : 2,
   "extra" : "extra",
-  "modified" : 5,
+  "modified" : "modified",
   "challengeName" : "challengeName",
   "id" : 0,
-  "projectId" : 3,
+  "projectId" : 7,
   "fromUsername" : "fromUsername",
-  "taskId" : 7
+  "taskId" : 5
 }, {
-  "targetId" : 2,
-  "created" : 5,
+  "targetId" : 9,
+  "created" : "created",
   "isRead" : true,
   "description" : "description",
   "notificationType" : 1,
   "userId" : 6,
-  "emailStatus" : 2,
-  "challengeId" : 9,
+  "emailStatus" : 5,
+  "challengeId" : 2,
   "extra" : "extra",
-  "modified" : 5,
+  "modified" : "modified",
   "challengeName" : "challengeName",
   "id" : 0,
-  "projectId" : 3,
+  "projectId" : 7,
   "fromUsername" : "fromUsername",
-  "taskId" : 7
+  "taskId" : 5
 } ]}]
      - parameter userId: (path) The id of the user to retrieve the notifications for 
      - parameter apiKey: (header) The user&#x27;s apiKey to authorize the request 
@@ -1095,98 +1095,98 @@ open class UserAPI {
 
      - examples: [{contentType=application/json, example=[ {
   "settings" : {
-    "needsReview" : 2,
+    "needsReview" : 7,
     "defaultBasemapId" : "defaultBasemapId",
     "leaderboardOptOut" : true,
     "isReviewer" : true,
     "emailOptIn" : true,
-    "theme" : 4,
-    "defaultBasemap" : 3,
+    "theme" : 9,
+    "defaultBasemap" : 2,
     "customBasemap" : "customBasemap",
     "locale" : "locale",
     "email" : "email",
-    "defaultEditor" : 9
+    "defaultEditor" : 5
   },
-  "score" : 7,
+  "score" : 3,
   "apiKey" : "apiKey",
-  "created" : 6,
-  "modified" : 1,
+  "created" : "created",
+  "modified" : "modified",
   "groups" : [ {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   }, {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   } ],
   "guest" : true,
   "id" : 0,
   "osmProfile" : {
     "avatarURL" : "avatarURL",
     "displayName" : "displayName",
-    "created" : 7,
+    "created" : "created",
     "homeLocation" : {
-      "latitude" : 5.637376656633329,
+      "latitude" : 1.4658129805029452,
       "name" : "name",
-      "longitude" : 2.3021358869347655
+      "longitude" : 5.962133916683182
     },
     "description" : "description",
-    "id" : 5
+    "id" : 6
   },
   "properties" : "properties"
 }, {
   "settings" : {
-    "needsReview" : 2,
+    "needsReview" : 7,
     "defaultBasemapId" : "defaultBasemapId",
     "leaderboardOptOut" : true,
     "isReviewer" : true,
     "emailOptIn" : true,
-    "theme" : 4,
-    "defaultBasemap" : 3,
+    "theme" : 9,
+    "defaultBasemap" : 2,
     "customBasemap" : "customBasemap",
     "locale" : "locale",
     "email" : "email",
-    "defaultEditor" : 9
+    "defaultEditor" : 5
   },
-  "score" : 7,
+  "score" : 3,
   "apiKey" : "apiKey",
-  "created" : 6,
-  "modified" : 1,
+  "created" : "created",
+  "modified" : "modified",
   "groups" : [ {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   }, {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   } ],
   "guest" : true,
   "id" : 0,
   "osmProfile" : {
     "avatarURL" : "avatarURL",
     "displayName" : "displayName",
-    "created" : 7,
+    "created" : "created",
     "homeLocation" : {
-      "latitude" : 5.637376656633329,
+      "latitude" : 1.4658129805029452,
       "name" : "name",
-      "longitude" : 2.3021358869347655
+      "longitude" : 5.962133916683182
     },
     "description" : "description",
-    "id" : 5
+    "id" : 6
   },
   "properties" : "properties"
 } ]}]
@@ -1524,50 +1524,50 @@ open class UserAPI {
 
      - examples: [{contentType=application/json, example={
   "settings" : {
-    "needsReview" : 2,
+    "needsReview" : 7,
     "defaultBasemapId" : "defaultBasemapId",
     "leaderboardOptOut" : true,
     "isReviewer" : true,
     "emailOptIn" : true,
-    "theme" : 4,
-    "defaultBasemap" : 3,
+    "theme" : 9,
+    "defaultBasemap" : 2,
     "customBasemap" : "customBasemap",
     "locale" : "locale",
     "email" : "email",
-    "defaultEditor" : 9
+    "defaultEditor" : 5
   },
-  "score" : 7,
+  "score" : 3,
   "apiKey" : "apiKey",
-  "created" : 6,
-  "modified" : 1,
+  "created" : "created",
+  "modified" : "modified",
   "groups" : [ {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   }, {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   } ],
   "guest" : true,
   "id" : 0,
   "osmProfile" : {
     "avatarURL" : "avatarURL",
     "displayName" : "displayName",
-    "created" : 7,
+    "created" : "created",
     "homeLocation" : {
-      "latitude" : 5.637376656633329,
+      "latitude" : 1.4658129805029452,
       "name" : "name",
-      "longitude" : 2.3021358869347655
+      "longitude" : 5.962133916683182
     },
     "description" : "description",
-    "id" : 5
+    "id" : 6
   },
   "properties" : "properties"
 }}]
@@ -1816,50 +1816,50 @@ open class UserAPI {
 
      - examples: [{contentType=application/json, example={
   "settings" : {
-    "needsReview" : 2,
+    "needsReview" : 7,
     "defaultBasemapId" : "defaultBasemapId",
     "leaderboardOptOut" : true,
     "isReviewer" : true,
     "emailOptIn" : true,
-    "theme" : 4,
-    "defaultBasemap" : 3,
+    "theme" : 9,
+    "defaultBasemap" : 2,
     "customBasemap" : "customBasemap",
     "locale" : "locale",
     "email" : "email",
-    "defaultEditor" : 9
+    "defaultEditor" : 5
   },
-  "score" : 7,
+  "score" : 3,
   "apiKey" : "apiKey",
-  "created" : 6,
-  "modified" : 1,
+  "created" : "created",
+  "modified" : "modified",
   "groups" : [ {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   }, {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   } ],
   "guest" : true,
   "id" : 0,
   "osmProfile" : {
     "avatarURL" : "avatarURL",
     "displayName" : "displayName",
-    "created" : 7,
+    "created" : "created",
     "homeLocation" : {
-      "latitude" : 5.637376656633329,
+      "latitude" : 1.4658129805029452,
       "name" : "name",
-      "longitude" : 2.3021358869347655
+      "longitude" : 5.962133916683182
     },
     "description" : "description",
-    "id" : 5
+    "id" : 6
   },
   "properties" : "properties"
 }}]
@@ -1902,50 +1902,50 @@ open class UserAPI {
 
      - examples: [{contentType=application/json, example={
   "settings" : {
-    "needsReview" : 2,
+    "needsReview" : 7,
     "defaultBasemapId" : "defaultBasemapId",
     "leaderboardOptOut" : true,
     "isReviewer" : true,
     "emailOptIn" : true,
-    "theme" : 4,
-    "defaultBasemap" : 3,
+    "theme" : 9,
+    "defaultBasemap" : 2,
     "customBasemap" : "customBasemap",
     "locale" : "locale",
     "email" : "email",
-    "defaultEditor" : 9
+    "defaultEditor" : 5
   },
-  "score" : 7,
+  "score" : 3,
   "apiKey" : "apiKey",
-  "created" : 6,
-  "modified" : 1,
+  "created" : "created",
+  "modified" : "modified",
   "groups" : [ {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   }, {
-    "groupType" : 7,
-    "created" : 9,
+    "groupType" : 5,
+    "created" : "created",
     "name" : "name",
-    "modified" : 3,
-    "id" : 5,
-    "projectId" : 2
+    "modified" : "modified",
+    "id" : 1,
+    "projectId" : 5
   } ],
   "guest" : true,
   "id" : 0,
   "osmProfile" : {
     "avatarURL" : "avatarURL",
     "displayName" : "displayName",
-    "created" : 7,
+    "created" : "created",
     "homeLocation" : {
-      "latitude" : 5.637376656633329,
+      "latitude" : 1.4658129805029452,
       "name" : "name",
-      "longitude" : 2.3021358869347655
+      "longitude" : 5.962133916683182
     },
     "description" : "description",
-    "id" : 5
+    "id" : 6
   },
   "properties" : "properties"
 }}]

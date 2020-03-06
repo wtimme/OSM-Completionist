@@ -16,9 +16,9 @@ public struct OrgMaprouletteSessionOSMProfile: Codable {
     public var _description: String
     public var avatarURL: String
     public var homeLocation: OrgMaprouletteSessionLocation
-    public var created: Int
+    public var created: String
 
-    public init(_id: Int64, displayName: String, _description: String, avatarURL: String, homeLocation: OrgMaprouletteSessionLocation, created: Int) {
+    public init(_id: Int64, displayName: String, _description: String, avatarURL: String, homeLocation: OrgMaprouletteSessionLocation, created: String) {
         self._id = _id
         self.displayName = displayName
         self._description = _description

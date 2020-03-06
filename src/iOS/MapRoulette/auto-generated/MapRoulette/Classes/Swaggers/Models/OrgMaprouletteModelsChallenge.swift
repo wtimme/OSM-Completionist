@@ -13,8 +13,8 @@ public struct OrgMaprouletteModelsChallenge: Codable {
 
     public var _id: Int64
     public var name: String
-    public var created: Int
-    public var modified: Int
+    public var created: String
+    public var modified: String
     public var _description: String?
     public var deleted: Bool
     public var infoLink: String?
@@ -24,12 +24,12 @@ public struct OrgMaprouletteModelsChallenge: Codable {
     public var extra: OrgMaprouletteModelsChallengeExtra
     public var status: Int?
     public var statusMessage: String?
-    public var lastTaskRefresh: Int?
-    public var dataOriginDate: Int?
+    public var lastTaskRefresh: String?
+    public var dataOriginDate: String?
     public var location: String?
     public var bounding: String?
 
-    public init(_id: Int64, name: String, created: Int, modified: Int, _description: String?, deleted: Bool, infoLink: String?, general: OrgMaprouletteModelsChallengeGeneral, creation: OrgMaprouletteModelsChallengeCreation, priority: OrgMaprouletteModelsChallengePriority, extra: OrgMaprouletteModelsChallengeExtra, status: Int?, statusMessage: String?, lastTaskRefresh: Int?, dataOriginDate: Int?, location: String?, bounding: String?) {
+    public init(_id: Int64, name: String, created: String, modified: String, _description: String?, deleted: Bool, infoLink: String?, general: OrgMaprouletteModelsChallengeGeneral, creation: OrgMaprouletteModelsChallengeCreation, priority: OrgMaprouletteModelsChallengePriority, extra: OrgMaprouletteModelsChallengeExtra, status: Int?, statusMessage: String?, lastTaskRefresh: String?, dataOriginDate: String?, location: String?, bounding: String?) {
         self._id = _id
         self.name = name
         self.created = created

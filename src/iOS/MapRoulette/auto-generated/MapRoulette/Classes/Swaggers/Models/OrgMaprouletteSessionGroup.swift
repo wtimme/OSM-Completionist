@@ -15,10 +15,10 @@ public struct OrgMaprouletteSessionGroup: Codable {
     public var name: String
     public var projectId: Int64
     public var groupType: Int
-    public var created: Int
-    public var modified: Int
+    public var created: String
+    public var modified: String
 
-    public init(_id: Int64, name: String, projectId: Int64, groupType: Int, created: Int, modified: Int) {
+    public init(_id: Int64, name: String, projectId: Int64, groupType: Int, created: String, modified: String) {
         self._id = _id
         self.name = name
         self.projectId = projectId

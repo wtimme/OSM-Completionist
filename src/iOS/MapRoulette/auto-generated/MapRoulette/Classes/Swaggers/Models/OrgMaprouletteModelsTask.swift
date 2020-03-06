@@ -13,15 +13,15 @@ public struct OrgMaprouletteModelsTask: Codable {
 
     public var _id: Int64
     public var name: String
-    public var created: Int
-    public var modified: Int
+    public var created: String
+    public var modified: String
     public var parent: Int64
     public var instruction: String?
     public var location: String?
     public var geometries: String
     public var suggestedFix: String?
     public var status: Int?
-    public var mappedOn: Int?
+    public var mappedOn: String?
     public var review: OrgMaprouletteModelsTaskReviewFields
     public var priority: Int
     public var changesetId: Int64?
@@ -30,7 +30,7 @@ public struct OrgMaprouletteModelsTask: Codable {
     public var isBundlePrimary: Bool?
     public var mapillaryImages: [OrgMaprouletteModelsMapillaryImage]?
 
-    public init(_id: Int64, name: String, created: Int, modified: Int, parent: Int64, instruction: String?, location: String?, geometries: String, suggestedFix: String?, status: Int?, mappedOn: Int?, review: OrgMaprouletteModelsTaskReviewFields, priority: Int, changesetId: Int64?, completionResponses: String?, bundleId: Int64?, isBundlePrimary: Bool?, mapillaryImages: [OrgMaprouletteModelsMapillaryImage]?) {
+    public init(_id: Int64, name: String, created: String, modified: String, parent: Int64, instruction: String?, location: String?, geometries: String, suggestedFix: String?, status: Int?, mappedOn: String?, review: OrgMaprouletteModelsTaskReviewFields, priority: Int, changesetId: Int64?, completionResponses: String?, bundleId: Int64?, isBundlePrimary: Bool?, mapillaryImages: [OrgMaprouletteModelsMapillaryImage]?) {
         self._id = _id
         self.name = name
         self.created = created

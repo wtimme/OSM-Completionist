@@ -115,47 +115,47 @@ open class TaskAPI {
      - POST /task
 
      - examples: [{contentType=application/json, example={
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }}]
      - parameter body: (body) The JSON structure for the Task body. 
      - parameter apiKey: (header) The user&#x27;s apiKey to authorize the request 
@@ -300,89 +300,89 @@ open class TaskAPI {
      - GET /tasks/find
 
      - examples: [{contentType=application/json, example=[ {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }, {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 } ]}]
      - parameter q: (query) The search string used to match the Task names. Default value is empty string, ie. will match everything. (optional)
      - parameter parentId: (query) This limits the search to the provided challenge and no tasks outside of the provided challenge ID. (optional)
@@ -430,89 +430,89 @@ open class TaskAPI {
      - GET /tasks/tags
 
      - examples: [{contentType=application/json, example=[ {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }, {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 } ]}]
      - parameter tags: (query) A comma separated list of tags (optional)
      - parameter limit: (query) Limit the number of results returned in the response. Default value is 10. (optional)
@@ -560,89 +560,89 @@ open class TaskAPI {
      - GET /tasks/random
 
      - examples: [{contentType=application/json, example=[ {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }, {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 } ]}]
      - parameter ps: (query) The search string to match the names of projects to limit the Task pool from. The string is case insensitive. (optional)
      - parameter cs: (query) The search string to match the names of challenges to limit the Task pool from. The string is case insensitive. (optional)
@@ -692,18 +692,18 @@ open class TaskAPI {
      - GET /task/{id}/tags
 
      - examples: [{contentType=application/json, example=[ {
-  "created" : 6,
+  "created" : "created",
   "name" : "name",
   "tagType" : "tagType",
   "description" : "description",
-  "modified" : 1,
+  "modified" : "modified",
   "id" : 0
 }, {
-  "created" : 6,
+  "created" : "created",
   "name" : "name",
   "tagType" : "tagType",
   "description" : "description",
-  "modified" : 1,
+  "modified" : "modified",
   "id" : 0
 } ]}]
      - parameter _id: (path) The ID of the Task 
@@ -743,47 +743,47 @@ open class TaskAPI {
      - GET /task/{id}/history
 
      - examples: [{contentType=application/json, example={
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }}]
      - parameter _id: (path) The id of the task 
 
@@ -833,13 +833,13 @@ open class TaskAPI {
 
      - examples: [{contentType=application/json, example=[ {
   "owner" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 7,
+  "mappedOn" : "mappedOn",
+  "bundleId" : 1,
   "suggestedFix" : "suggestedFix",
   "title" : "title",
   "blurb" : "blurb",
-  "type" : 9,
-  "priority" : 6,
+  "type" : 7,
+  "priority" : 7,
   "parentId" : 1,
   "point" : {
     "lng" : 5.637376656633329,
@@ -847,28 +847,28 @@ open class TaskAPI {
   },
   "isBundlePrimary" : true,
   "bounding" : "bounding",
-  "difficulty" : 7,
+  "difficulty" : 2,
   "parentName" : "parentName",
   "ownerName" : "ownerName",
   "pointReview" : {
-    "reviewRequestedBy" : 7,
-    "reviewedAt" : 1,
-    "reviewStartedAt" : 1,
-    "reviewStatus" : 4,
-    "reviewedBy" : 1
+    "reviewRequestedBy" : 2,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 3,
+    "reviewedBy" : 4
   },
-  "modified" : 2,
+  "modified" : "modified",
   "id" : 0,
-  "status" : 3
+  "status" : 9
 }, {
   "owner" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 7,
+  "mappedOn" : "mappedOn",
+  "bundleId" : 1,
   "suggestedFix" : "suggestedFix",
   "title" : "title",
   "blurb" : "blurb",
-  "type" : 9,
-  "priority" : 6,
+  "type" : 7,
+  "priority" : 7,
   "parentId" : 1,
   "point" : {
     "lng" : 5.637376656633329,
@@ -876,19 +876,19 @@ open class TaskAPI {
   },
   "isBundlePrimary" : true,
   "bounding" : "bounding",
-  "difficulty" : 7,
+  "difficulty" : 2,
   "parentName" : "parentName",
   "ownerName" : "ownerName",
   "pointReview" : {
-    "reviewRequestedBy" : 7,
-    "reviewedAt" : 1,
-    "reviewStartedAt" : 1,
-    "reviewStatus" : 4,
-    "reviewedBy" : 1
+    "reviewRequestedBy" : 2,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 3,
+    "reviewedBy" : 4
   },
-  "modified" : 2,
+  "modified" : "modified",
   "id" : 0,
-  "status" : 3
+  "status" : 9
 } ]}]
      - parameter _left: (path) The minimum latitude for the bounding box. 
      - parameter bottom: (path) The minimum longitude for the bounding box. 
@@ -955,47 +955,47 @@ open class TaskAPI {
      - PUT /task/{id}/changeset
 
      - examples: [{contentType=application/json, example={
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }}]
      - parameter _id: (path) The ID of the task 
      - parameter apiKey: (header) The user&#x27;s apiKey to authorize the request 
@@ -1039,47 +1039,47 @@ open class TaskAPI {
      - GET /task/{id}
 
      - examples: [{contentType=application/json, example={
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }}]
      - parameter _id: (path) The id of the Task to retrieve 
 
@@ -1119,47 +1119,47 @@ open class TaskAPI {
      - GET /challenge/{id}/task/{name}
 
      - examples: [{contentType=application/json, example={
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }}]
      - parameter _id: (path) The id of the parent Challenge of the Task 
      - parameter name: (path) The name of the Task being retrieved 
@@ -1202,47 +1202,47 @@ open class TaskAPI {
      - GET /task/{id}/refreshLock
 
      - examples: [{contentType=application/json, example={
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }}]
      - parameter _id: (path) The id of the Task on which the lock is to be refreshed 
 
@@ -1281,47 +1281,47 @@ open class TaskAPI {
      - GET /task/{id}/release
 
      - examples: [{contentType=application/json, example={
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }}]
      - parameter _id: (path) The id of the Task to retrieve 
 
@@ -1603,47 +1603,47 @@ open class TaskAPI {
      - GET /task/{id}/start
 
      - examples: [{contentType=application/json, example={
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }}]
      - parameter _id: (path) The id of the Task to retrieve 
 
@@ -1684,47 +1684,47 @@ open class TaskAPI {
      - PUT /task/{id}
 
      - examples: [{contentType=application/json, example={
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }}]
      - parameter body: (body) The JSON structure for the Task body. 
      - parameter _id: (path) The ID of the Task that is being updated 

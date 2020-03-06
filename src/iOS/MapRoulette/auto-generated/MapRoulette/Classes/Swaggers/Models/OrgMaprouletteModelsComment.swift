@@ -17,11 +17,11 @@ public struct OrgMaprouletteModelsComment: Codable {
     public var taskId: Int64
     public var challengeId: Int64
     public var projectId: Int64
-    public var created: Int
+    public var created: String
     public var comment: String
     public var actionId: Int64?
 
-    public init(_id: Int64, osmId: Int64, osmUsername: String, taskId: Int64, challengeId: Int64, projectId: Int64, created: Int, comment: String, actionId: Int64?) {
+    public init(_id: Int64, osmId: Int64, osmUsername: String, taskId: Int64, challengeId: Int64, projectId: Int64, created: String, comment: String, actionId: Int64?) {
         self._id = _id
         self.osmId = osmId
         self.osmUsername = osmUsername

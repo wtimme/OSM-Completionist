@@ -20,18 +20,18 @@ public struct OrgMaprouletteModelsClusteredPoint: Codable {
     public var point: OrgMaprouletteModelsPoint
     public var bounding: String
     public var blurb: String
-    public var modified: Int
+    public var modified: String
     public var difficulty: Int
     public var type: Int
     public var status: Int
     public var suggestedFix: String?
-    public var mappedOn: Int?
+    public var mappedOn: String?
     public var pointReview: OrgMaprouletteModelsPointReview
     public var priority: Int
     public var bundleId: Int64?
     public var isBundlePrimary: Bool?
 
-    public init(_id: Int64, owner: Int64, ownerName: String, title: String, parentId: Int64, parentName: String, point: OrgMaprouletteModelsPoint, bounding: String, blurb: String, modified: Int, difficulty: Int, type: Int, status: Int, suggestedFix: String?, mappedOn: Int?, pointReview: OrgMaprouletteModelsPointReview, priority: Int, bundleId: Int64?, isBundlePrimary: Bool?) {
+    public init(_id: Int64, owner: Int64, ownerName: String, title: String, parentId: Int64, parentName: String, point: OrgMaprouletteModelsPoint, bounding: String, blurb: String, modified: String, difficulty: Int, type: Int, status: Int, suggestedFix: String?, mappedOn: String?, pointReview: OrgMaprouletteModelsPointReview, priority: Int, bundleId: Int64?, isBundlePrimary: Bool?) {
         self._id = _id
         self.owner = owner
         self.ownerName = ownerName

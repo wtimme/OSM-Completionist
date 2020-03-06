@@ -14,11 +14,11 @@ public struct OrgMaprouletteModelsTag: Codable {
     public var _id: Int64
     public var name: String
     public var _description: String?
-    public var created: Int
-    public var modified: Int
+    public var created: String
+    public var modified: String
     public var tagType: String
 
-    public init(_id: Int64, name: String, _description: String?, created: Int, modified: Int, tagType: String) {
+    public init(_id: Int64, name: String, _description: String?, created: String, modified: String, tagType: String) {
         self._id = _id
         self.name = name
         self._description = _description

@@ -14,8 +14,8 @@ public struct OrgMaprouletteModelsUserNotification: Codable {
     public var _id: Int64
     public var userId: Int64
     public var notificationType: Int
-    public var created: Int
-    public var modified: Int
+    public var created: String
+    public var modified: String
     public var _description: String?
     public var fromUsername: String?
     public var challengeName: String?
@@ -27,7 +27,7 @@ public struct OrgMaprouletteModelsUserNotification: Codable {
     public var targetId: Int64?
     public var extra: String?
 
-    public init(_id: Int64, userId: Int64, notificationType: Int, created: Int, modified: Int, _description: String?, fromUsername: String?, challengeName: String?, isRead: Bool, emailStatus: Int, taskId: Int64?, challengeId: Int64?, projectId: Int64?, targetId: Int64?, extra: String?) {
+    public init(_id: Int64, userId: Int64, notificationType: Int, created: String, modified: String, _description: String?, fromUsername: String?, challengeName: String?, isRead: Bool, emailStatus: Int, taskId: Int64?, challengeId: Int64?, projectId: Int64?, targetId: Int64?, extra: String?) {
         self._id = _id
         self.userId = userId
         self.notificationType = notificationType

@@ -29,14 +29,14 @@ open class VirtualChallengeAPI {
      - POST /virtualchallenge
 
      - examples: [{contentType=application/json, example={
-  "taskIdList" : [ 2, 2 ],
-  "created" : 6,
+  "taskIdList" : [ 1, 1 ],
+  "created" : "created",
   "name" : "name",
-  "modified" : 1,
+  "modified" : "modified",
   "description" : "description",
   "id" : 0,
-  "expiry" : 5,
-  "ownerId" : 5
+  "expiry" : "expiry",
+  "ownerId" : 6
 }}]
      - parameter body: (body) The JSON structure for the Virtual Challenge body. 
      - parameter apiKey: (header) The user&#x27;s apiKey to authorize the request 
@@ -129,13 +129,13 @@ open class VirtualChallengeAPI {
 
      - examples: [{contentType=application/json, example=[ {
   "owner" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 7,
+  "mappedOn" : "mappedOn",
+  "bundleId" : 1,
   "suggestedFix" : "suggestedFix",
   "title" : "title",
   "blurb" : "blurb",
-  "type" : 9,
-  "priority" : 6,
+  "type" : 7,
+  "priority" : 7,
   "parentId" : 1,
   "point" : {
     "lng" : 5.637376656633329,
@@ -143,28 +143,28 @@ open class VirtualChallengeAPI {
   },
   "isBundlePrimary" : true,
   "bounding" : "bounding",
-  "difficulty" : 7,
+  "difficulty" : 2,
   "parentName" : "parentName",
   "ownerName" : "ownerName",
   "pointReview" : {
-    "reviewRequestedBy" : 7,
-    "reviewedAt" : 1,
-    "reviewStartedAt" : 1,
-    "reviewStatus" : 4,
-    "reviewedBy" : 1
+    "reviewRequestedBy" : 2,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 3,
+    "reviewedBy" : 4
   },
-  "modified" : 2,
+  "modified" : "modified",
   "id" : 0,
-  "status" : 3
+  "status" : 9
 }, {
   "owner" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 7,
+  "mappedOn" : "mappedOn",
+  "bundleId" : 1,
   "suggestedFix" : "suggestedFix",
   "title" : "title",
   "blurb" : "blurb",
-  "type" : 9,
-  "priority" : 6,
+  "type" : 7,
+  "priority" : 7,
   "parentId" : 1,
   "point" : {
     "lng" : 5.637376656633329,
@@ -172,19 +172,19 @@ open class VirtualChallengeAPI {
   },
   "isBundlePrimary" : true,
   "bounding" : "bounding",
-  "difficulty" : 7,
+  "difficulty" : 2,
   "parentName" : "parentName",
   "ownerName" : "ownerName",
   "pointReview" : {
-    "reviewRequestedBy" : 7,
-    "reviewedAt" : 1,
-    "reviewStartedAt" : 1,
-    "reviewStatus" : 4,
-    "reviewedBy" : 1
+    "reviewRequestedBy" : 2,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 3,
+    "reviewedBy" : 4
   },
-  "modified" : 2,
+  "modified" : "modified",
   "id" : 0,
-  "status" : 3
+  "status" : 9
 } ]}]
      - parameter _id: (path) The id of the parent project. 
      - parameter filter: (query) Can filter the Tasks returned by the status of the Task. 0 - Created, 1 - Fixed, 2 - False Positive, 3 - Skipped, 4 - Deleted, 5 - Already Fixed, 6 - Too Hard (optional)
@@ -229,89 +229,89 @@ open class VirtualChallengeAPI {
      - GET /virtualchallenge/{id}/tasksNearby/{proximityId}
 
      - examples: [{contentType=application/json, example=[ {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }, {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 } ]}]
      - parameter _id: (path)  
      - parameter proximityId: (path)  
@@ -360,89 +360,89 @@ open class VirtualChallengeAPI {
      - GET /virtualchallenge/{cid}/task
 
      - examples: [{contentType=application/json, example=[ {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }, {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 } ]}]
      - parameter cid: (path) The id of the Virtual Challenge limiting the tasks to only a descendent of that Virtual Challenge. 
      - parameter proximity: (query) Id of task that you wish to find the next task based on the proximity of that task (optional)
@@ -485,47 +485,47 @@ open class VirtualChallengeAPI {
      - GET /virtualchallenge/{cid}/nextTask/{id}
 
      - examples: [{contentType=application/json, example={
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }}]
      - parameter cid: (path) The id of the parent Virtual Challenge. 
      - parameter _id: (path) The id of the current task being viewed, so that we can get context of what the next task should be 
@@ -569,47 +569,47 @@ open class VirtualChallengeAPI {
      - GET /virtualchallenge/{cid}/previousTask/{id}
 
      - examples: [{contentType=application/json, example={
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }}]
      - parameter cid: (path) The id of the parent Virtual Challenge. 
      - parameter _id: (path) The id of the current task being viewed, so that we can get context of what the next task should be 
@@ -698,23 +698,23 @@ open class VirtualChallengeAPI {
      - GET /virtualchallenges
 
      - examples: [{contentType=application/json, example=[ {
-  "taskIdList" : [ 2, 2 ],
-  "created" : 6,
+  "taskIdList" : [ 1, 1 ],
+  "created" : "created",
   "name" : "name",
-  "modified" : 1,
+  "modified" : "modified",
   "description" : "description",
   "id" : 0,
-  "expiry" : 5,
-  "ownerId" : 5
+  "expiry" : "expiry",
+  "ownerId" : 6
 }, {
-  "taskIdList" : [ 2, 2 ],
-  "created" : 6,
+  "taskIdList" : [ 1, 1 ],
+  "created" : "created",
   "name" : "name",
-  "modified" : 1,
+  "modified" : "modified",
   "description" : "description",
   "id" : 0,
-  "expiry" : 5,
-  "ownerId" : 5
+  "expiry" : "expiry",
+  "ownerId" : 6
 } ]}]
      - parameter limit: (query) Limit the number of results returned in the response. Default value is 10. (optional)
      - parameter page: (query) Used in conjunction with the limit parameter to page through X number of responses. Default value is 0, ie. first page. (optional)
@@ -758,89 +758,89 @@ open class VirtualChallengeAPI {
      - GET /virtualchallenge/{id}/tasks
 
      - examples: [{contentType=application/json, example=[ {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 }, {
-  "parent" : 5,
-  "created" : 6,
-  "mappedOn" : 2,
-  "bundleId" : 1,
+  "parent" : 6,
+  "created" : "created",
+  "mappedOn" : "mappedOn",
+  "bundleId" : 2,
   "suggestedFix" : "suggestedFix",
-  "priority" : 1,
+  "priority" : 9,
   "isBundlePrimary" : true,
   "mapillaryImages" : [ {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   }, {
-    "lon" : 7.457744773683766,
+    "lon" : 7.386281948385884,
     "url_1024" : "url_1024",
     "url_640" : "url_640",
     "key" : "key",
-    "lat" : 6.84685269835264,
+    "lat" : 4.145608029883936,
     "url_320" : "url_320",
     "url_2048" : "url_2048"
   } ],
   "instruction" : "instruction",
   "review" : {
-    "reviewRequestedBy" : 9,
-    "reviewedAt" : 2,
-    "reviewStartedAt" : 4,
-    "reviewStatus" : 7,
-    "reviewedBy" : 3,
+    "reviewRequestedBy" : 5,
+    "reviewedAt" : "reviewedAt",
+    "reviewStartedAt" : "reviewStartedAt",
+    "reviewStatus" : 5,
+    "reviewedBy" : 2,
     "reviewClaimedBy" : 7
   },
   "geometries" : "geometries",
   "name" : "name",
-  "changesetId" : 1,
-  "modified" : 1,
+  "changesetId" : 3,
+  "modified" : "modified",
   "location" : "location",
   "completionResponses" : "completionResponses",
   "id" : 0,
-  "status" : 5
+  "status" : 1
 } ]}]
      - parameter _id: (path) The project ID. 
      - parameter limit: (query) Limit the number of results returned in the response. Default value is 10. (optional)
@@ -884,14 +884,14 @@ open class VirtualChallengeAPI {
      - GET /virtualchallenge/{id}
 
      - examples: [{contentType=application/json, example={
-  "taskIdList" : [ 2, 2 ],
-  "created" : 6,
+  "taskIdList" : [ 1, 1 ],
+  "created" : "created",
   "name" : "name",
-  "modified" : 1,
+  "modified" : "modified",
   "description" : "description",
   "id" : 0,
-  "expiry" : 5,
-  "ownerId" : 5
+  "expiry" : "expiry",
+  "ownerId" : 6
 }}]
      - parameter _id: (path) The id of the Virtual Challenge to retrieve 
 
@@ -931,14 +931,14 @@ open class VirtualChallengeAPI {
      - GET /virtualchallengebyname/{name}
 
      - examples: [{contentType=application/json, example={
-  "taskIdList" : [ 2, 2 ],
-  "created" : 6,
+  "taskIdList" : [ 1, 1 ],
+  "created" : "created",
   "name" : "name",
-  "modified" : 1,
+  "modified" : "modified",
   "description" : "description",
   "id" : 0,
-  "expiry" : 5,
-  "ownerId" : 5
+  "expiry" : "expiry",
+  "ownerId" : 6
 }}]
      - parameter _id: (path) The id of the parent Project of the Virtual Challenge 
      - parameter name: (path) The name of the Virtual Challenge being retrieved 
@@ -983,14 +983,14 @@ open class VirtualChallengeAPI {
      - PUT /virtualchallenge/{id}
 
      - examples: [{contentType=application/json, example={
-  "taskIdList" : [ 2, 2 ],
-  "created" : 6,
+  "taskIdList" : [ 1, 1 ],
+  "created" : "created",
   "name" : "name",
-  "modified" : 1,
+  "modified" : "modified",
   "description" : "description",
   "id" : 0,
-  "expiry" : 5,
-  "ownerId" : 5
+  "expiry" : "expiry",
+  "ownerId" : 6
 }}]
      - parameter body: (body) The JSON structure for the Virtual Challenge body. 
      - parameter _id: (path) The ID of the Virtual Challenge that is being updated 

@@ -13,14 +13,14 @@ public struct OrgMaprouletteModelsVirtualChallenge: Codable {
 
     public var _id: Int64
     public var name: String
-    public var created: Int
-    public var modified: Int
+    public var created: String
+    public var modified: String
     public var _description: String?
     public var ownerId: Int64
-    public var expiry: Int
+    public var expiry: String
     public var taskIdList: [Int64]?
 
-    public init(_id: Int64, name: String, created: Int, modified: Int, _description: String?, ownerId: Int64, expiry: Int, taskIdList: [Int64]?) {
+    public init(_id: Int64, name: String, created: String, modified: String, _description: String?, ownerId: Int64, expiry: String, taskIdList: [Int64]?) {
         self._id = _id
         self.name = name
         self.created = created

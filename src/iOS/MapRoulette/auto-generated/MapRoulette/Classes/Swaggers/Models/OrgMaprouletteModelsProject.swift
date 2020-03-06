@@ -14,8 +14,8 @@ public struct OrgMaprouletteModelsProject: Codable {
     public var _id: Int64
     public var owner: Int64
     public var name: String
-    public var created: Int
-    public var modified: Int
+    public var created: String
+    public var modified: String
     public var _description: String?
     public var groups: [OrgMaprouletteSessionGroup]
     public var enabled: Bool
@@ -24,7 +24,7 @@ public struct OrgMaprouletteModelsProject: Codable {
     public var isVirtual: Bool?
     public var featured: Bool
 
-    public init(_id: Int64, owner: Int64, name: String, created: Int, modified: Int, _description: String?, groups: [OrgMaprouletteSessionGroup], enabled: Bool, displayName: String?, deleted: Bool, isVirtual: Bool?, featured: Bool) {
+    public init(_id: Int64, owner: Int64, name: String, created: String, modified: String, _description: String?, groups: [OrgMaprouletteSessionGroup], enabled: Bool, displayName: String?, deleted: Bool, isVirtual: Bool?, featured: Bool) {
         self._id = _id
         self.owner = owner
         self.name = name
