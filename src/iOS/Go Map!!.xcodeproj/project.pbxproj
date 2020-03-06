@@ -262,6 +262,7 @@
 		64F59A4E240721820093DCDB /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F59A4D240721820093DCDB /* FeedbackGenerator.swift */; };
 		64F59A50240915840093DCDB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F59A4F240915840093DCDB /* MapViewController.swift */; };
 		64F59AC82412BB190093DCDB /* MapRouletteClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F59AC72412BB190093DCDB /* MapRouletteClient.swift */; };
+		AA246FB907AE90C7A9A88E2C /* Pods_Go_Map__.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6451600A9054D515EFE125BB /* Pods_Go_Map__.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -530,6 +531,7 @@
 		02F9A4541BC8348C0013BFBD /* OSM-Logo256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OSM-Logo256.png"; sourceTree = "<group>"; };
 		02FFCE0916A7360B001A5B8A /* NSMutableArray+PartialSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+PartialSort.h"; path = "../Shared/NSMutableArray+PartialSort.h"; sourceTree = "<group>"; };
 		02FFCE0A16A7360B001A5B8A /* NSMutableArray+PartialSort.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "NSMutableArray+PartialSort.mm"; path = "../Shared/NSMutableArray+PartialSort.mm"; sourceTree = "<group>"; };
+		1A415F56DD91B4E5D611F5DE /* Pods-Go Map!!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go Map!!.debug.xcconfig"; path = "Target Support Files/Pods-Go Map!!/Pods-Go Map!!.debug.xcconfig"; sourceTree = "<group>"; };
 		640B0B742285EAA800D0EE24 /* EditorMapLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorMapLayer.swift; sourceTree = "<group>"; };
 		64305F6D23E71F6A00232BB9 /* URLParserResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLParserResult.h; sourceTree = "<group>"; };
 		64305F6E23E71F6A00232BB9 /* URLParserResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLParserResult.m; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 		644AC0DE23C95C1500E2B1E4 /* ActiveQuestsBaseObjectMatcherTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuestsBaseObjectMatcherTestCase.swift; sourceTree = "<group>"; };
 		644AC0E023C9645A00E2B1E4 /* ActiveQuestBaseObjectMatcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuestBaseObjectMatcherMock.swift; sourceTree = "<group>"; };
 		644AC0E223CB48F800E2B1E4 /* MapViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelDelegateMock.swift; sourceTree = "<group>"; };
+		6451600A9054D515EFE125BB /* Pods_Go_Map__.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Go_Map__.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6453776423D38D4600656A1C /* OsmBaseObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OsmBaseObject.h; sourceTree = "<group>"; };
 		6453776523D38D4600656A1C /* OsmBaseObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OsmBaseObject.m; sourceTree = "<group>"; };
 		6453776823D38FA200656A1C /* OsmNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OsmNode.h; sourceTree = "<group>"; };
@@ -637,6 +640,7 @@
 		64F59A4D240721820093DCDB /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
 		64F59A4F240915840093DCDB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		64F59AC72412BB190093DCDB /* MapRouletteClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouletteClient.swift; sourceTree = "<group>"; };
+		7ABF7C15C7958C877CFCB0DF /* Pods-Go Map!!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go Map!!.release.xcconfig"; path = "Target Support Files/Pods-Go Map!!/Pods-Go Map!!.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -659,6 +663,7 @@
 				02ACBA3416713CCB00BB4414 /* UIKit.framework in Frameworks */,
 				02A194B219C6A432002338DA /* libsqlite3.0.dylib in Frameworks */,
 				02ACBD191671737300BB4414 /* libxml2.dylib in Frameworks */,
+				AA246FB907AE90C7A9A88E2C /* Pods_Go_Map__.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -813,6 +818,7 @@
 				64348D09225EA24E00ADE7FB /* GoMapUITests */,
 				02ACBA3216713CCB00BB4414 /* Frameworks */,
 				02ACBA3016713CCB00BB4414 /* Products */,
+				F054DC59AEBC6C0E422E8F75 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -848,6 +854,7 @@
 				0277E29316A673CC00456BED /* OpenGLES.framework */,
 				02ACBD1E16717BBB00BB4414 /* QuartzCore.framework */,
 				02ACBA3316713CCB00BB4414 /* UIKit.framework */,
+				6451600A9054D515EFE125BB /* Pods_Go_Map__.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1288,6 +1295,16 @@
 			path = MapRoulette;
 			sourceTree = "<group>";
 		};
+		F054DC59AEBC6C0E422E8F75 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A415F56DD91B4E5D611F5DE /* Pods-Go Map!!.debug.xcconfig */,
+				7ABF7C15C7958C877CFCB0DF /* Pods-Go Map!!.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1295,6 +1312,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02ACBA6116713CCB00BB4414 /* Build configuration list for PBXNativeTarget "Go Map!!" */;
 			buildPhases = (
+				1895CFE803AA79A2F01A2823 /* [CP] Check Pods Manifest.lock */,
 				02ACBA2B16713CCB00BB4414 /* Sources */,
 				02ACBA2C16713CCB00BB4414 /* Frameworks */,
 				02ACBA2D16713CCB00BB4414 /* Resources */,
@@ -1498,6 +1516,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1895CFE803AA79A2F01A2823 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Go Map!!-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		02ACBA2B16713CCB00BB4414 /* Sources */ = {
@@ -1834,6 +1877,7 @@
 		};
 		02ACBA6216713CCB00BB4414 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A415F56DD91B4E5D611F5DE /* Pods-Go Map!!.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
@@ -1864,6 +1908,7 @@
 		};
 		02ACBA6316713CCB00BB4414 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ABF7C15C7958C877CFCB0DF /* Pods-Go Map!!.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
