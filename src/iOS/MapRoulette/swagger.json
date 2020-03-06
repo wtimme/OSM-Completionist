@@ -7651,9 +7651,6 @@
           "type": "integer",
           "format": "int32"
         },
-        "params": {
-          "$ref": "#/definitions/org.maproulette.session.SearchParameters"
-        },
         "point": {
           "$ref": "#/definitions/org.maproulette.models.Point"
         },
@@ -7756,99 +7753,6 @@
         }
       }
     },
-    "org.maproulette.session.SearchParameters": {
-      "properties": {
-        "projectIds": {
-          "type": "array",
-          "items": {
-            "type": "integer",
-            "format": "int64"
-          }
-        },
-        "projectSearch": {
-          "type": "string"
-        },
-        "projectEnabled": {
-          "type": "boolean"
-        },
-        "challengeParams": {
-          "$ref": "#/definitions/org.maproulette.session.SearchChallengeParameters"
-        },
-        "taskTags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "taskTagConjunction": {
-          "type": "boolean"
-        },
-        "taskSearch": {
-          "type": "string"
-        },
-        "taskStatus": {
-          "type": "array",
-          "items": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "taskId": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "taskReviewStatus": {
-          "type": "array",
-          "items": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "taskProperties": {
-          "type": "collection.immutable.map[string,string]"
-        },
-        "taskPropertySearchType": {
-          "type": "string"
-        },
-        "taskPropertySearch": {
-          "$ref": "#/definitions/org.maproulette.session.TaskPropertySearch"
-        },
-        "taskPriorities": {
-          "type": "array",
-          "items": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "priority": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "location": {
-          "$ref": "#/definitions/org.maproulette.session.SearchLocation"
-        },
-        "bounding": {
-          "$ref": "#/definitions/org.maproulette.session.SearchLocation"
-        },
-        "boundingGeometries": {
-          "type": "array",
-          "items": {
-            "type": "play.api.libs.json.jsobject"
-          }
-        },
-        "fuzzySearch": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "owner": {
-          "type": "string"
-        },
-        "reviewer": {
-          "type": "string"
-        }
-      },
-      "required": ["challengeParams"]
-    },
     "org.maproulette.models.VirtualChallenge": {
       "properties": {
         "id": {
@@ -7872,9 +7776,6 @@
         "ownerId": {
           "type": "integer",
           "format": "int64"
-        },
-        "searchParameters": {
-          "$ref": "#/definitions/org.maproulette.session.SearchParameters"
         },
         "expiry": {
           "type": "integer",
