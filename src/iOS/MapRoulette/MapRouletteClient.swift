@@ -19,6 +19,11 @@ struct MapRouletteTask {
 
 /// An object that communicates with the MapRoulette API.
 protocol MapRouletteClientProtocol {
+    /// Retrieves the `MapRouletteTask`s in the given bounding box.
+    /// - Parameters:
+    ///   - rect: The rect for which to download the tasks.
+    ///   - completion: Closure that is executed when the request completed or an error occurred.
+    func tasks(in rect: OSMRect, _ completion: @escaping (Result<[MapRouletteTask], Error>) -> Void)
 }
 
 final class MapRouletteClient {
@@ -58,4 +63,29 @@ final class MapRouletteClient {
 }
 
 extension MapRouletteClient: MapRouletteClientProtocol {
+    func tasks(in rect: OSMRect, _ completion: @escaping (Result<[MapRouletteTask], Error>) -> Void) {
+        guard !isRectTooLargeForDownload(rect) else {
+            /// The area is too large to download.
+            return
+        }
+        
+        TaskAPI.getTasksInBoundingBox(_left: rect.origin.x, bottom: rect.origin.y + rect.size.height, _right: rect.origin.x + rect.size.width, top: rect.origin.y) { clusteredPoints, error in
+            guard error == nil, let clusteredPoints = clusteredPoints else {
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    let unknownError = NSError(domain: "de.wtimme.osm-completionist.MapRoulette",
+                                               code: -1,
+                                               userInfo: [NSLocalizedDescriptionKey: "An unknown error occurred"])
+                    completion(.failure(unknownError))
+                }
+                
+                return
+            }
+            
+            let tasks = clusteredPoints.map { MapRouletteTask(clusteredPoint: $0) }
+            completion(.success(tasks))
+        }
+    }
+    
 }
