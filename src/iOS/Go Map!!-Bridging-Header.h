@@ -16,3 +16,5 @@
 #import "OsmRelation.h"
 #import "MapViewController.h"
 #import "VectorMath.h"
+#import "GeoURLParser.h"
+#import "URLParserResult.h"

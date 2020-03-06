@@ -42,6 +42,9 @@ struct Quest {
     /// The question that the user is asked when encountering a map item for this quest.
     let question: String
     
+    /// The name of the icon that represents this `Quest`.
+    let iconImageName: String?
+    
     /// A query that is used to filter items that match this quest.
     ///
     /// Uses the [Overpass Turbo Wizard](https://wiki.openstreetmap.org/wiki/Overpass_turbo/Wizard) format.
@@ -55,11 +58,13 @@ struct Quest {
     
     init(identifier: String,
          question: String,
+         iconImageName: String?,
          overpassWizardQuery: String,
          solution: Solution,
          baseObjectMatcher: BaseObjectMatching?) {
         self.identifier = identifier
         self.question = question
+        self.iconImageName = iconImageName
         self.overpassWizardQuery = overpassWizardQuery
         self.solution = solution
         self.baseObjectMatcher = baseObjectMatcher
@@ -67,11 +72,13 @@ struct Quest {
     
     init(identifier: String,
          question: String,
+         iconImageName: String? = nil,
          overpassWizardQuery: String,
          solution: Solution,
          queryParser: OverpassQueryParsing? = OverpassQueryParser()) {
         self.identifier = identifier
         self.question = question
+        self.iconImageName = iconImageName
         self.overpassWizardQuery = overpassWizardQuery
         self.solution = solution
         

@@ -57,6 +57,8 @@ NSString * OSM_API_URL;
 
 @end
 
+
+
 @implementation OsmMapData
 
 static EditorMapLayer * g_EditorMapLayerForArchive = nil;
@@ -171,17 +173,10 @@ static EditorMapLayer * g_EditorMapLayerForArchive = nil;
 }
 
 
-
--(OSMRect)rootRect
-{
-	return _spatial.rootQuad.rect;
-}
-
-
-+(NSSet *)tagsToAutomaticallyStrip
++(NSSet<NSString *> *)tagsToAutomaticallyStrip
 {
 	static dispatch_once_t onceToken;
-	static NSSet * s_ignoreSet = nil;
+	static NSSet<NSString *> * s_ignoreSet = nil;
 	dispatch_once(&onceToken, ^{
 		s_ignoreSet = [NSSet setWithObjects:
 				@"tiger:upload_uuid", @"tiger:tlid", @"tiger:source", @"tiger:separated",
@@ -249,9 +244,9 @@ static EditorMapLayer * g_EditorMapLayerForArchive = nil;
 	}
 }
 
--(NSArray *)waysContainingNode:(OsmNode *)node
+-(NSArray<OsmWay *> *)waysContainingNode:(OsmNode *)node
 {
-	__block NSMutableArray * a = [NSMutableArray new];
+	__block NSMutableArray<OsmWay *> * a = [NSMutableArray new];
 	[_ways enumerateKeysAndObjectsUsingBlock:^(NSNumber * ident, OsmWay * w, BOOL *stop) {
 		if ( [w.nodes containsObject:node] )
 			[a addObject:w];
@@ -278,14 +273,14 @@ static EditorMapLayer * g_EditorMapLayerForArchive = nil;
 
 - (void)enumerateObjectsUsingBlock:(void (^)(OsmBaseObject * obj))block
 {
-	[_nodes enumerateKeysAndObjectsUsingBlock:^(NSString * ident,OsmNode * node,BOOL * stop){
+	[_nodes enumerateKeysAndObjectsUsingBlock:^(NSNumber * ident,OsmNode * node,BOOL * stop){
 		block( node );
 	}];
-	[_ways enumerateKeysAndObjectsUsingBlock:^(NSString * ident,OsmWay * way,BOOL * stop) {
+	[_ways enumerateKeysAndObjectsUsingBlock:^(NSNumber * ident,OsmWay * way,BOOL * stop) {
 		block( way );
 	}];
-	[_relations enumerateKeysAndObjectsUsingBlock:^(NSString * ident,OsmNode * node,BOOL * stop){
-		block( node );
+	[_relations enumerateKeysAndObjectsUsingBlock:^(NSNumber * ident,OsmRelation * relation,BOOL * stop){
+		block( relation );
 	}];
 }
 - (void)enumerateObjectsInRegion:(OSMRect)bbox block:(void (^)(OsmBaseObject * obj))block
@@ -302,22 +297,22 @@ static EditorMapLayer * g_EditorMapLayerForArchive = nil;
 }
 
 
--(NSMutableSet *)tagValuesForKey:(NSString *)key
+-(NSMutableSet<NSString *> *)tagValuesForKey:(NSString *)key
 {
-	NSMutableSet * set = [NSMutableSet set];
-	[_nodes enumerateKeysAndObjectsUsingBlock:^(NSString * ident, OsmBaseObject * object, BOOL *stop) {
+	NSMutableSet<NSString *> * set = [NSMutableSet set];
+	[_nodes enumerateKeysAndObjectsUsingBlock:^(NSNumber * ident, OsmBaseObject * object, BOOL *stop) {
 		NSString * value = [object.tags objectForKey:key];
 		if ( value ) {
 			[set addObject:value];
 		}
 	}];
-	[_ways enumerateKeysAndObjectsUsingBlock:^(NSString * ident, OsmBaseObject * object, BOOL *stop) {
+	[_ways enumerateKeysAndObjectsUsingBlock:^(NSNumber * ident, OsmBaseObject * object, BOOL *stop) {
 		NSString * value = [object.tags objectForKey:key];
 		if ( value ) {
 			[set addObject:value];
 		}
 	}];
-	[_relations enumerateKeysAndObjectsUsingBlock:^(NSString * ident, OsmBaseObject * object, BOOL *stop) {
+	[_relations enumerateKeysAndObjectsUsingBlock:^(NSNumber * ident, OsmBaseObject * object, BOOL *stop) {
 		NSString * value = [object.tags objectForKey:key];
 		if ( value ) {
 			[set addObject:value];
@@ -326,7 +321,7 @@ static EditorMapLayer * g_EditorMapLayerForArchive = nil;
 
 	// special case for street names
 	if ( [key isEqualToString:@"addr:street"] ) {
-		[_ways enumerateKeysAndObjectsUsingBlock:^(NSString * ident, OsmBaseObject * object, BOOL *stop) {
+		[_ways enumerateKeysAndObjectsUsingBlock:^(NSNumber * ident, OsmBaseObject * object, BOOL *stop) {
 			NSString * value = [object.tags objectForKey:@"highway"];
 			if ( value ) {
 				value = [object.tags objectForKey:@"name"];
@@ -340,9 +335,9 @@ static EditorMapLayer * g_EditorMapLayerForArchive = nil;
 }
 
 
--(NSArray *)userStatisticsForRegion:(OSMRect)rect
+-(NSArray<OsmUserStatistics *> *)userStatisticsForRegion:(OSMRect)rect
 {
-	NSMutableDictionary * dict = [NSMutableDictionary dictionary];
+	NSMutableDictionary<NSString *, OsmUserStatistics *> * dict = [NSMutableDictionary dictionary];
 
 	[self enumerateObjectsInRegion:rect block:^(OsmBaseObject * base) {
 		NSDate * date = [base dateForTimestamp];
@@ -396,11 +391,6 @@ static EditorMapLayer * g_EditorMapLayerForArchive = nil;
 
 #pragma mark Editing
 
--(void)registerUndoWithTarget:(id)target selector:(SEL)selector objects:(NSArray *)objects
-{
-	[_undoManager registerUndoWithTarget:target selector:selector objects:objects];
-}
-
 -(void)incrementModifyCount:(OsmBaseObject *)object
 {
 	[_undoManager registerUndoWithTarget:self selector:@selector(incrementModifyCount:) objects:@[object]];
@@ -417,9 +407,12 @@ static NSString * StringTruncatedTo255( NSString * s )
 {
 	if ( s.length > 255 )
 		s = [s substringToIndex:256];
+#if 0
+	// only necessary if we're truncating to 256 UTF-8 characters, which it turns out is unnecessary
 	while ( [s lengthOfBytesUsingEncoding:NSUTF8StringEncoding] > 255 ) {
 		s = [s substringToIndex:s.length-1];
 	}
+#endif
 	return s;
 }
 static NSDictionary * DictWithTagsTruncatedTo255( NSDictionary * tags )
@@ -433,7 +426,7 @@ static NSDictionary * DictWithTagsTruncatedTo255( NSDictionary * tags )
 	return newDict;
 }
 
--(void)setTags:(NSDictionary *)dict forObject:(OsmBaseObject *)object
+-(void)setTags:(NSDictionary<NSString *, NSString *> *)dict forObject:(OsmBaseObject *)object
 {
 	dict = DictWithTagsTruncatedTo255( dict );
 
@@ -1001,9 +994,9 @@ static NSDictionary * DictWithTagsTruncatedTo255( NSDictionary * tags )
 {
 	if ( newData ) {
 
-		NSMutableArray * newNodes = [NSMutableArray new];
-		NSMutableArray * newWays = [NSMutableArray new];
-		NSMutableArray * newRelations = [NSMutableArray new];
+		NSMutableArray<OsmNode *> * newNodes = [NSMutableArray new];
+		NSMutableArray<OsmWay *> * newWays = [NSMutableArray new];
+		NSMutableArray<OsmRelation *> * newRelations = [NSMutableArray new];
 
 		[newData->_nodes enumerateKeysAndObjectsUsingBlock:^(NSNumber * key,OsmNode * node,BOOL * stop){
 			OsmNode * current = [_nodes objectForKey:key];
@@ -1070,7 +1063,13 @@ static NSDictionary * DictWithTagsTruncatedTo255( NSDictionary * tags )
 
 		// store new nodes in database
 		if ( downloaded ) {
-			[self sqlSaveNodes:newNodes saveWays:newWays saveRelations:newRelations deleteNodes:nil deleteWays:nil deleteRelations:nil isUpdate:NO];
+			[self sqlSaveNodes:newNodes
+                      saveWays:newWays
+                 saveRelations:newRelations
+                   deleteNodes:nil
+                    deleteWays:nil
+               deleteRelations:nil
+                      isUpdate:NO];
 
 			// purge old data
 			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -1825,28 +1824,6 @@ static NSDictionary * DictWithTagsTruncatedTo255( NSDictionary * tags )
 	return [xml XMLStringWithOptions:NSXMLNodePrettyPrint];
 }
 
--(NSString *)changesetAsHtml
-{
-#if 1 || TARGET_OS_IPHONE
-	return nil;
-#else
-	NSXMLDocument * xml = [self createXmlWithChangeset:@"0"];
-	if ( xml == nil )
-		return nil;
-	// get XSLT code
-	// http://www.w3schools.com/xml/tryxslt.asp?xmlfile=simple&xsltfile=simple
-	NSString *xsltPath = [[NSBundle mainBundle] pathForResource:@"changeset" ofType:@"xsl"];
-	assert(xsltPath);
-	NSURL * xsltUrl = [NSURL fileURLWithPath:xsltPath];
-	// transform through XSLT
-	NSXMLDocument * htmlDoc = (NSXMLDocument *)[xml objectByApplyingXSLTAtURL:xsltUrl arguments:nil error:nil];
-	// put in WebFrame
-	NSString * html = htmlDoc.XMLString;
-	return html;
-#endif
-}
-
-
 #pragma mark Save/Restore
 
 
@@ -2006,11 +1983,11 @@ static NSDictionary * DictWithTagsTruncatedTo255( NSDictionary * tags )
 		if ( [object isKindOfClass:[OsmBaseObject class]] ) {
 
 			if ( object.isNode ) {
-				[_nodes setObject:object forKey:object.ident];
+				[_nodes setObject:object.isNode forKey:object.ident];
 			} else if ( object.isWay ) {
-				[_ways setObject:object forKey:object.ident];
+				[_ways setObject:object.isWay forKey:object.ident];
 			} else if ( object.isRelation ) {
-				[_relations setObject:object forKey:object.ident];
+				[_relations setObject:object.isRelation forKey:object.ident];
 			} else {
 				assert(NO);
 			}
@@ -2074,9 +2051,13 @@ static NSDictionary * DictWithTagsTruncatedTo255( NSDictionary * tags )
 	return ok;
 }
 
--(void)sqlSaveNodes:(NSArray *)saveNodes saveWays:(NSArray *)saveWays saveRelations:(NSArray *)saveRelations
-		deleteNodes:(NSArray *)deleteNodes deleteWays:(NSArray *)deleteWays deleteRelations:(NSArray *)deleteRelations
-		   isUpdate:(BOOL)isUpdate
+-(void)sqlSaveNodes:(NSArray<OsmNode *> *)saveNodes
+           saveWays:(NSArray<OsmWay *> *)saveWays
+      saveRelations:(NSArray<OsmRelation *> *)saveRelations
+        deleteNodes:(NSArray<OsmNode *> *)deleteNodes
+         deleteWays:(NSArray<OsmWay *> *)deleteWays
+    deleteRelations:(NSArray<OsmRelation *> *)deleteRelations
+           isUpdate:(BOOL)isUpdate
 {
 	if ( saveNodes.count + saveWays.count + saveRelations.count + deleteNodes.count + deleteWays.count + deleteRelations.count == 0 )
 		return;
@@ -2087,7 +2068,13 @@ static NSDictionary * DictWithTagsTruncatedTo255( NSDictionary * tags )
 		{
 			Database * db = [Database new];
 			[db createTables];
-			ok = [db saveNodes:saveNodes saveWays:saveWays saveRelations:saveRelations deleteNodes:deleteNodes deleteWays:deleteWays deleteRelations:deleteRelations isUpdate:isUpdate];
+			ok = [db saveNodes:saveNodes
+                      saveWays:saveWays
+                 saveRelations:saveRelations
+                   deleteNodes:deleteNodes
+                    deleteWays:deleteWays
+               deleteRelations:deleteRelations
+                      isUpdate:isUpdate];
 			if ( !ok ) {
 				[Database deleteDatabaseWithName:nil];
 			}
@@ -2246,9 +2233,9 @@ static NSDictionary * DictWithTagsTruncatedTo255( NSDictionary * tags )
 	NSLog(@"Discard sweep time = %f\n",t);
 
 	// make a copy of items to save because the dictionary might get updated by the time the Database block runs
-	NSArray * saveNodes 	= [_nodes allValues];
-	NSArray * saveWays 		= [_ways allValues];
-	NSArray * saveRelations = [_relations allValues];
+	NSArray<OsmNode *> * saveNodes 	= [_nodes allValues];
+	NSArray<OsmWay *> * saveWays 		= [_ways allValues];
+	NSArray<OsmRelation *> * saveRelations = [_relations allValues];
 	
 	dispatch_async(Database.dispatchQueue, ^{
 		
@@ -2260,8 +2247,13 @@ static NSDictionary * DictWithTagsTruncatedTo255( NSDictionary * tags )
 			Database * db2 = [[Database alloc] initWithName:@"tmp"];
 			tmpPath = db2.path;
 			[db2 createTables];
-			[db2 saveNodes:saveNodes saveWays:saveWays saveRelations:saveRelations
-			   deleteNodes:nil deleteWays:nil deleteRelations:nil isUpdate:NO];
+			[db2 saveNodes:saveNodes
+                  saveWays:saveWays
+             saveRelations:saveRelations
+               deleteNodes:nil
+                deleteWays:nil
+           deleteRelations:nil
+                  isUpdate:NO];
 		}
 		
 		NSString * realPath = [Database databasePathWithName:nil];
@@ -2286,33 +2278,39 @@ static NSDictionary * DictWithTagsTruncatedTo255( NSDictionary * tags )
 // after uploading a changeset we have to update the SQL database to reflect the changes the server replied with
 -(void)updateSql:(NSDictionary *)sqlUpdate
 {
-	NSMutableArray * insertNode		= [NSMutableArray new];
-	NSMutableArray * insertWay		= [NSMutableArray new];
-	NSMutableArray * insertRelation	= [NSMutableArray new];
-	NSMutableArray * deleteNode		= [NSMutableArray new];
-	NSMutableArray * deleteWay		= [NSMutableArray new];
-	NSMutableArray * deleteRelation	= [NSMutableArray new];
+	NSMutableArray<OsmNode *> * insertNode		= [NSMutableArray new];
+	NSMutableArray<OsmWay *> * insertWay		= [NSMutableArray new];
+    NSMutableArray<OsmRelation *> * insertRelation    = [NSMutableArray new];
+	NSMutableArray<OsmNode *> * deleteNode		= [NSMutableArray new];
+	NSMutableArray<OsmWay *> * deleteWay		= [NSMutableArray new];
+	NSMutableArray<OsmRelation *> * deleteRelation	= [NSMutableArray new];
 	[sqlUpdate enumerateKeysAndObjectsUsingBlock:^(OsmBaseObject * object, NSNumber * insert, BOOL *stop) {
 		if ( object.isNode ) {
 			if ( insert.boolValue )
-				[insertNode addObject:object];
+				[insertNode addObject:object.isNode];
 			else
-				[deleteNode addObject:object];
+				[deleteNode addObject:object.isNode];
 		} else if ( object.isWay ) {
 			if ( insert.boolValue )
-				[insertWay addObject:object];
+				[insertWay addObject:object.isWay];
 			else
-				[deleteWay addObject:object];
+				[deleteWay addObject:object.isWay];
 		} else if ( object.isRelation ) {
 			if ( insert.boolValue )
-				[insertRelation addObject:object];
+				[insertRelation addObject:object.isRelation];
 			else
-				[deleteRelation addObject:object];
+				[deleteRelation addObject:object.isRelation];
 		} else {
 			assert(NO);
 		}
 	}];
-	[self sqlSaveNodes:insertNode saveWays:insertWay saveRelations:insertRelation deleteNodes:deleteNode deleteWays:deleteWay deleteRelations:deleteRelation isUpdate:YES];
+	[self sqlSaveNodes:insertNode
+              saveWays:insertWay
+         saveRelations:insertRelation
+           deleteNodes:deleteNode
+            deleteWays:deleteWay
+       deleteRelations:deleteRelation
+              isUpdate:YES];
 }
 
 
@@ -2362,11 +2360,11 @@ static NSDictionary * DictWithTagsTruncatedTo255( NSDictionary * tags )
 		BOOL databaseFailure = NO;
 		@try {
 			Database * db = [Database new];
-			NSMutableDictionary * newNodes		= [db querySqliteNodes];
+			NSMutableDictionary<NSNumber *, OsmNode *> * newNodes		= [db querySqliteNodes];
 			NSAssert(newNodes,nil);
-			NSMutableDictionary * newWays		= [db querySqliteWays];
+			NSMutableDictionary<NSNumber *, OsmWay *> * newWays		= [db querySqliteWays];
 			NSAssert(newWays,nil);
-			NSMutableDictionary * newRelations	= [db querySqliteRelations];
+			NSMutableDictionary<NSNumber *, OsmRelation *> * newRelations	= [db querySqliteRelations];
 			NSAssert(newRelations,nil);
 
 			OsmMapData * newData = [[OsmMapData alloc] init];
