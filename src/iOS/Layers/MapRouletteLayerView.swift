@@ -15,6 +15,7 @@ import UIKit
 
 @objc protocol LayerView: class {
     var delegate: LayerViewDelegate? { get set }
+    func layout()
 }
 
 @objcMembers class MapRouletteLayerView: UIView, LayerView {
@@ -36,6 +37,10 @@ import UIKit
     // MARK: LayerView
     
     weak var delegate: LayerViewDelegate?
+    
+    func layout() {
+        /// TODO: Implement me.
+    }
     
     // MARK: Private methods
     

@@ -390,6 +390,7 @@ const CGFloat kEditControlCornerRadius = 4;
 
 	// get notes
 	[self updateNotesFromServerWithDelay:0];
+    [self.mapRouletteLayerView layout];
 
 	[self updateAerialAttributionButton];
     
@@ -873,6 +874,7 @@ static inline ViewOverlayMask OverlaysFor(MapViewState state, ViewOverlayMask ma
 			break;
 	}
 	[self updateNotesFromServerWithDelay:0];
+    [self.mapRouletteLayerView layout];
 
 	[CATransaction commit];
 
@@ -1717,6 +1719,7 @@ static inline ViewOverlayMask OverlaysFor(MapViewState state, ViewOverlayMask ma
 		return;
 
 	[self refreshNoteButtonsFromDatabase];
+    [self.mapRouletteLayerView layout];
 
 	OSMTransform o = OSMTransformMakeTranslation(delta.x, delta.y);
 	OSMTransform t = OSMTransformConcat( _screenFromMapTransform, o );
@@ -1740,6 +1743,7 @@ static inline ViewOverlayMask OverlaysFor(MapViewState state, ViewOverlayMask ma
 	}
 
 	[self refreshNoteButtonsFromDatabase];
+    [self.mapRouletteLayerView layout];
 
 	if ( log2(scale) < 13 && log2(ratio*scale) >= 13 ) {
 		// we zoomed in, so fetch local country code
@@ -1760,6 +1764,7 @@ static inline ViewOverlayMask OverlaysFor(MapViewState state, ViewOverlayMask ma
 		return;
 
 	[self refreshNoteButtonsFromDatabase];
+    [self.mapRouletteLayerView layout];
 
 	OSMPoint offset = [self mapPointFromScreenPoint:OSMPointFromCGPoint(zoomCenter) birdsEye:NO];
 	OSMTransform t = _screenFromMapTransform;
@@ -2932,6 +2937,7 @@ NSString * ActionTitle( EDIT_ACTION action, BOOL abbrev )
 		[_editorLayer.mapData setTags:tags forObject:object];
 		[self refreshPushpinText];
 		[self refreshNoteButtonsFromDatabase];
+        [self.mapRouletteLayerView layout];
 	}
 	[_editorLayer setNeedsLayout];
 	_confirmDrag = NO;
@@ -3247,6 +3253,7 @@ static NSString * const DisplayLinkPanning	= @"Panning";
 		[pinch setScale:1.0];
 	} else if ( pinch.state == UIGestureRecognizerStateEnded ) {
 		[self updateNotesFromServerWithDelay:0];
+        [self.mapRouletteLayerView layout];
 	}
 }
 
