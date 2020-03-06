@@ -34,9 +34,20 @@ final class MapRouletteClient {
     
     init(maximumBoundingBoxSizeInSquareKilometers: Double = 10.0) {
         self.maximumBoundingBoxSizeInSquareKilometers = maximumBoundingBoxSizeInSquareKilometers
+        
+        setupAPIBasePath()
     }
     
     // MARK: Private methods
+    
+    private func setupAPIBasePath() {
+        guard !MapRouletteAPI.basePath.starts(with: "http") else {
+            /// The `basePath` already has a protocol. Nothing to do here.
+            return
+        }
+        
+        MapRouletteAPI.basePath = "https:\(MapRouletteAPI.basePath)"
+    }
     
     private func isRectTooLargeForDownload(_ rect: OSMRect) -> Bool {
         let rectAreaSizeInMeters = SurfaceArea(rect)
