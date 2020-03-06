@@ -20,6 +20,18 @@ If you're looking for **a full OpenStreetMap editor**,
 Do you want to help testing pre-releases of OSM Completionist?
 [Become a TestFlight tester][9] today! 🚀
 
+# Development
+
+## Auto-generated MapRoulette API client
+
+The API client that is used for communication with the MapRoulette API
+is auto-generated using [Swagger Codegen][13]. Make sure to use at least 3.0.18,
+since that is the version to introduce (experimental) support for Swift 5.
+
+Install it via [Homebrew][14]:
+
+    % brew install swagger-codegen@3.0.18
+
 # Continuous delivery
 
 OSM Completionist makes use of fastlane.
@@ -80,3 +92,5 @@ in the StreetComplete repository.
 [10]: https://github.com/rugk/streetcomplete-quest-svgs
 [11]: https://cairosvg.org/
 [12]: https://github.com/westnordost/StreetComplete/blob/master/res/authors.txt
+[13]: https://swagger.io/docs/open-source-tools/swagger-codegen/
+[14]: https://brew.sh/
