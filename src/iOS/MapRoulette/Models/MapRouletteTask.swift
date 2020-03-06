@@ -9,7 +9,9 @@
 import MapRoulette
 
 struct MapRouletteTask {
-    let id: Int64
+    typealias ID = Int64
+    
+    let id: ID
     let coordinate: CLLocationCoordinate2D
     
     init(clusteredPoint: OrgMaprouletteModelsClusteredPoint) {
