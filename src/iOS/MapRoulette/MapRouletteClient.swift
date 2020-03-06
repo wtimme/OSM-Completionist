@@ -22,6 +22,9 @@ protocol MapRouletteClientProtocol {
 }
 
 final class MapRouletteClient {
+    // MARK: Public properties
+    
+    static let shared = MapRouletteClient()
 }
 
 extension MapRouletteClient: MapRouletteClientProtocol {
