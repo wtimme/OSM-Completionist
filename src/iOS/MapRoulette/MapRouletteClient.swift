@@ -21,5 +21,8 @@ struct MapRouletteTask {
 protocol MapRouletteClientProtocol {
 }
 
-final class MapRouletteClient: MapRouletteClientProtocol {
+final class MapRouletteClient {
+}
+
+extension MapRouletteClient: MapRouletteClientProtocol {
 }
