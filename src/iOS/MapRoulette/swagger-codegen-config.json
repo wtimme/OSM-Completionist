@@ -2,5 +2,4 @@
   "projectName": "MapRoulette",
   "podLicense": "'ISC License'",
   "podSummary": "Auto-generated API client for MapRoulette",
-  "podSource": "'https://github.com/wtimme/OSM-Completionist.git'"
 }
