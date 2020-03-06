@@ -262,6 +262,7 @@
 		64F59A4E240721820093DCDB /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F59A4D240721820093DCDB /* FeedbackGenerator.swift */; };
 		64F59A50240915840093DCDB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F59A4F240915840093DCDB /* MapViewController.swift */; };
 		64F59AC82412BB190093DCDB /* MapRouletteClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F59AC72412BB190093DCDB /* MapRouletteClient.swift */; };
+		64F73B022412F12100C7B4C8 /* CLLocationCoordinate2D+MapRoulette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73B012412F12100C7B4C8 /* CLLocationCoordinate2D+MapRoulette.swift */; };
 		AA246FB907AE90C7A9A88E2C /* Pods_Go_Map__.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6451600A9054D515EFE125BB /* Pods_Go_Map__.framework */; };
 /* End PBXBuildFile section */
 
@@ -640,6 +641,7 @@
 		64F59A4D240721820093DCDB /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
 		64F59A4F240915840093DCDB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		64F59AC72412BB190093DCDB /* MapRouletteClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouletteClient.swift; sourceTree = "<group>"; };
+		64F73B012412F12100C7B4C8 /* CLLocationCoordinate2D+MapRoulette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+MapRoulette.swift"; sourceTree = "<group>"; };
 		7ABF7C15C7958C877CFCB0DF /* Pods-Go Map!!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go Map!!.release.xcconfig"; path = "Target Support Files/Pods-Go Map!!/Pods-Go Map!!.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1291,6 +1293,7 @@
 			isa = PBXGroup;
 			children = (
 				64F59AC72412BB190093DCDB /* MapRouletteClient.swift */,
+				64F73B012412F12100C7B4C8 /* CLLocationCoordinate2D+MapRoulette.swift */,
 			);
 			path = MapRoulette;
 			sourceTree = "<group>";
@@ -1610,6 +1613,7 @@
 				024C323D1DEEA97100AD62AB /* OsmServerViewController.m in Sources */,
 				022A2A54167B8F1C00D7A5AC /* POITabBarController.m in Sources */,
 				64D64CE9227ECF450040C67A /* BaseObjectMatching.swift in Sources */,
+				64F73B022412F12100C7B4C8 /* CLLocationCoordinate2D+MapRoulette.swift in Sources */,
 				022A2A6E167D969700D7A5AC /* ClearCacheViewController.m in Sources */,
 				0296873F167E30C700B8FF2C /* PushPinView.m in Sources */,
 				02F373F916822C2C004614D4 /* UploadViewController.m in Sources */,
