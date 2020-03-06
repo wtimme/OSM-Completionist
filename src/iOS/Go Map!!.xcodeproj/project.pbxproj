@@ -1292,10 +1292,18 @@
 		64F59AC62412B5410093DCDB /* MapRoulette */ = {
 			isa = PBXGroup;
 			children = (
+				64F73AFF2412EF2100C7B4C8 /* Models */,
 				64F59AC72412BB190093DCDB /* MapRouletteClient.swift */,
 				64F73B012412F12100C7B4C8 /* CLLocationCoordinate2D+MapRoulette.swift */,
 			);
 			path = MapRoulette;
+			sourceTree = "<group>";
+		};
+		64F73AFF2412EF2100C7B4C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F054DC59AEBC6C0E422E8F75 /* Pods */ = {
