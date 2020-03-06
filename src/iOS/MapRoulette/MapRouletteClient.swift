@@ -7,6 +7,15 @@
 //
 
 import Foundation
+import MapRoulette
+
+struct MapRouletteTask {
+    let coordinate: CLLocationCoordinate2D
+    
+    init(clusteredPoint: OrgMaprouletteModelsClusteredPoint) {
+        self.coordinate = CLLocationCoordinate2D(mapRoulettePoint: clusteredPoint.point)
+    }
+}
 
 /// An object that communicates with the MapRoulette API.
 protocol MapRouletteClientProtocol {
