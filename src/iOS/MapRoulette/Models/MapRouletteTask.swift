@@ -17,3 +17,13 @@ struct MapRouletteTask {
         self.coordinate = CLLocationCoordinate2D(mapRoulettePoint: clusteredPoint.point)
     }
 }
+
+extension MapRouletteTask: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
+func ==(lhs: MapRouletteTask, rhs: MapRouletteTask) -> Bool {
+    return lhs.id == rhs.id
+}
