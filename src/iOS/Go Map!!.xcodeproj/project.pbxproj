@@ -855,6 +855,7 @@
 			children = (
 				6463E3C023F74D1F00E4F6ED /* Layers */,
 				64D64CE6227ECF450040C67A /* Overpass */,
+                64F59AC62412B5410093DCDB /* MapRoulette */,
 				64981F1D22667D7700178476 /* Extensions */,
 				64D74BF02253DF39004FFD20 /* Direction */,
 				64305F6C23E71F5700232BB9 /* URLParsing */,
@@ -1275,6 +1276,13 @@
 				64CCF4E223C0C1BF006164D3 /* Quest+MakeQuest.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		64F59AC62412B5410093DCDB /* MapRoulette */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MapRoulette;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
