@@ -7360,12 +7360,10 @@
           "format": "int32"
         },
         "created": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "modified": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "description": {
           "type": "string"
@@ -7420,12 +7418,10 @@
           "format": "int64"
         },
         "reviewedAt": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "reviewStartedAt": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         }
       }
     },
@@ -7462,8 +7458,7 @@
           "type": "string"
         },
         "modified": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "difficulty": {
           "type": "integer",
@@ -7481,8 +7476,7 @@
           "type": "string"
         },
         "mappedOn": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "pointReview": {
           "$ref": "#/definitions/org.maproulette.models.PointReview"
@@ -7515,12 +7509,10 @@
           "type": "string"
         },
         "created": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "modified": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "description": {
           "type": "string"
@@ -7573,12 +7565,10 @@
           "type": "string"
         },
         "created": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "modified": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "tagType": {
           "type": "string"
@@ -7730,12 +7720,10 @@
           "type": "string"
         },
         "created": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "modified": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "description": {
           "type": "string"
@@ -7745,8 +7733,7 @@
           "format": "int64"
         },
         "expiry": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "taskIdList": {
           "type": "array",
@@ -7817,12 +7804,10 @@
           "format": "int32"
         },
         "created": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "modified": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         }
       },
       "required": ["id", "name", "projectId", "groupType", "created", "modified"]
@@ -7862,8 +7847,7 @@
           "$ref": "#/definitions/org.maproulette.session.Location"
         },
         "created": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "requestToken": {
           "type": "play.api.libs.oauth.requesttoken"
@@ -7878,12 +7862,10 @@
           "format": "int64"
         },
         "created": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "modified": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "osmProfile": {
           "$ref": "#/definitions/org.maproulette.session.OSMProfile"
@@ -7939,8 +7921,7 @@
           "format": "int64"
         },
         "created": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "comment": {
           "type": "string"
@@ -8107,12 +8088,10 @@
           "type": "string"
         },
         "created": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "modified": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "description": {
           "type": "string"
@@ -8143,12 +8122,10 @@
           "type": "string"
         },
         "lastTaskRefresh": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "dataOriginDate": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "location": {
           "type": "string"
@@ -8202,12 +8179,10 @@
           "format": "int64"
         },
         "reviewedAt": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "reviewStartedAt": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "reviewClaimedBy": {
           "type": "integer",
@@ -8225,12 +8200,10 @@
           "type": "string"
         },
         "created": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "modified": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "parent": {
           "type": "integer",
@@ -8253,8 +8226,7 @@
           "format": "int32"
         },
         "mappedOn": {
-          "type": "integer",
-          "format": "epoch"
+          "type": "string"
         },
         "review": {
           "$ref": "#/definitions/org.maproulette.models.TaskReviewFields"
