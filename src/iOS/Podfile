@@ -5,5 +5,5 @@ target 'Go Map!!' do
   use_frameworks!
 
   # Pods for Go Map!!
-
+  pod 'MapRoulette', :path => './MapRoulette/auto-generated'
 end
