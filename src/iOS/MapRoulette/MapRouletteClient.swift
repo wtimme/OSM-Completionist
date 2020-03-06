@@ -9,16 +9,6 @@
 import Foundation
 import MapRoulette
 
-struct MapRouletteTask {
-    let id: Int64
-    let coordinate: CLLocationCoordinate2D
-    
-    init(clusteredPoint: OrgMaprouletteModelsClusteredPoint) {
-        self.id = clusteredPoint._id
-        self.coordinate = CLLocationCoordinate2D(mapRoulettePoint: clusteredPoint.point)
-    }
-}
-
 /// An object that communicates with the MapRoulette API.
 protocol MapRouletteClientProtocol {
     /// Retrieves the `MapRouletteTask`s in the given bounding box.
