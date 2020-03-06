@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
   s.source = { :git => 'git@github.com:swagger-api/swagger-mustache.git', :tag => 'v1.0.0' }
   s.authors = 'Swagger Codegen'
   s.license = 'ISC License'
+  s.homepage = 'https://github.com/wtimme/osm-completionist'
   s.summary = 'Auto-generated API client for MapRoulette'
   s.source_files = 'MapRoulette/Classes/**/*.swift'
   s.dependency 'Alamofire', '~> 4.9.0'
