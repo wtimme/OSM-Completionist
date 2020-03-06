@@ -32,6 +32,16 @@ Install it via [Homebrew][14]:
 
     % brew install swagger-codegen@3.0.18
 
+### Compiling Swagger Codegen (optional)
+
+At the time of writing, the formula for 3.0.18 was not available yet.
+Here's how to compile the `swagger-codegen` yourself:
+
+1. Clone the repository: `git clone https://github.com/swagger-api/swagger-codegen.git`
+2. Change to the folder: `cd swagger-codegen`
+3. Checkout the version: `git checkout v3.0.18`
+4. Package using Maven: `maven clean package`
+
 # Continuous delivery
 
 OSM Completionist makes use of fastlane.
