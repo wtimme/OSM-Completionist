@@ -3,5 +3,5 @@
   "podAuthors": "Bryce Cogswell and Go Map!! Contributers",
   "podLicense": "ISC License",
   "podSummary": "Auto-generated API client for MapRoulette",
-  "podSource": "https://github.com/wtimme/OSM-Completionist.git"
+  "podSource": "'https://github.com/wtimme/OSM-Completionist.git'"
 }
