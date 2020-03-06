@@ -3004,6 +3004,8 @@ NSString * ActionTitle( EDIT_ACTION action, BOOL abbrev )
 
 -(void)updateNotesFromServerWithDelay:(CGFloat)delay
 {
+    [self.mapRouletteLayerView updateDynamicContent];
+    
 	if ( _viewOverlayMask & VIEW_OVERLAY_NOTES ) {
 		OSMRect rc = [self screenLongitudeLatitude];
 		[_notesDatabase updateRegion:rc withDelay:delay fixmeData:self.editorLayer.mapData completion:^{

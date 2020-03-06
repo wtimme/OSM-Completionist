@@ -16,6 +16,9 @@ import UIKit
 @objc protocol LayerView: class {
     var delegate: LayerViewDelegate? { get set }
     func layout()
+    
+    /// Tells the layer to update its dynamic content (e. g. by downloading information from a web server)
+    func updateDynamicContent()
 }
 
 @objcMembers class MapRouletteLayerView: UIView, LayerView {
@@ -39,6 +42,10 @@ import UIKit
     weak var delegate: LayerViewDelegate?
     
     func layout() {
+        /// TODO: Implement me.
+    }
+    
+    func updateDynamicContent() {
         /// TODO: Implement me.
     }
     
