@@ -248,7 +248,7 @@ open class ReviewAPI {
      - parameter o: (query) The search string used to match the name of the person requesting the review. (review_requested_by) (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getReviewRequestedTasks(startDate: String? = nil, endDate: String? = nil, onlySaved: Bool? = nil, limit: Int? = nil, page: Int? = nil, sort: String? = nil, order: String? = nil, excludeOtherReviewers: Bool? = nil, cs: Object? = nil, o: Object? = nil, completion: @escaping ((_ data: [OrgMaprouletteModelsTask]?,_ error: Error?) -> Void)) {
+    open class func getReviewRequestedTasks(startDate: String? = nil, endDate: String? = nil, onlySaved: Bool? = nil, limit: Int? = nil, page: Int? = nil, sort: String? = nil, order: String? = nil, excludeOtherReviewers: Bool? = nil, cs: String? = nil, o: String? = nil, completion: @escaping ((_ data: [OrgMaprouletteModelsTask]?,_ error: Error?) -> Void)) {
         getReviewRequestedTasksWithRequestBuilder(startDate: startDate, endDate: endDate, onlySaved: onlySaved, limit: limit, page: page, sort: sort, order: order, excludeOtherReviewers: excludeOtherReviewers, cs: cs, o: o).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -357,7 +357,7 @@ open class ReviewAPI {
 
      - returns: RequestBuilder<[OrgMaprouletteModelsTask]> 
      */
-    open class func getReviewRequestedTasksWithRequestBuilder(startDate: String? = nil, endDate: String? = nil, onlySaved: Bool? = nil, limit: Int? = nil, page: Int? = nil, sort: String? = nil, order: String? = nil, excludeOtherReviewers: Bool? = nil, cs: Object? = nil, o: Object? = nil) -> RequestBuilder<[OrgMaprouletteModelsTask]> {
+    open class func getReviewRequestedTasksWithRequestBuilder(startDate: String? = nil, endDate: String? = nil, onlySaved: Bool? = nil, limit: Int? = nil, page: Int? = nil, sort: String? = nil, order: String? = nil, excludeOtherReviewers: Bool? = nil, cs: String? = nil, o: String? = nil) -> RequestBuilder<[OrgMaprouletteModelsTask]> {
         let path = "/tasks/review"
         let URLString = MapRouletteAPI.basePath + path
         let parameters: [String:Any]? = nil
@@ -397,7 +397,7 @@ open class ReviewAPI {
      - parameter r: (query) The search string used to match the Reviewer names. (reviewed_by) (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getReviewedTasks(mappers: String? = nil, reviewers: String? = nil, startDate: String? = nil, endDate: String? = nil, allowReviewNeeded: Bool? = nil, limit: Int? = nil, page: Int? = nil, sort: String? = nil, order: String? = nil, cs: Object? = nil, o: Object? = nil, r: Object? = nil, completion: @escaping ((_ data: [OrgMaprouletteModelsTask]?,_ error: Error?) -> Void)) {
+    open class func getReviewedTasks(mappers: String? = nil, reviewers: String? = nil, startDate: String? = nil, endDate: String? = nil, allowReviewNeeded: Bool? = nil, limit: Int? = nil, page: Int? = nil, sort: String? = nil, order: String? = nil, cs: String? = nil, o: String? = nil, r: String? = nil, completion: @escaping ((_ data: [OrgMaprouletteModelsTask]?,_ error: Error?) -> Void)) {
         getReviewedTasksWithRequestBuilder(mappers: mappers, reviewers: reviewers, startDate: startDate, endDate: endDate, allowReviewNeeded: allowReviewNeeded, limit: limit, page: page, sort: sort, order: order, cs: cs, o: o, r: r).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -508,7 +508,7 @@ open class ReviewAPI {
 
      - returns: RequestBuilder<[OrgMaprouletteModelsTask]> 
      */
-    open class func getReviewedTasksWithRequestBuilder(mappers: String? = nil, reviewers: String? = nil, startDate: String? = nil, endDate: String? = nil, allowReviewNeeded: Bool? = nil, limit: Int? = nil, page: Int? = nil, sort: String? = nil, order: String? = nil, cs: Object? = nil, o: Object? = nil, r: Object? = nil) -> RequestBuilder<[OrgMaprouletteModelsTask]> {
+    open class func getReviewedTasksWithRequestBuilder(mappers: String? = nil, reviewers: String? = nil, startDate: String? = nil, endDate: String? = nil, allowReviewNeeded: Bool? = nil, limit: Int? = nil, page: Int? = nil, sort: String? = nil, order: String? = nil, cs: String? = nil, o: String? = nil, r: String? = nil) -> RequestBuilder<[OrgMaprouletteModelsTask]> {
         let path = "/tasks/reviewed"
         let URLString = MapRouletteAPI.basePath + path
         let parameters: [String:Any]? = nil
@@ -546,7 +546,7 @@ open class ReviewAPI {
      - parameter r: (query) The search string used to match the Reviewer names. (reviewed_by) (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func nextTaskReview(onlySaved: Bool? = nil, sort: String? = nil, order: String? = nil, lastTaskId: Int64? = nil, excludeOtherReviewers: Bool? = nil, cs: Object? = nil, o: Object? = nil, r: Object? = nil, completion: @escaping ((_ data: OrgMaprouletteModelsTask?,_ error: Error?) -> Void)) {
+    open class func nextTaskReview(onlySaved: Bool? = nil, sort: String? = nil, order: String? = nil, lastTaskId: Int64? = nil, excludeOtherReviewers: Bool? = nil, cs: String? = nil, o: String? = nil, r: String? = nil, completion: @escaping ((_ data: OrgMaprouletteModelsTask?,_ error: Error?) -> Void)) {
         nextTaskReviewWithRequestBuilder(onlySaved: onlySaved, sort: sort, order: order, lastTaskId: lastTaskId, excludeOtherReviewers: excludeOtherReviewers, cs: cs, o: o, r: r).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -611,7 +611,7 @@ open class ReviewAPI {
 
      - returns: RequestBuilder<OrgMaprouletteModelsTask> 
      */
-    open class func nextTaskReviewWithRequestBuilder(onlySaved: Bool? = nil, sort: String? = nil, order: String? = nil, lastTaskId: Int64? = nil, excludeOtherReviewers: Bool? = nil, cs: Object? = nil, o: Object? = nil, r: Object? = nil) -> RequestBuilder<OrgMaprouletteModelsTask> {
+    open class func nextTaskReviewWithRequestBuilder(onlySaved: Bool? = nil, sort: String? = nil, order: String? = nil, lastTaskId: Int64? = nil, excludeOtherReviewers: Bool? = nil, cs: String? = nil, o: String? = nil, r: String? = nil) -> RequestBuilder<OrgMaprouletteModelsTask> {
         let path = "/tasks/review/next"
         let URLString = MapRouletteAPI.basePath + path
         let parameters: [String:Any]? = nil

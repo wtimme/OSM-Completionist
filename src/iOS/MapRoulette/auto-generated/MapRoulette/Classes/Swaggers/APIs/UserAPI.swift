@@ -122,7 +122,7 @@ open class UserAPI {
      - parameter notificationIds: (query) One or more comma-separated ids of notifications to delete 
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func deleteNotifications(userId: Int64, notificationIds: Object, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+    open class func deleteNotifications(userId: Int64, notificationIds: String, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
         deleteNotificationsWithRequestBuilder(userId: userId, notificationIds: notificationIds).execute { (response, error) -> Void in
             if error == nil {
                 completion((), error)
@@ -142,7 +142,7 @@ open class UserAPI {
 
      - returns: RequestBuilder<Void> 
      */
-    open class func deleteNotificationsWithRequestBuilder(userId: Int64, notificationIds: Object) -> RequestBuilder<Void> {
+    open class func deleteNotificationsWithRequestBuilder(userId: Int64, notificationIds: String) -> RequestBuilder<Void> {
         var path = "/user/{userId}/notifications"
         let userIdPreEscape = "\(userId)"
         let userIdPostEscape = userIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1219,7 +1219,7 @@ open class UserAPI {
      - parameter notificationIds: (query) One or more comma-separated ids of notifications to mark as read 
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func markNotificationsRead(userId: Int64, notificationIds: Object, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+    open class func markNotificationsRead(userId: Int64, notificationIds: String, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
         markNotificationsReadWithRequestBuilder(userId: userId, notificationIds: notificationIds).execute { (response, error) -> Void in
             if error == nil {
                 completion((), error)
@@ -1239,7 +1239,7 @@ open class UserAPI {
 
      - returns: RequestBuilder<Void> 
      */
-    open class func markNotificationsReadWithRequestBuilder(userId: Int64, notificationIds: Object) -> RequestBuilder<Void> {
+    open class func markNotificationsReadWithRequestBuilder(userId: Int64, notificationIds: String) -> RequestBuilder<Void> {
         var path = "/user/{userId}/notifications"
         let userIdPreEscape = "\(userId)"
         let userIdPostEscape = userIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""

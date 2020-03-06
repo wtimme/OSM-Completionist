@@ -1412,7 +1412,7 @@ open class TaskAPI {
      - parameter requestReview: (query) Boolean indicating if a review is requested on this task. (Will override user settings if provided) (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func setBundleTaskStatus(bundleId: Int64, primaryId: Int64, status: Int, apiKey: String, comment: String? = nil, tags: String? = nil, requestReview: Object? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+    open class func setBundleTaskStatus(bundleId: Int64, primaryId: Int64, status: Int, apiKey: String, comment: String? = nil, tags: String? = nil, requestReview: Bool? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
         setBundleTaskStatusWithRequestBuilder(bundleId: bundleId, primaryId: primaryId, status: status, apiKey: apiKey, comment: comment, tags: tags, requestReview: requestReview).execute { (response, error) -> Void in
             if error == nil {
                 completion((), error)
@@ -1437,7 +1437,7 @@ open class TaskAPI {
 
      - returns: RequestBuilder<Void> 
      */
-    open class func setBundleTaskStatusWithRequestBuilder(bundleId: Int64, primaryId: Int64, status: Int, apiKey: String, comment: String? = nil, tags: String? = nil, requestReview: Object? = nil) -> RequestBuilder<Void> {
+    open class func setBundleTaskStatusWithRequestBuilder(bundleId: Int64, primaryId: Int64, status: Int, apiKey: String, comment: String? = nil, tags: String? = nil, requestReview: Bool? = nil) -> RequestBuilder<Void> {
         var path = "/taskBundle/{bundleId}/{status}"
         let bundleIdPreEscape = "\(bundleId)"
         let bundleIdPostEscape = bundleIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1535,7 +1535,7 @@ open class TaskAPI {
      - parameter requestReview: (query) Boolean indicating if a review is requested on this task. (Will override user settings if provided) (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func setTaskStatus(_id: Int64, status: Int, apiKey: String, comment: String? = nil, tags: String? = nil, requestReview: Object? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+    open class func setTaskStatus(_id: Int64, status: Int, apiKey: String, comment: String? = nil, tags: String? = nil, requestReview: Bool? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
         setTaskStatusWithRequestBuilder(_id: _id, status: status, apiKey: apiKey, comment: comment, tags: tags, requestReview: requestReview).execute { (response, error) -> Void in
             if error == nil {
                 completion((), error)
@@ -1559,7 +1559,7 @@ open class TaskAPI {
 
      - returns: RequestBuilder<Void> 
      */
-    open class func setTaskStatusWithRequestBuilder(_id: Int64, status: Int, apiKey: String, comment: String? = nil, tags: String? = nil, requestReview: Object? = nil) -> RequestBuilder<Void> {
+    open class func setTaskStatusWithRequestBuilder(_id: Int64, status: Int, apiKey: String, comment: String? = nil, tags: String? = nil, requestReview: Bool? = nil) -> RequestBuilder<Void> {
         var path = "/task/{id}/{status}"
         let _idPreEscape = "\(_id)"
         let _idPostEscape = _idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""

@@ -1028,10 +1028,12 @@
         }, {
           "name": "cs",
           "in": "query",
+          "type": "string",
           "description": "The search string used to match the Challenge names. Default value is empty string, ie. will match all challenges."
         }, {
           "name": "o",
           "in": "query",
+          "type": "string",
           "description": "The search string used to match the name of the person requesting the review. (review_requested_by)"
         }]
       }
@@ -1121,14 +1123,17 @@
         }, {
           "name": "cs",
           "in": "query",
+          "type": "string",
           "description": "The search string used to match the Challenge names. Default value is empty string, ie. will match all challenges."
         }, {
           "name": "o",
           "in": "query",
+          "type": "string",
           "description": "The search string used to match the name of the person requesting the review. (review_requested_by)"
         }, {
           "name": "r",
           "in": "query",
+          "type": "string",
           "description": "The search string used to match the Reviewer names. (reviewed_by)"
         }]
       }
@@ -1188,14 +1193,17 @@
         }, {
           "name": "cs",
           "in": "query",
+          "type": "string",
           "description": "The search string used to match the Challenge names. Default value is empty string, ie. will match all challenges."
         }, {
           "name": "o",
           "in": "query",
+          "type": "string",
           "description": "The search string used to match the name of the person requesting the review. (review_requested_by)"
         }, {
           "name": "r",
           "in": "query",
+          "type": "string",
           "description": "The search string used to match the Reviewer names. (reviewed_by)"
         }]
       }
@@ -2025,30 +2033,41 @@
         }, {
           "name": "pid",
           "in": "query",
+          "type": "integer",
+          "format": "int64",
           "description": "The id of the project to limit your search too"
         }, {
           "name": "ps",
           "in": "query",
+          "type": "string",
           "description": "The search string used to match the project names. Default value is empty string, ie. will match all projects."
         }, {
           "name": "pe",
           "in": "query",
+          "type": "boolean",
+          "default": true,
           "description": "Boolean variable true|false that limits the search by enabled projects only if set to true. Default will is true."
         }, {
           "name": "ct",
           "in": "query",
+          "type": "string",
           "description": "Comma separated list of tags to limit the returned challenges by"
         }, {
           "name": "cs",
           "in": "query",
+          "type": "string",
+          "default": "",
           "description": "The search string used to match the Challenge names. Default value is empty string, ie. will match all challenges."
         }, {
           "name": "ce",
           "in": "query",
+          "type": "boolean",
+          "default": true,
           "description": "Boolean variable true|false that limits the search by enabled projects only if set to true. Default will is true."
         }, {
           "name": "cd",
           "in": "query",
+          "type": "string",
           "description": "The difficulty level to limit the returned challenges by. Following difficulty Integers can be used. 1 - Easy, 2 - Normal, 3 - Expert, -1 - Any difficulty. Default value is -1."
         }]
       }
@@ -2105,6 +2124,8 @@
         }, {
           "name": "parentId",
           "in": "query",
+          "type": "integer",
+          "format": "int64",
           "description": "This field will be ignored for this request"
         }]
       }
@@ -2769,6 +2790,8 @@
         }, {
           "name": "proximity",
           "in": "query",
+          "type": "integer",
+          "format": "int64",
           "description": "Id of task around which geographically closest tasks are desired"
         }]
       }
@@ -3428,6 +3451,8 @@
         }, {
           "name": "id",
           "in": "path",
+          "type": "integer",
+          "format": "int64",
           "description": "The ID of the parent project",
           "required": true
         }]
@@ -3954,6 +3979,8 @@
         }, {
           "name": "proximity",
           "in": "query",
+          "type": "integer",
+          "format": "int64",
           "description": "Id of task around which geographically closest tasks are desired"
         }]
       }
@@ -5162,6 +5189,7 @@
         }, {
           "name": "requestReview",
           "in": "query",
+          "type": "boolean",
           "description": "Boolean indicating if a review is requested on this task. (Will override user settings if provided)"
         }, {
           "name": "completionResponses",
@@ -5232,6 +5260,7 @@
         }, {
           "name": "requestReview",
           "in": "query",
+          "type": "boolean",
           "description": "Boolean indicating if a review is requested on this task. (Will override user settings if provided)"
         }]
       }
@@ -5490,6 +5519,8 @@
         }, {
           "name": "id",
           "in": "path",
+          "type": "integer",
+          "format": "int64",
           "description": "The id of the parent project."
         }]
       }
@@ -6838,7 +6869,7 @@
           "in": "query",
           "name": "notificationIds",
           "description": "One or more comma-separated ids of notifications to delete",
-          "type": "string,",
+          "type": "string",
           "required": true
         }]
       },
@@ -6867,7 +6898,7 @@
           "in": "query",
           "name": "notificationIds",
           "description": "One or more comma-separated ids of notifications to mark as read",
-          "type": "string,",
+          "type": "string",
           "required": true
         }]
       }
@@ -7221,46 +7252,6 @@
         "consumes": ["application/json"]
       }
     },
-    "/change/tag/test": {
-      "post": {
-        "operationId": "testTagChange",
-        "tags": ["Changes"],
-        "summary": "Test Changes",
-        "description": "Takes in a group of changes and instead of submitting them to OSM will return a standard OSMChange XML that would have been submitted to the OSM servers",
-        "responses": {
-          "200": {
-            "description": "Ok with a standard message"
-          },
-          "401": {
-            "description": "The user is not authorized to make this request"
-          }
-        },
-        "parameters": [{
-          "in": "query",
-          "name": "changeType",
-          "type": "string",
-          "required": false,
-          "default": "delta"
-        }, {
-          "in": "body",
-          "name": "body",
-          "description": "The tag changes",
-          "required": true,
-          "schema": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "$ref": "#/definitions/org.maproulette.services.osm.ChangeObjects.TagChange"
-            }
-          }
-        }, {
-          "name": "groupType",
-          "in": "query",
-          "description": "delta to return a delta version of the changes that would be applied. osmchange for the actual OSMChange value that would be applied to the OSM servers"
-        }],
-        "consumes": ["application/json"]
-      }
-    },
     "/task/{taskId}/fix/apply": {
       "post": {
         "operationId": "applyTagFix",
@@ -7308,6 +7299,7 @@
         }, {
           "name": "requestReview",
           "in": "query",
+          "type": "boolean",
           "description": "Boolean indicating if a review is requested on this task. (Will override user settings if provided)"
         }],
         "consumes": ["application/json"]
@@ -7690,31 +7682,6 @@
         }
       },
       "required": ["left", "bottom", "right", "top"]
-    },
-    "org.maproulette.session.TaskPropertySearch": {
-      "properties": {
-        "key": {
-          "type": "string"
-        },
-        "value": {
-          "type": "string"
-        },
-        "valueType": {
-          "type": "string"
-        },
-        "searchType": {
-          "type": "string"
-        },
-        "operationType": {
-          "type": "string"
-        },
-        "left": {
-          "$ref": "#/definitions/org.maproulette.session.TaskPropertySearch"
-        },
-        "right": {
-          "$ref": "#/definitions/org.maproulette.session.TaskPropertySearch"
-        }
-      }
     },
     "org.maproulette.session.SearchChallengeParameters": {
       "properties": {

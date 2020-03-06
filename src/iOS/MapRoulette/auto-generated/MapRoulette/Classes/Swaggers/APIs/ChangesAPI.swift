@@ -19,7 +19,7 @@ open class ChangesAPI {
      - parameter requestReview: (query) Boolean indicating if a review is requested on this task. (Will override user settings if provided) (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func applyTagFix(taskId: Int64, comment: String? = nil, tags: String? = nil, requestReview: Object? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+    open class func applyTagFix(taskId: Int64, comment: String? = nil, tags: String? = nil, requestReview: Bool? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
         applyTagFixWithRequestBuilder(taskId: taskId, comment: comment, tags: tags, requestReview: requestReview).execute { (response, error) -> Void in
             if error == nil {
                 completion((), error)
@@ -41,7 +41,7 @@ open class ChangesAPI {
 
      - returns: RequestBuilder<Void> 
      */
-    open class func applyTagFixWithRequestBuilder(taskId: Int64, comment: String? = nil, tags: String? = nil, requestReview: Object? = nil) -> RequestBuilder<Void> {
+    open class func applyTagFixWithRequestBuilder(taskId: Int64, comment: String? = nil, tags: String? = nil, requestReview: Bool? = nil) -> RequestBuilder<Void> {
         let path = "/task/{taskId}/fix/apply"
         let URLString = MapRouletteAPI.basePath + path
         let parameters: [String:Any]? = nil
@@ -56,50 +56,6 @@ open class ChangesAPI {
         let requestBuilder: RequestBuilder<Void>.Type = MapRouletteAPI.requestBuilderFactory.getNonDecodableBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
-    }
-
-    /**
-     Test Changes
-
-     - parameter body: (body) The tag changes 
-     - parameter changeType: (query)  (optional)
-     - parameter groupType: (query) delta to return a delta version of the changes that would be applied. osmchange for the actual OSMChange value that would be applied to the OSM servers (optional)
-     - parameter completion: completion handler to receive the data and the error objects
-     */
-    open class func testTagChange(body: [OrgMaprouletteServicesOsmChangeObjectsTagChange], changeType: String? = nil, groupType: Object? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
-        testTagChangeWithRequestBuilder(body: body, changeType: changeType, groupType: groupType).execute { (response, error) -> Void in
-            if error == nil {
-                completion((), error)
-            } else {
-                completion(nil, error)
-            }
-        }
-    }
-
-
-    /**
-     Test Changes
-     - POST /change/tag/test
-
-     - parameter body: (body) The tag changes 
-     - parameter changeType: (query)  (optional)
-     - parameter groupType: (query) delta to return a delta version of the changes that would be applied. osmchange for the actual OSMChange value that would be applied to the OSM servers (optional)
-
-     - returns: RequestBuilder<Void> 
-     */
-    open class func testTagChangeWithRequestBuilder(body: [OrgMaprouletteServicesOsmChangeObjectsTagChange], changeType: String? = nil, groupType: Object? = nil) -> RequestBuilder<Void> {
-        let path = "/change/tag/test"
-        let URLString = MapRouletteAPI.basePath + path
-        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: body)
-        var url = URLComponents(string: URLString)
-        url?.queryItems = APIHelper.mapValuesToQueryItems([
-                        "changeType": changeType, 
-                        "groupType": groupType
-        ])
-
-        let requestBuilder: RequestBuilder<Void>.Type = MapRouletteAPI.requestBuilderFactory.getNonDecodableBuilder()
-
-        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
 
 }

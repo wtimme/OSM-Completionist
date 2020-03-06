@@ -450,7 +450,7 @@ open class ChallengeAPI {
      - parameter rebuild: (query)  (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func createFromGithub(projectId: Int64, username: String, repo: String, name: String, _id: Object, rebuild: Bool? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+    open class func createFromGithub(projectId: Int64, username: String, repo: String, name: String, _id: Int64, rebuild: Bool? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
         createFromGithubWithRequestBuilder(projectId: projectId, username: username, repo: repo, name: name, _id: _id, rebuild: rebuild).execute { (response, error) -> Void in
             if error == nil {
                 completion((), error)
@@ -474,7 +474,7 @@ open class ChallengeAPI {
 
      - returns: RequestBuilder<Void> 
      */
-    open class func createFromGithubWithRequestBuilder(projectId: Int64, username: String, repo: String, name: String, _id: Object, rebuild: Bool? = nil) -> RequestBuilder<Void> {
+    open class func createFromGithubWithRequestBuilder(projectId: Int64, username: String, repo: String, name: String, _id: Int64, rebuild: Bool? = nil) -> RequestBuilder<Void> {
         var path = "/project/{projectId}/challenge/{username}/{repo}/{name}"
         let projectIdPreEscape = "\(projectId)"
         let projectIdPostEscape = projectIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -815,7 +815,7 @@ open class ChallengeAPI {
      - parameter cd: (query) The difficulty level to limit the returned challenges by. Following difficulty Integers can be used. 1 - Easy, 2 - Normal, 3 - Expert, -1 - Any difficulty. Default value is -1. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func extendedFind(limit: Int? = nil, page: Int? = nil, sort: String? = nil, order: String? = nil, pid: Object? = nil, ps: Object? = nil, pe: Object? = nil, ct: Object? = nil, cs: Object? = nil, ce: Object? = nil, cd: Object? = nil, completion: @escaping ((_ data: [OrgMaprouletteModelsChallenge]?,_ error: Error?) -> Void)) {
+    open class func extendedFind(limit: Int? = nil, page: Int? = nil, sort: String? = nil, order: String? = nil, pid: Int64? = nil, ps: String? = nil, pe: Bool? = nil, ct: String? = nil, cs: String? = nil, ce: Bool? = nil, cd: String? = nil, completion: @escaping ((_ data: [OrgMaprouletteModelsChallenge]?,_ error: Error?) -> Void)) {
         extendedFindWithRequestBuilder(limit: limit, page: page, sort: sort, order: order, pid: pid, ps: ps, pe: pe, ct: ct, cs: cs, ce: ce, cd: cd).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -943,7 +943,7 @@ open class ChallengeAPI {
 
      - returns: RequestBuilder<[OrgMaprouletteModelsChallenge]> 
      */
-    open class func extendedFindWithRequestBuilder(limit: Int? = nil, page: Int? = nil, sort: String? = nil, order: String? = nil, pid: Object? = nil, ps: Object? = nil, pe: Object? = nil, ct: Object? = nil, cs: Object? = nil, ce: Object? = nil, cd: Object? = nil) -> RequestBuilder<[OrgMaprouletteModelsChallenge]> {
+    open class func extendedFindWithRequestBuilder(limit: Int? = nil, page: Int? = nil, sort: String? = nil, order: String? = nil, pid: Int64? = nil, ps: String? = nil, pe: Bool? = nil, ct: String? = nil, cs: String? = nil, ce: Bool? = nil, cd: String? = nil) -> RequestBuilder<[OrgMaprouletteModelsChallenge]> {
         let path = "/challenges/extendedFind"
         let URLString = MapRouletteAPI.basePath + path
         let parameters: [String:Any]? = nil
@@ -953,7 +953,7 @@ open class ChallengeAPI {
                         "page": page?.encodeToJSON(), 
                         "sort": sort, 
                         "order": order, 
-                        "pid": pid, 
+                        "pid": pid?.encodeToJSON(), 
                         "ps": ps, 
                         "pe": pe, 
                         "ct": ct, 
@@ -1854,7 +1854,7 @@ open class ChallengeAPI {
      - parameter proximity: (query) Id of task around which geographically closest tasks are desired (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getNearbyTasks(cid: Int64, proximityId: Int64, excludeSelfLocked: Bool? = nil, limit: Int? = nil, proximity: Object? = nil, completion: @escaping ((_ data: [OrgMaprouletteModelsTask]?,_ error: Error?) -> Void)) {
+    open class func getNearbyTasks(cid: Int64, proximityId: Int64, excludeSelfLocked: Bool? = nil, limit: Int? = nil, proximity: Int64? = nil, completion: @escaping ((_ data: [OrgMaprouletteModelsTask]?,_ error: Error?) -> Void)) {
         getNearbyTasksWithRequestBuilder(cid: cid, proximityId: proximityId, excludeSelfLocked: excludeSelfLocked, limit: limit, proximity: proximity).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1958,7 +1958,7 @@ open class ChallengeAPI {
 
      - returns: RequestBuilder<[OrgMaprouletteModelsTask]> 
      */
-    open class func getNearbyTasksWithRequestBuilder(cid: Int64, proximityId: Int64, excludeSelfLocked: Bool? = nil, limit: Int? = nil, proximity: Object? = nil) -> RequestBuilder<[OrgMaprouletteModelsTask]> {
+    open class func getNearbyTasksWithRequestBuilder(cid: Int64, proximityId: Int64, excludeSelfLocked: Bool? = nil, limit: Int? = nil, proximity: Int64? = nil) -> RequestBuilder<[OrgMaprouletteModelsTask]> {
         var path = "/challenge/{cid}/tasksNearby/{proximityId}"
         let cidPreEscape = "\(cid)"
         let cidPostEscape = cidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1972,7 +1972,7 @@ open class ChallengeAPI {
         url?.queryItems = APIHelper.mapValuesToQueryItems([
                         "excludeSelfLocked": excludeSelfLocked, 
                         "limit": limit?.encodeToJSON(), 
-                        "proximity": proximity
+                        "proximity": proximity?.encodeToJSON()
         ])
 
         let requestBuilder: RequestBuilder<[OrgMaprouletteModelsTask]>.Type = MapRouletteAPI.requestBuilderFactory.getBuilder()
@@ -2715,7 +2715,7 @@ open class ChallengeAPI {
      - parameter points: (query) The number of clusters that you want returned (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getTasksInCluster(clusterId: Int, _id: Object, points: Int? = nil, completion: @escaping ((_ data: [OrgMaprouletteModelsClusteredPoint]?,_ error: Error?) -> Void)) {
+    open class func getTasksInCluster(clusterId: Int, _id: Int64, points: Int? = nil, completion: @escaping ((_ data: [OrgMaprouletteModelsClusteredPoint]?,_ error: Error?) -> Void)) {
         getTasksInClusterWithRequestBuilder(clusterId: clusterId, _id: _id, points: points).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -2791,7 +2791,7 @@ open class ChallengeAPI {
 
      - returns: RequestBuilder<[OrgMaprouletteModelsClusteredPoint]> 
      */
-    open class func getTasksInClusterWithRequestBuilder(clusterId: Int, _id: Object, points: Int? = nil) -> RequestBuilder<[OrgMaprouletteModelsClusteredPoint]> {
+    open class func getTasksInClusterWithRequestBuilder(clusterId: Int, _id: Int64, points: Int? = nil) -> RequestBuilder<[OrgMaprouletteModelsClusteredPoint]> {
         var path = "/tasksInCluster/{clusterId}"
         let clusterIdPreEscape = "\(clusterId)"
         let clusterIdPostEscape = clusterIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -3093,7 +3093,7 @@ open class ChallengeAPI {
      - parameter parentId: (query) This field will be ignored for this request (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func listing(projectIds: String? = nil, limit: Int? = nil, page: Int? = nil, onlyEnabled: Bool? = nil, parentId: Object? = nil, completion: @escaping ((_ data: [OrgMaprouletteModelsChallengeListing]?,_ error: Error?) -> Void)) {
+    open class func listing(projectIds: String? = nil, limit: Int? = nil, page: Int? = nil, onlyEnabled: Bool? = nil, parentId: Int64? = nil, completion: @escaping ((_ data: [OrgMaprouletteModelsChallengeListing]?,_ error: Error?) -> Void)) {
         listingWithRequestBuilder(projectIds: projectIds, limit: limit, page: page, onlyEnabled: onlyEnabled, parentId: parentId).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -3123,7 +3123,7 @@ open class ChallengeAPI {
 
      - returns: RequestBuilder<[OrgMaprouletteModelsChallengeListing]> 
      */
-    open class func listingWithRequestBuilder(projectIds: String? = nil, limit: Int? = nil, page: Int? = nil, onlyEnabled: Bool? = nil, parentId: Object? = nil) -> RequestBuilder<[OrgMaprouletteModelsChallengeListing]> {
+    open class func listingWithRequestBuilder(projectIds: String? = nil, limit: Int? = nil, page: Int? = nil, onlyEnabled: Bool? = nil, parentId: Int64? = nil) -> RequestBuilder<[OrgMaprouletteModelsChallengeListing]> {
         let path = "/challenges/listing"
         let URLString = MapRouletteAPI.basePath + path
         let parameters: [String:Any]? = nil
@@ -3133,7 +3133,7 @@ open class ChallengeAPI {
                         "limit": limit?.encodeToJSON(), 
                         "page": page?.encodeToJSON(), 
                         "onlyEnabled": onlyEnabled, 
-                        "parentId": parentId
+                        "parentId": parentId?.encodeToJSON()
         ])
 
         let requestBuilder: RequestBuilder<[OrgMaprouletteModelsChallengeListing]>.Type = MapRouletteAPI.requestBuilderFactory.getBuilder()

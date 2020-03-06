@@ -217,7 +217,7 @@ open class VirtualChallengeAPI {
      - parameter proximity: (query) Id of task around which geographically closest tasks are desired (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getNearbyTasks(_id: Int64, proximityId: Int64, limit: Int? = nil, proximity: Object? = nil, completion: @escaping ((_ data: [OrgMaprouletteModelsTask]?,_ error: Error?) -> Void)) {
+    open class func getNearbyTasks(_id: Int64, proximityId: Int64, limit: Int? = nil, proximity: Int64? = nil, completion: @escaping ((_ data: [OrgMaprouletteModelsTask]?,_ error: Error?) -> Void)) {
         getNearbyTasksWithRequestBuilder(_id: _id, proximityId: proximityId, limit: limit, proximity: proximity).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -320,7 +320,7 @@ open class VirtualChallengeAPI {
 
      - returns: RequestBuilder<[OrgMaprouletteModelsTask]> 
      */
-    open class func getNearbyTasksWithRequestBuilder(_id: Int64, proximityId: Int64, limit: Int? = nil, proximity: Object? = nil) -> RequestBuilder<[OrgMaprouletteModelsTask]> {
+    open class func getNearbyTasksWithRequestBuilder(_id: Int64, proximityId: Int64, limit: Int? = nil, proximity: Int64? = nil) -> RequestBuilder<[OrgMaprouletteModelsTask]> {
         var path = "/virtualchallenge/{id}/tasksNearby/{proximityId}"
         let _idPreEscape = "\(_id)"
         let _idPostEscape = _idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -333,7 +333,7 @@ open class VirtualChallengeAPI {
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
                         "limit": limit?.encodeToJSON(), 
-                        "proximity": proximity
+                        "proximity": proximity?.encodeToJSON()
         ])
 
         let requestBuilder: RequestBuilder<[OrgMaprouletteModelsTask]>.Type = MapRouletteAPI.requestBuilderFactory.getBuilder()
