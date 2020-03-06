@@ -7,103 +7,490 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		391A50B6FF9BEF53AE3C4AA326176874 /* Pods-Go Map!!-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 700B8B1533A062AD6CF7BB61ED465238 /* Pods-Go Map!!-dummy.m */; };
-		5C2A1995BB8A5A4581714154F05E5FE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		F754A9D4DAF5BF918E0157D820F2DADB /* Pods-Go Map!!-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F8CDD896C16CF34B6C3B97C96288065A /* Pods-Go Map!!-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00F5BC6228EF06EF1E1193A47DD7E6FC /* ChallengeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0DE18D2AAF5693799AEC1542EDECC7 /* ChallengeAPI.swift */; };
+		01E725C177955A8A47DA73A13B856F16 /* OrgMaprouletteModelsTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A90F74BEA894ECCC282C59070006D7 /* OrgMaprouletteModelsTask.swift */; };
+		04FDF956E60BAC3CD1FEA3C46B3F6A1C /* OrgMaprouletteModelsVirtualChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A02F6241286A87D3793B0B442F91F /* OrgMaprouletteModelsVirtualChallenge.swift */; };
+		062CC403D7E15428428EED48A33E70CF /* Pods-Go Map!!-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EEBF6BA60A98AD8CF78865C98E317D2 /* Pods-Go Map!!-dummy.m */; };
+		08A081168F80AB06621DA179BE33D911 /* OrgMaprouletteModelsTaskCluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B140E98D4A6F1E50DBFFDCC9FF4B25 /* OrgMaprouletteModelsTaskCluster.swift */; };
+		09C8F254424DA8EAD1243264B9AEA4BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */; };
+		0BDB7BBD15134EA7CABBD334B83A55F6 /* OrgMaprouletteModelsTaskBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E239E5763CF4E6B9E7BD2D56BBF0E3 /* OrgMaprouletteModelsTaskBundle.swift */; };
+		0C5E11DE24DAA737704B355F5F2F3426 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7A47A590ED08C21AB24503841C370 /* ParameterEncoding.swift */; };
+		0CF76070098FBF6794DABB91C3273D68 /* OrgMaprouletteSessionUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD873B24CFD6B7EDF8AFDF79EC531E66 /* OrgMaprouletteSessionUserSettings.swift */; };
+		0E8EF0AD712F872D75C99EFB3280CAFE /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F0E2ECEE623AD57D8AF8E6F48C124 /* APIs.swift */; };
+		1041197E972352F0764CE474BEAFCA69 /* TaskReviewAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EA339DAA6E98021ED6D30B155F64B6 /* TaskReviewAPI.swift */; };
+		132E0F619E4338E5D1B27E4C72076B3F /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86FC9B604FA843EF26A951C43C0CE8B /* Notifications.swift */; };
+		1945CD5D63A1C164AEAAA9A33E85571E /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0389D0AFC58E73A075F3F7740CE1D441 /* Alamofire-dummy.m */; };
+		1986B50C74F1697EA43F68335C93CEB3 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616062C81FDAB5C58156D8D00F0FC48D /* MultipartFormData.swift */; };
+		1C13DC4A1C5DBF34372008E0429FF02B /* AlamofireImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADE49197A01FBCBF221E8104F502AFC /* AlamofireImplementations.swift */; };
+		1E76F94ED76C0C4CC0BD0B77EB3FE41C /* SurveyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB0F001D6BCE403F17456E4C6C2F84 /* SurveyAPI.swift */; };
+		2124519C965E8F05DF12E8BE12C943D9 /* OrgMaprouletteModelsPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2473063EA6DA515C260A0C9506EDA6B2 /* OrgMaprouletteModelsPoint.swift */; };
+		247CE02FEB0B76CBC496C4F1705D37B0 /* OrgMaprouletteSessionSearchChallengeParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE2FE8DC38FE8987D00FE55701AF8DE /* OrgMaprouletteSessionSearchChallengeParameters.swift */; };
+		2B8F711B355A4E430391A4DF226E4C5E /* OrgMaprouletteSessionSearchLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4225DD3E6153A88E1E4930EE937B4970 /* OrgMaprouletteSessionSearchLocation.swift */; };
+		2C27879A5E7D229D6BC38B4C1C0A7AE9 /* ReviewAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A88E4FE699F8B035D629E09FCA1EB2A /* ReviewAPI.swift */; };
+		2C61B040BA6A9A7AE66C4D9BA26D5520 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFB0C226D602EC371BECC5BD2CC9370 /* SessionDelegate.swift */; };
+		2EC10DD87BDCEEB0B7E773335559B31A /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8243CE1B9C20B49A291931550E0BCB /* Models.swift */; };
+		301E0700E2238F2CA1C70E78D970DEAF /* OrgMaprouletteSessionUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED91667F18614778C48616B3D844594 /* OrgMaprouletteSessionUser.swift */; };
+		3571F958A3907B3A806E62D50C2550D4 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C36DA43AFF8C1CD3C666DACA78B91C2 /* NetworkReachabilityManager.swift */; };
+		35B49A70F3CFAB0AC1BEB3581BDDB652 /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A59A72A182644C9A52CD18CD21C97A /* JSONValue.swift */; };
+		389227E2188D596F0A1DC572ED3C3735 /* VirtualChallengeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111F033603E942B802D13C873DB7862 /* VirtualChallengeAPI.swift */; };
+		397D1EDC0D2ABA63C9560C0B22584B5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */; };
+		39D12C174FDC119DFD7173164416C52E /* Apiv2API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832D040AFB93D3B51F24B272499ED54 /* Apiv2API.swift */; };
+		3A2010F30419B1CCB6FF22DD46141E42 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F18BE7ED9E0CE8F5AB1D8447421BB4B /* APIHelper.swift */; };
+		3D2F798AD4E8FA96A971187F73B1AAC8 /* JSONEncodingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB7AA2850471F53DF5148890A79417 /* JSONEncodingHelper.swift */; };
+		3E2CEABB221B6ED4D17B0C59D81E00BE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D3C830A9D4B64131704E129DE6E78 /* Extensions.swift */; };
+		41629EB188E5E918E1931BAFD83E4FD4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D640A369C3E96B11816BE09F33DF30B /* Configuration.swift */; };
+		422A51FE25A927C107E9CF2377A26EEB /* JSONEncodableEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D7F2A034533CAEA1F1C42A075014D3 /* JSONEncodableEncoding.swift */; };
+		43B56E3ADC21C11D2F4C53BF19D37C59 /* OrgMaprouletteModelsChallengePriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA10B78DBE8567BF9A0259B08930B3A /* OrgMaprouletteModelsChallengePriority.swift */; };
+		53791F5E5F07400F92CFDFC89A432305 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3AE0D4172A0ECD56EBFA08991A7C70 /* Validation.swift */; };
+		548597CA4B1059188967F96526C4129D /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1B6B4F821283C65F95BA190C5145C /* UserAPI.swift */; };
+		5AA9746D1EA9E88ED98DD86E40141103 /* BundleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A373B4502F6A9000C45EADB64844FB7 /* BundleAPI.swift */; };
+		62CCF6E691F84930E70D2E9ED58FB6DD /* CodableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953B75B43FAF6637BE70759471EAAF56 /* CodableHelper.swift */; };
+		63B10A14F0364F042765E5B7D3C80000 /* TagDeprecatedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5830328C9220559D4BC938D68A1768D3 /* TagDeprecatedAPI.swift */; };
+		6452AD9B52425C4643B9E74E670ECBAB /* OrgMaprouletteModelsTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5AB66B13C7054A8EF4BEC1420B3AB9 /* OrgMaprouletteModelsTag.swift */; };
+		64744C911253C3E01461FAD7C935C8D7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA11279AA1D6557BB10C9936E9B3A3 /* Result.swift */; };
+		65C5A19156467F0F988B6BFB87BEB1AC /* OrgMaprouletteModelsChallengeListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDAD4AEDC5E08C6AE452DC773DA80D2 /* OrgMaprouletteModelsChallengeListing.swift */; };
+		68B51545059326B061934C897E6C3DA8 /* OrgMaprouletteModelsMapillaryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861105075CB1D32914E027BDDD47412E /* OrgMaprouletteModelsMapillaryImage.swift */; };
+		69B8D3B45F545019B2406157DCDCAA6D /* OrgMaprouletteSessionTaskPropertySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA5D5F94C5EED05E5AFC6C36DB4CD12 /* OrgMaprouletteSessionTaskPropertySearch.swift */; };
+		6A6185C0BF0E7562C0F4FDB4674468B3 /* OrgMaprouletteModelsChallengeGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C47C1163C70FE7B8974BFD345753E4B /* OrgMaprouletteModelsChallengeGeneral.swift */; };
+		7664FD4F59A0C00866CBAE60B0A3AD64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */; };
+		7BB7E20B221DF192F9DFD35255D61ABC /* OrgMaprouletteSessionLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8338C560E53716B1D8754A87858562 /* OrgMaprouletteSessionLocation.swift */; };
+		7E9CA2BBB4E3A630E3CD8B1368615B2D /* OrgMaprouletteModelsComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE42C2DCE4AEBEBDE35C865299C98CE /* OrgMaprouletteModelsComment.swift */; };
+		8151A57AA3400E9C096C6A19F68791C2 /* ProjectAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE752F0761E880AC9CD1B962079668B /* ProjectAPI.swift */; };
+		82FA064FBC6E05CB970DFE80C797E330 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B03B07DFA7C8BB60693AE1DE30731E2 /* Alamofire.framework */; };
+		83956E20859CDBBE7BC38ABADE0170FB /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F367F44FC87833A1792B541781BB7 /* AFError.swift */; };
+		872B22657E0AF4A6CA8C80387A18D5D9 /* OrgMaprouletteSessionOSMProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC151CB1ED49BE9B3837771B363B2DE8 /* OrgMaprouletteSessionOSMProfile.swift */; };
+		8D5BD1AE5D1A251BC951CE7F674E26C2 /* OrgMaprouletteModelsPointReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F7AFF38C433943094C6015D670016 /* OrgMaprouletteModelsPointReview.swift */; };
+		931BBB8230A25161D5C37528A8F9FECF /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3F4F1011789493720361780A1982D /* SessionManager.swift */; };
+		933FDA5970AA525D6CB92BFEBA2BAB4A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACD677FD4B95B260E1B1C656D08B84 /* Timeline.swift */; };
+		945CCF499393CCD468D453AB67C006C8 /* MapRoulette-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DFCF80AC5440B3CC524DDD29C7DD4CE /* MapRoulette-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9461A226A5B24BBEE4C5AB731973D73B /* OrgMaprouletteModelsClusteredPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6DCBD801CFD673A1C999692EF2D09E /* OrgMaprouletteModelsClusteredPoint.swift */; };
+		98A929C8E9012AB167672714FFD2113C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE101F8BE2F43D16C24A9874C79A94A /* Request.swift */; };
+		9AFBAFD2C35CBB6D408DBAB26BAA119B /* TaskAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FC621688D474CA652F309C377335B /* TaskAPI.swift */; };
+		9D0A23AB65D5C1E883C0B1EC7E9930BF /* OrgMaprouletteModelsChallengeCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFCA691F27CCF14D1055A7E393BAC1 /* OrgMaprouletteModelsChallengeCreation.swift */; };
+		A2AE3C4343E410716AF7EF44291C8778 /* CommentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAA8F90F506FFE3CB4F21BC21D70D0 /* CommentAPI.swift */; };
+		A6E878B2CDEE723CE807DB26D21B6B60 /* OrgMaprouletteSessionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB820DD7FF6A4E0568CD92B2B333D8E /* OrgMaprouletteSessionGroup.swift */; };
+		AA5A285E4300DCB2DEC742B8D1E71AE5 /* OrgMaprouletteExceptionStatusMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A76CEB148990D7EA576BCC54553EBE /* OrgMaprouletteExceptionStatusMessage.swift */; };
+		AB0A09FDB98EA8814F625F971E6CBE47 /* MapRoulette-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 769AB5338B6E4EC589E6321557648B14 /* MapRoulette-dummy.m */; };
+		AFC64B1097F7355FF423D6A73E9C7210 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50DCBCED5F02570DDA9386825ACB4CF /* TaskDelegate.swift */; };
+		BAB1B777F0295A7576CF0404ACEBC416 /* OrgMaprouletteModelsChallengeExtra.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6CFD498163897456389C39463C30A /* OrgMaprouletteModelsChallengeExtra.swift */; };
+		BEE6B677416CA71C981D1D3F60B18C96 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC5E8A366EFB3B0CF9816F6A90B258 /* Alamofire.swift */; };
+		C823D40614BD40E77C9F60EA094B915B /* OrgMaprouletteModelsTaskReviewFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = A457494B5C5F043979BB237F0010032E /* OrgMaprouletteModelsTaskReviewFields.swift */; };
+		CC231FD5CCF5B9E6904B65E33975F67A /* OrgMaprouletteModelsProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37F3E23F5ED4D12B480251DD743D0DD /* OrgMaprouletteModelsProject.swift */; };
+		D1E0138B826CBBBE74DA37F24227D8A1 /* ChangesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28D0C80B784470AB305B5B53E1BAE4 /* ChangesAPI.swift */; };
+		D3D8C379C6E4FB487E5ABD6800AD7B7E /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D8FC88383C541917CFD5ADA31DD7AB /* DispatchQueue+Alamofire.swift */; };
+		D5D49CBD3E94E43165267E33C98F56EF /* Pods-Go Map!!-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B3F9FF4BE0563EC3C43AB01E9A131F3D /* Pods-Go Map!!-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D65C254F5ABF2CB5ECEE50FE8F8E1A80 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A315E96FC5BCCAB1C5145D4BF1BCF /* Response.swift */; };
+		E3747EC31FCCA97D75A81FC700CF7E24 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15E9B6C2601FD9AD228CA2D657E44B /* ResponseSerialization.swift */; };
+		ED4739DB07D87EB72A6C6ACDDC865AD9 /* OrgMaprouletteModelsUserNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57084BC6490E4425A06F0AE27320CC1D /* OrgMaprouletteModelsUserNotification.swift */; };
+		EDF8F804DAB05FBE631ABF745A61656B /* KeywordAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCBA7D29ABFE410F722B34B9C01DA7A /* KeywordAPI.swift */; };
+		F13F2AA7F2E6D95A181CAB99B900D531 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7B86CF47C1835EA00FE7A8B8D5CCC5 /* ServerTrustPolicy.swift */; };
+		F7B74645E07C39771156A1FA413B98D4 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FFE4C558583FF9884EBA9DDF1C6F0DCD /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FDEF62DC3BFE81569BA849B50731C826 /* OrgMaprouletteModelsChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAAB263D580E46E7987A9473547636 /* OrgMaprouletteModelsChallenge.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7A71CAFC5AF80EF330EDA0FBD22B06EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
+		7BF4DC80352C1C6B862B490222ADF9E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
+		EFBF45972900C523F217019FF48DD77E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C91E08C77DC053849161B68D8F54ED36;
+			remoteInfo = MapRoulette;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		02DBEEB3669BB5388D7833748B6E0B6A /* Pods-Go Map!!-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Go Map!!-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6E78C1BD3E7B47D4E787A7FF6D4249D2 /* Pods-Go Map!!.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Go Map!!.modulemap"; sourceTree = "<group>"; };
-		700B8B1533A062AD6CF7BB61ED465238 /* Pods-Go Map!!-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Go Map!!-dummy.m"; sourceTree = "<group>"; };
-		85B2686DB306BFBEF5A8EA7C98AFFF69 /* Pods-Go Map!!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Go Map!!.debug.xcconfig"; sourceTree = "<group>"; };
-		89D16BFF5788B64F131929DC8FACEF4A /* Pods-Go Map!!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Go Map!!.release.xcconfig"; sourceTree = "<group>"; };
+		0389D0AFC58E73A075F3F7740CE1D441 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		092FC621688D474CA652F309C377335B /* TaskAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TaskAPI.swift; sourceTree = "<group>"; };
+		09AB0F001D6BCE403F17456E4C6C2F84 /* SurveyAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SurveyAPI.swift; sourceTree = "<group>"; };
+		0C96CDEC4805F115B4225E4EBFC020B7 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
+		0E6DCBD801CFD673A1C999692EF2D09E /* OrgMaprouletteModelsClusteredPoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsClusteredPoint.swift; sourceTree = "<group>"; };
+		10EA339DAA6E98021ED6D30B155F64B6 /* TaskReviewAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TaskReviewAPI.swift; sourceTree = "<group>"; };
+		11A59A72A182644C9A52CD18CD21C97A /* JSONValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONValue.swift; path = MapRoulette/Classes/Swaggers/JSONValue.swift; sourceTree = "<group>"; };
+		1372A7CE65C38E52713A840B1200B5F2 /* Pods-Go Map!!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Go Map!!.debug.xcconfig"; sourceTree = "<group>"; };
+		1A373B4502F6A9000C45EADB64844FB7 /* BundleAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BundleAPI.swift; sourceTree = "<group>"; };
+		1B1F2FAF69318C9DC055C0DEA57B5506 /* Pods-Go Map!!-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Go Map!!-frameworks.sh"; sourceTree = "<group>"; };
+		1C1A02F6241286A87D3793B0B442F91F /* OrgMaprouletteModelsVirtualChallenge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsVirtualChallenge.swift; sourceTree = "<group>"; };
+		1DFCF80AC5440B3CC524DDD29C7DD4CE /* MapRoulette-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MapRoulette-umbrella.h"; sourceTree = "<group>"; };
+		20A76CEB148990D7EA576BCC54553EBE /* OrgMaprouletteExceptionStatusMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteExceptionStatusMessage.swift; sourceTree = "<group>"; };
+		2473063EA6DA515C260A0C9506EDA6B2 /* OrgMaprouletteModelsPoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsPoint.swift; sourceTree = "<group>"; };
+		28BA729F858CCD2EA5712B36CD35C087 /* MapRoulette-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MapRoulette-Info.plist"; sourceTree = "<group>"; };
+		2B8338C560E53716B1D8754A87858562 /* OrgMaprouletteSessionLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteSessionLocation.swift; sourceTree = "<group>"; };
+		2C47C1163C70FE7B8974BFD345753E4B /* OrgMaprouletteModelsChallengeGeneral.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsChallengeGeneral.swift; sourceTree = "<group>"; };
+		2C50F83F93296D01A5B9009365A2671D /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
+		2EE101F8BE2F43D16C24A9874C79A94A /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		31678EEDFE36AE2D8746C7BC9F5093B9 /* MapRoulette.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MapRoulette.modulemap; sourceTree = "<group>"; };
+		349D3C830A9D4B64131704E129DE6E78 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = MapRoulette/Classes/Swaggers/Extensions.swift; sourceTree = "<group>"; };
+		3ADE49197A01FBCBF221E8104F502AFC /* AlamofireImplementations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireImplementations.swift; path = MapRoulette/Classes/Swaggers/AlamofireImplementations.swift; sourceTree = "<group>"; };
+		3D7B86CF47C1835EA00FE7A8B8D5CCC5 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		3DE2FE8DC38FE8987D00FE55701AF8DE /* OrgMaprouletteSessionSearchChallengeParameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteSessionSearchChallengeParameters.swift; sourceTree = "<group>"; };
+		3EFB0C226D602EC371BECC5BD2CC9370 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		4225DD3E6153A88E1E4930EE937B4970 /* OrgMaprouletteSessionSearchLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteSessionSearchLocation.swift; sourceTree = "<group>"; };
+		47D8FC88383C541917CFD5ADA31DD7AB /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		4B03B07DFA7C8BB60693AE1DE30731E2 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C0246343CE89D29417F7D21146A7450 /* MapRoulette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MapRoulette.release.xcconfig; sourceTree = "<group>"; };
+		4CA10B78DBE8567BF9A0259B08930B3A /* OrgMaprouletteModelsChallengePriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsChallengePriority.swift; sourceTree = "<group>"; };
+		4EEBF6BA60A98AD8CF78865C98E317D2 /* Pods-Go Map!!-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Go Map!!-dummy.m"; sourceTree = "<group>"; };
+		5111F033603E942B802D13C873DB7862 /* VirtualChallengeAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VirtualChallengeAPI.swift; sourceTree = "<group>"; };
+		52E9A90E818BEECBE7DA3851DE72860E /* Pods-Go Map!!-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Go Map!!-acknowledgements.plist"; sourceTree = "<group>"; };
+		55B140E98D4A6F1E50DBFFDCC9FF4B25 /* OrgMaprouletteModelsTaskCluster.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsTaskCluster.swift; sourceTree = "<group>"; };
+		56A90F74BEA894ECCC282C59070006D7 /* OrgMaprouletteModelsTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsTask.swift; sourceTree = "<group>"; };
+		57084BC6490E4425A06F0AE27320CC1D /* OrgMaprouletteModelsUserNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsUserNotification.swift; sourceTree = "<group>"; };
+		5830328C9220559D4BC938D68A1768D3 /* TagDeprecatedAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TagDeprecatedAPI.swift; sourceTree = "<group>"; };
+		5832D040AFB93D3B51F24B272499ED54 /* Apiv2API.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Apiv2API.swift; sourceTree = "<group>"; };
+		58ACD677FD4B95B260E1B1C656D08B84 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
+		59E239E5763CF4E6B9E7BD2D56BBF0E3 /* OrgMaprouletteModelsTaskBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsTaskBundle.swift; sourceTree = "<group>"; };
+		5CCAA8F90F506FFE3CB4F21BC21D70D0 /* CommentAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CommentAPI.swift; sourceTree = "<group>"; };
+		5CDAD4AEDC5E08C6AE452DC773DA80D2 /* OrgMaprouletteModelsChallengeListing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsChallengeListing.swift; sourceTree = "<group>"; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D8243CE1B9C20B49A291931550E0BCB /* Models.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Models.swift; path = MapRoulette/Classes/Swaggers/Models.swift; sourceTree = "<group>"; };
+		5ED047C2109FD8C989F0D93F032AAA29 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		5F9F0E2ECEE623AD57D8AF8E6F48C124 /* APIs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIs.swift; path = MapRoulette/Classes/Swaggers/APIs.swift; sourceTree = "<group>"; };
+		5FE42C2DCE4AEBEBDE35C865299C98CE /* OrgMaprouletteModelsComment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsComment.swift; sourceTree = "<group>"; };
+		5FEB2726D8D5B1A0A657204329BCF4BD /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		616062C81FDAB5C58156D8D00F0FC48D /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6A5AB66B13C7054A8EF4BEC1420B3AB9 /* OrgMaprouletteModelsTag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsTag.swift; sourceTree = "<group>"; };
+		6EB820DD7FF6A4E0568CD92B2B333D8E /* OrgMaprouletteSessionGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteSessionGroup.swift; sourceTree = "<group>"; };
+		6F18BE7ED9E0CE8F5AB1D8447421BB4B /* APIHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIHelper.swift; path = MapRoulette/Classes/Swaggers/APIHelper.swift; sourceTree = "<group>"; };
+		7026824925C5E193141CA4589857EA20 /* MapRoulette-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MapRoulette-prefix.pch"; sourceTree = "<group>"; };
+		768CD829A40A3CD9A3D02392EAFF6BD8 /* Pods-Go Map!!.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Go Map!!.modulemap"; sourceTree = "<group>"; };
+		769AB5338B6E4EC589E6321557648B14 /* MapRoulette-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MapRoulette-dummy.m"; sourceTree = "<group>"; };
+		7A28D0C80B784470AB305B5B53E1BAE4 /* ChangesAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChangesAPI.swift; sourceTree = "<group>"; };
+		7A88E4FE699F8B035D629E09FCA1EB2A /* ReviewAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewAPI.swift; sourceTree = "<group>"; };
+		7C36DA43AFF8C1CD3C666DACA78B91C2 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		7CA5D5F94C5EED05E5AFC6C36DB4CD12 /* OrgMaprouletteSessionTaskPropertySearch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteSessionTaskPropertySearch.swift; sourceTree = "<group>"; };
+		81175CCEAD163023A3E4FB4487629A77 /* Pods-Go Map!!-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Go Map!!-Info.plist"; sourceTree = "<group>"; };
+		85FC5E8A366EFB3B0CF9816F6A90B258 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		861105075CB1D32914E027BDDD47412E /* OrgMaprouletteModelsMapillaryImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsMapillaryImage.swift; sourceTree = "<group>"; };
+		8BCBA7D29ABFE410F722B34B9C01DA7A /* KeywordAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeywordAPI.swift; sourceTree = "<group>"; };
+		8D640A369C3E96B11816BE09F33DF30B /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = MapRoulette/Classes/Swaggers/Configuration.swift; sourceTree = "<group>"; };
+		8FC74F0D398DE3CD435C074686116FA3 /* MapRoulette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MapRoulette.framework; path = MapRoulette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93C295FBA996828EF2DE607ED1A971ED /* Pods-Go Map!!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Go Map!!.release.xcconfig"; sourceTree = "<group>"; };
+		953B75B43FAF6637BE70759471EAAF56 /* CodableHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodableHelper.swift; path = MapRoulette/Classes/Swaggers/CodableHelper.swift; sourceTree = "<group>"; };
+		98D3F4F1011789493720361780A1982D /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
+		9C6F7AFF38C433943094C6015D670016 /* OrgMaprouletteModelsPointReview.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsPointReview.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C87903140C134F5B8BB0BA143BDA05B5 /* Pods-Go Map!!-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Go Map!!-Info.plist"; sourceTree = "<group>"; };
-		E08A17FCF8A7A85B9E9B6FD56296852E /* Pods-Go Map!!-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Go Map!!-acknowledgements.plist"; sourceTree = "<group>"; };
+		9F7CC6149964A7B365E5C5ACF54C6FD7 /* Pods-Go Map!!-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Go Map!!-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A31DDF318E3E03B4DEA2F1B4182A555D /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
+		A37F3E23F5ED4D12B480251DD743D0DD /* OrgMaprouletteModelsProject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsProject.swift; sourceTree = "<group>"; };
+		A457494B5C5F043979BB237F0010032E /* OrgMaprouletteModelsTaskReviewFields.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsTaskReviewFields.swift; sourceTree = "<group>"; };
+		A50DCBCED5F02570DDA9386825ACB4CF /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
+		AAEB7AA2850471F53DF5148890A79417 /* JSONEncodingHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONEncodingHelper.swift; path = MapRoulette/Classes/Swaggers/JSONEncodingHelper.swift; sourceTree = "<group>"; };
+		AF15E9B6C2601FD9AD228CA2D657E44B /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		B06A315E96FC5BCCAB1C5145D4BF1BCF /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		B3F9FF4BE0563EC3C43AB01E9A131F3D /* Pods-Go Map!!-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Go Map!!-umbrella.h"; sourceTree = "<group>"; };
+		B7FFCA691F27CCF14D1055A7E393BAC1 /* OrgMaprouletteModelsChallengeCreation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsChallengeCreation.swift; sourceTree = "<group>"; };
+		B86FC9B604FA843EF26A951C43C0CE8B /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
+		BC151CB1ED49BE9B3837771B363B2DE8 /* OrgMaprouletteSessionOSMProfile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteSessionOSMProfile.swift; sourceTree = "<group>"; };
+		BD873B24CFD6B7EDF8AFDF79EC531E66 /* OrgMaprouletteSessionUserSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteSessionUserSettings.swift; sourceTree = "<group>"; };
+		CF0DE18D2AAF5693799AEC1542EDECC7 /* ChallengeAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChallengeAPI.swift; sourceTree = "<group>"; };
+		DDE752F0761E880AC9CD1B962079668B /* ProjectAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProjectAPI.swift; sourceTree = "<group>"; };
+		DED91667F18614778C48616B3D844594 /* OrgMaprouletteSessionUser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteSessionUser.swift; sourceTree = "<group>"; };
+		DF3AE0D4172A0ECD56EBFA08991A7C70 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		E63F367F44FC87833A1792B541781BB7 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		E8A8DB29C50AA8892731F15EEA136989 /* Pods_Go_Map__.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Go_Map__.framework; path = "Pods-Go Map!!.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8CDD896C16CF34B6C3B97C96288065A /* Pods-Go Map!!-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Go Map!!-umbrella.h"; sourceTree = "<group>"; };
+		EEA6CFD498163897456389C39463C30A /* OrgMaprouletteModelsChallengeExtra.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsChallengeExtra.swift; sourceTree = "<group>"; };
+		F0B1B6B4F821283C65F95BA190C5145C /* UserAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		F1DA11279AA1D6557BB10C9936E9B3A3 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		F2D7F2A034533CAEA1F1C42A075014D3 /* JSONEncodableEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONEncodableEncoding.swift; path = MapRoulette/Classes/Swaggers/JSONEncodableEncoding.swift; sourceTree = "<group>"; };
+		F50F9CDD19FB678C8DFE8E56F5A14CCC /* MapRoulette.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MapRoulette.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F5EAAB263D580E46E7987A9473547636 /* OrgMaprouletteModelsChallenge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrgMaprouletteModelsChallenge.swift; sourceTree = "<group>"; };
+		F8D7A47A590ED08C21AB24503841C370 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		FBEC9E6BC53944C0809172141B2C01B5 /* MapRoulette.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MapRoulette.debug.xcconfig; sourceTree = "<group>"; };
+		FFE4C558583FF9884EBA9DDF1C6F0DCD /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		ACB0E7C864475F057DA589A28D374DC7 /* Frameworks */ = {
+		090C1D63463ACF622287EFF9D5C9392D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C2A1995BB8A5A4581714154F05E5FE0 /* Foundation.framework in Frameworks */,
+				7664FD4F59A0C00866CBAE60B0A3AD64 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22307FD301EB95218FA46DA96C109FE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82FA064FBC6E05CB970DFE80C797E330 /* Alamofire.framework in Frameworks */,
+				397D1EDC0D2ABA63C9560C0B22584B5B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C627155947A4133556E5441033D4C0C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09C8F254424DA8EAD1243264B9AEA4BC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A24123311AA7A0D7987FA6C102FD717 /* Targets Support Files */ = {
+		2F2A6FCCD7293377A61DF5D10894ACF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				388F30EB60EF7EB3F6A62EC775273EBC /* Pods-Go Map!! */,
+				4B03B07DFA7C8BB60693AE1DE30731E2 /* Alamofire.framework */,
+				DBBD239EB7C1C83EA80124D1A53485AB /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7210367BAE45CF623C75370F9F5A10B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				20A76CEB148990D7EA576BCC54553EBE /* OrgMaprouletteExceptionStatusMessage.swift */,
+				F5EAAB263D580E46E7987A9473547636 /* OrgMaprouletteModelsChallenge.swift */,
+				B7FFCA691F27CCF14D1055A7E393BAC1 /* OrgMaprouletteModelsChallengeCreation.swift */,
+				EEA6CFD498163897456389C39463C30A /* OrgMaprouletteModelsChallengeExtra.swift */,
+				2C47C1163C70FE7B8974BFD345753E4B /* OrgMaprouletteModelsChallengeGeneral.swift */,
+				5CDAD4AEDC5E08C6AE452DC773DA80D2 /* OrgMaprouletteModelsChallengeListing.swift */,
+				4CA10B78DBE8567BF9A0259B08930B3A /* OrgMaprouletteModelsChallengePriority.swift */,
+				0E6DCBD801CFD673A1C999692EF2D09E /* OrgMaprouletteModelsClusteredPoint.swift */,
+				5FE42C2DCE4AEBEBDE35C865299C98CE /* OrgMaprouletteModelsComment.swift */,
+				861105075CB1D32914E027BDDD47412E /* OrgMaprouletteModelsMapillaryImage.swift */,
+				2473063EA6DA515C260A0C9506EDA6B2 /* OrgMaprouletteModelsPoint.swift */,
+				9C6F7AFF38C433943094C6015D670016 /* OrgMaprouletteModelsPointReview.swift */,
+				A37F3E23F5ED4D12B480251DD743D0DD /* OrgMaprouletteModelsProject.swift */,
+				6A5AB66B13C7054A8EF4BEC1420B3AB9 /* OrgMaprouletteModelsTag.swift */,
+				56A90F74BEA894ECCC282C59070006D7 /* OrgMaprouletteModelsTask.swift */,
+				59E239E5763CF4E6B9E7BD2D56BBF0E3 /* OrgMaprouletteModelsTaskBundle.swift */,
+				55B140E98D4A6F1E50DBFFDCC9FF4B25 /* OrgMaprouletteModelsTaskCluster.swift */,
+				A457494B5C5F043979BB237F0010032E /* OrgMaprouletteModelsTaskReviewFields.swift */,
+				57084BC6490E4425A06F0AE27320CC1D /* OrgMaprouletteModelsUserNotification.swift */,
+				1C1A02F6241286A87D3793B0B442F91F /* OrgMaprouletteModelsVirtualChallenge.swift */,
+				6EB820DD7FF6A4E0568CD92B2B333D8E /* OrgMaprouletteSessionGroup.swift */,
+				2B8338C560E53716B1D8754A87858562 /* OrgMaprouletteSessionLocation.swift */,
+				BC151CB1ED49BE9B3837771B363B2DE8 /* OrgMaprouletteSessionOSMProfile.swift */,
+				3DE2FE8DC38FE8987D00FE55701AF8DE /* OrgMaprouletteSessionSearchChallengeParameters.swift */,
+				4225DD3E6153A88E1E4930EE937B4970 /* OrgMaprouletteSessionSearchLocation.swift */,
+				7CA5D5F94C5EED05E5AFC6C36DB4CD12 /* OrgMaprouletteSessionTaskPropertySearch.swift */,
+				DED91667F18614778C48616B3D844594 /* OrgMaprouletteSessionUser.swift */,
+				BD873B24CFD6B7EDF8AFDF79EC531E66 /* OrgMaprouletteSessionUserSettings.swift */,
+			);
+			name = Models;
+			path = MapRoulette/Classes/Swaggers/Models;
+			sourceTree = "<group>";
+		};
+		7D02D4600E8C814A4EF1D8C7FF8FA146 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5ED047C2109FD8C989F0D93F032AAA29 /* Alamofire.modulemap */,
+				0389D0AFC58E73A075F3F7740CE1D441 /* Alamofire-dummy.m */,
+				A31DDF318E3E03B4DEA2F1B4182A555D /* Alamofire-Info.plist */,
+				5FEB2726D8D5B1A0A657204329BCF4BD /* Alamofire-prefix.pch */,
+				FFE4C558583FF9884EBA9DDF1C6F0DCD /* Alamofire-umbrella.h */,
+				2C50F83F93296D01A5B9009365A2671D /* Alamofire.debug.xcconfig */,
+				0C96CDEC4805F115B4225E4EBFC020B7 /* Alamofire.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Alamofire";
+			sourceTree = "<group>";
+		};
+		892C14D64B3BDFF6B9FC61C9C285FBB5 /* MapRoulette */ = {
+			isa = PBXGroup;
+			children = (
+				3ADE49197A01FBCBF221E8104F502AFC /* AlamofireImplementations.swift */,
+				6F18BE7ED9E0CE8F5AB1D8447421BB4B /* APIHelper.swift */,
+				5F9F0E2ECEE623AD57D8AF8E6F48C124 /* APIs.swift */,
+				953B75B43FAF6637BE70759471EAAF56 /* CodableHelper.swift */,
+				8D640A369C3E96B11816BE09F33DF30B /* Configuration.swift */,
+				349D3C830A9D4B64131704E129DE6E78 /* Extensions.swift */,
+				F2D7F2A034533CAEA1F1C42A075014D3 /* JSONEncodableEncoding.swift */,
+				AAEB7AA2850471F53DF5148890A79417 /* JSONEncodingHelper.swift */,
+				11A59A72A182644C9A52CD18CD21C97A /* JSONValue.swift */,
+				5D8243CE1B9C20B49A291931550E0BCB /* Models.swift */,
+				EEBE86FEF5CC51561485D380BFCE7D6F /* APIs */,
+				7210367BAE45CF623C75370F9F5A10B0 /* Models */,
+				B42AC6858542DB0EF31281682393C044 /* Pod */,
+				AC793379853E8211CBFD380EE2E45E04 /* Support Files */,
+			);
+			name = MapRoulette;
+			path = "../MapRoulette/auto-generated";
+			sourceTree = "<group>";
+		};
+		8F30E2313BA742AB147C26DFA40BC5F3 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				892C14D64B3BDFF6B9FC61C9C285FBB5 /* MapRoulette */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		90FDDC7F5D24472360CA259A8D40AE98 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC362FA3C7A87C2E5630BA06D8CB57BD /* Alamofire */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AC793379853E8211CBFD380EE2E45E04 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				31678EEDFE36AE2D8746C7BC9F5093B9 /* MapRoulette.modulemap */,
+				769AB5338B6E4EC589E6321557648B14 /* MapRoulette-dummy.m */,
+				28BA729F858CCD2EA5712B36CD35C087 /* MapRoulette-Info.plist */,
+				7026824925C5E193141CA4589857EA20 /* MapRoulette-prefix.pch */,
+				1DFCF80AC5440B3CC524DDD29C7DD4CE /* MapRoulette-umbrella.h */,
+				FBEC9E6BC53944C0809172141B2C01B5 /* MapRoulette.debug.xcconfig */,
+				4C0246343CE89D29417F7D21146A7450 /* MapRoulette.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../../Pods/Target Support Files/MapRoulette";
+			sourceTree = "<group>";
+		};
+		B42AC6858542DB0EF31281682393C044 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				F50F9CDD19FB678C8DFE8E56F5A14CCC /* MapRoulette.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		CBFE0B5BD635BA2B6DB1DFD147F5A1E6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D62094463B4BF6CC3851D34264006A42 /* Pods-Go Map!! */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		388F30EB60EF7EB3F6A62EC775273EBC /* Pods-Go Map!! */ = {
+		CC362FA3C7A87C2E5630BA06D8CB57BD /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
-				6E78C1BD3E7B47D4E787A7FF6D4249D2 /* Pods-Go Map!!.modulemap */,
-				02DBEEB3669BB5388D7833748B6E0B6A /* Pods-Go Map!!-acknowledgements.markdown */,
-				E08A17FCF8A7A85B9E9B6FD56296852E /* Pods-Go Map!!-acknowledgements.plist */,
-				700B8B1533A062AD6CF7BB61ED465238 /* Pods-Go Map!!-dummy.m */,
-				C87903140C134F5B8BB0BA143BDA05B5 /* Pods-Go Map!!-Info.plist */,
-				F8CDD896C16CF34B6C3B97C96288065A /* Pods-Go Map!!-umbrella.h */,
-				85B2686DB306BFBEF5A8EA7C98AFFF69 /* Pods-Go Map!!.debug.xcconfig */,
-				89D16BFF5788B64F131929DC8FACEF4A /* Pods-Go Map!!.release.xcconfig */,
+				E63F367F44FC87833A1792B541781BB7 /* AFError.swift */,
+				85FC5E8A366EFB3B0CF9816F6A90B258 /* Alamofire.swift */,
+				47D8FC88383C541917CFD5ADA31DD7AB /* DispatchQueue+Alamofire.swift */,
+				616062C81FDAB5C58156D8D00F0FC48D /* MultipartFormData.swift */,
+				7C36DA43AFF8C1CD3C666DACA78B91C2 /* NetworkReachabilityManager.swift */,
+				B86FC9B604FA843EF26A951C43C0CE8B /* Notifications.swift */,
+				F8D7A47A590ED08C21AB24503841C370 /* ParameterEncoding.swift */,
+				2EE101F8BE2F43D16C24A9874C79A94A /* Request.swift */,
+				B06A315E96FC5BCCAB1C5145D4BF1BCF /* Response.swift */,
+				AF15E9B6C2601FD9AD228CA2D657E44B /* ResponseSerialization.swift */,
+				F1DA11279AA1D6557BB10C9936E9B3A3 /* Result.swift */,
+				3D7B86CF47C1835EA00FE7A8B8D5CCC5 /* ServerTrustPolicy.swift */,
+				3EFB0C226D602EC371BECC5BD2CC9370 /* SessionDelegate.swift */,
+				98D3F4F1011789493720361780A1982D /* SessionManager.swift */,
+				A50DCBCED5F02570DDA9386825ACB4CF /* TaskDelegate.swift */,
+				58ACD677FD4B95B260E1B1C656D08B84 /* Timeline.swift */,
+				DF3AE0D4172A0ECD56EBFA08991A7C70 /* Validation.swift */,
+				7D02D4600E8C814A4EF1D8C7FF8FA146 /* Support Files */,
 			);
-			name = "Pods-Go Map!!";
-			path = "Target Support Files/Pods-Go Map!!";
-			sourceTree = "<group>";
-		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		C7EDB4D49085FC1FB9BBE6D45E1F8EF3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E8A8DB29C50AA8892731F15EEA136989 /* Pods_Go_Map__.framework */,
-			);
-			name = Products;
+			name = Alamofire;
+			path = Alamofire;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				C7EDB4D49085FC1FB9BBE6D45E1F8EF3 /* Products */,
-				0A24123311AA7A0D7987FA6C102FD717 /* Targets Support Files */,
+				8F30E2313BA742AB147C26DFA40BC5F3 /* Development Pods */,
+				2F2A6FCCD7293377A61DF5D10894ACF2 /* Frameworks */,
+				90FDDC7F5D24472360CA259A8D40AE98 /* Pods */,
+				FD1BE00040181ED896D7EF86090688A6 /* Products */,
+				CBFE0B5BD635BA2B6DB1DFD147F5A1E6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		D62094463B4BF6CC3851D34264006A42 /* Pods-Go Map!! */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+				768CD829A40A3CD9A3D02392EAFF6BD8 /* Pods-Go Map!!.modulemap */,
+				9F7CC6149964A7B365E5C5ACF54C6FD7 /* Pods-Go Map!!-acknowledgements.markdown */,
+				52E9A90E818BEECBE7DA3851DE72860E /* Pods-Go Map!!-acknowledgements.plist */,
+				4EEBF6BA60A98AD8CF78865C98E317D2 /* Pods-Go Map!!-dummy.m */,
+				1B1F2FAF69318C9DC055C0DEA57B5506 /* Pods-Go Map!!-frameworks.sh */,
+				81175CCEAD163023A3E4FB4487629A77 /* Pods-Go Map!!-Info.plist */,
+				B3F9FF4BE0563EC3C43AB01E9A131F3D /* Pods-Go Map!!-umbrella.h */,
+				1372A7CE65C38E52713A840B1200B5F2 /* Pods-Go Map!!.debug.xcconfig */,
+				93C295FBA996828EF2DE607ED1A971ED /* Pods-Go Map!!.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = "Pods-Go Map!!";
+			path = "Target Support Files/Pods-Go Map!!";
+			sourceTree = "<group>";
+		};
+		DBBD239EB7C1C83EA80124D1A53485AB /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		EEBE86FEF5CC51561485D380BFCE7D6F /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				5832D040AFB93D3B51F24B272499ED54 /* Apiv2API.swift */,
+				1A373B4502F6A9000C45EADB64844FB7 /* BundleAPI.swift */,
+				CF0DE18D2AAF5693799AEC1542EDECC7 /* ChallengeAPI.swift */,
+				7A28D0C80B784470AB305B5B53E1BAE4 /* ChangesAPI.swift */,
+				5CCAA8F90F506FFE3CB4F21BC21D70D0 /* CommentAPI.swift */,
+				8BCBA7D29ABFE410F722B34B9C01DA7A /* KeywordAPI.swift */,
+				DDE752F0761E880AC9CD1B962079668B /* ProjectAPI.swift */,
+				7A88E4FE699F8B035D629E09FCA1EB2A /* ReviewAPI.swift */,
+				09AB0F001D6BCE403F17456E4C6C2F84 /* SurveyAPI.swift */,
+				5830328C9220559D4BC938D68A1768D3 /* TagDeprecatedAPI.swift */,
+				092FC621688D474CA652F309C377335B /* TaskAPI.swift */,
+				10EA339DAA6E98021ED6D30B155F64B6 /* TaskReviewAPI.swift */,
+				F0B1B6B4F821283C65F95BA190C5145C /* UserAPI.swift */,
+				5111F033603E942B802D13C873DB7862 /* VirtualChallengeAPI.swift */,
+			);
+			name = APIs;
+			path = MapRoulette/Classes/Swaggers/APIs;
+			sourceTree = "<group>";
+		};
+		FD1BE00040181ED896D7EF86090688A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */,
+				8FC74F0D398DE3CD435C074686116FA3 /* MapRoulette.framework */,
+				E8A8DB29C50AA8892731F15EEA136989 /* Pods_Go_Map__.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		9DD51C3752E13E1A83207A1C8CBBB30C /* Headers */ = {
+		2582784E4FA6A1AC5D23FC53AC3F6EE2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F754A9D4DAF5BF918E0157D820F2DADB /* Pods-Go Map!!-umbrella.h in Headers */,
+				F7B74645E07C39771156A1FA413B98D4 /* Alamofire-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CF888BAF9491F19D70D1E9B42F05EB7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5D49CBD3E94E43165267E33C98F56EF /* Pods-Go Map!!-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE40FE5784DB4FD7C06E23AB37CBEF74 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				945CCF499393CCD468D453AB67C006C8 /* MapRoulette-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,20 +499,59 @@
 /* Begin PBXNativeTarget section */
 		3A1D6D211679B7849F6043481CA06DBB /* Pods-Go Map!! */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7E708093C3D7ACC5AA9515742119DE82 /* Build configuration list for PBXNativeTarget "Pods-Go Map!!" */;
+			buildConfigurationList = E6F699D8BEE5C537ACAE0928B962EFEC /* Build configuration list for PBXNativeTarget "Pods-Go Map!!" */;
 			buildPhases = (
-				9DD51C3752E13E1A83207A1C8CBBB30C /* Headers */,
-				DB7A50D9515A876E330E4E3739A65C3C /* Sources */,
-				ACB0E7C864475F057DA589A28D374DC7 /* Frameworks */,
-				F2C59E8EDEC9321ED6DDCABEF0102145 /* Resources */,
+				7CF888BAF9491F19D70D1E9B42F05EB7 /* Headers */,
+				0F1C1AF9C89122CB8C49B77622909D79 /* Sources */,
+				C627155947A4133556E5441033D4C0C0 /* Frameworks */,
+				434D352353BF5607EF60F5BBC50A84F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20B0580A6ACB9B1C0ACAA85C486377A1 /* PBXTargetDependency */,
+				136A533CA5E6B9EFE56A316DC7E3BDE3 /* PBXTargetDependency */,
+			);
+			name = "Pods-Go Map!!";
+			productName = "Pods-Go Map!!";
+			productReference = E8A8DB29C50AA8892731F15EEA136989 /* Pods_Go_Map__.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C91E08C77DC053849161B68D8F54ED36 /* MapRoulette */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9436B560FFD66C6143B9DC5C657B60CE /* Build configuration list for PBXNativeTarget "MapRoulette" */;
+			buildPhases = (
+				DE40FE5784DB4FD7C06E23AB37CBEF74 /* Headers */,
+				65EB7FA9B198521F4A39D02DB0242D1B /* Sources */,
+				22307FD301EB95218FA46DA96C109FE2 /* Frameworks */,
+				9711A48C9AB29FA7B9BEFEC9FEF487CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3833E0DA5345E116CF1D6A4CF579013 /* PBXTargetDependency */,
+			);
+			name = MapRoulette;
+			productName = MapRoulette;
+			productReference = 8FC74F0D398DE3CD435C074686116FA3 /* MapRoulette.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4A5194ABAF7A4780609E0E581DA6B54 /* Build configuration list for PBXNativeTarget "Alamofire" */;
+			buildPhases = (
+				2582784E4FA6A1AC5D23FC53AC3F6EE2 /* Headers */,
+				2DDFD9AC10F181CD7130BDF5F9E0502B /* Sources */,
+				090C1D63463ACF622287EFF9D5C9392D /* Frameworks */,
+				473D3E892ABB6C798CFF290644259B34 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-Go Map!!";
-			productName = "Pods-Go Map!!";
-			productReference = E8A8DB29C50AA8892731F15EEA136989 /* Pods_Go_Map__.framework */;
+			name = Alamofire;
+			productName = Alamofire;
+			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -146,17 +572,33 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = C7EDB4D49085FC1FB9BBE6D45E1F8EF3 /* Products */;
+			productRefGroup = FD1BE00040181ED896D7EF86090688A6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */,
+				C91E08C77DC053849161B68D8F54ED36 /* MapRoulette */,
 				3A1D6D211679B7849F6043481CA06DBB /* Pods-Go Map!! */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F2C59E8EDEC9321ED6DDCABEF0102145 /* Resources */ = {
+		434D352353BF5607EF60F5BBC50A84F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		473D3E892ABB6C798CFF290644259B34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9711A48C9AB29FA7B9BEFEC9FEF487CB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -166,20 +608,158 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DB7A50D9515A876E330E4E3739A65C3C /* Sources */ = {
+		0F1C1AF9C89122CB8C49B77622909D79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				391A50B6FF9BEF53AE3C4AA326176874 /* Pods-Go Map!!-dummy.m in Sources */,
+				062CC403D7E15428428EED48A33E70CF /* Pods-Go Map!!-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DDFD9AC10F181CD7130BDF5F9E0502B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83956E20859CDBBE7BC38ABADE0170FB /* AFError.swift in Sources */,
+				1945CD5D63A1C164AEAAA9A33E85571E /* Alamofire-dummy.m in Sources */,
+				BEE6B677416CA71C981D1D3F60B18C96 /* Alamofire.swift in Sources */,
+				D3D8C379C6E4FB487E5ABD6800AD7B7E /* DispatchQueue+Alamofire.swift in Sources */,
+				1986B50C74F1697EA43F68335C93CEB3 /* MultipartFormData.swift in Sources */,
+				3571F958A3907B3A806E62D50C2550D4 /* NetworkReachabilityManager.swift in Sources */,
+				132E0F619E4338E5D1B27E4C72076B3F /* Notifications.swift in Sources */,
+				0C5E11DE24DAA737704B355F5F2F3426 /* ParameterEncoding.swift in Sources */,
+				98A929C8E9012AB167672714FFD2113C /* Request.swift in Sources */,
+				D65C254F5ABF2CB5ECEE50FE8F8E1A80 /* Response.swift in Sources */,
+				E3747EC31FCCA97D75A81FC700CF7E24 /* ResponseSerialization.swift in Sources */,
+				64744C911253C3E01461FAD7C935C8D7 /* Result.swift in Sources */,
+				F13F2AA7F2E6D95A181CAB99B900D531 /* ServerTrustPolicy.swift in Sources */,
+				2C61B040BA6A9A7AE66C4D9BA26D5520 /* SessionDelegate.swift in Sources */,
+				931BBB8230A25161D5C37528A8F9FECF /* SessionManager.swift in Sources */,
+				AFC64B1097F7355FF423D6A73E9C7210 /* TaskDelegate.swift in Sources */,
+				933FDA5970AA525D6CB92BFEBA2BAB4A /* Timeline.swift in Sources */,
+				53791F5E5F07400F92CFDFC89A432305 /* Validation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65EB7FA9B198521F4A39D02DB0242D1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C13DC4A1C5DBF34372008E0429FF02B /* AlamofireImplementations.swift in Sources */,
+				3A2010F30419B1CCB6FF22DD46141E42 /* APIHelper.swift in Sources */,
+				0E8EF0AD712F872D75C99EFB3280CAFE /* APIs.swift in Sources */,
+				39D12C174FDC119DFD7173164416C52E /* Apiv2API.swift in Sources */,
+				5AA9746D1EA9E88ED98DD86E40141103 /* BundleAPI.swift in Sources */,
+				00F5BC6228EF06EF1E1193A47DD7E6FC /* ChallengeAPI.swift in Sources */,
+				D1E0138B826CBBBE74DA37F24227D8A1 /* ChangesAPI.swift in Sources */,
+				62CCF6E691F84930E70D2E9ED58FB6DD /* CodableHelper.swift in Sources */,
+				A2AE3C4343E410716AF7EF44291C8778 /* CommentAPI.swift in Sources */,
+				41629EB188E5E918E1931BAFD83E4FD4 /* Configuration.swift in Sources */,
+				3E2CEABB221B6ED4D17B0C59D81E00BE /* Extensions.swift in Sources */,
+				422A51FE25A927C107E9CF2377A26EEB /* JSONEncodableEncoding.swift in Sources */,
+				3D2F798AD4E8FA96A971187F73B1AAC8 /* JSONEncodingHelper.swift in Sources */,
+				35B49A70F3CFAB0AC1BEB3581BDDB652 /* JSONValue.swift in Sources */,
+				EDF8F804DAB05FBE631ABF745A61656B /* KeywordAPI.swift in Sources */,
+				AB0A09FDB98EA8814F625F971E6CBE47 /* MapRoulette-dummy.m in Sources */,
+				2EC10DD87BDCEEB0B7E773335559B31A /* Models.swift in Sources */,
+				AA5A285E4300DCB2DEC742B8D1E71AE5 /* OrgMaprouletteExceptionStatusMessage.swift in Sources */,
+				FDEF62DC3BFE81569BA849B50731C826 /* OrgMaprouletteModelsChallenge.swift in Sources */,
+				9D0A23AB65D5C1E883C0B1EC7E9930BF /* OrgMaprouletteModelsChallengeCreation.swift in Sources */,
+				BAB1B777F0295A7576CF0404ACEBC416 /* OrgMaprouletteModelsChallengeExtra.swift in Sources */,
+				6A6185C0BF0E7562C0F4FDB4674468B3 /* OrgMaprouletteModelsChallengeGeneral.swift in Sources */,
+				65C5A19156467F0F988B6BFB87BEB1AC /* OrgMaprouletteModelsChallengeListing.swift in Sources */,
+				43B56E3ADC21C11D2F4C53BF19D37C59 /* OrgMaprouletteModelsChallengePriority.swift in Sources */,
+				9461A226A5B24BBEE4C5AB731973D73B /* OrgMaprouletteModelsClusteredPoint.swift in Sources */,
+				7E9CA2BBB4E3A630E3CD8B1368615B2D /* OrgMaprouletteModelsComment.swift in Sources */,
+				68B51545059326B061934C897E6C3DA8 /* OrgMaprouletteModelsMapillaryImage.swift in Sources */,
+				2124519C965E8F05DF12E8BE12C943D9 /* OrgMaprouletteModelsPoint.swift in Sources */,
+				8D5BD1AE5D1A251BC951CE7F674E26C2 /* OrgMaprouletteModelsPointReview.swift in Sources */,
+				CC231FD5CCF5B9E6904B65E33975F67A /* OrgMaprouletteModelsProject.swift in Sources */,
+				6452AD9B52425C4643B9E74E670ECBAB /* OrgMaprouletteModelsTag.swift in Sources */,
+				01E725C177955A8A47DA73A13B856F16 /* OrgMaprouletteModelsTask.swift in Sources */,
+				0BDB7BBD15134EA7CABBD334B83A55F6 /* OrgMaprouletteModelsTaskBundle.swift in Sources */,
+				08A081168F80AB06621DA179BE33D911 /* OrgMaprouletteModelsTaskCluster.swift in Sources */,
+				C823D40614BD40E77C9F60EA094B915B /* OrgMaprouletteModelsTaskReviewFields.swift in Sources */,
+				ED4739DB07D87EB72A6C6ACDDC865AD9 /* OrgMaprouletteModelsUserNotification.swift in Sources */,
+				04FDF956E60BAC3CD1FEA3C46B3F6A1C /* OrgMaprouletteModelsVirtualChallenge.swift in Sources */,
+				A6E878B2CDEE723CE807DB26D21B6B60 /* OrgMaprouletteSessionGroup.swift in Sources */,
+				7BB7E20B221DF192F9DFD35255D61ABC /* OrgMaprouletteSessionLocation.swift in Sources */,
+				872B22657E0AF4A6CA8C80387A18D5D9 /* OrgMaprouletteSessionOSMProfile.swift in Sources */,
+				247CE02FEB0B76CBC496C4F1705D37B0 /* OrgMaprouletteSessionSearchChallengeParameters.swift in Sources */,
+				2B8F711B355A4E430391A4DF226E4C5E /* OrgMaprouletteSessionSearchLocation.swift in Sources */,
+				69B8D3B45F545019B2406157DCDCAA6D /* OrgMaprouletteSessionTaskPropertySearch.swift in Sources */,
+				301E0700E2238F2CA1C70E78D970DEAF /* OrgMaprouletteSessionUser.swift in Sources */,
+				0CF76070098FBF6794DABB91C3273D68 /* OrgMaprouletteSessionUserSettings.swift in Sources */,
+				8151A57AA3400E9C096C6A19F68791C2 /* ProjectAPI.swift in Sources */,
+				2C27879A5E7D229D6BC38B4C1C0A7AE9 /* ReviewAPI.swift in Sources */,
+				1E76F94ED76C0C4CC0BD0B77EB3FE41C /* SurveyAPI.swift in Sources */,
+				63B10A14F0364F042765E5B7D3C80000 /* TagDeprecatedAPI.swift in Sources */,
+				9AFBAFD2C35CBB6D408DBAB26BAA119B /* TaskAPI.swift in Sources */,
+				1041197E972352F0764CE474BEAFCA69 /* TaskReviewAPI.swift in Sources */,
+				548597CA4B1059188967F96526C4129D /* UserAPI.swift in Sources */,
+				389227E2188D596F0A1DC572ED3C3735 /* VirtualChallengeAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		136A533CA5E6B9EFE56A316DC7E3BDE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MapRoulette;
+			target = C91E08C77DC053849161B68D8F54ED36 /* MapRoulette */;
+			targetProxy = EFBF45972900C523F217019FF48DD77E /* PBXContainerItemProxy */;
+		};
+		20B0580A6ACB9B1C0ACAA85C486377A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = 7A71CAFC5AF80EF330EDA0FBD22B06EE /* PBXContainerItemProxy */;
+		};
+		E3833E0DA5345E116CF1D6A4CF579013 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = 7BF4DC80352C1C6B862B490222ADF9E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		1AFE617F67503FA01F35AE2AD5005164 /* Debug */ = {
+		0F7F2617CB9213807F3580F9D0E29112 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85B2686DB306BFBEF5A8EA7C98AFFF69 /* Pods-Go Map!!.debug.xcconfig */;
+			baseConfigurationReference = 0C96CDEC4805F115B4225E4EBFC020B7 /* Alamofire.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1BB86E0896CE132DD1E503C2325668F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1372A7CE65C38E52713A840B1200B5F2 /* Pods-Go Map!!.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -204,6 +784,68 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3CA3380DF558845A1F494B4A61988BED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBEC9E6BC53944C0809172141B2C01B5 /* MapRoulette.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MapRoulette/MapRoulette-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MapRoulette/MapRoulette-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MapRoulette/MapRoulette.modulemap";
+				PRODUCT_MODULE_NAME = MapRoulette;
+				PRODUCT_NAME = MapRoulette;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3E34629840C593E821BBF4796F36D7BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C50F83F93296D01A5B9009365A2671D /* Alamofire.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -267,6 +909,38 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		906C1184C0C75723AB8F6E525BD3FB96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C0246343CE89D29417F7D21146A7450 /* MapRoulette.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MapRoulette/MapRoulette-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MapRoulette/MapRoulette-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MapRoulette/MapRoulette.modulemap";
+				PRODUCT_MODULE_NAME = MapRoulette;
+				PRODUCT_NAME = MapRoulette;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -334,9 +1008,9 @@
 			};
 			name = Debug;
 		};
-		B2EFBFF2B80741B141C997278A4CA68D /* Release */ = {
+		FA2AF895838F5D7325EBBCE8292E56B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89D16BFF5788B64F131929DC8FACEF4A /* Pods-Go Map!!.release.xcconfig */;
+			baseConfigurationReference = 93C295FBA996828EF2DE607ED1A971ED /* Pods-Go Map!!.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -380,11 +1054,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7E708093C3D7ACC5AA9515742119DE82 /* Build configuration list for PBXNativeTarget "Pods-Go Map!!" */ = {
+		9436B560FFD66C6143B9DC5C657B60CE /* Build configuration list for PBXNativeTarget "MapRoulette" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1AFE617F67503FA01F35AE2AD5005164 /* Debug */,
-				B2EFBFF2B80741B141C997278A4CA68D /* Release */,
+				3CA3380DF558845A1F494B4A61988BED /* Debug */,
+				906C1184C0C75723AB8F6E525BD3FB96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4A5194ABAF7A4780609E0E581DA6B54 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E34629840C593E821BBF4796F36D7BF /* Debug */,
+				0F7F2617CB9213807F3580F9D0E29112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6F699D8BEE5C537ACAE0928B962EFEC /* Build configuration list for PBXNativeTarget "Pods-Go Map!!" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BB86E0896CE132DD1E503C2325668F8 /* Debug */,
+				FA2AF895838F5D7325EBBCE8292E56B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

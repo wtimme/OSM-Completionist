@@ -1,0 +1,6 @@
+framework module MapRoulette {
+  umbrella header "MapRoulette-umbrella.h"
+
+  export *
+  module * { export * }
+}

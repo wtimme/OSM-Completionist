@@ -1,3 +1,23 @@
-PODFILE CHECKSUM: a08380e078ac721e8c01055eafad05bbed487467
+PODS:
+  - Alamofire (4.9.1)
+  - MapRoulette (0.0.1):
+    - Alamofire (~> 4.9.0)
+
+DEPENDENCIES:
+  - MapRoulette (from `./MapRoulette/auto-generated`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+
+EXTERNAL SOURCES:
+  MapRoulette:
+    :path: "./MapRoulette/auto-generated"
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  MapRoulette: 20ab1c68cf147ce3d59adb17e775d15430872d9a
+
+PODFILE CHECKSUM: e96a3319dc505c997a9ee5fe3f3361edbb7d27a6
 
 COCOAPODS: 1.9.0

@@ -1,0 +1,23 @@
+{
+  "name": "MapRoulette",
+  "platforms": {
+    "ios": "9.0",
+    "osx": "10.11",
+    "tvos": "9.0"
+  },
+  "version": "0.0.1",
+  "source": {
+    "git": "git@github.com:swagger-api/swagger-mustache.git",
+    "tag": "v1.0.0"
+  },
+  "authors": "Swagger Codegen",
+  "license": "ISC License",
+  "homepage": "https://github.com/wtimme/osm-completionist",
+  "summary": "Auto-generated API client for MapRoulette",
+  "source_files": "MapRoulette/Classes/**/*.swift",
+  "dependencies": {
+    "Alamofire": [
+      "~> 4.9.0"
+    ]
+  }
+}
