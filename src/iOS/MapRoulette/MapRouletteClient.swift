@@ -10,9 +10,11 @@ import Foundation
 import MapRoulette
 
 struct MapRouletteTask {
+    let id: Int64
     let coordinate: CLLocationCoordinate2D
     
     init(clusteredPoint: OrgMaprouletteModelsClusteredPoint) {
+        self.id = clusteredPoint._id
         self.coordinate = CLLocationCoordinate2D(mapRoulettePoint: clusteredPoint.point)
     }
 }
