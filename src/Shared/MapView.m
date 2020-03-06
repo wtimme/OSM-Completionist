@@ -1176,6 +1176,10 @@ static inline ViewOverlayMask OverlaysFor(MapViewState state, ViewOverlayMask ma
     return NO;
 }
 
+- (void)layerDidEncounterError:(NSError *)error {
+    [self presentError:error flash:NO];
+}
+
 -(OSMRect)screenLongitudeLatitude
 {
 #if 1

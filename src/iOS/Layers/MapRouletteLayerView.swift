@@ -11,6 +11,7 @@ import UIKit
 @objc protocol LayerViewDelegate: class {
     func isLayerVisible(_ layerView: LayerView) -> Bool
     var screenLongitudeLatitude: OSMRect { get }
+    func layerDidEncounterError(_ error: Error)
 }
 
 @objc protocol LayerView: class {
