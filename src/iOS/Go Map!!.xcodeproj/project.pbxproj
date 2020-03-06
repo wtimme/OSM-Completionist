@@ -261,6 +261,7 @@
 		64E21EB822651F2D004605D7 /* XCTestCase+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E21EB722651F2D004605D7 /* XCTestCase+UserDefaults.swift */; };
 		64F59A4E240721820093DCDB /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F59A4D240721820093DCDB /* FeedbackGenerator.swift */; };
 		64F59A50240915840093DCDB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F59A4F240915840093DCDB /* MapViewController.swift */; };
+		64F59AC82412BB190093DCDB /* MapRouletteClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F59AC72412BB190093DCDB /* MapRouletteClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -635,6 +636,7 @@
 		64E21EB722651F2D004605D7 /* XCTestCase+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UserDefaults.swift"; sourceTree = "<group>"; };
 		64F59A4D240721820093DCDB /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
 		64F59A4F240915840093DCDB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		64F59AC72412BB190093DCDB /* MapRouletteClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouletteClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -855,7 +857,7 @@
 			children = (
 				6463E3C023F74D1F00E4F6ED /* Layers */,
 				64D64CE6227ECF450040C67A /* Overpass */,
-                64F59AC62412B5410093DCDB /* MapRoulette */,
+				64F59AC62412B5410093DCDB /* MapRoulette */,
 				64981F1D22667D7700178476 /* Extensions */,
 				64D74BF02253DF39004FFD20 /* Direction */,
 				64305F6C23E71F5700232BB9 /* URLParsing */,
@@ -1281,6 +1283,7 @@
 		64F59AC62412B5410093DCDB /* MapRoulette */ = {
 			isa = PBXGroup;
 			children = (
+				64F59AC72412BB190093DCDB /* MapRouletteClient.swift */,
 			);
 			path = MapRoulette;
 			sourceTree = "<group>";
@@ -1556,6 +1559,7 @@
 				0230558B19B931B20041B151 /* CustomPresetController.m in Sources */,
 				021C6AA81686145C00FB17B0 /* UndoManager.m in Sources */,
 				02E8436519B39FAD0044AC1D /* OsmNotesDatabase.m in Sources */,
+				64F59AC82412BB190093DCDB /* MapRouletteClient.swift in Sources */,
 				023D1723168A36B10011FABC /* POIAttributesViewController.m in Sources */,
 				022B09A719BD3F7B0041687B /* QuadMapC.mm in Sources */,
 				64D64CEC227ED0790040C67A /* KeyExistsQuery.swift in Sources */,
