@@ -32,6 +32,11 @@ Install it via [Homebrew][14]:
 
     % brew install swagger-codegen@3.0.18
 
+In the MapRoulette directory (`src/iOS/MapRoulette`), run the following command
+to re-generate the APIs:
+
+    % swagger-codegen generate -i swagger.json -l swift5 -o auto-generated
+
 ### Compiling Swagger Codegen (optional)
 
 At the time of writing, the formula for 3.0.18 was not available yet.
