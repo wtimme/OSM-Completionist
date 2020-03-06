@@ -53,8 +53,13 @@ import UIKit
     func updateDynamicContent() {
         guard let boundingBox = delegate?.screenLongitudeLatitude else { return }
         
-        apiClient.tasks(in: boundingBox) { result in
-            /// TODO: Implement me.
+        apiClient.tasks(in: boundingBox) { [weak self] result in
+            switch result {
+            case let .failure(error):
+                self?.delegate?.layerDidEncounterError(error)
+            case let .success(tasks):
+                self?.processTasks(tasks)
+            }
         }
     }
     
@@ -62,5 +67,8 @@ import UIKit
     
     private func setup() {
         /// Implement me
+    }
+    
+    private func processTasks(_ tasksToProcess: [MapRouletteTask]) {
     }
 }
