@@ -23,6 +23,10 @@ import UIKit
 
 @objcMembers class MapRouletteLayerView: UIView, LayerView {
     
+    // MARK: Private properties
+    
+    private let apiClient: MapRouletteClientProtocol = MapRouletteClient.shared
+    
     // MARK: Initializer
     
     override init(frame: CGRect) {
@@ -46,7 +50,11 @@ import UIKit
     }
     
     func updateDynamicContent() {
-        /// TODO: Implement me.
+        guard let boundingBox = delegate?.screenLongitudeLatitude else { return }
+        
+        apiClient.tasks(in: boundingBox) { result in
+            /// TODO: Implement me.
+        }
     }
     
     // MARK: Private methods
