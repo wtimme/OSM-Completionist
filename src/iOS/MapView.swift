@@ -8,6 +8,11 @@
 
 @objc extension MapView {
     func setupMapRouletteLayer() {
+        guard nil == self.mapRouletteLayerView else {
+            /// Only setup the layer once.
+            return
+        }
+        
         let layerView = MapRouletteLayerView()
         layerView.translatesAutoresizingMaskIntoConstraints = false
         
