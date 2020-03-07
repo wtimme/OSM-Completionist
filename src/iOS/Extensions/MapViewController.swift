@@ -21,5 +21,9 @@ extension MapViewController {
 
 extension MapViewController: MapRouletteLayerViewDelegate {
     func didSelectMapRouletteTask(_ task: MapRouletteTask) {
+        guard let taskURL = URL(string: "https://maproulette.org/task/\(task.id)") else { return }
+        
+        let safariViewController = SFSafariViewController(url: taskURL)
+        present(safariViewController, animated: true)
     }
 }
