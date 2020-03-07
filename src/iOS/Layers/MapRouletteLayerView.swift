@@ -11,6 +11,10 @@ import UIKit
 @objc protocol LayerViewDelegate: class {
     func isLayerVisible(_ layerView: LayerView) -> Bool
     var screenLongitudeLatitude: OSMRect { get }
+
+    @objc(screenPointFromMapPoint:birdsEye:)
+    func screenPoint(from mapPoint: OSMPoint, birdsEye: Bool) -> CGPoint
+
     func layerDidEncounterError(_ error: Error)
 }
 
