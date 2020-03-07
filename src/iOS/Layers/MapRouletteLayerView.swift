@@ -18,6 +18,12 @@ import UIKit
     func layerDidEncounterError(_ error: Error)
 }
 
+protocol MapRouletteLayerViewDelegate: class {
+    /// Is invoked when the user selected a `MapRouletteTaks` on the map.
+    /// - Parameter task: The task that was selected.
+    func didSelectMapRouletteTask(_ task: MapRouletteTask)
+}
+
 @objc protocol LayerView: class {
     var delegate: LayerViewDelegate? { get set }
     func layout()
@@ -53,6 +59,7 @@ import UIKit
     // MARK: LayerView
     
     weak var delegate: LayerViewDelegate?
+    weak var mapRouletteLayerViewDelegate: MapRouletteLayerViewDelegate?
     
     func layout() {
         guard let delegate = delegate else {
@@ -135,6 +142,6 @@ import UIKit
             return
         }
         
-        /// TODO: Handle task selection.
+        mapRouletteLayerViewDelegate?.didSelectMapRouletteTask(task)
     }
 }
