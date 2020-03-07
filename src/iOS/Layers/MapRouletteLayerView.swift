@@ -31,6 +31,10 @@ import UIKit
     // MARK: Private properties
     
     private let apiClient: MapRouletteClientProtocol = MapRouletteClient.shared
+    private lazy var tasks = Set<MapRouletteTask>()
+    
+    /// The views for each task.
+    private lazy var taskViews = [MapRouletteTask.ID: UIView]()
     
     // MARK: Initializer
     
@@ -51,7 +55,25 @@ import UIKit
     weak var delegate: LayerViewDelegate?
     
     func layout() {
-        /// TODO: Implement me.
+        guard let delegate = delegate else {
+            /// In order to layout, we need ot have the delegate for the drawing calculation.
+            return
+        }
+        
+        for (taskId, view) in taskViews {
+            guard let task = tasks.first(where: { $0.id == taskId }) else {
+                /// TODO: Add error handling.
+                return
+            }
+            
+            let taskMapPoint = MapPointForLatitudeLongitude(task.coordinate.latitude, task.coordinate.longitude)
+            let screenPoint = delegate.screenPoint(from: taskMapPoint, birdsEye: true)
+            
+            /// Update the view's frame.
+            var updatedFrame = view.frame
+            updatedFrame.origin = screenPoint
+            view.frame = updatedFrame
+        }
     }
     
     func updateDynamicContent() {
@@ -74,5 +96,45 @@ import UIKit
     }
     
     private func processTasks(_ tasksToProcess: [MapRouletteTask]) {
+        tasksToProcess.forEach { task in
+            /// Store the task.
+            tasks.insert(task)
+            
+            guard !taskViews.keys.contains(task.id) else {
+                /// A view for this task already exists.
+                return
+            }
+            
+            addViewForTask(task)
+            
+        }
+        
+        layout()
+    }
+    
+    private func addViewForTask(_ task: MapRouletteTask) {
+        let button = UIButton()
+        
+        button.setTitle("MR", for: .normal)
+        button.backgroundColor = .orange
+        button.layer.cornerRadius = 4
+        button.sizeToFit()
+        
+        button.addTarget(self, action: #selector(didTapTaskButton(_:)), for: .touchUpInside)
+        
+        button.tag = Int(task.id)
+        
+        taskViews[task.id] = button
+        
+        addSubview(button)
+    }
+    
+    @objc private func didTapTaskButton(_ button: UIButton) {
+        guard let task = tasks.first(where: { $0.id == button.tag }) else {
+            /// Unable to find the task for this button.
+            return
+        }
+        
+        /// TODO: Handle task selection.
     }
 }
