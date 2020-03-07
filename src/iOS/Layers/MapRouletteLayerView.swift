@@ -84,6 +84,11 @@ protocol MapRouletteLayerViewDelegate: class {
     }
     
     func updateDynamicContent() {
+        guard delegate?.isLayerVisible(self) ?? false else {
+            /// If the layer was not visible, there is no need to update the content.
+            return
+        }
+        
         guard let boundingBox = delegate?.screenLongitudeLatitude else { return }
         
         apiClient.tasks(in: boundingBox) { [weak self] result in
