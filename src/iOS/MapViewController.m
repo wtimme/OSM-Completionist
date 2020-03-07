@@ -87,6 +87,8 @@
 {
 	[super viewWillAppear:animated];
 	self.navigationController.navigationBarHidden = YES;
+    
+    [self.mapView.mapRouletteLayerView layout];
 }
 
 

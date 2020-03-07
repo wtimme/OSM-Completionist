@@ -67,6 +67,15 @@ protocol MapRouletteLayerViewDelegate: class {
             return
         }
         
+        guard delegate.isLayerVisible(self) else {
+            /// The layer is not visible; hide it.
+            isHidden = true
+            return
+        }
+        
+        /// Make sure the layer is visible.
+        isHidden = false
+        
         for (taskId, view) in taskViews {
             guard let task = tasks.first(where: { $0.id == taskId }) else {
                 /// TODO: Add error handling.
