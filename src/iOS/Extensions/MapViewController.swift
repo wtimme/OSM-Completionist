@@ -18,3 +18,8 @@ extension MapViewController {
         present(safariViewController, animated: true)
     }
 }
+
+extension MapViewController: MapRouletteLayerViewDelegate {
+    func didSelectMapRouletteTask(_ task: MapRouletteTask) {
+    }
+}

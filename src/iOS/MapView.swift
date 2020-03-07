@@ -20,6 +20,8 @@
             layerView.bottomAnchor.constraint(equalTo: viewController.toolbar.topAnchor)
         ])
         
+        layerView.mapRouletteLayerViewDelegate = viewController
+        
         self.mapRouletteLayerView = layerView
     }
 }
