@@ -21,7 +21,7 @@ struct RegularExpressionQuery {
 extension RegularExpressionQuery: BaseObjectMatching {
     
     func matches(_ object: OsmBaseObject) -> Bool {
-        guard let tags = object.tags as? [String: String] else { return false }
+        guard let tags = object.tags else { return false }
         
         let regularExpressionDoesMatch = tags.first { tagKey, tagValue in
             return tagKey.range(of: key, options: .regularExpression) != nil && tagValue.range(of: value, options: .regularExpression) != nil

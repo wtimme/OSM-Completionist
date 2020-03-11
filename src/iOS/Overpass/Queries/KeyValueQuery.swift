@@ -21,7 +21,7 @@ struct KeyValueQuery {
 extension KeyValueQuery: BaseObjectMatching {
     
     func matches(_ object: OsmBaseObject) -> Bool {
-        guard let valueOfObject = object.tags?[key] as? String else {
+        guard let valueOfObject = object.tags?[key] else {
             /// The object does not have a tag with the given key.
             if isNegated {
                 /// Treat the absence of a tag with the given key as a match when the query is negated.
