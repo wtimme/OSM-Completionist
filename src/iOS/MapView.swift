@@ -16,7 +16,7 @@
         let layerView = MapRouletteLayerView()
         layerView.translatesAutoresizingMaskIntoConstraints = false
         
-        addSubview(layerView)
+        insertSubview(layerView, belowSubview: editControl)
         
         NSLayoutConstraint.activate([
             layerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
