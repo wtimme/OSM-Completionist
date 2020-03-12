@@ -32,12 +32,16 @@ extension MapViewController {
 
 extension MapViewController: UIViewControllerPreviewingDelegate {
     public func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        /// TODO: Implement me.
-        return nil
+        guard let viewController = storyboard?.instantiateViewController(withIdentifier: "poiTabBar") else {
+            assertionFailure("Unable to instantiate the `poiTabBar` view controller")
+            return nil
+        }
+        
+        return viewController
     }
     
     public func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        /// TODO: Implement me.
+        present(viewControllerToCommit, animated: true)
     }
     
     
