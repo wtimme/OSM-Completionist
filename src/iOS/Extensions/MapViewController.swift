@@ -32,6 +32,11 @@ extension MapViewController {
 
 extension MapViewController: UIViewControllerPreviewingDelegate {
     public func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let tappedNode = mapView.editorLayer.osmHitTest(location, radius: 10, testNodes: false, ignoreList: [], segment: nil) else {
+            /// Only display a preview for nodes.
+            return nil
+        }
+        
         guard
             let viewController = storyboard?.instantiateViewController(withIdentifier: "poiTabBar"),
             let poiTabBarController = viewController as? POITabBarController
@@ -39,7 +44,6 @@ extension MapViewController: UIViewControllerPreviewingDelegate {
             assertionFailure("Unable to instantiate the `poiTabBar` view controller")
             return nil
         }
-        
         
         return poiTabBarController
     }
