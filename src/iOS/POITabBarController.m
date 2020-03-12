@@ -25,6 +25,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    AppDelegate * appDelegate = [AppDelegate getAppDelegate];
+    OsmBaseObject * selection = appDelegate.mapView.editorLayer.selectedPrimary;
+    self.selection = selection;
+    
     NSInteger tabIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"POITabIndex"];
     self.selectedIndex = tabIndex;
 }
@@ -33,9 +37,6 @@
 {
 	[super viewWillAppear:animated];
 
-	AppDelegate * appDelegate = [AppDelegate getAppDelegate];
-	OsmBaseObject * selection = appDelegate.mapView.editorLayer.selectedPrimary;
-	self.selection = selection;
     
     [self updateWithSelectedObject:selection];
 }
