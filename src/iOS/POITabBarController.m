@@ -27,6 +27,12 @@
     self.selectedIndex = tabIndex;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self updatePOIAttributesTabBarItemVisibilityWithSelectedObject:self.selection];
+}
+
 - (void)setSelection:(OsmBaseObject *)selection {
     _selection = selection;
     
@@ -44,8 +50,6 @@
 
         self.relationList = [selection.parentRelations mutableCopy];
     }
-    
-    [self updatePOIAttributesTabBarItemVisibilityWithSelectedObject:selection];
 }
 
 - (void)selectTagsViewController {
