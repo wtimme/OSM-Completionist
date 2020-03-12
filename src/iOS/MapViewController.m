@@ -71,6 +71,8 @@
     [self setupAccessibility];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:NULL];
+    
+    [self setupPeekAndPop];
 }
 
 - (void)setupAccessibility {

@@ -17,4 +17,28 @@ extension MapViewController {
         let safariViewController = SFSafariViewController(url: url)
         present(safariViewController, animated: true)
     }
+    
+    /// Sets up "Peek and Pop", which allows the user to preview an object by performing the gesture.
+    /// See: https://developer.apple.com/documentation/uikit/deprecated_symbols/implementing_peek_and_pop
+    @objc func setupPeekAndPop() {
+        guard #available(iOS 11.4, *) else {
+            /// Peek and Pop requires at least iOS 11.4.
+            return
+        }
+        
+        registerForPreviewing(with: self, sourceView: mapView)
+    }
+}
+
+extension MapViewController: UIViewControllerPreviewingDelegate {
+    public func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        /// TODO: Implement me.
+        return nil
+    }
+    
+    public func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        /// TODO: Implement me.
+    }
+    
+    
 }
