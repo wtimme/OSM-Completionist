@@ -33,12 +33,10 @@
     self.selectedIndex = tabIndex;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-	[super viewWillAppear:animated];
-
+- (void)setSelection:(OsmBaseObject *)selection {
+    _selection = selection;
     
-    [self updateWithSelectedObject:selection];
+    [self updateWithSelectedObject:self.selection];
 }
 
 - (void)updateWithSelectedObject:(OsmBaseObject *)selection {
