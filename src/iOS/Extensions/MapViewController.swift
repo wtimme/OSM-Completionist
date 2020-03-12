@@ -45,6 +45,8 @@ extension MapViewController: UIViewControllerPreviewingDelegate {
             return nil
         }
         
+        poiTabBarController.selectTagsViewController()
+
         return poiTabBarController
     }
     
