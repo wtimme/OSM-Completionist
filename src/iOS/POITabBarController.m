@@ -36,15 +36,21 @@
 	AppDelegate * appDelegate = [AppDelegate getAppDelegate];
 	OsmBaseObject * selection = appDelegate.mapView.editorLayer.selectedPrimary;
 	self.selection = selection;
-	self.keyValueDict = [NSMutableDictionary new];
-	self.relationList = [NSMutableArray new];
-	if ( selection ) {
-		[selection.tags enumerateKeysAndObjectsUsingBlock:^(NSString * key, NSString * obj, BOOL *stop) {
-			[_keyValueDict setObject:obj forKey:key];
-		}];
+    
+    [self updateWithSelectedObject:selection];
+}
 
-		self.relationList = [selection.parentRelations mutableCopy];
-	}
+- (void)updateWithSelectedObject:(OsmBaseObject *)selection {
+    self.keyValueDict = [NSMutableDictionary new];
+    self.relationList = [NSMutableArray new];
+    
+    if ( selection ) {
+        [selection.tags enumerateKeysAndObjectsUsingBlock:^(NSString * key, NSString * obj, BOOL *stop) {
+            [_keyValueDict setObject:obj forKey:key];
+        }];
+
+        self.relationList = [selection.parentRelations mutableCopy];
+    }
     
     [self updatePOIAttributesTabBarItemVisibilityWithSelectedObject:selection];
 }
