@@ -17,3 +17,4 @@
 #import "GeoURLParser.h"
 #import "URLParserResult.h"
 #import "MapViewController.h"
+#import "POITabBarController.h"
