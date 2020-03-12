@@ -41,6 +41,8 @@ extension MapViewController {
         poiTabBarController.selection = node
         poiTabBarController.selectTagsViewController()
         
+        poiTabBarController.preferredContentSize = CGSize(width: 0, height: 420)
+        
         poiTabBarController.tabBar.isHidden = true
         
         if let selectedNavigationController = poiTabBarController.selectedViewController as? UINavigationController {
