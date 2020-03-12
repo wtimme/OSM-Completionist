@@ -28,15 +28,8 @@ extension MapViewController {
         
         registerForPreviewing(with: self, sourceView: mapView)
     }
-}
-
-extension MapViewController: UIViewControllerPreviewingDelegate {
-    public func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        guard let tappedNode = mapView.editorLayer.osmHitTest(location, radius: 10, testNodes: false, ignoreList: [], segment: nil) else {
-            /// Only display a preview for nodes.
-            return nil
-        }
-        
+    
+    private func viewControllerForPreviewingNode(_ node: OsmNode) -> UIViewController? {
         guard
             let viewController = storyboard?.instantiateViewController(withIdentifier: "poiTabBar"),
             let poiTabBarController = viewController as? POITabBarController
@@ -45,9 +38,24 @@ extension MapViewController: UIViewControllerPreviewingDelegate {
             return nil
         }
         
+        poiTabBarController.selection = node
         poiTabBarController.selectTagsViewController()
 
         return poiTabBarController
+    }
+}
+
+extension MapViewController: UIViewControllerPreviewingDelegate {
+    public func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard
+            let tappedObject = mapView.editorLayer.osmHitTest(location, radius: 10, testNodes: false, ignoreList: [], segment: nil),
+            let tappedNode = tappedObject.isNode()
+        else {
+            /// Only display a preview for nodes.
+            return nil
+        }
+        
+        return viewControllerForPreviewingNode(tappedNode)
     }
     
     public func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
