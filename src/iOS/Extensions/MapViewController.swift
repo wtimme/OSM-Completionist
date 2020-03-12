@@ -59,6 +59,13 @@ extension MapViewController: UIViewControllerPreviewingDelegate {
     }
     
     public func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        if let poiTabBarViewController = viewControllerToCommit as? POITabBarController,
+            let selectedNode = poiTabBarViewController.selection as? OsmNode {
+            /// Make sure that the node is selected when the user dismisses the tab bar view controller again.
+            mapView.editorLayer.selectedNode = selectedNode
+            mapView.placePushpinForSelection()
+        }
+        
         present(viewControllerToCommit, animated: true)
     }
     
