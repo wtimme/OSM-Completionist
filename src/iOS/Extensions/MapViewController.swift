@@ -40,6 +40,8 @@ extension MapViewController {
         
         poiTabBarController.selection = node
         poiTabBarController.selectTagsViewController()
+        
+        poiTabBarController.tabBar.isHidden = true
 
         return poiTabBarController
     }
@@ -65,6 +67,9 @@ extension MapViewController: UIViewControllerPreviewingDelegate {
                 mapView.editorLayer.selectedNode = selectedNode
                 mapView.placePushpinForSelection()
             }
+            
+            /// Show the tab bar.
+            poiTabBarViewController.tabBar.isHidden = false
         }
         
         present(viewControllerToCommit, animated: true)
