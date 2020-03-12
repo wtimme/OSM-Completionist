@@ -789,10 +789,6 @@ BOOL IsOsmBooleanTrue( NSString * value )
 		return nil;
 
 	} else {
-
-#if DEBUG
-		assert(NO);
-#endif
 		CommonTagKey * tag = [CommonTagKey tagWithName:label tagKey:key defaultValue:defaultValue placeholder:placeholder keyboard:keyboard capitalize:capitalize presets:nil];
 		CommonTagGroup * group = [CommonTagGroup groupWithName:nil tags:@[tag]];
 		return group;
