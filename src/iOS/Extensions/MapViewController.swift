@@ -42,6 +42,12 @@ extension MapViewController {
         poiTabBarController.selectTagsViewController()
         
         poiTabBarController.tabBar.isHidden = true
+        
+        if let selectedNavigationController = poiTabBarController.selectedViewController as? UINavigationController {
+            /// The view controller that is visible for the preview is a `UINavigationController`.
+            /// For the preview, hide its navigation bar.
+            selectedNavigationController.setNavigationBarHidden(true, animated: false)
+        }
 
         return poiTabBarController
     }
@@ -70,6 +76,11 @@ extension MapViewController: UIViewControllerPreviewingDelegate {
             
             /// Show the tab bar.
             poiTabBarViewController.tabBar.isHidden = false
+            
+            if let selectedNavigationController = poiTabBarViewController.selectedViewController as? UINavigationController {
+                /// For previewing, we have hidden the navigation bar, so we need to make it visible again.
+                selectedNavigationController.setNavigationBarHidden(false, animated: false)
+            }
         }
         
         present(viewControllerToCommit, animated: true)
