@@ -49,6 +49,10 @@
     [self updatePOIAttributesTabBarItemVisibilityWithSelectedObject:selection];
 }
 
+- (void)selectTagsViewController {
+    self.selectedIndex = 1;
+}
+
 /**
  Hides the POI attributes tab bar item when the user is adding a new item, since it doesn't have any attributes yet.
 

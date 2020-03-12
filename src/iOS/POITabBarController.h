@@ -23,4 +23,7 @@
 - (BOOL)isTagDictChanged;
 - (BOOL)isTagDictChanged:(NSDictionary *)newDictionary;
 
+/// Sets the view controller that presents the tags as the `selectedIndex`.
+- (void)selectTagsViewController;
+
 @end
