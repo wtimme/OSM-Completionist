@@ -16,12 +16,6 @@
 
 @implementation POITabBarController
 
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     
