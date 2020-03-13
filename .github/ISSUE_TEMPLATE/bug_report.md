@@ -1,3 +1,11 @@
+---
+name: Bug Report
+about: Report unexpected behaviour
+title: ''
+labels: 'bug'
+assignees: ''
+---
+
 ## Steps to reproduce
 
 1. Open the app
