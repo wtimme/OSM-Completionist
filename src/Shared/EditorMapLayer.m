@@ -995,6 +995,11 @@ typedef struct RGBAColor {
 		c.red = 0xAC/255.0;
 		c.green = 0x39/255.0;
 		c.blue = 0xAC/255.0;
+    } else if ([object.tags[@"natural"] isEqualToString:@"tree"]) {
+        /// #127A38
+        c.red = 18/255.0;
+        c.green = 122/255.0;
+        c.blue = 56/255.0;
 	} else if ( object.tags[@"amenity"] || object.tags[@"building"] || object.tags[@"leisure"] ) {
 		c.red = 0x73/255.0;
 		c.green = 0x4A/255.0;
@@ -1012,9 +1017,6 @@ typedef struct RGBAColor {
 		c.red = 0;
 		c.green = 0;
 		c.blue = 1;
-    } else if (object.tags.count > 0) {
-        /// Use `blackColor` for objects that have at least one tag.
-        c.red = c.green = c.blue = 0;
 	} else {
 		// gray for untagged nodes
 		c.alpha = 0.0;
@@ -1586,24 +1588,24 @@ const static CGFloat Z_ARROWS			= Z_BASE + 11 * ZSCALE;
     if ( icon ) {
         /// White box as the background
         CALayer *backgroundLayer = [CALayer new];
-        backgroundLayer.bounds            = CGRectMake(0, 0, MinIconSizeInPixels, MinIconSizeInPixels);
-        backgroundLayer.backgroundColor     = [UIColor colorWithWhite:1.0 alpha:0.75].CGColor;
-        backgroundLayer.cornerRadius        = 5;
-        backgroundLayer.masksToBounds     = YES;
-        backgroundLayer.anchorPoint = CGPointZero;
+        backgroundLayer.bounds          = CGRectMake(0, 0, MinIconSizeInPixels, MinIconSizeInPixels);
+        backgroundLayer.backgroundColor	= [UIColor colorWithWhite:1.0 alpha:0.75].CGColor;
+        backgroundLayer.cornerRadius    = 5;
+        backgroundLayer.masksToBounds   = YES;
+        backgroundLayer.anchorPoint 	= CGPointZero;
         
         /// The actual icon image serves as a `mask` for the icon's color layer, allowing for "tinting" of the icons.
         CALayer *iconMaskLayer = [CALayer new];
-        iconMaskLayer.frame            = CGRectMake(0, 0, MinIconSizeInPixels, MinIconSizeInPixels);
-        iconMaskLayer.contents            = (id)icon.CGImage;
+        iconMaskLayer.frame            	= CGRectMake(0, 0, MinIconSizeInPixels, MinIconSizeInPixels);
+        iconMaskLayer.contents        	= (id)icon.CGImage;
         
         CALayer *iconLayer = [CALayer new];
         iconLayer.bounds            = CGRectMake(0, 0, MinIconSizeInPixels, MinIconSizeInPixels);
-        RGBAColor iconColor = [self defaultColorForObject:node];
-        iconLayer.backgroundColor     = [UIColor colorWithRed:iconColor.red
-                                                        green:iconColor.green
-                                                         blue:iconColor.blue
-                                                        alpha:iconColor.alpha].CGColor;
+        RGBAColor iconColor 		= [self defaultColorForObject:node];
+        iconLayer.backgroundColor   = [UIColor colorWithRed:iconColor.red
+													green:iconColor.green
+													   blue:iconColor.blue
+													  alpha:1.0].CGColor;
         iconLayer.mask = iconMaskLayer;
         iconLayer.anchorPoint = CGPointZero;
         
