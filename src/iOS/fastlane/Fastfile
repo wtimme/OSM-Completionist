@@ -7,7 +7,10 @@ platform :ios do
 
   desc "Performs basic integration checks to be run before merging"
   lane :pull_request_checks do
-    run_tests(scheme: "GoMapTests")
+    run_tests(
+      project: "Go Map!!.xcodeproj",
+      scheme: "GoMapTests"
+    )
   end
 
   lane :run_stamp_changelog do
@@ -28,7 +31,10 @@ platform :ios do
     commit_version_bump(xcodeproj: "Go Map!!.xcodeproj")
 
     sync_code_signing(type: "appstore")
-    build_app(scheme: "Go Map!!")
+    build_app(
+      project: "Go Map!!.xcodeproj",
+      scheme: "Go Map!!"
+    )
 
     # Add a tag like 'builds/beta/1.6.5-12'
     add_git_tag(

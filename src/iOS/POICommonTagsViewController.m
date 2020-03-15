@@ -252,7 +252,6 @@
 		cell.nameLabel.text = commonTag.name;
 		cell.valueField.placeholder = commonTag.placeholder;
 		cell.valueField.delegate = self;
-		cell.valueField.textColor = [UIColor colorWithRed:0.22 green:0.33 blue:0.53 alpha:1.0];
 		cell.commonTag = commonTag;
 
 		cell.valueField.keyboardType = commonTag.keyboardType;
@@ -366,6 +365,8 @@
 
 - (void)resignAll
 {
+	if ( self.tableView.window == nil )
+		return;
 	for (CommonTagCell * cell in self.tableView.visibleCells) {
 		[cell.valueField resignFirstResponder];
 		[cell.valueField2 resignFirstResponder];

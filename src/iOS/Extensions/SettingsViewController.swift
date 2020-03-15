@@ -54,4 +54,10 @@ extension SettingsViewController {
         return "\(appName) \(appVersion) (\(appBuildNumber))"
     }
     
+    @objc func openTestFlightURL() {
+        guard let url = URL(string: "https://testflight.apple.com/join/v1tyM5yU") else { return }
+        
+        UIApplication.shared.openURL(url)
+    }
+    
 }
