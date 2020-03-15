@@ -2444,10 +2444,10 @@ NSString * ActionTitle( EDIT_ACTION action, BOOL abbrev )
 		ignoreList = [way.nodes arrayByAddingObjectsFromArray:parentWays];
 	}
 	OsmBaseObject * hit = [_editorLayer osmHitTest:_pushpinView.arrowPoint
-											  radius:DragConnectHitTestRadius
-										   testNodes:YES
-										  ignoreList:ignoreList
-											 segment:segment];
+											radius:DragConnectHitTestRadius
+									 isDragConnect:YES
+										ignoreList:ignoreList
+										   segment:segment];
 	return hit;
 }
 
@@ -3443,7 +3443,7 @@ static NSString * const DisplayLinkPanning	= @"Panning";
 	} else {
 
 		// hit test anything
-		hit = [_editorLayer osmHitTest:point radius:DefaultHitTestRadius testNodes:NO ignoreList:nil segment:NULL];
+		hit = [_editorLayer osmHitTest:point radius:DefaultHitTestRadius isDragConnect:NO ignoreList:nil segment:NULL];
 		if ( hit ) {
             /// Present quest interface, if applicable.
             [self.viewModel presentQuestInterfaceFor:hit];

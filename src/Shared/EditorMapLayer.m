@@ -2033,16 +2033,6 @@ const static CGFloat Z_ARROWS			= Z_BASE + 11 * ZSCALE;
 
 #pragma mark Select objects and draw
 
-static BOOL inline ShouldDisplayNodeInWay( NSDictionary * tags )
-{
-	NSInteger tagCount = tags.count;
-	if ( tagCount == 0 )
-		return NO;
-	if ( [tags objectForKey:@"source"] )
-		--tagCount;
-	return tagCount > 0;
-}
-
 
 -(NSMutableArray *)getVisibleObjects
 {
@@ -2053,7 +2043,7 @@ static BOOL inline ShouldDisplayNodeInWay( NSDictionary * tags )
 		if ( show == TRISTATE_UNKNOWN ) {
 			if ( !obj.deleted ) {
 				if ( obj.isNode ) {
-					if ( ((OsmNode *)obj).wayCount == 0 || ShouldDisplayNodeInWay( obj.tags ) ) {
+					if ( ((OsmNode *)obj).wayCount == 0 || [obj hasInterestingTags] ) {
 						show = TRISTATE_YES;
 					}
 				} else if ( obj.isWay ) {
@@ -2378,7 +2368,6 @@ static BOOL inline ShouldDisplayNodeInWay( NSDictionary * tags )
 				lastIndex = objectLimit - removeCount;
 			}
 		}
-		// DLog( @"added %ld same", (long)lastIndex - objectLimit);
 		objectLimit = lastIndex;
 
 		// remove unwanted objects
@@ -2663,8 +2652,13 @@ inline static CGFloat HitTestLineSegment(CLLocationCoordinate2D point, OSMSize m
 }
 
 // distance is in units of the hit test radius (WayHitTestRadius)
-+ (void)osmHitTestEnumerate:(CGPoint)point radius:(CGFloat)radius mapView:(MapView *)mapView objects:(NSArray<OsmBaseObject *> *)objects testNodes:(BOOL)testNodes
-				 ignoreList:(NSArray<OsmBaseObject *> *)ignoreList block:(void(^)(OsmBaseObject * obj,CGFloat dist,NSInteger segment))block
++ (void)osmHitTestEnumerate:(CGPoint)point
+					 radius:(CGFloat)radius
+					mapView:(MapView *)mapView
+					objects:(NSArray<OsmBaseObject *> *)objects
+				  testNodes:(BOOL)testNodes
+				 ignoreList:(NSArray<OsmBaseObject *> *)ignoreList
+					  block:(void(^)(OsmBaseObject * obj,CGFloat dist,NSInteger segment))block
 {
 	CLLocationCoordinate2D location = [mapView longitudeLatitudeForScreenPoint:point birdsEye:YES];
 	OSMRect viewCoord = [mapView screenLongitudeLatitude];
@@ -2673,10 +2667,11 @@ inline static CGFloat HitTestLineSegment(CLLocationCoordinate2D point, OSMSize m
 	OSMSize maxDegrees = { radius / pixelsPerDegree.width, radius / pixelsPerDegree.height };
 	const double NODE_BIAS = 0.5;	// make nodes appear closer so they can be selected
 
-	NSMutableSet * relations = [NSMutableSet new];
+	NSMutableSet * parentRelations = [NSMutableSet new];
 	for ( OsmBaseObject * object in objects ) {
 		if ( object.deleted )
 			continue;
+
 		if ( object.isNode ) {
 			OsmNode * node = (id)object;
 			if ( ![ignoreList containsObject:node] ) {
@@ -2685,7 +2680,7 @@ inline static CGFloat HitTestLineSegment(CLLocationCoordinate2D point, OSMSize m
 					dist *= NODE_BIAS;
 					if ( dist <= 1.0 ) {
 						block( node, dist, 0 );
-						[relations addObjectsFromArray:node.parentRelations];
+						[parentRelations addObjectsFromArray:node.parentRelations];
 					}
 				}
 			}
@@ -2693,10 +2688,10 @@ inline static CGFloat HitTestLineSegment(CLLocationCoordinate2D point, OSMSize m
 			OsmWay * way = (id)object;
 			if ( ![ignoreList containsObject:way] ) {
 				NSInteger seg = 0;
-				CGFloat dist = [self osmHitTestWay:way location:location maxDegrees:maxDegrees segment:&seg];
-				if ( dist <= 1.0 ) {
-					block( way, dist, seg );
-					[relations addObjectsFromArray:way.parentRelations];
+				CGFloat distToWay = [self osmHitTestWay:way location:location maxDegrees:maxDegrees segment:&seg];
+				if ( distToWay <= 1.0 ) {
+					block( way, distToWay, seg );
+					[parentRelations addObjectsFromArray:way.parentRelations];
 				}
 			}
 			if ( testNodes ) {
@@ -2707,7 +2702,7 @@ inline static CGFloat HitTestLineSegment(CLLocationCoordinate2D point, OSMSize m
 					dist *= NODE_BIAS;
 					if ( dist < 1.0 ) {
 						block( node, dist, 0 );
-						[relations addObjectsFromArray:node.parentRelations];
+						[parentRelations addObjectsFromArray:node.parentRelations];
 					}
 				}
 			}
@@ -2734,21 +2729,21 @@ inline static CGFloat HitTestLineSegment(CLLocationCoordinate2D point, OSMSize m
 			}
 		}
 	}
-	for ( OsmRelation * relation in relations ) {
+	for ( OsmRelation * relation in parentRelations ) {
 		// for non-multipolygon relations, like turn restrictions
 		block( relation, 1.0, 0 );
 	}
 }
 
 // default hit test when clicking on the map, or drag-connecting
-- (OsmBaseObject *)osmHitTest:(CGPoint)point radius:(CGFloat)radius testNodes:(BOOL)testNodes ignoreList:(NSArray<OsmBaseObject *> *)ignoreList segment:(NSInteger *)pSegment
+- (OsmBaseObject *)osmHitTest:(CGPoint)point radius:(CGFloat)radius isDragConnect:(BOOL)isDragConnect ignoreList:(NSArray<OsmBaseObject *> *)ignoreList segment:(NSInteger *)pSegment
 {
 	if ( self.hidden )
 		return nil;
 
 	__block CGFloat bestDist = 1000000;
 	NSMutableDictionary * best = [NSMutableDictionary new];
-	[EditorMapLayer osmHitTestEnumerate:point radius:radius mapView:_mapView objects:_shownObjects testNodes:testNodes ignoreList:ignoreList block:^(OsmBaseObject *obj, CGFloat dist, NSInteger segment) {
+	[EditorMapLayer osmHitTestEnumerate:point radius:radius mapView:_mapView objects:_shownObjects testNodes:isDragConnect ignoreList:ignoreList block:^(OsmBaseObject *obj, CGFloat dist, NSInteger segment) {
 		if ( dist < bestDist ) {
 			bestDist = dist;
 			[best removeAllObjects];
@@ -2762,21 +2757,32 @@ inline static CGFloat HitTestLineSegment(CLLocationCoordinate2D point, OSMSize m
 
 	OsmBaseObject * pick = nil;
 	if ( best.count > 1 ) {
-		if ( pick == nil && self.selectedRelation ) {
-			// pick a way that is a member of the relation if possible
-			for ( OsmMember * member in self.selectedRelation.members ) {
-				if ( best[member.ref] ) {
-					pick = member.ref;
+		if ( isDragConnect ) {
+			// prefer to connecct to a way in a relation over the relation itself, which is opposite what we do when selecting by tap
+			for ( OsmBaseObject * obj in best ) {
+				if ( !obj.isRelation ) {
+					pick = obj;
 					break;
 				}
 			}
-		}
-		if ( pick == nil && self.selectedPrimary == nil ) {
-			// nothing currently selected, so prefer relations
-			for ( OsmBaseObject * obj in best ) {
-				if ( obj.isRelation ) {
-					pick = obj;
-					break;
+		} else {
+			// performing selection by tap
+			if ( pick == nil && self.selectedRelation ) {
+				// pick a way that is a member of the relation if possible
+				for ( OsmMember * member in self.selectedRelation.members ) {
+					if ( best[member.ref] ) {
+						pick = member.ref;
+						break;
+					}
+				}
+			}
+			if ( pick == nil && self.selectedPrimary == nil ) {
+				// nothing currently selected, so prefer relations
+				for ( OsmBaseObject * obj in best ) {
+					if ( obj.isRelation ) {
+						pick = obj;
+						break;
+					}
 				}
 			}
 		}
