@@ -101,3 +101,18 @@ well with objects that _do not have_ the tag at all, as well as a fix for the
 
 ### Fixed
 - Fix email address for feedback (#35)
+
+[1.6.2 (9)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.6.2-8...builds/beta/1.6.2-9
+[1.6.2 (10)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.6.2-9...builds/beta/1.6.2-10
+[1.6.2 (11)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.6.2-10...builds/beta/1.6.2-11
+[1.6.2 (12)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.6.2-11...builds/beta/1.6.2-12
+[1.6.2 (13)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.6.2-12...builds/beta/1.6.2-13
+[1.6.2 (14)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.6.2-13...builds/beta/1.6.2-14
+[1.6.2 (16)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.6.2-14...builds/beta/1.6.2-16
+[1.6.2 (17)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.6.2-16...builds/beta/1.6.2-17
+[1.6.2 (18)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.6.2-17...builds/beta/1.6.2-18
+[1.6.2 (19)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.6.2-18...builds/beta/1.6.2-19
+[1.7.0 (20)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.6.2-19...builds/beta/1.7.0-20
+[1.7.0 (22)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-20...builds/beta/1.7.0-22
+[1.7.0 (23)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-22...builds/beta/1.7.0-23
+[1.7.0 (24)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-23...builds/beta/1.7.0-24
