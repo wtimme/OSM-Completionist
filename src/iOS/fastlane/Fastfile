@@ -1,6 +1,9 @@
 # Disable metrics
 opt_out_usage
 
+# Configuration
+CHANGELOG_PATH = "./CHANGELOG.md"
+
 default_platform(:ios)
 
 platform :ios do
@@ -10,15 +13,6 @@ platform :ios do
     run_tests(
       project: "Go Map!!.xcodeproj",
       scheme: "GoMapTests"
-    )
-  end
-
-  lane :run_stamp_changelog do
-    stamp_changelog(
-      changelog_path: './CHANGELOG.md',
-      section_identifier: '2.0.0 (42)',
-      git_tag: "builds/beta/2.0.0-42",
-      stamp_date: "true"
     )
   end
 
@@ -34,11 +28,14 @@ platform :ios do
     # Determine the tag (e. g. 'builds/beta/1.6.5-12')
     git_tag = "builds/beta/#{get_version_number()}-#{get_build_number()}"
 
+    # Read the "Unreleased" section of the changelog.
+    # This will later be used when uploading the build to TestFlight.
+    changelog = read_changelog(changelog_path: CHANGELOG_PATH)
+
     # Update the changelog
-    changelog_path = './CHANGELOG.md'
     section_identifier = "#{get_version_number()} (#{get_build_number()})"
     stamp_changelog(
-      changelog_path: changelog_path,
+      changelog_path: CHANGELOG_PATH,
       section_identifier: section_identifier,
       git_tag: git_tag,
       stamp_date: 'true'
@@ -59,7 +56,9 @@ platform :ios do
 
     push_to_git_remote
 
-    upload_to_testflight
+    upload_to_testflight(
+      changelog: changelog
+    )
   end
 
   desc "Re-generates the app icon from the base app_icon.png in the fastlane metadata directory"
