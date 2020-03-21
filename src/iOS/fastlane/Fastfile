@@ -16,15 +16,6 @@ platform :ios do
     )
   end
 
-  lane :run_stamp_changelog do
-    stamp_changelog(
-      changelog_path: './CHANGELOG.md',
-      section_identifier: '2.0.0 (42)',
-      git_tag: "builds/beta/2.0.0-42",
-      stamp_date: "true"
-    )
-  end
-
   desc "Uploads a new Beta version to TestFlight"
   lane :beta do
     pull_request_checks

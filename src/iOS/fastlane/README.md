@@ -21,11 +21,6 @@ or alternatively using `brew cask install fastlane`
 fastlane ios pull_request_checks
 ```
 Performs basic integration checks to be run before merging
-### ios run_stamp_changelog
-```
-fastlane ios run_stamp_changelog
-```
-
 ### ios beta
 ```
 fastlane ios beta
