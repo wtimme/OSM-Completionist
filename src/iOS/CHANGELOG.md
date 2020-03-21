@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.7.0 (31)] - 2020-03-21
 This build has been updated with the latest changes from `bryceco/master`.
 ### Added
 - Add CHANGELOG.md
@@ -157,3 +159,4 @@ well with objects that _do not have_ the tag at all, as well as a fix for the
 [1.7.0 (28)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-27...builds/beta/1.7.0-28
 [1.7.0 (29)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-28...builds/beta/1.7.0-29
 [1.7.0 (30)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-29...builds/beta/1.7.0-30
+[1.7.0 (31)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-30...builds/beta/1.7.0-31
