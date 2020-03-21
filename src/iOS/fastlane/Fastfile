@@ -31,16 +31,16 @@ platform :ios do
     )
     commit_version_bump(xcodeproj: "Go Map!!.xcodeproj")
 
+    # Determine the tag (e. g. 'builds/beta/1.6.5-12')
+    git_tag = "builds/beta/#{get_version_number()}-#{get_build_number()}"
+
     sync_code_signing(type: "appstore")
     build_app(
       project: "Go Map!!.xcodeproj",
       scheme: "Go Map!!"
     )
 
-    # Add a tag like 'builds/beta/1.6.5-12'
-    add_git_tag(
-      tag: "builds/beta/#{get_version_number()}-#{get_build_number()}"
-    )
+    add_git_tag(tag: git_tag)
 
     push_to_git_remote
 
