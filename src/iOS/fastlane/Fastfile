@@ -34,6 +34,21 @@ platform :ios do
     # Determine the tag (e. g. 'builds/beta/1.6.5-12')
     git_tag = "builds/beta/#{get_version_number()}-#{get_build_number()}"
 
+    # Update the changelog
+    changelog_path = './CHANGELOG.md'
+    section_identifier = "#{get_version_number()} (#{get_build_number()})"
+    stamp_changelog(
+      changelog_path: changelog_path,
+      section_identifier: section_identifier,
+      git_tag: git_tag,
+      stamp_date: 'true'
+    )
+    git_commit(
+      path: changelog_path,
+      message: "Update CHANGELOG.md with changes for #{section_identifier}",
+      allow_nothing_to_commit: true
+    )
+
     sync_code_signing(type: "appstore")
     build_app(
       project: "Go Map!!.xcodeproj",
