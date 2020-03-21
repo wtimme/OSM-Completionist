@@ -1,6 +1,9 @@
 # Disable metrics
 opt_out_usage
 
+# Configuration
+CHANGELOG_PATH = "./CHANGELOG.md"
+
 default_platform(:ios)
 
 platform :ios do
@@ -35,10 +38,9 @@ platform :ios do
     git_tag = "builds/beta/#{get_version_number()}-#{get_build_number()}"
 
     # Update the changelog
-    changelog_path = './CHANGELOG.md'
     section_identifier = "#{get_version_number()} (#{get_build_number()})"
     stamp_changelog(
-      changelog_path: changelog_path,
+      changelog_path: CHANGELOG_PATH,
       section_identifier: section_identifier,
       git_tag: git_tag,
       stamp_date: 'true'
