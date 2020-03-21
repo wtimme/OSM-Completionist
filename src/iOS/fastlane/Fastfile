@@ -41,7 +41,7 @@ platform :ios do
       stamp_date: 'true'
     )
     git_commit(
-      path: changelog_path,
+      path: CHANGELOG_PATH,
       message: "Update CHANGELOG.md with changes for #{section_identifier}",
       allow_nothing_to_commit: true
     )
