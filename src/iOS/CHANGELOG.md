@@ -9,6 +9,40 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add CHANGELOG.md
 - Setup fastlane to handle the CHANGELOG.md automatically
 
+## [1.7.0 (30)] - 2020-03-15
+This build has been updated with the latest changes from `bryceco/master`.
+### Added
+- Setup fastlane and Travis CI (bryceco/GoMap#238)
+
+### Fixed
+- End of line does not snap to building which is part of a relation (bryceco/GoMap#281)
+- Remove empty row from language selection (bryceco/GoMap#294)
+
+## [1.7.0 (29)] - 2020-03-13
+This build has been updated with the latest changes from `bryceco/master`.
+### Added
+- Use green tint color for nodes that represent trees (bryceco/GoMap#277)
+
+### Fixed
+- Fix Dark Mode for icons in "POI Type" screen (bryceco/GoMap#289)
+
+## [1.7.0 (28)] - 2020-03-12
+### Added
+- Add "Join our TestFlight Beta" entry to Settings (bryceco/GoMap#288)
+- Preview: "Peek and Pop" for nodes (bryceco/GoMap#223)
+
+## [1.7.0 (27)] - 2020-03-12
+### Added
+- Use `SFSafariViewController` for websites so that they can be shared (bryceco/GoMap#275)
+
+## [1.7.0 (26)] - 2020-03-11
+### Added
+- Use circular background for nodes, similar to OpenStreetMap.org (bryceco/GoMap#277)
+
+## [1.7.0 (25)] - 2020-03-11
+### Fixed
+- Tint the updated icons using the existing `defaultColorForObject:` (bryceco/GoMap#277)
+
 ## [1.7.0 (24)] - 2020-03-11
 ### Fixed
 - Fix an issue where the "edit control" at the bottom of the map was not
@@ -116,3 +150,9 @@ well with objects that _do not have_ the tag at all, as well as a fix for the
 [1.7.0 (22)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-20...builds/beta/1.7.0-22
 [1.7.0 (23)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-22...builds/beta/1.7.0-23
 [1.7.0 (24)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-23...builds/beta/1.7.0-24
+[1.7.0 (25)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-24...builds/beta/1.7.0-25
+[1.7.0 (26)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-25...builds/beta/1.7.0-26
+[1.7.0 (27)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-26...builds/beta/1.7.0-27
+[1.7.0 (28)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-27...builds/beta/1.7.0-28
+[1.7.0 (29)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-28...builds/beta/1.7.0-29
+[1.7.0 (30)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-29...builds/beta/1.7.0-30
