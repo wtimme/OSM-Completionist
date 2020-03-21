@@ -52,8 +52,8 @@ reacting to taps when the MapRoulette layer was visible
 This build still includes the MapRoulette MVP, but has been updated with the
 latest changes from `bryceco/master`:
 ### Fixed
-- Fix blurry icons in "POI Type" screen (#283)
-- Fix Dark Mode for "Notes" comments (#279)
+- Fix blurry icons in "POI Type" screen (bryceco/GoMap#283)
+- Fix Dark Mode for "Notes" comments (bryceco/GoMap#279)
 
 ## [1.7.0 (22)] - 2020-03-07
 ### Added
