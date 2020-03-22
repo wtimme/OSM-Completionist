@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+This build contains a preview for the refactoring of the `UploadViewController`.
+Please test uploading changes to the OSM server and report in the pull request
+if you find any issues.
+
+### Changed
+- Preview: Move `UploadViewController` to a dedicated storyboard (bryceco/GoMap#313)
 
 ## [1.7.0 (31)] - 2020-03-21
 This build has been updated with the latest changes from `bryceco/master`.
