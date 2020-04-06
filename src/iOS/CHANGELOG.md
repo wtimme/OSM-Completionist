@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- "Bug Reports & Suggestions" now opens GitHub instead of sending an email
+
 ## [1.7.0 (31)] - 2020-03-21
 This build has been updated with the latest changes from `bryceco/master`.
 ### Added
