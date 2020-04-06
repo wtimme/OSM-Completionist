@@ -206,28 +206,7 @@
 	UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
 
 	if ( cell == _sendMailCell ) {
-
-		if ( [MFMailComposeViewController canSendMail] ) {
-            NSString *emailAddress = [@[@"no-spam-please", @"posteo.de"] componentsJoinedByString:@"@"];
-			AppDelegate * appDelegate = [AppDelegate getAppDelegate];
-			MFMailComposeViewController * mail = [[MFMailComposeViewController alloc] init];
-			mail.mailComposeDelegate = self;
-			[mail setSubject:[NSString stringWithFormat:@"%@ %@ feedback", appDelegate.appName, appDelegate.appVersion]];
-			[mail setToRecipients:@[emailAddress]];
-			NSMutableString * body = [NSMutableString stringWithFormat:@"Device: %@\n", [self deviceModel]];
-			[body appendString:[NSString stringWithFormat:@"iOS version: %@\n", [[UIDevice currentDevice] systemVersion]]];
-			if ( appDelegate.userName.length ) {
-				[body appendString:[NSString stringWithFormat:@"OSM ID: %@\n\n",appDelegate.userName]];
-			}
-			[mail setMessageBody:body isHTML:NO];
-			[self.navigationController presentViewController:mail animated:YES completion:nil];
-		} else {
-			UIAlertController * alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Cannot compose message",nil)
-																			message:NSLocalizedString(@"Mail delivery is not available on this device",nil)
-																	 preferredStyle:UIAlertControllerStyleAlert];
-			[alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK",nil) style:UIAlertActionStyleCancel handler:nil]];
-			[self presentViewController:alert animated:YES completion:nil];
-		}
+        [self presentGitHubIssuesPage];
     } else if (cell == _testFlightCell) {
         [self openTestFlightURL];
 	}
