@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SafariServices
 
 extension SettingsViewController {
     
@@ -58,6 +59,13 @@ extension SettingsViewController {
         guard let url = URL(string: "https://testflight.apple.com/join/v1tyM5yU") else { return }
         
         UIApplication.shared.openURL(url)
+    }
+    
+    @objc func presentGitHubIssuesPage() {
+        guard let url = URL(string: "https://github.com/wtimme/OSM-Completionist/issues") else { return }
+        
+        let viewController = SFSafariViewController(url: url)
+        present(viewController, animated: true)
     }
     
 }
