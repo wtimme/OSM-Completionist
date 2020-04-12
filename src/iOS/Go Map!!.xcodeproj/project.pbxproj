@@ -1853,7 +1853,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = CH829V2QQB;
 				DISPLAY_NAME = "Completionist Debug";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1883,7 +1883,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = CH829V2QQB;
 				DISPLAY_NAME = Completionist;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
