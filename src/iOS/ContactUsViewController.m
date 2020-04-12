@@ -174,7 +174,7 @@
 
 	if ( cell == _sendMailCell ) {
 
-        [self presentGitHubIssuesPage];
+        /// Sending emails is disabled in OSM Completionist.
 
 	} else if ( cell == _githubCell ) {
 
