@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.7.1 (35)] - 2020-04-12
+
 This build has been updated with the latest changes from `bryceco/master`:
 - The big storyboard was split into several smaller ones
 - The "Contact Us" section has been moved to a dedicated view controller
@@ -172,3 +174,4 @@ well with objects that _do not have_ the tag at all, as well as a fix for the
 [1.7.0 (30)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-29...builds/beta/1.7.0-30
 [1.7.0 (31)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-30...builds/beta/1.7.0-31
 [1.7.0 (33)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-31...builds/beta/1.7.0-33
+[1.7.1 (35)]: https://github.com/wtimme/OSM-Completionist/compare/builds/beta/1.7.0-33...builds/beta/1.7.1-35
