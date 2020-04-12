@@ -2,26 +2,13 @@
 //  SettingsViewController.swift
 //  Go Map!!
 //
-//  Created by Wolfgang Timme on 4/16/19.
-//  Copyright © 2019 Bryce. All rights reserved.
+//  Created by Wolfgang Timme on 12.04.20.
+//  Copyright © 2020 Bryce. All rights reserved.
 //
 
 import Foundation
-import SafariServices
 
 extension SettingsViewController {
-    
-    // MARK: UITableViewDataSource
-    
-    open override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        let isLastSection = tableView.numberOfSections == section + 1
-        if isLastSection {
-            return createVersionDetailsString()
-        }
-        
-        return nil
-    }
-    
     // MARK: Settings - Show FPS Label
     
     @objc static let showFPSLabelUserDefaultsKey = "showFPSLabel"
@@ -39,6 +26,17 @@ extension SettingsViewController {
         showFPSLabel = sender.isOn
     }
     
+    // MARK: UITableViewDataSource
+    
+    open override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        let isLastSection = tableView.numberOfSections == section + 1
+        if isLastSection {
+            return createVersionDetailsString()
+        }
+        
+        return nil
+    }
+    
     // MARK: Private methods
     
     private func createVersionDetailsString() -> String? {
@@ -53,19 +51,6 @@ extension SettingsViewController {
         }
         
         return "\(appName) \(appVersion) (\(appBuildNumber))"
-    }
-    
-    @objc func openTestFlightURL() {
-        guard let url = URL(string: "https://testflight.apple.com/join/v1tyM5yU") else { return }
-        
-        UIApplication.shared.openURL(url)
-    }
-    
-    @objc func presentGitHubIssuesPage() {
-        guard let url = URL(string: "https://github.com/wtimme/OSM-Completionist/issues") else { return }
-        
-        let viewController = SFSafariViewController(url: url)
-        present(viewController, animated: true)
     }
     
 }

@@ -11,6 +11,7 @@
 #import "DisplayViewController.h"
 #import "EditorMapLayer.h"
 #import "MapView.h"
+#import "ContactUsViewController.h"
 #import "OsmNode.h"
 #import "OsmWay.h"
 #import "OsmRelation.h"

@@ -72,6 +72,7 @@
 		024ADF3C16B1B38B00875658 /* PathUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 024ADF3B16B1B38B00875658 /* PathUtil.m */; };
 		024B4CA219BBE67400BBA60B /* CustomPresetListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024B4CA119BBE67400BBA60B /* CustomPresetListViewController.m */; };
 		024C323D1DEEA97100AD62AB /* OsmServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024C323C1DEEA97100AD62AB /* OsmServerViewController.m */; };
+		024CAB2724429C8200EFB7CA /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024CAB2624429C8200EFB7CA /* ContactUsViewController.m */; };
 		025224E816D7292E00B6FD53 /* RotatingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025224E716D7292E00B6FD53 /* RotatingNavigationController.m */; };
 		0259E4081BCAEC88006C354C /* MyApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 0259E4071BCAEC88006C354C /* MyApplication.m */; };
 		025A1CFC1690B96E002B60CB /* OSM-Logo57.png in Resources */ = {isa = PBXBuildFile; fileRef = 025A1CFA1690B96E002B60CB /* OSM-Logo57.png */; };
@@ -96,6 +97,9 @@
 		029043A31682797A00BE3480 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 029043A21682797A00BE3480 /* LoginViewController.m */; };
 		02912D46168504AC00A541BC /* move.png in Resources */ = {isa = PBXBuildFile; fileRef = 02912D45168504AC00A541BC /* move.png */; };
 		02912D4D16852AEC00A541BC /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = 02912D4C16852AEC00A541BC /* question.png */; };
+		0291D83724427AFA00F793BE /* Display.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0291D83524427AFA00F793BE /* Display.storyboard */; };
+		0291D8392442815100F793BE /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0291D8382442815100F793BE /* Settings.storyboard */; };
+		0291D83C24428CBB00F793BE /* POI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0291D83B24428CBB00F793BE /* POI.storyboard */; };
 		0296873F167E30C700B8FF2C /* PushPinView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0296873E167E30C700B8FF2C /* PushPinView.m */; };
 		0296876B1680D57800B8FF2C /* bullseye.png in Resources */ = {isa = PBXBuildFile; fileRef = 0296876A1680D57700B8FF2C /* bullseye.png */; };
 		0296876E1680D5D400B8FF2C /* redo32.png in Resources */ = {isa = PBXBuildFile; fileRef = 0296876C1680D5D400B8FF2C /* redo32.png */; };
@@ -212,7 +216,7 @@
 		64972EA7228242A800286157 /* XCUIElement+TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64972EA6228242A800286157 /* XCUIElement+TestHelper.swift */; };
 		64972EA922858C9000286157 /* MapViewQuestAnnotationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64972EA822858C9000286157 /* MapViewQuestAnnotationManager.swift */; };
 		64972EAB22858FDF00286157 /* MapViewQuestAnnotationManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64972EAA22858FDF00286157 /* MapViewQuestAnnotationManagerTestCase.swift */; };
-		64981F1F22667D7700178476 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64981F1E22667D7700178476 /* SettingsViewController.swift */; };
+		64981F1F22667D7700178476 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64981F1E22667D7700178476 /* ContactUsViewController.swift */; };
 		64B2AD172280E59200204F8B /* QueryFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B2AD162280E59200204F8B /* QueryFormViewModel.swift */; };
 		64B2AD192280E5E500204F8B /* QueryFormViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B2AD182280E5E500204F8B /* QueryFormViewModelTestCase.swift */; };
 		64B2AD1B2280EAAB00204F8B /* OverpassQueryParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B2AD1A2280EAAB00204F8B /* OverpassQueryParserMock.swift */; };
@@ -231,6 +235,7 @@
 		64CCF4E323C0C1BF006164D3 /* Quest+MakeQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4E223C0C1BF006164D3 /* Quest+MakeQuest.swift */; };
 		64CCF4E523C0DC2E006164D3 /* StaticQuestProviderTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4E423C0DC2E006164D3 /* StaticQuestProviderTestCase.swift */; };
 		64CCF4E723C13F67006164D3 /* QuestListViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCF4E623C13F67006164D3 /* QuestListViewModelDelegateMock.swift */; };
+		64D5D972244379A500AB0EC2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D5D971244379A500AB0EC2 /* SettingsViewController.swift */; };
 		64D64CE2227ECEA20040C67A /* OsmBaseObject+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CE1227ECEA20040C67A /* OsmBaseObject+Make.swift */; };
 		64D64CE9227ECF450040C67A /* BaseObjectMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CE8227ECF450040C67A /* BaseObjectMatching.swift */; };
 		64D64CEC227ED0790040C67A /* KeyExistsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CEB227ED0790040C67A /* KeyExistsQuery.swift */; };
@@ -366,6 +371,8 @@
 		024B4CA119BBE67400BBA60B /* CustomPresetListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CustomPresetListViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		024C323B1DEEA97100AD62AB /* OsmServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OsmServerViewController.h; sourceTree = "<group>"; };
 		024C323C1DEEA97100AD62AB /* OsmServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OsmServerViewController.m; sourceTree = "<group>"; };
+		024CAB2524429C8200EFB7CA /* ContactUsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
+		024CAB2624429C8200EFB7CA /* ContactUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactUsViewController.m; sourceTree = "<group>"; };
 		025224E616D7292E00B6FD53 /* RotatingNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RotatingNavigationController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		025224E716D7292E00B6FD53 /* RotatingNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RotatingNavigationController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0259E4061BCAEC88006C354C /* MyApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MyApplication.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -409,6 +416,9 @@
 		029043A21682797A00BE3480 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		02912D45168504AC00A541BC /* move.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = move.png; sourceTree = "<group>"; };
 		02912D4C16852AEC00A541BC /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
+		0291D83624427AFA00F793BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Display.storyboard; sourceTree = "<group>"; };
+		0291D8382442815100F793BE /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		0291D83B24428CBB00F793BE /* POI.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = POI.storyboard; path = Base.lproj/POI.storyboard; sourceTree = "<group>"; };
 		0296873D167E30C700B8FF2C /* PushPinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushPinView.h; sourceTree = "<group>"; };
 		0296873E167E30C700B8FF2C /* PushPinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushPinView.m; sourceTree = "<group>"; };
 		0296876A1680D57700B8FF2C /* bullseye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullseye.png; sourceTree = "<group>"; };
@@ -583,7 +593,7 @@
 		64972EA6228242A800286157 /* XCUIElement+TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+TestHelper.swift"; sourceTree = "<group>"; };
 		64972EA822858C9000286157 /* MapViewQuestAnnotationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewQuestAnnotationManager.swift; sourceTree = "<group>"; };
 		64972EAA22858FDF00286157 /* MapViewQuestAnnotationManagerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewQuestAnnotationManagerTestCase.swift; sourceTree = "<group>"; };
-		64981F1E22667D7700178476 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		64981F1E22667D7700178476 /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		64B2AD162280E59200204F8B /* QueryFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryFormViewModel.swift; sourceTree = "<group>"; };
 		64B2AD182280E5E500204F8B /* QueryFormViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryFormViewModelTestCase.swift; sourceTree = "<group>"; };
 		64B2AD1A2280EAAB00204F8B /* OverpassQueryParserMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassQueryParserMock.swift; sourceTree = "<group>"; };
@@ -602,6 +612,7 @@
 		64CCF4E223C0C1BF006164D3 /* Quest+MakeQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quest+MakeQuest.swift"; sourceTree = "<group>"; };
 		64CCF4E423C0DC2E006164D3 /* StaticQuestProviderTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticQuestProviderTestCase.swift; sourceTree = "<group>"; };
 		64CCF4E623C13F67006164D3 /* QuestListViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestListViewModelDelegateMock.swift; sourceTree = "<group>"; };
+		64D5D971244379A500AB0EC2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		64D64CE1227ECEA20040C67A /* OsmBaseObject+Make.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OsmBaseObject+Make.swift"; sourceTree = "<group>"; };
 		64D64CE8227ECF450040C67A /* BaseObjectMatching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObjectMatching.swift; sourceTree = "<group>"; };
 		64D64CEB227ED0790040C67A /* KeyExistsQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyExistsQuery.swift; sourceTree = "<group>"; };
@@ -797,6 +808,17 @@
 			name = Launch;
 			sourceTree = "<group>";
 		};
+		0291D83A2442822300F793BE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0291D83524427AFA00F793BE /* Display.storyboard */,
+				02ACBA4B16713CCB00BB4414 /* MainStoryboard.storyboard */,
+				0291D8382442815100F793BE /* Settings.storyboard */,
+				0291D83B24428CBB00F793BE /* POI.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		02ACBA2416713CCB00BB4414 = {
 			isa = PBXGroup;
 			children = (
@@ -891,7 +913,6 @@
 				02E8437E19B4DE510044AC1D /* Localizable.strings */,
 				029043A11682797A00BE3480 /* LoginViewController.h */,
 				029043A21682797A00BE3480 /* LoginViewController.m */,
-				02ACBA4B16713CCB00BB4414 /* MainStoryboard.storyboard */,
 				02ACBA5116713CCB00BB4414 /* MapViewController.h */,
 				02ACBA5216713CCB00BB4414 /* MapViewController.m */,
 				64C968442261ED3100351C0C /* Media.xcassets */,
@@ -927,6 +948,7 @@
 				02ACBA5816713CCB00BB4414 /* SettingsViewController.h */,
 				02ACBA5916713CCB00BB4414 /* SettingsViewController.m */,
 				02ACBCFF16713F7F00BB4414 /* Shared */,
+				0291D83A2442822300F793BE /* Storyboards */,
 				02ACBA3A16713CCB00BB4414 /* Supporting Files */,
 				02BF745220793F0A0028ED6A /* TurnRestrictController.h */,
 				02BF745320793F0A0028ED6A /* TurnRestrictController.m */,
@@ -938,6 +960,8 @@
 				02BED989168B6F2F00357B94 /* WebPageViewController.m */,
 				644AC0D823C957EB00E2B1E4 /* MapViewModel.swift */,
 				64F59A4D240721820093DCDB /* FeedbackGenerator.swift */,
+				024CAB2524429C8200EFB7CA /* ContactUsViewController.h */,
+				024CAB2624429C8200EFB7CA /* ContactUsViewController.m */,
 			);
 			name = "Go Map!";
 			sourceTree = "<group>";
@@ -1130,13 +1154,14 @@
 		64981F1D22667D7700178476 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				64981F1E22667D7700178476 /* SettingsViewController.swift */,
+				64981F1E22667D7700178476 /* ContactUsViewController.swift */,
 				64E21EB222651620004605D7 /* LoginViewController.swift */,
 				64D64D272280BF0D0040C67A /* DisplayViewController.swift */,
 				64972E9A2282125500286157 /* String+PercentEncodingForRFC3986.swift */,
 				640B0B742285EAA800D0EE24 /* EditorMapLayer.swift */,
 				64F59A4F240915840093DCDB /* MapViewController.swift */,
 				6455AC28241ACB7C00B3AFB3 /* UIImageView+DarkMode.swift */,
+				64D5D971244379A500AB0EC2 /* SettingsViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1389,6 +1414,8 @@
 				02ACBBC116713F2B00BB4414 /* changeset.xsl in Resources */,
 				02072AE81BD5E99B00F1CAB4 /* 709-plus-toolbar@3x.png in Resources */,
 				64D64D00227ED5EB0040C67A /* overpass-query-parser.js in Resources */,
+				0291D83724427AFA00F793BE /* Display.storyboard in Resources */,
+				0291D8392442815100F793BE /* Settings.storyboard in Resources */,
 				02072ACC1BD4546F00F1CAB4 /* 710-folder.png in Resources */,
 				64D74BF42253DF49004FFD20 /* DirectionViewController.xib in Resources */,
 				02072AB01BD446F500F1CAB4 /* 852-map-toolbar@3x.png in Resources */,
@@ -1432,6 +1459,7 @@
 				02130E85196CF58500498297 /* MenuIcon.png in Resources */,
 				02DAB7D61BFA4BBC00360AED /* 723-location-arrow-toolbar-selected@2x.png in Resources */,
 				02072AC21BD44B2800F1CAB4 /* 1200-file-type-settings-toolbar@3x.png in Resources */,
+				0291D83C24428CBB00F793BE /* POI.storyboard in Resources */,
 				02072AD31BD454E800F1CAB4 /* 751-eye-toolbar@2x.png in Resources */,
 				02ACBCFC16713F2B00BB4414 /* TagInfo.menu.xml in Resources */,
 				02ACBCFD16713F2B00BB4414 /* TagInfo.xml in Resources */,
@@ -1541,6 +1569,7 @@
 				64972E9D22821AE300286157 /* QuestManager.swift in Sources */,
 				020C2A90168A7688003F2C2A /* CreditsViewController.m in Sources */,
 				64D64D202280B5250040C67A /* QueryFormViewController.swift in Sources */,
+				64D5D972244379A500AB0EC2 /* SettingsViewController.swift in Sources */,
 				6442666822540EDF00C0D545 /* Disposable.swift in Sources */,
 				64D64D12227F364D0040C67A /* KeyValueQuery.swift in Sources */,
 				02DBB4451A1C884F00732D53 /* HeightViewController.m in Sources */,
@@ -1559,7 +1588,7 @@
 				64972EA922858C9000286157 /* MapViewQuestAnnotationManager.swift in Sources */,
 				02C3C73A19A6DCEA003B6783 /* AerialList.m in Sources */,
 				02BED99C168CBC5400357B94 /* LocationBallLayer.m in Sources */,
-				64981F1F22667D7700178476 /* SettingsViewController.swift in Sources */,
+				64981F1F22667D7700178476 /* ContactUsViewController.swift in Sources */,
 				02BED99F168D102700357B94 /* OfflineViewController.m in Sources */,
 				02401F391DE1369E00F32AF5 /* ExternalGPS.m in Sources */,
 				64972E9B2282125500286157 /* String+PercentEncodingForRFC3986.swift in Sources */,
@@ -1589,6 +1618,7 @@
 				027EDC70206F3EED00D349D6 /* DDXMLElement.m in Sources */,
 				6442666722540EDF00C0D545 /* Lock.swift in Sources */,
 				02A8613D20A95C16008C465F /* NetworkStatus.m in Sources */,
+				024CAB2724429C8200EFB7CA /* ContactUsViewController.m in Sources */,
 				025224E816D7292E00B6FD53 /* RotatingNavigationController.m in Sources */,
 				64F59A50240915840093DCDB /* MapViewController.swift in Sources */,
 				0228442C16D8870C00A1C051 /* GpxLayer.m in Sources */,
@@ -1670,6 +1700,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0291D83524427AFA00F793BE /* Display.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0291D83624427AFA00F793BE /* Base */,
+			);
+			name = Display.storyboard;
+			sourceTree = "<group>";
+		};
 		02ACBA3C16713CCB00BB4414 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1823,7 +1861,7 @@
 				INFOPLIST_FILE = "Go Map!!-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.wtimme.osm-completionist";
 				PRODUCT_NAME = "Go Map!!";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1853,7 +1891,7 @@
 				INFOPLIST_FILE = "Go Map!!-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.wtimme.osm-completionist";
 				PRODUCT_NAME = "Go Map!!";
 				PROVISIONING_PROFILE_SPECIFIER = "";
