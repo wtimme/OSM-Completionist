@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+This build has been updated with the latest changes from `bryceco/master`:
+- The big storyboard was split into several smaller ones
+- The "Contact Us" section has been moved to a dedicated view controller
+
 ## [1.7.0 (33)] - 2020-04-06
 
 This build has been updated with the latest changes from `bryceco/master`.
