@@ -178,9 +178,7 @@
 
 	} else if ( cell == _githubCell ) {
 
-		NSURL * url = [NSURL URLWithString:@"https://github.com/bryceco/GoMap/issues"];
-		UIViewController * viewController = [[SFSafariViewController alloc] initWithURL:url];
-		[self presentViewController:viewController animated:YES completion:nil];
+		[self presentGitHubIssuesPage];
 
     } else if (cell == _testFlightCell) {
 
