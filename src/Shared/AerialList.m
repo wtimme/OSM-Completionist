@@ -363,13 +363,20 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 
 -(void)loadIconFromWeb:(NSString *)url
 {
+	// don't use https because some providers are using expired certs and the request will fail
+	url = [url stringByReplacingOccurrencesOfString:@"https://" withString:@"http://"];
+
 	NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]
 											  cachePolicy:NSURLRequestReturnCacheDataElseLoad
 										  timeoutInterval:60];
 	NSURLSessionDataTask * task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
 		if ( data ) {
 			UIImage * image = [[NSImage alloc] initWithData:data];
-			_attributionIcon = image;
+			dispatch_async(dispatch_get_main_queue(), ^{
+				_attributionIcon = image;
+			});
+		} else {
+			NSLog(@"Fetch icon failed: %@",url);
 		}
 	}];
 	[task resume];
@@ -499,13 +506,21 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 			}
 			NSDictionary * properties = isGeoJSON ? entry[@"properties"] : entry;
 			NSString * 	name 				= properties[@"name"];
-			NSString * 	identifier			= properties[@"id"];
-			if ( identifier.length == 0 || blacklist[identifier] ) {
-				NSLog(@"Aerial: blacklist %@", identifier);
+			if ( [name hasPrefix:@"Maxar "] ) {
+				// we special case their imagery because they require a special key
 				continue;
 			}
+			NSString * 	identifier			= properties[@"id"];
+			if ( identifier.length == 0 || blacklist[identifier] )
+				continue;
+			NSString *  category			= properties[@"category"];
+			if ( [category isEqualToString:@"osmbasedmap"] )
+				continue;
 			NSString *	startDateString		= properties[@"start_date"];
 			NSString *	endDateString		= properties[@"end_date"];
+			NSDate 	 *  endDate   = [AerialService dateFromString:endDateString];
+			if ( endDate && [endDate timeIntervalSinceNow] < -20*365.0*24*60*60 )
+				continue;
 			NSString * 	type 				= properties[@"type"];
 			NSArray  *	projections			= properties[@"available_projections"];
 			NSString * 	url 				= properties[@"url"];
@@ -526,12 +541,6 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 				polygonPoints = properties[@"extent"][@"polygon"];
 			}
 
-			NSDate * endDate   = [AerialService dateFromString:endDateString];
-			if ( endDate && [endDate timeIntervalSinceNow] < -20*365.0*24*60*60 ) {
-				NSLog(@"Aerial: too old %@: %@\n",endDateString,name);
-				continue;
-			}
-
 			if ( !([type isEqualToString:@"tms"] || [type isEqualToString:@"wms"]) ) {
 				if ( ![knownUnsupported containsObject:type] )
 					NSLog(@"Aerial: unsupported type %@: %@\n",type,name);
@@ -546,13 +555,6 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 				NSLog(@"Aerial: bad url %@: %@\n",url,name);
 				continue;
 			}
-
-			if ( [name hasPrefix:@"Maxar "] ) {
-				// we special case their imagery because they require a special key
-				NSLog(@"Aerial: skip Maxar %@: %@\n",url,name);
-				continue;
-			}
-
 
 			// we only support some types of WMS projections
 			NSString * projection = nil;
@@ -679,8 +681,8 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 	// get cached data
 	NSData * cachedData = [NSData dataWithContentsOfFile:[self pathToExternalAerialsCache]];
 	NSDate * now = [NSDate date];
-	NSDate * lastDownload = [[NSUserDefaults standardUserDefaults] objectForKey:@"lastImageryDownloadDate"];
-	if ( cachedData == nil || (lastDownload && [now timeIntervalSinceDate:lastDownload] >= 60*60*24*7) ) {
+	_lastDownloadDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"lastImageryDownloadDate"];
+	if ( cachedData == nil || (_lastDownloadDate && [now timeIntervalSinceDate:_lastDownloadDate] >= 60*60*24*7) ) {
 		// download newer version periodically
 		NSString * urlString = @"https://josm.openstreetmap.de/maps?format=geojson";
 		NSURL * downloadUrl = [NSURL URLWithString:urlString];
@@ -698,6 +700,7 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 			}
 		}];
 	   	[downloadTask resume];
+		_lastDownloadDate = now;
 	}
 
    	// read cached version
