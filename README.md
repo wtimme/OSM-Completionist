@@ -1,3 +1,17 @@
+## DEPRECATED
+
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+This repository is no longer supported.
+
+Please consider implementing the quest functionality directly
+in the [GoMap!!][2] repository, e. g. as part of [bryceco/GoMap#221](https://github.com/bryceco/GoMap/issues/221).
+
+Pay [OSM-Surveyor](https://github.com/wtimme/OSM-Surveyor) a visit and consider contributing there as well.
+
+Most of the added functionality is available from the Git history as atomic commits, ready to be picked and built upon.
+
+---
 
 # OSM Completionist
 
