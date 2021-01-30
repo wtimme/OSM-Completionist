@@ -14,11 +14,13 @@
 
 
 @interface AerialService : NSObject
+
+@property (class,readonly)	NSArray<NSString *> *	supportedProjections;
+
 @property (readonly) NSString	*	name;
 @property (readonly) NSString	*	identifier;
 @property (readonly) NSString	*	url;
 @property (readonly) int32_t		maxZoom;
-@property (readonly) NSString	*	cacheName;
 @property (readonly) NSString	*	metadataUrl;
 @property (readonly) NSData		*	placeholderImage;
 @property (readonly) CGPathRef 		polygon;
@@ -53,15 +55,18 @@
 
 @interface AerialList : NSObject
 {
-	NSMutableArray 	*	_userDefinedList;	// built-in and user-defined tiles
-	NSArray			*	_downloadedList;	// downloaded on each launch
+	NSMutableArray	 				*	_userDefinedList;	// user-defined tile servers
+	NSArray							*	_downloadedList;	// downloaded on each launch
+	NSMutableArray<AerialService *>	*	_recentlyUsed;
 }
 
-@property (nonatomic) 	AerialService	*	currentAerial;
-@property (readonly) 	NSDate			*	lastDownloadDate;
+@property (nonatomic) 	AerialService				*	currentAerial;
+@property (readonly) 	NSDate						*	lastDownloadDate;
 
 -(void)load;
 -(void)save;
+
+-(NSArray<AerialService *> *)recentlyUsed;
 
 -(NSArray *)builtinServices;
 -(NSArray *)userDefinedServices;

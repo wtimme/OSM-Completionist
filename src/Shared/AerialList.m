@@ -13,6 +13,7 @@
 
 static NSString * CUSTOMAERIALLIST_KEY = @"AerialList";
 static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
+static NSString * RECENTLY_USED_KEY = @"AerialListRecentlyUsed";
 
 #define BING_IDENTIFIER	 			@"BingIdentifier"
 #define MAPNIK_IDENTIFIER			@"MapnikIdentifier"
@@ -26,12 +27,39 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 
 @implementation AerialService
 
--(instancetype)initWithName:(NSString *)name identifier:(NSString *)identifier url:(NSString *)url
-					maxZoom:(NSInteger)maxZoom roundUp:(BOOL)roundUp
+@synthesize placeholderImage = _placeholderImage;
+
++(NSArray<NSString *> *)supportedProjections
+{
+	static NSArray<NSString *> * list = nil;
+	if ( list == nil ) {
+		list = @[
+			@"EPSG:3857",
+			@"EPSG:4326",
+			@"EPSG:900913",
+			@"EPSG:3587",
+			@"EPSG:54004",
+			@"EPSG:41001",
+			@"EPSG:102113",
+			@"EPSG:102100",
+			@"EPSG:3785"
+		];
+	}
+	return list;
+}
+
+-(instancetype)initWithName:(NSString *)name
+				 identifier:(NSString *)identifier
+						url:(NSString *)url
+					maxZoom:(NSInteger)maxZoom
+					roundUp:(BOOL)roundUp
 				  startDate:(NSString *)startDate
 					endDate:(NSString *)endDate
-			  wmsProjection:(NSString *)projection polygon:(CGPathRef)polygon
-			   attribString:(NSString *)attribString attribIcon:(UIImage *)attribIcon attribUrl:(NSString *)attribUrl
+			  wmsProjection:(NSString *)projection
+					polygon:(CGPathRef)polygon
+			   attribString:(NSString *)attribString
+				 attribIcon:(UIImage *)attribIcon
+				  attribUrl:(NSString *)attribUrl
 {
 	self = [super init];
 	if ( self ) {
@@ -48,21 +76,38 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 		_endDate			= endDate;
 		_wmsProjection		= projection;
 		_polygon			= CGPathCreateCopy( polygon );
-		_attributionString 	= attribString;
+		_attributionString 	= attribString.length ? attribString : name;
 		_attributionIcon	= attribIcon;
 		_attributionUrl		= attribUrl;
 	}
 	return self;
 }
 
-+(instancetype)aerialWithName:(NSString *)name identifier:(NSString *)identifier url:(NSString *)url
-					  maxZoom:(NSInteger)maxZoom roundUp:(BOOL)roundUp
++(instancetype)aerialWithName:(NSString *)name
+				   identifier:(NSString *)identifier
+						  url:(NSString *)url
+					  maxZoom:(NSInteger)maxZoom
+					  roundUp:(BOOL)roundUp
 					startDate:(NSString *)startDate
 					  endDate:(NSString *)endDate
-				wmsProjection:(NSString *)projection polygon:(CGPathRef)polygon
-				 attribString:(NSString *)attribString attribIcon:(UIImage *)attribIcon attribUrl:(NSString *)attribUrl
+				wmsProjection:(NSString *)projection
+					  polygon:(CGPathRef)polygon
+				 attribString:(NSString *)attribString
+				   attribIcon:(UIImage *)attribIcon
+					attribUrl:(NSString *)attribUrl
 {
-	return [[AerialService alloc] initWithName:name identifier:identifier url:url maxZoom:maxZoom roundUp:roundUp startDate:startDate endDate:endDate wmsProjection:projection polygon:polygon attribString:attribString attribIcon:attribIcon attribUrl:attribUrl];
+	return [[AerialService alloc] initWithName:name
+									identifier:identifier
+										   url:url
+									   maxZoom:maxZoom
+									   roundUp:roundUp
+									 startDate:startDate
+									   endDate:endDate
+								 wmsProjection:projection
+									   polygon:polygon
+								  attribString:attribString
+									attribIcon:attribIcon
+									 attribUrl:attribUrl];
 }
 
 -(BOOL)isBingAerial
@@ -170,8 +215,8 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
 		NSString * url = @"eZ5AGZGcRQyKahl/+UTyIm+vENuJECB4Hvu4ytCzjBoCBDeRMbsOkaQ7zD5rUAYfRDaQwnQRiqE4lj0KYTenPe1d1spljlcYgvYRsqjEtYp6AhCoBPO4Rz6d0Z9enlPqPj7KCvxyOcB8A/+3HkYjpMGMEcvA6oeSX9I0RH/PS9mdAZEC5TmU3odUJQ0hNzczrKtUDmNujrTNfFVHhZZWPLEVZUC9cE94VF/AJkoIigdmXooJ+5UcPtH/uzc6NbOb";
-		service = [AerialService aerialWithName:MAXAR_STANDARD_IDENTIFIER
-								  identifier:@"Maxar-Standard"
+		service = [AerialService aerialWithName:@"Maxar Standard Aerial"
+								  identifier:MAXAR_STANDARD_IDENTIFIER
 										 url:[aes decryptString:url]
 									 maxZoom:21
 									 roundUp:YES
@@ -234,7 +279,7 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 	dispatch_once(&onceToken, ^{
 		service = [AerialService aerialWithName:@"Mapbox Locator"
 									 identifier:MAPBOX_LOCATOR_IDENTIFIER
-											url:@"https://{switch:a,b,c,d}.tiles.mapbox.com/v4/openstreetmap.map-inh76ba2/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJjaml5MjVyb3MwMWV0M3hxYmUzdGdwbzE4In0.q548FjhsSJzvXsGlPsFxAQ"
+											url:@"https://api.mapbox.com/styles/v1/openstreetmap/ckasmteyi1tda1ipfis6wqhuq/tiles/256/{zoom}/{x}/{y}{@2x}?access_token=pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJjaml5MjVyb3MwMWV0M3hxYmUzdGdwbzE4In0.q548FjhsSJzvXsGlPsFxAQ"
 										maxZoom:20
 										roundUp:NO
 									  startDate:nil
@@ -274,6 +319,7 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 			  @"url" 		: _url,
 			  @"zoom" 		: @(_maxZoom),
 			  @"roundUp" 	: @(_roundZoomUp),
+			  @"projection"	: _wmsProjection ?: @""
 			  };
 }
 -(instancetype)initWithDictionary:(NSDictionary *)dict
@@ -288,6 +334,10 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 		url = [url stringByReplacingOccurrencesOfString:@"{t}" withString:s];
 	}
 
+	NSString * projection = dict[@"projection"];
+	if ( projection.length == 0 )
+		projection = nil;
+
 	return [self initWithName:dict[@"name"]
 				   identifier:url
 						  url:url
@@ -295,7 +345,7 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 					  roundUp:[dict[@"roundUp"] boolValue]
 					startDate:nil
 					  endDate:nil
-				   wmsProjection:nil
+				wmsProjection:projection
 					  polygon:NULL
 				 attribString:nil
 				   attribIcon:nil
@@ -303,17 +353,6 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 }
 
 
--(NSString *)cacheName
-{
-	if ( self.isBingAerial )
-		return @"BingAerialTiles";
-
-	const char *cstr = [_url cStringUsingEncoding:NSUTF8StringEncoding];
-	NSData * data = [NSData dataWithBytes:cstr length:_url.length];
-	uint8_t digest[CC_SHA1_DIGEST_LENGTH];
-	CC_SHA1(data.bytes, (CC_LONG)data.length, digest);
-	return [NSString stringWithFormat:@"%08x", *(uint32_t *)digest];
-}
 -(NSString *)metadataUrl
 {
 	if ( self.isBingAerial ) {
@@ -323,14 +362,28 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 }
 -(NSData *)placeholderImage
 {
-	if ( self.isBingAerial ) {
-		static NSData * data;
-		static dispatch_once_t onceToken;
-		dispatch_once(&onceToken, ^{
-			data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BingPlaceholderImage" ofType:@"png"]];
-		});
-		return data;
+	if ( _placeholderImage ) {
+		return _placeholderImage.length ? _placeholderImage : nil;
 	}
+	NSString * name = nil;
+	if ( self.isBingAerial ) {
+		name = @"BingPlaceholderImage";
+	} else if ( [_identifier isEqualToString:@"EsriWorldImagery"] ) {
+		name = @"EsriPlaceholderImage";
+	}
+	if ( name ) {
+		NSString * path = [[NSBundle mainBundle] pathForResource:name ofType:@"png"];
+		if ( path == nil )
+			path = [[NSBundle mainBundle] pathForResource:name ofType:@"jpg"];
+		NSData * data = [NSData dataWithContentsOfFile:path];
+		if ( data.length ) {
+			dispatch_sync(dispatch_get_main_queue(), ^{
+				_placeholderImage = data;
+			});
+		}
+		return _placeholderImage;
+	}
+	_placeholderImage = [NSData new];
 	return nil;
 }
 
@@ -363,9 +416,6 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 
 -(void)loadIconFromWeb:(NSString *)url
 {
-	// don't use https because some providers are using expired certs and the request will fail
-	url = [url stringByReplacingOccurrencesOfString:@"https://" withString:@"http://"];
-
 	NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]
 											  cachePolicy:NSURLRequestReturnCacheDataElseLoad
 										  timeoutInterval:60];
@@ -375,8 +425,6 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 			dispatch_async(dispatch_get_main_queue(), ^{
 				_attributionIcon = image;
 			});
-		} else {
-			NSLog(@"Fetch icon failed: %@",url);
 		}
 	}];
 	[task resume];
@@ -392,6 +440,8 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 
 
 @implementation AerialList
+
+@synthesize currentAerial = _currentAerial;
 
 -(instancetype)init
 {
@@ -455,46 +505,22 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 	if ( ![featureArray isKindOfClass:[NSArray class]] )
 		return nil;
 
-	NSDictionary * blacklist = @{
-		@"hike_n_bike"					: @YES,                  // 'Hike & Bike'
-		@"osm-mapnik-german_style"		: @YES,      // 'OpenStreetMap (German Style)'
-		@"osm-mapnik-black_and_white"	: @YES,   // 'OpenStreetMap (Standard Black & White)'
-		@"skobbler"						: @YES,                     // 'Skobbler'
-		@"openpt_map"					: @YES,                   // 'OpenPT Map (overlay)'
-		@"tf-cycle"						: @YES,                     // 'Thunderforest OpenCycleMap'
-		@"qa_no_address"				: @YES,                // 'QA No Address'
-		@"landsat"						: @YES,                      // 'Landsat'
-
-		@"US-TIGER-Roads-2012"			: @YES,
-		@"US-TIGER-Roads-2014"			: @YES,
-
-		@"Waymarked_Trails-Cycling"		: @YES,
-		@"Waymarked_Trails-Hiking"		: @YES,
-		@"Waymarked_Trails-MTB"			: @YES,
-		@"Waymarked_Trails-Skating"		: @YES,
-		@"Waymarked_Trails-Winter_Sports": @YES,
-
-		@"OSM_Inspector-Addresses"		: @YES,
-		@"OSM_Inspector-Geometry"		: @YES,
-		@"OSM_Inspector-Highways"		: @YES,
-		@"OSM_Inspector-Multipolygon"	: @YES,
-		@"OSM_Inspector-Places"			: @YES,
-		@"OSM_Inspector-Routing"		: @YES,
-		@"OSM_Inspector-Tagging"		: @YES
-	};
-	NSDictionary * supportedProjections = @{
-		@"EPSG:3857" 	: @(YES),
-		@"EPSG:4326" 	: @(YES),
-		@"EPSG:900913" 	: @(YES), // EPSG:3857 alternatives codes
-		@"EPSG:3587" 	: @(YES),
-		@"EPSG:54004" 	: @(YES),
-		@"EPSG:41001" 	: @(YES),
-		@"EPSG:102113" 	: @(YES),
-		@"EPSG:102100" 	: @(YES),
-		@"EPSG:3785" 	: @(YES)
+	NSDictionary * categories = @{
+		@"photo" 		: @YES,
+		@"elevation" 	: @YES
 	};
 
-	NSArray * knownUnsupported = @[ @"scanex", @"wms_endpoint", @"bing" ];
+	NSDictionary * supportedTypes = @{
+		@"tms" 			: @YES,
+		@"wms" 			: @YES,
+		@"scanex" 		: @NO,
+		@"wms_endpoint" : @NO,
+		@"wmts" 		: @NO,
+		@"bing" 		: @NO,
+	};
+
+	NSSet * supportedProjections = [NSSet setWithArray:AerialService.supportedProjections];
+
 	NSMutableArray * externalAerials = [NSMutableArray new];
 	for ( NSDictionary * entry in featureArray ) {
 
@@ -511,11 +537,11 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 				continue;
 			}
 			NSString * 	identifier			= properties[@"id"];
-			if ( identifier.length == 0 || blacklist[identifier] )
-				continue;
 			NSString *  category			= properties[@"category"];
-			if ( [category isEqualToString:@"osmbasedmap"] )
+			if ( categories[category] == nil ) {
+				// NSLog(@"category %@ - %@",category,identifier);
 				continue;
+			}
 			NSString *	startDateString		= properties[@"start_date"];
 			NSString *	endDateString		= properties[@"end_date"];
 			NSDate 	 *  endDate   = [AerialService dateFromString:endDateString];
@@ -529,21 +555,11 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 			NSString * 	attribString 		= properties[@"attribution"][@"text"];
 			NSString * 	attribUrl 			= properties[@"attribution"][@"url"];
 			NSInteger	overlay				= [properties[@"overlay"] integerValue];
-			NSArray  * 	polygonPoints 		= nil;
-			BOOL		isMultiPolygon		= NO;	// a GeoJSON multipolygon, which has an extra layer of nesting
-			if ( isGeoJSON ) {
-				NSDictionary * 	geometry = entry[@"geometry"];
-				if ( [geometry isKindOfClass:[NSDictionary class]] ) {
-					polygonPoints = geometry[@"coordinates"];
-					isMultiPolygon = [geometry[@"type"] isEqualToString:@"MultiPolygon"];
-				}
-			} else {
-				polygonPoints = properties[@"extent"][@"polygon"];
-			}
-
-			if ( !([type isEqualToString:@"tms"] || [type isEqualToString:@"wms"]) ) {
-				if ( ![knownUnsupported containsObject:type] )
-					NSLog(@"Aerial: unsupported type %@: %@\n",type,name);
+			NSNumber * supported = supportedTypes[ type ];
+			if ( supported == nil ) {
+				NSLog(@"Aerial: unsupported type %@: %@\n",type,name);
+				continue;
+			} else if ( supported.boolValue == NO ) {
 				continue;
 			}
 			if ( overlay ) {
@@ -560,13 +576,25 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 			NSString * projection = nil;
 			if ( [type isEqualToString:@"wms"] ) {
 				for ( NSString * proj in projections ) {
-					if ( supportedProjections[proj] ) {
+					if ( [supportedProjections containsObject:proj] ) {
 						projection = proj;
 						break;
 					}
 				}
 				if ( projection == nil )
 					continue;
+			}
+
+			NSArray  * 	polygonPoints 		= nil;
+			BOOL		isMultiPolygon		= NO;	// a GeoJSON multipolygon, which has an extra layer of nesting
+			if ( isGeoJSON ) {
+				NSDictionary * 	geometry = entry[@"geometry"];
+				if ( [geometry isKindOfClass:[NSDictionary class]] ) {
+					polygonPoints = geometry[@"coordinates"];
+					isMultiPolygon = [geometry[@"type"] isEqualToString:@"MultiPolygon"];
+				}
+			} else {
+				polygonPoints = properties[@"extent"][@"polygon"];
 			}
 
 			CGPathRef polygon = NULL;
@@ -608,7 +636,7 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 					if ( [attribIconString hasPrefix:@"http"] ) {
 						httpIcon = YES;
 					} else {
-						NSLog(@"unsupported icon format: %@\n",attribIconString);
+						NSLog(@"Aerial: unsupported icon format in %@: %@\n",name,attribIconString);
 					}
 				}
 			}
@@ -685,6 +713,7 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 	if ( cachedData == nil || (_lastDownloadDate && [now timeIntervalSinceDate:_lastDownloadDate] >= 60*60*24*7) ) {
 		// download newer version periodically
 		NSString * urlString = @"https://josm.openstreetmap.de/maps?format=geojson";
+		//NSString * urlString = @"https://osmlab.github.io/editor-layer-index/imagery.geojson";
 		NSURL * downloadUrl = [NSURL URLWithString:urlString];
 		NSURLSessionDataTask * downloadTask = [[NSURLSession sharedSession] dataTaskWithURL:downloadUrl completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 			[[NSUserDefaults standardUserDefaults] setObject:now forKey:@"lastImageryDownloadDate"];
@@ -722,6 +751,28 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 			_userDefinedList[i] = [[AerialService alloc] initWithDictionary:_userDefinedList[i]];
 		}
 	}
+
+	// fetch and decode recently used list
+	NSMutableDictionary * dict = [NSMutableDictionary new];
+	for ( AerialService * service in _downloadedList ) {
+		dict[service.identifier] = service;
+	}
+	for ( AerialService * service in _userDefinedList ) {
+		dict[service.identifier] = service;
+	}
+	for ( AerialService * service in @[[AerialService maxarPremiumAerial], [AerialService maxarStandardAerial] ] ) {
+		dict[service.identifier] = service;
+	}
+
+	NSArray * recentIdentiers = [defaults objectForKey:RECENTLY_USED_KEY] ?: @[];
+	_recentlyUsed = [NSMutableArray arrayWithCapacity:recentIdentiers.count];
+	for ( NSString * identifier in recentIdentiers ) {
+		AerialService * service = dict[identifier];
+		if ( service ) {
+			[_recentlyUsed addObject:service];
+		}
+	}
+
 	NSString * currentIdentifier = [defaults objectForKey:CUSTOMAERIALSELECTION_KEY];
 	if ( currentIdentifier == nil || [currentIdentifier isKindOfClass:[NSNumber class]] ) {
 		currentIdentifier = BING_IDENTIFIER;
@@ -729,12 +780,12 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 	NSArray * a = [[self.builtinServices arrayByAddingObjectsFromArray:self.userDefinedServices] arrayByAddingObjectsFromArray:_downloadedList];
 	for ( AerialService * service in a ) {
 		if ( [currentIdentifier isEqualToString:service.identifier] ) {
-			_currentAerial = service;
+			self.currentAerial = service;
 			break;
 		}
 	}
 	if ( _currentAerial == nil ) {
-		_currentAerial = self.builtinServices[0];
+		self.currentAerial = self.builtinServices[0];
 	}
 }
 
@@ -747,6 +798,12 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 	}
 	[defaults setObject:a forKey:CUSTOMAERIALLIST_KEY];
 	[defaults setObject:_currentAerial.identifier forKey:CUSTOMAERIALSELECTION_KEY];
+
+	NSMutableArray * recents = [NSMutableArray new];
+	for ( AerialService * service in _recentlyUsed ) {
+		[recents addObject:service.identifier];
+	}
+	[defaults setObject:recents forKey:RECENTLY_USED_KEY];
 }
 
 -(NSArray *)servicesForRegion:(OSMRect)rect
@@ -766,6 +823,28 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 		return [obj1.name compare:obj2.name];
 	}];
 	return result;
+}
+
+-(AerialService *)currentAerial
+{
+	return _currentAerial;
+}
+-(void)setCurrentAerial:(AerialService *)currentAerial
+{
+	_currentAerial = currentAerial;
+
+	// update recently used
+	const NSInteger MAX_ITEMS = 6;
+	[_recentlyUsed removeObject:currentAerial];
+	[_recentlyUsed insertObject:currentAerial atIndex:0];
+	while ( _recentlyUsed.count > MAX_ITEMS ) {
+		[_recentlyUsed removeLastObject];
+	}
+}
+
+-(NSArray<AerialService *> *)recentlyUsed
+{
+	return _recentlyUsed;
 }
 
 -(NSInteger)count
@@ -790,8 +869,9 @@ static NSString * CUSTOMAERIALSELECTION_KEY = @"AerialListSelection";
 	AerialService * s = _userDefinedList[index];
 	[_userDefinedList removeObjectAtIndex:index];
 	if ( s == _currentAerial ) {
-		_currentAerial = self.builtinServices[0];
+		self.currentAerial = self.builtinServices[0];
 	}
+	[_recentlyUsed removeObject:s];
 }
 
 @end

@@ -13,14 +13,12 @@
 
 @implementation DownloadThreadPool
 
--(id)initWithMaxConnections:(NSInteger)max
+-(id)init
 {
 	self = [super init];
 	if ( self ) {
 		NSURLSessionConfiguration * config = [NSURLSessionConfiguration defaultSessionConfiguration];
-		// config.HTTPMaximumConnectionsPerHost = max;	// use iOS defaults for now (4)
 		_urlSession	= [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];
-		
 		_downloadCount = 0;
 	}
 	return self;
@@ -32,46 +30,23 @@
 	static DownloadThreadPool * pool = nil;
 
 	dispatch_once( &onceToken, ^{
-		pool = [[DownloadThreadPool alloc] initWithMaxConnections:2];
+		pool = [[DownloadThreadPool alloc] init];
 	});
 	return pool;
 }
 
-+(DownloadThreadPool *)generalPool;
-{
-	static dispatch_once_t		onceToken = 0;
-	static DownloadThreadPool * pool = nil;
-
-	dispatch_once( &onceToken, ^{
-		pool = [[DownloadThreadPool alloc] initWithMaxConnections:5];
-	});
-	return pool;
-}
-
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
-{
-	[data enumerateByteRangesUsingBlock:^(const void * _Nonnull bytes, NSRange byteRange, BOOL * _Nonnull stop) {
-	}];
-	NSLog(@"download partial data\n");
-}
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error
-{
-	NSLog(@"download complete\n");
-}
-
-
--(void)dataForUrl:(NSString *)url completeOnMain:(BOOL)completeOnMain completion:(void(^)(NSData * data,NSError * error))completion
+-(void)streamForUrl:(NSString *)url callback:(void(^)(NSInputStream * stream,NSError * error))callback
 {
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
 	[request setHTTPMethod:@"GET"];
 	[request addValue:@"8bit" forHTTPHeaderField:@"Content-Transfer-Encoding"];
 	[request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
-	
+
 	OSAtomicIncrement32(&_downloadCount);
 
 	NSURLSessionDataTask * task = [_urlSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 		OSAtomicDecrement32(&_downloadCount);
-		
+
 		NSHTTPURLResponse * httpResponse = (id)response;
 		if ( error ) {
 			DLog(@"Error: %@", error.localizedDescription);
@@ -85,45 +60,24 @@
 			error = [NSError errorWithDomain:@"HTTP" code:httpResponse.statusCode userInfo:@{ NSLocalizedDescriptionKey:text?:@""}];
 			data = nil;
 		}
-		
-		if ( completeOnMain ) {
-			dispatch_async(dispatch_get_main_queue(), ^{
-				completion(data,error);
-			});
+
+		if ( data && !error ) {
+			NSInputStream * inputStream = [NSInputStream inputStreamWithData:data];
+			callback(inputStream,nil);
 		} else {
-			completion(data,error);
+			callback(nil,error);
 		}
 	}];
 	[task resume];
 }
 
--(void)dataForUrl:(NSString *)url completion:(void(^)(NSData * data,NSError * error))completion
-{
-	[self dataForUrl:url completeOnMain:YES completion:completion];
-}
-
--(void)streamForUrl:(NSString *)url callback:(void(^)(NSInputStream * stream,NSError * error))callback
-{
-	[self dataForUrl:url completeOnMain:NO completion:^(NSData *data, NSError *error) {
-		if ( data && !error ) {
-			NSInputStream * inputStream = [NSInputStream inputStreamWithData:data];
-			callback(inputStream,error);
-		} else {
-			callback(nil,error);
-		}
-	}];
-}
-
-
 -(void)cancelAllDownloads
 {
-	@synchronized(self) {
-		[_urlSession getTasksWithCompletionHandler:^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) {
-			for (NSURLSessionTask *task in dataTasks) {
-				[task cancel];
-			}
-		}];
-	}
+	[_urlSession getAllTasksWithCompletionHandler:^(NSArray<__kindof NSURLSessionTask *> * _Nonnull tasks) {
+		for ( NSURLSessionTask * task in tasks ) {
+			[task cancel];
+		}
+	}];
 }
 
 -(NSInteger)downloadsInProgress

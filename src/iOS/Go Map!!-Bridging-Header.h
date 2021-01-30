@@ -2,9 +2,6 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
-#import "CommonTagList.h"
-#import "LoginViewController.h"
-#import "KeyChain.h"
 #import "AppDelegate.h"
 #import "OsmMapData.h"
 #import "SettingsViewController.h"
@@ -12,9 +9,19 @@
 #import "EditorMapLayer.h"
 #import "MapView.h"
 #import "ContactUsViewController.h"
+#import "EditorMapLayer.h"
+#import "KeyChain.h"
+#import "LayerProperties.h"
+#import "LocationURLParser.h"
+#import "LoginViewController.h"
+#import "MainViewController.h"
+#import "OsmMapData.h"
+#import "OsmMember.h"
 #import "OsmNode.h"
-#import "OsmWay.h"
 #import "OsmRelation.h"
-#import "GeoURLParser.h"
-#import "URLParserResult.h"
-#import "MapViewController.h"
+#import "OsmWay.h"
+#import "PathUtil.h"
+#import "RenderInfo.h"
+#import "VectorMath.h"
+
+UIImage * IconScaledForDisplay(UIImage *icon);

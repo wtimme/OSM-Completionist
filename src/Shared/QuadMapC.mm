@@ -22,7 +22,7 @@
 #endif
 
 // Don't query the server for regions smaller than this:
-static const double MinRectSize = 360.0 / (1 << 18);
+static const double MinRectSize = 360.0 / (1 << 16);
 
 static const OSMRect MAP_RECT = { -180, -90, 360, 180 };
 
@@ -209,7 +209,7 @@ public:
 		return (int)north << 1 | west;
 	}
 
-	void enumerateWithBlock( void (^block)(QuadBoxCC *) )
+	void enumerateWithBlock( void (^block)(const QuadBoxCC *) ) const
 	{
 		block(this);
 		for ( int child = 0; child <= QUAD_LAST; ++child ) {
@@ -234,34 +234,34 @@ public:
 
 #pragma mark Region
 
-	void missingPieces( std::vector<QuadBoxCC *> & pieces, const OSMRect & target )
+	void missingPieces( std::vector<QuadBoxCC *> & missing, const OSMRect & needed )
 	{
 		if ( _whole || _busy )
 			return;
-		if ( ! OSMRectIntersectsRect(target, _rect ) )
+		if ( ! OSMRectIntersectsRect(needed, _rect ) )
 			return;
-		if ( _rect.size.width <= MinRectSize || _rect.size.width <= target.size.width/8 ) {
+		if ( _rect.size.width <= MinRectSize || _rect.size.width <= needed.size.width/2 || _rect.size.height <= needed.size.height/2 ) {
 			_busy = YES;
-			pieces.push_back(this);
+			missing.push_back(this);
 			return;
 		}
-		if ( OSMRectContainsRect(target, _rect) ) {
+		if ( OSMRectContainsRect(needed, _rect) ) {
 			if ( !hasChildren() ) {
 				_busy = YES;
-				pieces.push_back(this);
+				missing.push_back(this);
 				return;
 			}
 		}
 
 		for ( int child = 0; child <= QUAD_LAST; ++child ) {
 			OSMRect rc = ChildRect( (QUAD_ENUM)child, _rect );
-			if ( OSMRectIntersectsRect( target, rc ) ) {
+			if ( OSMRectIntersectsRect( needed, rc ) ) {
 
 				if ( _children[child] == nil ) {
 					_children[child] = new QuadBoxCC( rc, this, nil );
 				}
 
-				_children[child]->missingPieces(pieces,target);
+				_children[child]->missingPieces(missing,needed);
 			}
 		}
 	}
@@ -315,6 +315,14 @@ public:
 		}
 	}
 
+	NSInteger count() const
+	{
+		__block NSInteger c = 0;
+		enumerateWithBlock(^(const QuadBoxCC * quad) {
+			c += quad->_members.size();
+		});
+		return c;
+	}
 
 	NSInteger countBusy() const
 	{
@@ -360,14 +368,14 @@ public:
 	{
 		if ( fraction ) {
 			// get a list of all quads that have downloads
-			__block std::vector<QuadBoxCC *> list;
-			this->enumerateWithBlock(^(QuadBoxCC * quad) {
+			__block std::vector<const QuadBoxCC *> list;
+			this->enumerateWithBlock(^(const QuadBoxCC * quad) {
 				if ( quad->_downloadDate ) {
 					list.push_back(quad);
 				}
 			});
 			// sort ascending by date
-			std::sort( list.begin(), list.end(), ^(QuadBoxCC *a, QuadBoxCC * b){return a->_downloadDate < b->_downloadDate;} );
+			std::sort( list.begin(), list.end(), ^(const QuadBoxCC *a, const QuadBoxCC * b){return a->_downloadDate < b->_downloadDate;} );
 
 			int index = (int)(list.size() * fraction);
 			double date2 = list[ index ]->downloadDate();
@@ -472,6 +480,35 @@ public:
 		return NO;
 	}
 
+	static void findObjectsInAreaNonRecurse( const QuadBoxCC * top, const OSMRect & bbox, void (^block)(OsmBaseObject *) )
+	{
+		std::vector<const QuadBoxCC *>	stack;
+		stack.reserve(32);
+		stack.push_back(top);
+
+		while ( !stack.empty() ) {
+
+			const QuadBoxCC * q = stack.back();
+			stack.pop_back();
+
+			for ( const auto & obj : q->_members ) {
+				// need to do this because we aren't using the accessor (for perf reasons) which would do it for us
+				if ( obj->_boundingBox.origin.x == 0 && obj->_boundingBox.origin.y == 0 && obj->_boundingBox.size.width == 0 && obj->_boundingBox.size.height == 0 ) {
+					[obj computeBoundingBox];
+				}
+				if ( OSMRectIntersectsRect( obj->_boundingBox, bbox ) ) {
+					block( obj );
+				}
+			}
+			for ( int c = 0; c <= QUAD_LAST; ++c ) {
+				QuadBoxCC * child = q->_children[ c ];
+				if ( child && OSMRectIntersectsRect( bbox, child->_rect ) ) {
+					stack.push_back(child);
+				}
+			}
+		}
+	}
+
 	void findObjectsInArea( const OSMRect & bbox, void (^block)(OsmBaseObject *) ) const
 	{
 		for ( const auto & obj : _members ) {
@@ -519,6 +556,35 @@ public:
 				child->deleteObjectsWithPredicate( predicate );
 			}
 		}
+	}
+
+	static void consistencyCheck( const QuadBoxCC * top, OsmBaseObject * object )
+	{
+		std::vector<const QuadBoxCC *>	stack;
+		stack.reserve(32);
+		stack.push_back(top);
+		int foundCount = 0;
+
+		while ( !stack.empty() ) {
+
+			const QuadBoxCC * q = stack.back();
+			stack.pop_back();
+
+			for ( const auto & member : q->_members ) {
+				if ( member == object ) {
+					++foundCount;
+					assert( foundCount == 1 );
+					assert( OSMRectContainsRect( q->_rect, object.boundingBox ) );
+				}
+			}
+			for ( int c = 0; c <= QUAD_LAST; ++c ) {
+				QuadBoxCC * child = q->_children[ c ];
+				if ( child ) {
+					stack.push_back(child);
+				}
+			}
+		}
+		assert( foundCount == 1 );
 	}
 };
 
@@ -605,11 +671,7 @@ public:
 
 -(NSInteger)count
 {
-	__block NSInteger c = 0;
-	_cpp->enumerateWithBlock(^(QuadBoxCC * quad) {
-		++c;
-	});
-	return c;
+	return _cpp->count();
 }
 
 #pragma mark Region
@@ -634,6 +696,10 @@ public:
 // If the download succeeded we can mark this region and its children as whole.
 -(void)makeWhole:(BOOL)success
 {
+	if ( _cpp == NULL ) {
+		// this should only happen if the user cleared the cache while data was downloading?
+		return;
+	}
 	_cpp->makeWhole(success);
 }
 
@@ -672,7 +738,12 @@ public:
 
 -(void)findObjectsInArea:(OSMRect)bbox block:(void (^)(OsmBaseObject *))block
 {
-	_cpp->findObjectsInArea(bbox, block);
+	_cpp->findObjectsInAreaNonRecurse(_cpp,bbox,block);
+}
+
+-(void)consistencyCheckObject:(OsmBaseObject *)object
+{
+	_cpp->consistencyCheck( _cpp, object );
 }
 
 #pragma mark Discard objects

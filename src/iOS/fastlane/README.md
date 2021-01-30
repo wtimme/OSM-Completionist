@@ -21,7 +21,7 @@ or alternatively using `brew cask install fastlane`
 fastlane ios pull_request_checks
 ```
 Performs basic integration checks to be run before merging
-### ios beta
+### ios beta_completionist
 ```
 fastlane ios beta
 ```
@@ -31,6 +31,11 @@ Uploads a new Beta version to TestFlight
 fastlane ios regenerate_app_icon
 ```
 Re-generates the app icon from the base app_icon.png in the fastlane metadata directory
+### ios beta
+```
+fastlane ios beta
+```
+Builds and uploads a new TestFlight Beta release.
 
 ----
 

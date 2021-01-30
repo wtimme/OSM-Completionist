@@ -30,9 +30,9 @@
     [super viewDidLoad];
 
 	UIColor * color = [UIColor.grayColor colorWithAlphaComponent:0.5];
-	_commentTextView.layer.borderColor = color.CGColor;
-	_commentTextView.layer.borderWidth = 2.0;
-	_commentTextView.layer.cornerRadius = 10.0;
+	_commentContainerView.layer.borderColor = color.CGColor;
+	_commentContainerView.layer.borderWidth = 2.0;
+	_commentContainerView.layer.cornerRadius = 10.0;
 
 	_sourceTextField.layer.borderColor = color.CGColor;
 	_sourceTextField.layer.borderWidth = 2.0;
@@ -68,6 +68,8 @@
 
 	_sendMailButton.enabled = (text != nil);
 	_editXmlButton.enabled = (text != nil);
+
+	_clearCommentButton.hidden = YES;
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -87,6 +89,13 @@
 }
 
 
+- (IBAction)clearCommentText:(id)sender
+{
+	_commentTextView.text = @"";
+	_clearCommentButton.hidden = YES;
+}
+
+
 - (IBAction)commit:(id)sender
 {
 	AppDelegate * appDelegate = (id)[[UIApplication sharedApplication] delegate];
@@ -96,8 +105,8 @@
 	}
 
 	if ( ![[NSUserDefaults standardUserDefaults] boolForKey:@"userDidPreviousUpload"] ) {
-		UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Attention"
-																		message:@"You are about to make changes to the live OpenStreetMap database. Your changes will be visible to everyone in the world.\n\nTo continue press Commit once again, otherwise press Cancel."
+		UIAlertController * alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Attention",nil)
+																		message:NSLocalizedString(@"You are about to make changes to the live OpenStreetMap database. Your changes will be visible to everyone in the world.\n\nTo continue press Commit once again, otherwise press Cancel.",nil)
 																 preferredStyle:UIAlertControllerStyleAlert];
 		[alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel",nil) style:UIAlertActionStyleCancel handler:nil]];
 		[alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Commit",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -148,12 +157,15 @@
 			// flash success message
 			dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC));
 			dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+				[appDelegate.mapView.editorLayer setNeedsLayout];
 				[appDelegate.mapView flashMessage:NSLocalizedString(@"Upload complete!",nil) duration:1.5];
 			});
 		}
 	};
 
-	NSString * imagery = appDelegate.mapView.aerialLayer.aerialService.name;
+	NSString * imagery = nil;
+	if ( appDelegate.mapView.viewState == MAPVIEW_EDITORAERIAL || appDelegate.mapView.viewState == MAPVIEW_AERIAL )
+		imagery = appDelegate.mapView.aerialLayer.aerialService.name;
 
 	if ( _xmlTextView.editable ) {
 		
@@ -175,11 +187,6 @@
 
 -(IBAction)editXml:(id)sender
 {
-	AppDelegate * appDelegate = AppDelegate.getAppDelegate;
-
-	MFMailComposeViewController * mail = [[MFMailComposeViewController alloc] init];
-	mail.mailComposeDelegate = self;
-	[mail setSubject:[NSString stringWithFormat:@"%@ changeset", appDelegate.appName]];
 	NSString * xml = [_mapData changesetAsXml];
 	xml = [xml stringByAppendingString:@"\n\n\n\n\n\n\n\n\n\n\n\n"];
 	_xmlTextView.attributedText = nil;
@@ -202,7 +209,7 @@
 
 		MFMailComposeViewController * mail = [[MFMailComposeViewController alloc] init];
 		mail.mailComposeDelegate = self;
-		[mail setSubject:[NSString stringWithFormat:@"%@ changeset", appDelegate.appName]];
+		[mail setSubject:[NSString stringWithFormat:NSLocalizedString(@"%@ changeset",nil), appDelegate.appName]];
 		NSString * xml = [_mapData changesetAsXml];
 		[mail addAttachmentData:[xml dataUsingEncoding:NSUTF8StringEncoding] mimeType:@"application/xml" fileName:@"osmChange.osc"];
 		[self presentViewController:mail animated:YES completion:nil];
@@ -220,9 +227,29 @@
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void)textViewDidChange:(UITextView *)textView
+{
+	if ( textView == _commentTextView ) {
+		_clearCommentButton.hidden  = _commentTextView.text.length == 0;
+	}
+}
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+	if ( textView == _commentTextView ) {
+		_clearCommentButton.hidden  = _commentTextView.text.length == 0;
+	}
+}
+-(void)textViewDidEndEditing:(UITextView *)textView
+{
+	if ( textView == _commentTextView ) {
+		_clearCommentButton.hidden  = YES;
+	}
+}
+
+// this is for navigating from the changeset back to the location of the modified object
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)url inRange:(NSRange)characterRange
 {
-	AppDelegate	*	appDelegate = AppDelegate.getAppDelegate;
+	AppDelegate	*	appDelegate = AppDelegate.shared;
 	NSString 	*	name = url.absoluteString;
 	if ( name.length == 0 )
 		return NO;

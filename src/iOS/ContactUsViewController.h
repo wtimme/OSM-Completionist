@@ -17,9 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 	IBOutlet UITableViewCell	*	_sendMailCell;
 	IBOutlet UITableViewCell    *   _testFlightCell;
 	IBOutlet UITableViewCell	*	_githubCell;
+	IBOutlet UITableViewCell	*	_weblateCell;
 }
-
-@property (nonatomic, readonly) IBOutlet UISwitch *showFPSLabelSwitch;
 
 @end
 
