@@ -23,19 +23,19 @@ fastlane ios pull_request_checks
 Performs basic integration checks to be run before merging
 ### ios beta_completionist
 ```
-fastlane ios beta
+fastlane ios beta_completionist
 ```
 Uploads a new Beta version to TestFlight
-### ios regenerate_app_icon
-```
-fastlane ios regenerate_app_icon
-```
-Re-generates the app icon from the base app_icon.png in the fastlane metadata directory
 ### ios beta
 ```
 fastlane ios beta
 ```
 Builds and uploads a new TestFlight Beta release.
+### ios regenerate_app_icon
+```
+fastlane ios regenerate_app_icon
+```
+Re-generates the app icon from the base app_icon.png in the fastlane metadata directory
 
 ----
 
