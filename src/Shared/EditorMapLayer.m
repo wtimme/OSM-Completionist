@@ -1624,7 +1624,7 @@ const static CGFloat Z_HIGHLIGHT_ARROW	= Z_BASE + 14 * ZSCALE;
 		}
 	}
     
-    CALayer *questAnnotationLayer = [self questAnnotationLayerWithNode:node];
+    CALayerWithProperties *questAnnotationLayer = [self questAnnotationLayerWithNode:node];
     if (questAnnotationLayer) {
         [layers addObject:questAnnotationLayer];
     }
@@ -1651,7 +1651,7 @@ const static CGFloat Z_HIGHLIGHT_ARROW	= Z_BASE + 14 * ZSCALE;
  @param node The node to determine the `CALayer` for.
  @return The layer that should be rendered in order to indicate a quest for the given node.
  */
-- (CALayer *)questAnnotationLayerWithNode:(OsmNode *)node {
+- (CALayerWithProperties *)questAnnotationLayerWithNode:(OsmNode *)node {
     if (![self.questAnnotationManager shouldShowQuestAnnotationFor:node]) {
         return nil;
     }
