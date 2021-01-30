@@ -141,6 +141,7 @@ in the StreetComplete repository.
 ## Presets and translation
 
 Go Map!! is using iD presets, so you can improve translations [by improving translations of iD presets](https://github.com/openstreetmap/id-tagging-schema).
+
 [1]: https://www.openstreetmap.org
 [2]: https://github.com/bryceco/GoMap
 [3]: https://itunes.apple.com/app/id592990211
