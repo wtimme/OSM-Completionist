@@ -41,7 +41,7 @@ class MapViewModelTestCase: XCTestCase {
         activeQuestBaseObjectMatcherMock.questsToReturn = []
         
         /// When
-        _ = viewModel.presentQuestInterface(for: baseObject)
+        viewModel.presentQuestInterface(for: baseObject)
         
         /// Then
         XCTAssertEqual(activeQuestBaseObjectMatcherMock.baseObject, baseObject)
@@ -66,7 +66,7 @@ class MapViewModelTestCase: XCTestCase {
                                                            Quest.makeQuest(question: secondQuestion)]
         
         /// When
-        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        viewModel.presentQuestInterface(for: OsmBaseObject())
         
         /// Then
         XCTAssertEqual(delegateMock.question, firstQuestion)
@@ -82,7 +82,7 @@ class MapViewModelTestCase: XCTestCase {
         activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(solution: solution)]
         
         /// When
-        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        viewModel.presentQuestInterface(for: OsmBaseObject())
         
         /// Then
         XCTAssertEqual(delegateMock.choices, ["Yes (backrest=true)", "No (backrest=false)"])
@@ -93,7 +93,7 @@ class MapViewModelTestCase: XCTestCase {
         activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest()]
         
         /// When
-        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        viewModel.presentQuestInterface(for: OsmBaseObject())
         delegateMock.selectionHandler?(999)
         
         /// Then
@@ -109,7 +109,7 @@ class MapViewModelTestCase: XCTestCase {
         activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(solution: solution)]
         
         /// When
-        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        viewModel.presentQuestInterface(for: OsmBaseObject())
         delegateMock.selectionHandler?(0)
         
         /// Then
@@ -127,7 +127,7 @@ class MapViewModelTestCase: XCTestCase {
         activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(question: question, solution: solution)]
         
         /// When
-        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        viewModel.presentQuestInterface(for: OsmBaseObject())
         
         /// Then
         XCTAssertTrue(delegateMock.didCallAskNumericQuestion)
@@ -141,7 +141,7 @@ class MapViewModelTestCase: XCTestCase {
         activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(solution: solution)]
         
         /// When
-        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        viewModel.presentQuestInterface(for: OsmBaseObject())
         
         /// Then
         XCTAssertEqual(delegateMock.key, key)
@@ -153,7 +153,7 @@ class MapViewModelTestCase: XCTestCase {
         activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(solution: solution)]
         
         /// When
-        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        viewModel.presentQuestInterface(for: OsmBaseObject())
         delegateMock.numericHandler?(nil)
         
         /// Then
@@ -166,7 +166,7 @@ class MapViewModelTestCase: XCTestCase {
         activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(solution: solution)]
         
         /// When
-        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        viewModel.presentQuestInterface(for: OsmBaseObject())
         delegateMock.numericHandler?("this is not a number")
         
         /// Then
@@ -181,7 +181,7 @@ class MapViewModelTestCase: XCTestCase {
         activeQuestBaseObjectMatcherMock.questsToReturn = [Quest.makeQuest(solution: solution)]
         
         /// When
-        _ = viewModel.presentQuestInterface(for: OsmBaseObject())
+        viewModel.presentQuestInterface(for: OsmBaseObject())
         delegateMock.numericHandler?(numericAnswer)
         
         /// Then
