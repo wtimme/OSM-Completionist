@@ -39,6 +39,12 @@ Do you want to help testing pre-releases of OSM Completionist?
 OSM Completionist makes use of fastlane.
 For a list of available actions, please refer to [the auto-generated README][8].
 
+## Getting started with development
+
+1. Install [XcodeGen](https://github.com/yonaskolb/XcodeGen)
+2. Run `xcodegen generate` in the root directory of this repository
+3. Open the project file (`Completionist.xcodeproj`)
+
 ## Signing
 
 To automate the signing, this project uses [fastlane match][13].
