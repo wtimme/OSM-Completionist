@@ -886,6 +886,7 @@
 		3E0CE23E25C623F600A77294 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3E87F88325C6F4340002B1DF /* CompletionistAdditions */,
 				3E0CE24025C623F600A77294 /* MainViewController.swift */,
 				3E0CE24125C623F600A77294 /* String+PercentEncodingForRFC3986.swift */,
 				3E0CE24225C623F600A77294 /* ContactUsViewController.swift */,
@@ -893,6 +894,13 @@
 				3E0CE24525C623F600A77294 /* SettingsViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3E87F88325C6F4340002B1DF /* CompletionistAdditions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CompletionistAdditions;
 			sourceTree = "<group>";
 		};
 		64305F6C23E71F5700232BB9 /* URLParsing */ = {
