@@ -123,7 +123,6 @@
 		02F8F4341696004B002A0820 /* NominatimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F8F4331696004B002A0820 /* NominatimViewController.m */; };
 		02FFCE0B16A7360B001A5B8A /* NSMutableArray+PartialSort.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02FFCE0A16A7360B001A5B8A /* NSMutableArray+PartialSort.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3E0CE1FF25C623B200A77294 /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE1FE25C623B200A77294 /* FeedbackGenerator.swift */; };
-		3E0CE24825C623F600A77294 /* String+PercentEncodingForRFC3986.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE24125C623F600A77294 /* String+PercentEncodingForRFC3986.swift */; };
 		3E0CE24925C623F600A77294 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE24225C623F600A77294 /* ContactUsViewController.swift */; };
 		3E0CE24C25C623F600A77294 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE24525C623F600A77294 /* SettingsViewController.swift */; };
 		3E49F4B224DFA64800A347BB /* RulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E49F4B124DFA64800A347BB /* RulerView.m */; };
@@ -1302,7 +1301,6 @@
 				02C3C73A19A6DCEA003B6783 /* AerialList.m in Sources */,
 				02BED99C168CBC5400357B94 /* LocationBallLayer.m in Sources */,
 				021FADD725873D0100F6E1C0 /* PresetsForFeature.swift in Sources */,
-				3E0CE24825C623F600A77294 /* String+PercentEncodingForRFC3986.swift in Sources */,
 				02BED99F168D102700357B94 /* OfflineViewController.m in Sources */,
 				3E87F88D25C6F4340002B1DF /* DisplayViewController+CompletionistAdditions.m in Sources */,
 				02401F391DE1369E00F32AF5 /* ExternalGPS.m in Sources */,
