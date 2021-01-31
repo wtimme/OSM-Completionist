@@ -34,6 +34,7 @@ targets:
         GCC_PREFIX_HEADER: "src/iOS/Go Map!!-Prefix.pch"
         SWIFT_OBJC_INTERFACE_HEADER_NAME: "$(SWIFT_MODULE_NAME)-Swift.h"
         PRODUCT_MODULE_NAME: "Go_Map__"
+        DEVELOPMENT_TEAM: CH829V2QQB
   OSMCompletionistTests:
     type: bundle.unit-test
     platform: iOS
