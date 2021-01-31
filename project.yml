@@ -36,6 +36,7 @@ targets:
         SWIFT_OBJC_INTERFACE_HEADER_NAME: "$(SWIFT_MODULE_NAME)-Swift.h"
         PRODUCT_MODULE_NAME: "Go_Map__"
         DEVELOPMENT_TEAM: CH829V2QQB
+        CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF: NO
   OSMCompletionistTests:
     type: bundle.unit-test
     platform: iOS
