@@ -16,12 +16,10 @@ class OverpassQueryParserMock: NSObject {
 }
 
 extension OverpassQueryParserMock: OverpassQueryParsing {
-    
     func parse(_ query: String) -> OverpassQueryParserResult {
         parseCallCounter += 1
         queries.append(query)
-        
+
         return mockedResult
     }
-    
 }

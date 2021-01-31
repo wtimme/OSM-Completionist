@@ -8,11 +8,9 @@
 
 /// Protocol for objects that can be used to match an `OsmBaseObject` against.
 protocol BaseObjectMatching {
-    
     /// Attempts to matches the given `OsmBaseObject`.
     ///
     /// - Parameter object: The object to match.
     /// - Returns: YES if the given object matches, NO if it does not.
     func matches(_ object: OsmBaseObject) -> Bool
-    
 }

@@ -15,7 +15,8 @@ extension Quest {
                           iconImageName: String? = nil,
                           overpassWizardQuery: String = "dolor_sit:amet",
                           solution: Solution = .multipleChoice([]),
-                          baseObjectMatcher: BaseObjectMatching? = nil) -> Quest {
+                          baseObjectMatcher: BaseObjectMatching? = nil) -> Quest
+    {
         return Quest(identifier: identifier,
                      question: question,
                      iconImageName: iconImageName,

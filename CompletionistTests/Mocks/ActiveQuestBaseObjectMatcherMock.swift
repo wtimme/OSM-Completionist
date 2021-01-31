@@ -14,7 +14,7 @@ class ActiveQuestBaseObjectMatcherMock: ActiveQuestBaseObjectMatching {
     var questsToReturn = [Quest]()
     func quests(matching baseObject: OsmBaseObject) -> [Quest] {
         self.baseObject = baseObject
-        
+
         return questsToReturn
     }
 }

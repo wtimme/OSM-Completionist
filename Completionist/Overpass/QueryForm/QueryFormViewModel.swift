@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol QueryFormViewModelDelegate: class {
+protocol QueryFormViewModelDelegate: AnyObject {
     /// The coordinate that the Overpass Turbo preview should centered on
     var previewCenterCoordinate: CLLocationCoordinate2D? { get }
-    
+
     /// Asks the delegate to present the preview with the given URL string.
     ///
     /// - Parameter url: The URL of the preview address as a string.
@@ -19,20 +19,19 @@ protocol QueryFormViewModelDelegate: class {
 }
 
 class QueryFormViewModel: NSObject {
-    
     // MARK: Public properties
-    
+
     var queryText = Observable<String>("")
     var errorMessage = Observable<String>("")
     var isPreviewButtonEnabled = Observable<Bool>(false)
-    
+
     weak var delegate: QueryFormViewModelDelegate?
-    
+
     // MARK: Private properties
-    
+
     private let parser: OverpassQueryParsing
     private var questManager: QuestManaging
-    
+
     /// The last successfully parsed query string.
     /// When the parser results in an error, this string is set to an empty string.
     private var mostRecentSuccessfulQuery = "" {
@@ -40,51 +39,52 @@ class QueryFormViewModel: NSObject {
             isPreviewButtonEnabled.value = !mostRecentSuccessfulQuery.isEmpty
         }
     }
-    
+
     // MARK: Initializer
-    
+
     init(parser: OverpassQueryParsing,
-         questManager: QuestManaging = QuestManager()) {
+         questManager: QuestManaging = QuestManager())
+    {
         self.parser = parser
         self.questManager = questManager
-        
+
         super.init()
-        
+
         if let activeQuery = questManager.activeQuestQuery {
             evaluateQuery(activeQuery)
         }
-        self.queryText.value = self.mostRecentSuccessfulQuery
+        queryText.value = mostRecentSuccessfulQuery
     }
-    
-    convenience override init() {
+
+    override convenience init() {
         let parser = OverpassQueryParser()
-        
+
         assert(parser != nil, "Unable to create the query parser.")
-        
+
         self.init(parser: parser!)
     }
-    
+
     // MARK: Public methods
-    
+
     func evaluateQuery(_ query: String) {
         guard !query.isEmpty else {
             mostRecentSuccessfulQuery = ""
             errorMessage.value = ""
             return
         }
-        
+
         let result = parser.parse(query)
-        
+
         switch result {
-        case .error(let message):
+        case let .error(message):
             mostRecentSuccessfulQuery = ""
             errorMessage.value = message
-        case .success(let baseObjectMatcher):
+        case let .success(baseObjectMatcher):
             mostRecentSuccessfulQuery = baseObjectMatcher == nil ? "" : query
             errorMessage.value = ""
         }
     }
-    
+
     func presentPreview() {
         guard
             !mostRecentSuccessfulQuery.isEmpty,
@@ -93,7 +93,7 @@ class QueryFormViewModel: NSObject {
             // Without a proper query, there's no need to notify the delegate.
             return
         }
-        
+
         /// Attempt to center the preview's map on a specific coordinate.
         let centerCoordinateURLPart: String
         if let coordinate = delegate?.previewCenterCoordinate {
@@ -101,11 +101,11 @@ class QueryFormViewModel: NSObject {
         } else {
             centerCoordinateURLPart = ""
         }
-        
+
         let previewURL = "https://overpass-turbo.eu?w=\(escapedQuery)&R\(centerCoordinateURLPart)"
         delegate?.presentPreviewWithOverpassTurbo(url: previewURL)
     }
-    
+
     func viewWillDisappear() {
         let queryToSave: String?
         if mostRecentSuccessfulQuery.isEmpty {
@@ -113,8 +113,7 @@ class QueryFormViewModel: NSObject {
         } else {
             queryToSave = mostRecentSuccessfulQuery
         }
-        
+
         questManager.activeQuestQuery = queryToSave
     }
-
 }

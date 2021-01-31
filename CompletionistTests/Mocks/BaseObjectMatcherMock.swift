@@ -12,10 +12,10 @@ import Foundation
 class BaseObjectMatcherMock: NSObject {
     /// Is used to compare mocks.
     let identifier = UUID()
-    
+
     var object: OsmBaseObject?
     var doesMatch: Bool
-    
+
     init(doesMatch: Bool = false) {
         self.doesMatch = doesMatch
     }
@@ -24,7 +24,7 @@ class BaseObjectMatcherMock: NSObject {
 extension BaseObjectMatcherMock: BaseObjectMatching {
     func matches(_ object: OsmBaseObject) -> Bool {
         self.object = object
-        
+
         return doesMatch
     }
 }

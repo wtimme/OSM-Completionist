@@ -10,7 +10,7 @@ struct KeyValueQuery {
     let key: String
     let value: String
     let isNegated: Bool
-    
+
     init(key: String, value: String, isNegated: Bool = false) {
         self.key = key
         self.value = value
@@ -19,7 +19,6 @@ struct KeyValueQuery {
 }
 
 extension KeyValueQuery: BaseObjectMatching {
-    
     func matches(_ object: OsmBaseObject) -> Bool {
         guard let valueOfObject = object.tags?[key] else {
             /// The object does not have a tag with the given key.
@@ -30,8 +29,7 @@ extension KeyValueQuery: BaseObjectMatching {
                 return false
             }
         }
-        
+
         return valueOfObject == value
     }
-    
 }

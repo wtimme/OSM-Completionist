@@ -15,7 +15,6 @@ struct TypeQuery {
 }
 
 extension TypeQuery: BaseObjectMatching {
-    
     func matches(_ object: OsmBaseObject) -> Bool {
         switch type {
         case .node:
@@ -26,5 +25,4 @@ extension TypeQuery: BaseObjectMatching {
             return object is OsmRelation
         }
     }
-    
 }

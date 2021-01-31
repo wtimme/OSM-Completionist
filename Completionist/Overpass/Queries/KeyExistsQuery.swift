@@ -9,7 +9,7 @@
 struct KeyExistsQuery {
     let key: String
     let isNegated: Bool
-    
+
     init(key: String, isNegated: Bool = false) {
         self.key = key
         self.isNegated = isNegated
@@ -17,15 +17,13 @@ struct KeyExistsQuery {
 }
 
 extension KeyExistsQuery: BaseObjectMatching {
-    
     func matches(_ object: OsmBaseObject) -> Bool {
         let keyExists = object.tags?.keys.contains(key) ?? false
-        
+
         if isNegated {
             return !keyExists
         } else {
             return keyExists
         }
     }
-    
 }

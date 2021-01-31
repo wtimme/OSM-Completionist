@@ -9,13 +9,11 @@
 @testable import Go_Map__
 
 extension OsmBaseObject {
-    
     static func makeBaseObjectWithTag(_ key: String, _ value: String) -> OsmBaseObject {
-        let object = OsmBaseObject.init()
-        
+        let object = OsmBaseObject()
+
         object.constructTag(key, value: value)
-        
+
         return object
     }
-    
 }

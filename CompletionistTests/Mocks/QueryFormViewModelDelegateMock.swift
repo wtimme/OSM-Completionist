@@ -11,16 +11,14 @@ import Foundation
 
 class QueryFormViewModelDelegateMock: NSObject {
     var previewCenterCoordinate: CLLocationCoordinate2D?
-    
+
     var didCallPresentPreview = false
     var previewURL: String?
 }
 
 extension QueryFormViewModelDelegateMock: QueryFormViewModelDelegate {
-    
     func presentPreviewWithOverpassTurbo(url: String) {
         didCallPresentPreview = true
         previewURL = url
     }
-    
 }

@@ -9,13 +9,13 @@
 extension DisplayViewController {
     @objc func presentQuestListViewController() {
         let viewController = QuestListTableViewController()
-        
+
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
+
     @objc func presentOverpassQueryViewController() {
         let viewController = QueryFormViewController()
-        
+
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

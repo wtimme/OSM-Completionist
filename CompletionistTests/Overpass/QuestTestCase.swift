@@ -6,22 +6,21 @@
 //  Copyright © 2020 Bryce. All rights reserved.
 //
 
-import XCTest
 @testable import Go_Map__
+import XCTest
 
 class QuestTestCase: XCTestCase {
-
     func testInitWithQueryParser_whenQueryParserIsNil_shouldResultInBaseObjectMatcherNil() {
         /// Given
         let queryParser: OverpassQueryParsing? = nil
-        
+
         /// When
         let quest = Quest(identifier: "",
                           question: "",
                           overpassWizardQuery: "",
                           solution: .multipleChoice([]),
                           queryParser: queryParser)
-        
+
         /// Then
         XCTAssertNil(quest.baseObjectMatcher)
     }
@@ -30,14 +29,14 @@ class QuestTestCase: XCTestCase {
         /// Given
         let queryParserMock = OverpassQueryParserMock()
         queryParserMock.mockedResult = .error("")
-        
+
         /// When
         let quest = Quest(identifier: "",
                           question: "",
                           overpassWizardQuery: "",
                           solution: .multipleChoice([]),
                           queryParser: queryParserMock)
-        
+
         /// Then
         XCTAssertNil(quest.baseObjectMatcher)
     }
@@ -46,14 +45,14 @@ class QuestTestCase: XCTestCase {
         /// Given
         let queryParserMock = OverpassQueryParserMock()
         queryParserMock.mockedResult = .success(nil)
-        
+
         /// When
         let quest = Quest(identifier: "",
                           question: "",
                           overpassWizardQuery: "",
                           solution: .multipleChoice([]),
                           queryParser: queryParserMock)
-        
+
         /// Then
         XCTAssertNil(quest.baseObjectMatcher)
     }
@@ -63,19 +62,18 @@ class QuestTestCase: XCTestCase {
         let queryParserMock = OverpassQueryParserMock()
         let baseObjectMatcherMock = BaseObjectMatcherMock()
         queryParserMock.mockedResult = .success(baseObjectMatcherMock)
-        
+
         /// When
         let quest = Quest(identifier: "",
                           question: "",
                           overpassWizardQuery: "",
                           solution: .multipleChoice([]),
                           queryParser: queryParserMock)
-        
+
         /// Then
-        
+
         /// The Quest's `baseObjectMatcher` should be a mock.
         XCTAssertEqual((quest.baseObjectMatcher as? BaseObjectMatcherMock).require().identifier,
                        baseObjectMatcherMock.identifier)
     }
-
 }

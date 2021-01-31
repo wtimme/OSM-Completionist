@@ -12,7 +12,7 @@ import Foundation
 class QuestListViewModelDelegateMock: QuestListViewModelDelegate {
     private(set) var reloadItemCalled = false
     private(set) var reloadItemIndex: Int?
-    
+
     func reloadItem(at index: Int) {
         reloadItemCalled = true
         reloadItemIndex = index

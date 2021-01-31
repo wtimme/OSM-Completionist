@@ -15,30 +15,30 @@ extension NSNotification.Name {
 }
 
 final class QuestManager: NSObject, QuestManaging {
-    
     // MARK: Private properties
-    
+
     private let userDefaults: UserDefaults
     private let activeQueryUserDefaultsKey: String
     private let notificationCenter: NotificationCenter
-    
+
     // MARK: Initializer
-    
+
     init(userDefaults: UserDefaults = .standard,
          activeQueryUserDefaultsKey: String = "activeQuestQuery",
-         notificationCenter: NotificationCenter = .default) {
+         notificationCenter: NotificationCenter = .default)
+    {
         self.userDefaults = userDefaults
         self.activeQueryUserDefaultsKey = activeQueryUserDefaultsKey
         self.notificationCenter = notificationCenter
     }
-    
+
     var activeQuestQuery: String? {
         get { return userDefaults.string(forKey: activeQueryUserDefaultsKey) }
         set {
             let isUpdatedValue = activeQuestQuery != newValue
-            
+
             userDefaults.set(newValue, forKey: activeQueryUserDefaultsKey)
-            
+
             if isUpdatedValue {
                 notificationCenter.post(name: .QuestManagerDidUpdateActiveQuests, object: self)
             }

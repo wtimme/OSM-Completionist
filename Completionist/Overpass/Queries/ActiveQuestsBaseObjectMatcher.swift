@@ -17,9 +17,11 @@ protocol ActiveQuestBaseObjectMatching {
 
 class ActiveQuestsBaseObjectMatcher {
     // MARK: Private properties
+
     private let questProvider: QuestProviding
-    
+
     // MARK: Initalizer
+
     init(questProvider: QuestProviding) {
         self.questProvider = questProvider
     }
