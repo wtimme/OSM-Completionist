@@ -29,6 +29,7 @@
 #import "OsmMember.h"
 #import "RulerView.h"
 #import "TurnRestrictController.h"
+#import "MapView+CompletionistAdditions.h"
 
 #if TARGET_OS_IPHONE
 #import "DDXML.h"
@@ -66,9 +67,8 @@ static const CGFloat Z_FLASH			= 110;
 @end
 
 
-@interface MapView () <MapViewModelDelegate>
+@interface MapView ()
 @property (strong,nonatomic) IBOutlet UIVisualEffectView    *    statusBarBackground;
-@property (nonatomic, readonly) MapViewModel *viewModel;
 @end
 
 @implementation MapView
@@ -99,7 +99,6 @@ const CGFloat kEditControlCornerRadius = 4;
 #endif
 
 	if (self) {
-        _viewModel = [[MapViewModel alloc] init];
 #if !TARGET_OS_IPHONE
 		self.wantsLayer = YES;
 #endif
@@ -395,7 +394,7 @@ const CGFloat kEditControlCornerRadius = 4;
 		[self updateNotesFromServerWithDelay:0];
 	}
     
-    self.viewModel.delegate = self;
+    [self configureViewModel];
 }
 
 -(void)compassOnLayer:(CALayer *)layer withRadius:(CGFloat)radius
@@ -3463,7 +3462,7 @@ static NSString * const DisplayLinkPanning	= @"Panning";
 				CGPoint pos = [self pointOnObject:object forPoint:point];
 				[self placePushpinAtPoint:pos object:object];
                 
-                [weakSelf.viewModel presentQuestInterfaceFor:object];
+                [weakSelf presentQuestInterfaceFor:object];
 			}]];
 		}
 		[multiSelectSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel",nil) style:UIAlertActionStyleCancel handler:nil]];
@@ -3576,7 +3575,7 @@ static NSString * const DisplayLinkPanning	= @"Panning";
 		hit = [_editorLayer osmHitTest:point radius:DefaultHitTestRadius isDragConnect:NO ignoreList:nil segment:NULL];
 		if ( hit ) {
             /// Present quest interface, if applicable.
-            [self.viewModel presentQuestInterfaceFor:hit];
+            [self presentQuestInterfaceFor:hit];
             
 			if ( hit.isNode ) {
 				_editorLayer.selectedNode = (id)hit;
@@ -3638,91 +3637,6 @@ static NSString * const DisplayLinkPanning	= @"Panning";
 			_confirmDrag = (_editorLayer.selectedPrimary.modifyCount == 0);
 		}
 	}
-}
-
-#pragma mark - MapViewModelDelegate
-
-- (void)askMultipleChoiceQuestionWithQuestion:(NSString *)question
-                                      choices:(NSArray<NSString *> *)choices
-                             selectionHandler:(void (^)(NSInteger))selectionHandler {
-    UIAlertControllerStyle alertStyle = UIAlertControllerStyleActionSheet;
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        alertStyle = UIAlertControllerStyleAlert;
-    }
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:question
-                                                                             message:nil
-                                                                      preferredStyle:alertStyle];
-    
-    [choices enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        UIAlertAction *choiceAction = [UIAlertAction actionWithTitle:obj style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            selectionHandler(idx);
-        }];
-        [alertController addAction:choiceAction];
-    }];
-    
-    NSString *cancelActionTitle = NSLocalizedString(@"Cancel",
-                                                    @"Title of the button when canceling questions");
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelActionTitle
-                                                           style:UIAlertActionStyleCancel
-                                                         handler:nil];
-    [alertController addAction:cancelAction];
-    
-    [self.mainViewController presentViewController:alertController animated:YES completion:nil];
-}
-
-- (void)askNumericQuestionWithQuestion:(NSString *)question
-                                   key:(NSString *)key
-                               handler:(void (^)(NSString * _Nullable))handler {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:question
-                                                                             message:nil
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    
-    __block __weak UITextField *answerTextField;
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        /// Configure the text field for numeric input.
-        textField.keyboardType = UIKeyboardTypeNumberPad;
-        textField.placeholder = key;
-        
-        /// Keep a reference to the text field so that we can later get the text that the user put in.
-        answerTextField = textField;
-    }];
-    
-    NSString *confirmActionTitle = NSLocalizedString(@"Confirm",
-                                                     @"Title of the button when finishing the input of numeric quest answers");
-    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:confirmActionTitle
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * _Nonnull action) {
-        handler(answerTextField.text);
-    }];
-    [alertController addAction:confirmAction];
-    
-    NSString *cancelActionTitle = NSLocalizedString(@"Cancel",
-                                                    @"Title of the button when canceling questions");
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelActionTitle
-                                                           style:UIAlertActionStyleCancel
-                                                         handler:nil];
-    [alertController addAction:cancelAction];
-    
-    [self.mainViewController presentViewController:alertController animated:YES completion:nil];
-}
-
-- (void)finishQuestForSelectedObjectByApplyingTagWithKey:(NSString *)key value:(NSString *)value {
-    NSMutableDictionary *tags = [NSMutableDictionary dictionary];
-    
-    if (self.editorLayer.selectedPrimary.tags.count > 0) {
-        [tags addEntriesFromDictionary:self.editorLayer.selectedPrimary.tags];
-    }
-    
-    [tags setObject:value forKey:key];
-    
-    [self setTagsForCurrentObject:tags];
-    
-    self.editorLayer.selectedNode = nil;
-    self.editorLayer.selectedWay = nil;
-    self.editorLayer.selectedRelation = nil;
-    
-    [self removePin];
 }
 
 @end

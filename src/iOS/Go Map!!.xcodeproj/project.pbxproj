@@ -129,6 +129,7 @@
 		3E49F4B224DFA64800A347BB /* RulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E49F4B124DFA64800A347BB /* RulerView.m */; };
 		3E87F88D25C6F4340002B1DF /* DisplayViewController+CompletionistAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87F88525C6F4340002B1DF /* DisplayViewController+CompletionistAdditions.m */; };
 		3E87F88E25C6F4340002B1DF /* EditorMapLayer+CompletionistAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87F88825C6F4340002B1DF /* EditorMapLayer+CompletionistAdditions.m */; };
+		3E87F88F25C6F4340002B1DF /* MapView+CompletionistAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87F88B25C6F4340002B1DF /* MapView+CompletionistAdditions.m */; };
 		64305F7223E7224E00232BB9 /* LocationURLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 64305F7123E7224E00232BB9 /* LocationURLParser.m */; };
 		64305F7423E723B200232BB9 /* LocationURLParserTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64305F7323E723B200232BB9 /* LocationURLParserTestCase.swift */; };
 		64348CED225E7CD900ADE7FB /* GoMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64348CEC225E7CD900ADE7FB /* GoMapTests.swift */; };
@@ -484,6 +485,8 @@
 		3E87F88625C6F4340002B1DF /* DisplayViewController+CompletionistAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DisplayViewController+CompletionistAdditions.h"; sourceTree = "<group>"; };
 		3E87F88825C6F4340002B1DF /* EditorMapLayer+CompletionistAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EditorMapLayer+CompletionistAdditions.m"; sourceTree = "<group>"; };
 		3E87F88925C6F4340002B1DF /* EditorMapLayer+CompletionistAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EditorMapLayer+CompletionistAdditions.h"; sourceTree = "<group>"; };
+		3E87F88B25C6F4340002B1DF /* MapView+CompletionistAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MapView+CompletionistAdditions.m"; sourceTree = "<group>"; };
+		3E87F88C25C6F4340002B1DF /* MapView+CompletionistAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MapView+CompletionistAdditions.h"; sourceTree = "<group>"; };
 		64305F7023E7224E00232BB9 /* LocationURLParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationURLParser.h; sourceTree = "<group>"; };
 		64305F7123E7224E00232BB9 /* LocationURLParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationURLParser.m; sourceTree = "<group>"; };
 		64305F7323E723B200232BB9 /* LocationURLParserTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationURLParserTestCase.swift; sourceTree = "<group>"; };
@@ -907,6 +910,7 @@
 			children = (
 				3E87F88425C6F4340002B1DF /* DisplayViewController */,
 				3E87F88725C6F4340002B1DF /* EditorMapLayer */,
+				3E87F88A25C6F4340002B1DF /* MapView */,
 			);
 			path = CompletionistAdditions;
 			sourceTree = "<group>";
@@ -927,6 +931,15 @@
 				3E87F88925C6F4340002B1DF /* EditorMapLayer+CompletionistAdditions.h */,
 			);
 			path = EditorMapLayer;
+			sourceTree = "<group>";
+		};
+		3E87F88A25C6F4340002B1DF /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				3E87F88B25C6F4340002B1DF /* MapView+CompletionistAdditions.m */,
+				3E87F88C25C6F4340002B1DF /* MapView+CompletionistAdditions.h */,
+			);
+			path = MapView;
 			sourceTree = "<group>";
 		};
 		64305F6C23E71F5700232BB9 /* URLParsing */ = {
@@ -1235,6 +1248,7 @@
 				02ACBBCB16713F2B00BB4414 /* MercatorTileLayer.m in Sources */,
 				02ACBBCC16713F2B00BB4414 /* OsmMapData.m in Sources */,
 				027EDC71206F3EED00D349D6 /* DDXMLElementAdditions.m in Sources */,
+				3E87F88F25C6F4340002B1DF /* MapView+CompletionistAdditions.m in Sources */,
 				3E87F88E25C6F4340002B1DF /* EditorMapLayer+CompletionistAdditions.m in Sources */,
 				02BF745420793F0A0028ED6A /* TurnRestrictController.m in Sources */,
 				02ACBCF816713F2B00BB4414 /* QuadMap.m in Sources */,
