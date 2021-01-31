@@ -15,6 +15,7 @@
 #import "MapView.h"
 #import "MercatorTileLayer.h"
 #import "DisplayViewController.h"
+#import "DisplayViewController+CompletionistAdditions.h"
 
 static const NSInteger BACKGROUND_SECTION		= 0;
 static const NSInteger FILTER_SECTION = 3;
