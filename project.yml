@@ -10,6 +10,7 @@ targets:
       testTargets:
         - OSMCompletionistTests
     sources:
+      - Completionist
       - path: src/Shared
       - path: src/iOS
         excludes:
