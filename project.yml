@@ -5,7 +5,7 @@ targets:
   OSMCompletionist:
     type: application
     platform: iOS
-    deploymentTarget: "9.0"
+    deploymentTarget: "10.0"
     scheme:
       testTargets:
         - OSMCompletionistTests
@@ -40,7 +40,7 @@ targets:
   OSMCompletionistTests:
     type: bundle.unit-test
     platform: iOS
-    deploymentTarget: "9.0"
+    deploymentTarget: "10.0"
     sources:
       - path: src/iOS/GoMapTests
     dependencies:
@@ -48,7 +48,7 @@ targets:
   OSMCompletionistUITests:
     type: bundle.ui-testing
     platform: iOS
-    deploymentTarget: "9.0"
+    deploymentTarget: "10.0"
     scheme:
       testTargets:
         - OSMCompletionistUITests
