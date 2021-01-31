@@ -123,34 +123,9 @@
 		02F8F4341696004B002A0820 /* NominatimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F8F4331696004B002A0820 /* NominatimViewController.m */; };
 		02FFCE0B16A7360B001A5B8A /* NSMutableArray+PartialSort.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02FFCE0A16A7360B001A5B8A /* NSMutableArray+PartialSort.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3E0CE1FF25C623B200A77294 /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE1FE25C623B200A77294 /* FeedbackGenerator.swift */; };
-		3E0CE22525C623DD00A77294 /* QuestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE20C25C623DD00A77294 /* QuestManager.swift */; };
-		3E0CE22625C623DD00A77294 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE20D25C623DD00A77294 /* Quest.swift */; };
-		3E0CE22725C623DD00A77294 /* ActiveQuestsBaseObjectMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE20F25C623DD00A77294 /* ActiveQuestsBaseObjectMatcher.swift */; };
-		3E0CE22825C623DD00A77294 /* KeyValueQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE21025C623DD00A77294 /* KeyValueQuery.swift */; };
-		3E0CE22925C623DD00A77294 /* KeyExistsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE21125C623DD00A77294 /* KeyExistsQuery.swift */; };
-		3E0CE22A25C623DD00A77294 /* RegularExpressionQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE21225C623DD00A77294 /* RegularExpressionQuery.swift */; };
-		3E0CE22B25C623DD00A77294 /* TypeQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE21325C623DD00A77294 /* TypeQuery.swift */; };
-		3E0CE22C25C623DD00A77294 /* BaseObjectMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE21425C623DD00A77294 /* BaseObjectMatching.swift */; };
-		3E0CE22D25C623DD00A77294 /* RecursiveQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE21525C623DD00A77294 /* RecursiveQuery.swift */; };
-		3E0CE22E25C623DD00A77294 /* overpass-query-parser.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E0CE21625C623DD00A77294 /* overpass-query-parser.js */; };
-		3E0CE22F25C623DD00A77294 /* QueryFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE21825C623DD00A77294 /* QueryFormViewController.swift */; };
-		3E0CE23025C623DD00A77294 /* QueryFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE21925C623DD00A77294 /* QueryFormViewModel.swift */; };
-		3E0CE23125C623DD00A77294 /* QueryFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E0CE21A25C623DD00A77294 /* QueryFormViewController.xib */; };
-		3E0CE23225C623DD00A77294 /* Quest+staticQuests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE21B25C623DD00A77294 /* Quest+staticQuests.swift */; };
-		3E0CE23325C623DD00A77294 /* MapViewQuestAnnotationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE21C25C623DD00A77294 /* MapViewQuestAnnotationManager.swift */; };
-		3E0CE23425C623DD00A77294 /* Quests.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E0CE21D25C623DD00A77294 /* Quests.xcassets */; };
-		3E0CE23525C623DD00A77294 /* OverpassQueryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE21E25C623DD00A77294 /* OverpassQueryParser.swift */; };
-		3E0CE23625C623DD00A77294 /* QuestProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE22025C623DD00A77294 /* QuestProviding.swift */; };
-		3E0CE23725C623DD00A77294 /* StaticQuestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE22125C623DD00A77294 /* StaticQuestProvider.swift */; };
-		3E0CE23825C623DD00A77294 /* QuestListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E0CE22225C623DD00A77294 /* QuestListTableViewController.xib */; };
-		3E0CE23925C623DD00A77294 /* QuestListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE22325C623DD00A77294 /* QuestListTableViewController.swift */; };
-		3E0CE23A25C623DD00A77294 /* QuestListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE22425C623DD00A77294 /* QuestListViewModel.swift */; };
-		3E0CE24625C623F600A77294 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE23F25C623F600A77294 /* DisplayViewController.swift */; };
 		3E0CE24825C623F600A77294 /* String+PercentEncodingForRFC3986.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE24125C623F600A77294 /* String+PercentEncodingForRFC3986.swift */; };
 		3E0CE24925C623F600A77294 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE24225C623F600A77294 /* ContactUsViewController.swift */; };
-		3E0CE24A25C623F600A77294 /* EditorMapLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE24325C623F600A77294 /* EditorMapLayer.swift */; };
 		3E0CE24C25C623F600A77294 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE24525C623F600A77294 /* SettingsViewController.swift */; };
-		3E0CE25125C6242900A77294 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE25025C6242900A77294 /* MapViewModel.swift */; };
 		3E49F4B224DFA64800A347BB /* RulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E49F4B124DFA64800A347BB /* RulerView.m */; };
 		64305F7223E7224E00232BB9 /* LocationURLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 64305F7123E7224E00232BB9 /* LocationURLParser.m */; };
 		64305F7423E723B200232BB9 /* LocationURLParserTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64305F7323E723B200232BB9 /* LocationURLParserTestCase.swift */; };
@@ -497,36 +472,11 @@
 		02FFCE0916A7360B001A5B8A /* NSMutableArray+PartialSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+PartialSort.h"; path = "../Shared/NSMutableArray+PartialSort.h"; sourceTree = "<group>"; };
 		02FFCE0A16A7360B001A5B8A /* NSMutableArray+PartialSort.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "NSMutableArray+PartialSort.mm"; path = "../Shared/NSMutableArray+PartialSort.mm"; sourceTree = "<group>"; };
 		3E0CE1FE25C623B200A77294 /* FeedbackGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
-		3E0CE20C25C623DD00A77294 /* QuestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestManager.swift; sourceTree = "<group>"; };
-		3E0CE20D25C623DD00A77294 /* Quest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
-		3E0CE20F25C623DD00A77294 /* ActiveQuestsBaseObjectMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveQuestsBaseObjectMatcher.swift; sourceTree = "<group>"; };
-		3E0CE21025C623DD00A77294 /* KeyValueQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueQuery.swift; sourceTree = "<group>"; };
-		3E0CE21125C623DD00A77294 /* KeyExistsQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyExistsQuery.swift; sourceTree = "<group>"; };
-		3E0CE21225C623DD00A77294 /* RegularExpressionQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularExpressionQuery.swift; sourceTree = "<group>"; };
-		3E0CE21325C623DD00A77294 /* TypeQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeQuery.swift; sourceTree = "<group>"; };
-		3E0CE21425C623DD00A77294 /* BaseObjectMatching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObjectMatching.swift; sourceTree = "<group>"; };
-		3E0CE21525C623DD00A77294 /* RecursiveQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecursiveQuery.swift; sourceTree = "<group>"; };
-		3E0CE21625C623DD00A77294 /* overpass-query-parser.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "overpass-query-parser.js"; sourceTree = "<group>"; };
-		3E0CE21825C623DD00A77294 /* QueryFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryFormViewController.swift; sourceTree = "<group>"; };
-		3E0CE21925C623DD00A77294 /* QueryFormViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryFormViewModel.swift; sourceTree = "<group>"; };
-		3E0CE21A25C623DD00A77294 /* QueryFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QueryFormViewController.xib; sourceTree = "<group>"; };
-		3E0CE21B25C623DD00A77294 /* Quest+staticQuests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Quest+staticQuests.swift"; sourceTree = "<group>"; };
-		3E0CE21C25C623DD00A77294 /* MapViewQuestAnnotationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewQuestAnnotationManager.swift; sourceTree = "<group>"; };
-		3E0CE21D25C623DD00A77294 /* Quests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Quests.xcassets; sourceTree = "<group>"; };
-		3E0CE21E25C623DD00A77294 /* OverpassQueryParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverpassQueryParser.swift; sourceTree = "<group>"; };
-		3E0CE22025C623DD00A77294 /* QuestProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestProviding.swift; sourceTree = "<group>"; };
-		3E0CE22125C623DD00A77294 /* StaticQuestProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticQuestProvider.swift; sourceTree = "<group>"; };
-		3E0CE22225C623DD00A77294 /* QuestListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestListTableViewController.xib; sourceTree = "<group>"; };
-		3E0CE22325C623DD00A77294 /* QuestListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestListTableViewController.swift; sourceTree = "<group>"; };
-		3E0CE22425C623DD00A77294 /* QuestListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestListViewModel.swift; sourceTree = "<group>"; };
-		3E0CE23F25C623F600A77294 /* DisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		3E0CE24025C623F600A77294 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3E0CE24125C623F600A77294 /* String+PercentEncodingForRFC3986.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PercentEncodingForRFC3986.swift"; sourceTree = "<group>"; };
 		3E0CE24225C623F600A77294 /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
-		3E0CE24325C623F600A77294 /* EditorMapLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorMapLayer.swift; sourceTree = "<group>"; };
 		3E0CE24425C623F600A77294 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3E0CE24525C623F600A77294 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		3E0CE25025C6242900A77294 /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		3E49F4B124DFA64800A347BB /* RulerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RulerView.m; path = ../Shared/RulerView.m; sourceTree = "<group>"; };
 		64305F7023E7224E00232BB9 /* LocationURLParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationURLParser.h; sourceTree = "<group>"; };
 		64305F7123E7224E00232BB9 /* LocationURLParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationURLParser.m; sourceTree = "<group>"; };
@@ -719,7 +669,6 @@
 			isa = PBXGroup;
 			children = (
 				3E0CE23E25C623F600A77294 /* Extensions */,
-				3E0CE20B25C623DD00A77294 /* Overpass */,
 				3E0CE1FE25C623B200A77294 /* FeedbackGenerator.swift */,
 				024C323B1DEEA97100AD62AB /* AdvancedSettingsViewController.h */,
 				024C323C1DEEA97100AD62AB /* AdvancedSettingsViewController.m */,
@@ -761,7 +710,6 @@
 				029043A21682797A00BE3480 /* LoginViewController.m */,
 				02ACBA5116713CCB00BB4414 /* MainViewController.h */,
 				02ACBA5216713CCB00BB4414 /* MainViewController.m */,
-				3E0CE25025C6242900A77294 /* MapViewModel.swift */,
 				02BED98C168BF87100357B94 /* NearbyMappersViewController.h */,
 				02BED98D168BF87200357B94 /* NearbyMappersViewController.m */,
 				02F8F4321696004B002A0820 /* NominatimViewController.h */,
@@ -935,67 +883,12 @@
 			path = ../Shared/PresetsDatabase;
 			sourceTree = "<group>";
 		};
-		3E0CE20B25C623DD00A77294 /* Overpass */ = {
-			isa = PBXGroup;
-			children = (
-				3E0CE20C25C623DD00A77294 /* QuestManager.swift */,
-				3E0CE20D25C623DD00A77294 /* Quest.swift */,
-				3E0CE20E25C623DD00A77294 /* Queries */,
-				3E0CE21625C623DD00A77294 /* overpass-query-parser.js */,
-				3E0CE21725C623DD00A77294 /* QueryForm */,
-				3E0CE21B25C623DD00A77294 /* Quest+staticQuests.swift */,
-				3E0CE21C25C623DD00A77294 /* MapViewQuestAnnotationManager.swift */,
-				3E0CE21D25C623DD00A77294 /* Quests.xcassets */,
-				3E0CE21E25C623DD00A77294 /* OverpassQueryParser.swift */,
-				3E0CE21F25C623DD00A77294 /* QuestList */,
-			);
-			path = Overpass;
-			sourceTree = "<group>";
-		};
-		3E0CE20E25C623DD00A77294 /* Queries */ = {
-			isa = PBXGroup;
-			children = (
-				3E0CE20F25C623DD00A77294 /* ActiveQuestsBaseObjectMatcher.swift */,
-				3E0CE21025C623DD00A77294 /* KeyValueQuery.swift */,
-				3E0CE21125C623DD00A77294 /* KeyExistsQuery.swift */,
-				3E0CE21225C623DD00A77294 /* RegularExpressionQuery.swift */,
-				3E0CE21325C623DD00A77294 /* TypeQuery.swift */,
-				3E0CE21425C623DD00A77294 /* BaseObjectMatching.swift */,
-				3E0CE21525C623DD00A77294 /* RecursiveQuery.swift */,
-			);
-			path = Queries;
-			sourceTree = "<group>";
-		};
-		3E0CE21725C623DD00A77294 /* QueryForm */ = {
-			isa = PBXGroup;
-			children = (
-				3E0CE21825C623DD00A77294 /* QueryFormViewController.swift */,
-				3E0CE21925C623DD00A77294 /* QueryFormViewModel.swift */,
-				3E0CE21A25C623DD00A77294 /* QueryFormViewController.xib */,
-			);
-			path = QueryForm;
-			sourceTree = "<group>";
-		};
-		3E0CE21F25C623DD00A77294 /* QuestList */ = {
-			isa = PBXGroup;
-			children = (
-				3E0CE22025C623DD00A77294 /* QuestProviding.swift */,
-				3E0CE22125C623DD00A77294 /* StaticQuestProvider.swift */,
-				3E0CE22225C623DD00A77294 /* QuestListTableViewController.xib */,
-				3E0CE22325C623DD00A77294 /* QuestListTableViewController.swift */,
-				3E0CE22425C623DD00A77294 /* QuestListViewModel.swift */,
-			);
-			path = QuestList;
-			sourceTree = "<group>";
-		};
 		3E0CE23E25C623F600A77294 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3E0CE23F25C623F600A77294 /* DisplayViewController.swift */,
 				3E0CE24025C623F600A77294 /* MainViewController.swift */,
 				3E0CE24125C623F600A77294 /* String+PercentEncodingForRFC3986.swift */,
 				3E0CE24225C623F600A77294 /* ContactUsViewController.swift */,
-				3E0CE24325C623F600A77294 /* EditorMapLayer.swift */,
 				3E0CE24425C623F600A77294 /* LoginViewController.swift */,
 				3E0CE24525C623F600A77294 /* SettingsViewController.swift */,
 			);
@@ -1247,7 +1140,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				029A17C8257AB8A70035C6ED /* POI-Icons.xcassets in Resources */,
-				3E0CE23425C623DD00A77294 /* Quests.xcassets in Resources */,
 				02ACBA3E16713CCB00BB4414 /* InfoPlist.strings in Resources */,
 				028F504719BA2F460093C423 /* presets in Resources */,
 				02AFBF20245774DC00BE43F4 /* OSM-Logo256.png in Resources */,
@@ -1256,7 +1148,6 @@
 				02ACBA4D16713CCB00BB4414 /* MainStoryboard.storyboard in Resources */,
 				02ACBBC116713F2B00BB4414 /* changeset.xsl in Resources */,
 				0291D83724427AFA00F793BE /* Display.storyboard in Resources */,
-				3E0CE23125C623DD00A77294 /* QueryFormViewController.xib in Resources */,
 				027AB4FA250E9C8000C404CD /* Settings.storyboard in Resources */,
 				64D74BF42253DF49004FFD20 /* DirectionViewController.xib in Resources */,
 				02ED19811BBF119C00A57CF4 /* Launch Screen.storyboard in Resources */,
@@ -1264,8 +1155,6 @@
 				027AB4FD250E9C8A00C404CD /* POI.storyboard in Resources */,
 				02C3194E250EAED500C5D200 /* Localizable.strings in Resources */,
 				027AB500250E9C9B00C404CD /* Height.storyboard in Resources */,
-				3E0CE23825C623DD00A77294 /* QuestListTableViewController.xib in Resources */,
-				3E0CE22E25C623DD00A77294 /* overpass-query-parser.js in Resources */,
 				023B892B19C148790060CDB5 /* Images.xcassets in Resources */,
 				02ACBCFD16713F2B00BB4414 /* RenderInfo.json in Resources */,
 			);
@@ -1301,7 +1190,6 @@
 				3E0CE24C25C623F600A77294 /* SettingsViewController.swift in Sources */,
 				6453776623D38D4600656A1C /* OsmBaseObject.m in Sources */,
 				02ACBBC316713F2B00BB4414 /* DownloadThreadPool.m in Sources */,
-				3E0CE23525C623DD00A77294 /* OverpassQueryParser.swift in Sources */,
 				02A194B019C69701002338DA /* Database.m in Sources */,
 				02ACBBC416713F2B00BB4414 /* EditorMapLayer.m in Sources */,
 				02C3C73419A5A40C003B6783 /* AerialListViewController.m in Sources */,
@@ -1320,16 +1208,12 @@
 				024B4CA219BBE67400BBA60B /* CustomPresetListViewController.m in Sources */,
 				027EDC72206F3EED00D349D6 /* DDXMLNode.m in Sources */,
 				02ACBD2416717D7000BB4414 /* RenderInfo.m in Sources */,
-				3E0CE22525C623DD00A77294 /* QuestManager.swift in Sources */,
 				0225A36A19B63F0D008B63BA /* DisplayViewController.m in Sources */,
 				021FADBB258591D000F6E1C0 /* PresetKey.swift in Sources */,
 				024233101674FDB4008A3B6A /* VectorMath.m in Sources */,
 				0223DB531675D53200D6F825 /* POIFeaturePickerViewController.m in Sources */,
 				6453777323D391CC00656A1C /* OsmMember.m in Sources */,
-				3E0CE22825C623DD00A77294 /* KeyValueQuery.swift in Sources */,
-				3E0CE23225C623DD00A77294 /* Quest+staticQuests.swift in Sources */,
 				6442666922540EDF00C0D545 /* Observable.swift in Sources */,
-				3E0CE22F25C623DD00A77294 /* QueryFormViewController.swift in Sources */,
 				0223DB5716765C9000D6F825 /* POIFeaturePresetsViewController.m in Sources */,
 				0205460616766808004A2A23 /* POIPresetValuePickerController.m in Sources */,
 				021B30C81973AA4400B36EFF /* OsmMapData+Edit.m in Sources */,
@@ -1340,14 +1224,12 @@
 				022A2A54167B8F1C00D7A5AC /* POITabBarController.m in Sources */,
 				022A2A6E167D969700D7A5AC /* ClearCacheViewController.m in Sources */,
 				0296873F167E30C700B8FF2C /* PushPinView.m in Sources */,
-				3E0CE22C25C623DD00A77294 /* BaseObjectMatching.swift in Sources */,
 				02F373F916822C2C004614D4 /* UploadViewController.m in Sources */,
 				02695B8D1A08C1DB0028D95E /* NotesTableViewController.m in Sources */,
 				022ABCA420C3750A002D4977 /* Buildings3DView.m in Sources */,
 				647F46D12253F08200CEC482 /* HeadingProvider.swift in Sources */,
 				029043A31682797A00BE3480 /* LoginViewController.m in Sources */,
 				3E0CE1FF25C623B200A77294 /* FeedbackGenerator.swift in Sources */,
-				3E0CE22725C623DD00A77294 /* ActiveQuestsBaseObjectMatcher.swift in Sources */,
 				021FADE22588474300F6E1C0 /* PresetCategory.swift in Sources */,
 				02354F782462526A00878A04 /* PersistentWebCache.m in Sources */,
 				64348D01225E8D3F00ADE7FB /* OsmNode+Direction.swift in Sources */,
@@ -1355,19 +1237,13 @@
 				0230558B19B931B20041B151 /* CustomPresetController.m in Sources */,
 				3E49F4B224DFA64800A347BB /* RulerView.m in Sources */,
 				021C6AA81686145C00FB17B0 /* UndoManager.m in Sources */,
-				3E0CE22B25C623DD00A77294 /* TypeQuery.swift in Sources */,
-				3E0CE23025C623DD00A77294 /* QueryFormViewModel.swift in Sources */,
 				02E8436519B39FAD0044AC1D /* OsmNotesDatabase.m in Sources */,
-				3E0CE22D25C623DD00A77294 /* RecursiveQuery.swift in Sources */,
 				023D1723168A36B10011FABC /* POIAttributesViewController.m in Sources */,
-				3E0CE23625C623DD00A77294 /* QuestProviding.swift in Sources */,
 				022B09A719BD3F7B0041687B /* QuadMapC.mm in Sources */,
 				02354F7A246349E100878A04 /* CurvedGlyphLayer.swift in Sources */,
 				020C2A90168A7688003F2C2A /* CreditsViewController.m in Sources */,
 				6442666822540EDF00C0D545 /* Disposable.swift in Sources */,
 				02DBB4451A1C884F00732D53 /* HeightViewController.m in Sources */,
-				3E0CE23725C623DD00A77294 /* StaticQuestProvider.swift in Sources */,
-				3E0CE23325C623DD00A77294 /* MapViewQuestAnnotationManager.swift in Sources */,
 				02B69D101BF5A66B002605A3 /* LanguageTableViewController.m in Sources */,
 				6453777023D3913100656A1C /* OsmRelation.m in Sources */,
 				02BED98E168BF87200357B94 /* NearbyMappersViewController.m in Sources */,
@@ -1375,8 +1251,6 @@
 				64D74BF32253DF49004FFD20 /* DirectionViewController.swift in Sources */,
 				027EDC74206F3EED00D349D6 /* NSString+DDXML.m in Sources */,
 				02C3C73A19A6DCEA003B6783 /* AerialList.m in Sources */,
-				3E0CE22625C623DD00A77294 /* Quest.swift in Sources */,
-				3E0CE25125C6242900A77294 /* MapViewModel.swift in Sources */,
 				02BED99C168CBC5400357B94 /* LocationBallLayer.m in Sources */,
 				021FADD725873D0100F6E1C0 /* PresetsForFeature.swift in Sources */,
 				3E0CE24825C623F600A77294 /* String+PercentEncodingForRFC3986.swift in Sources */,
@@ -1390,26 +1264,20 @@
 				02C19B351699E8C000F75E3C /* BingMetadataViewController.m in Sources */,
 				028E0C0C20B2182100CEC71F /* FilterObjectsViewController.m in Sources */,
 				0259E4081BCAEC88006C354C /* MyApplication.m in Sources */,
-				3E0CE23A25C623DD00A77294 /* QuestListViewModel.swift in Sources */,
-				3E0CE24A25C623F600A77294 /* EditorMapLayer.swift in Sources */,
-				3E0CE24625C623F600A77294 /* DisplayViewController.swift in Sources */,
 				021FADC52585951E00F6E1C0 /* PresetGroup.swift in Sources */,
 				028DADE4247DFB8F000A130A /* WikiPage.m in Sources */,
 				3E0CE24925C623F600A77294 /* ContactUsViewController.swift in Sources */,
 				02CC01DC25843F2F004444EF /* PresetLanguages.swift in Sources */,
 				02FFCE0B16A7360B001A5B8A /* NSMutableArray+PartialSort.mm in Sources */,
-				3E0CE22925C623DD00A77294 /* KeyExistsQuery.swift in Sources */,
 				027EDC73206F3EED00D349D6 /* DDXMLDocument.m in Sources */,
 				024ADF3C16B1B38B00875658 /* PathUtil.m in Sources */,
 				02CB5B6516BF1F9C00432914 /* AutocompleteTextField.m in Sources */,
 				02D5B5F3248F154D00FEE448 /* Colors.swift in Sources */,
 				021FADCD25873C8200F6E1C0 /* PresetsDatabase+TableView.swift in Sources */,
-				3E0CE23925C623DD00A77294 /* QuestListTableViewController.swift in Sources */,
 				02F04AD21BC4D3B50044FD95 /* GpxConfigureViewController.m in Sources */,
 				0260484219E66C8700415CB1 /* DisplayLink.m in Sources */,
 				027EDC70206F3EED00D349D6 /* DDXMLElement.m in Sources */,
 				6442666722540EDF00C0D545 /* Lock.swift in Sources */,
-				3E0CE22A25C623DD00A77294 /* RegularExpressionQuery.swift in Sources */,
 				024CAB2724429C8200EFB7CA /* ContactUsViewController.m in Sources */,
 				0216636D2470AFAB00B0B0F6 /* CurvedTextLayer.swift in Sources */,
 				025224E816D7292E00B6FD53 /* RotatingNavigationController.m in Sources */,
