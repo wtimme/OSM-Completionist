@@ -1,0 +1,55 @@
+name: OSMCompletionist
+options:
+  bundleIdPrefix: de.wtimme
+targets:
+  OSMCompletionist:
+    type: application
+    platform: iOS
+    deploymentTarget: "9.0"
+    scheme:
+      testTargets:
+        - OSMCompletionistTests
+    sources:
+      - path: src/Shared
+      - path: src/iOS
+        excludes:
+          - "*.xcodeproj"
+          - ".gitignore"
+          - "Gemfile*"
+          - GoMapTests
+          - GoMapUITests
+          - "Go Map!!-Info.plist"
+          - fastlane
+          - vendor
+          - .bundle
+      - path: src/Images.xcassets
+      - path: src/POI-Icons/POI-Icons.xcassets
+      - path: src/presets
+        buildPhase: resources
+        type: folder
+    settings:
+      base:
+        INFOPLIST_FILE: "src/iOS/Go Map!!-Info.plist"
+        SWIFT_OBJC_BRIDGING_HEADER: "src/iOS/Go Map!!-Bridging-Header.h"
+        GCC_PREFIX_HEADER: "src/iOS/Go Map!!-Prefix.pch"
+        SWIFT_OBJC_INTERFACE_HEADER_NAME: "$(SWIFT_MODULE_NAME)-Swift.h"
+        PRODUCT_MODULE_NAME: "Go_Map__"
+  OSMCompletionistTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "9.0"
+    sources:
+      - path: src/iOS/GoMapTests
+    dependencies:
+      - target: OSMCompletionist
+  OSMCompletionistUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "9.0"
+    scheme:
+      testTargets:
+        - OSMCompletionistUITests
+    sources:
+      - path: src/iOS/GoMapUITests
+    dependencies:
+      - target: OSMCompletionist
