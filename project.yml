@@ -1,4 +1,4 @@
-name: OSMCompletionist
+name: Completionist
 options:
   bundleIdPrefix: de.wtimme
 targets:
