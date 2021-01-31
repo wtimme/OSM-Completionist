@@ -23,6 +23,7 @@ targets:
           - fastlane
           - vendor
           - .bundle
+          - "Go Map!!/Images.xcassets"
       - path: src/Images.xcassets
       - path: src/POI-Icons/POI-Icons.xcassets
       - path: src/presets
