@@ -138,7 +138,7 @@ platform :ios do
   lane :regenerate_app_icon do
     appicon(
       appicon_devices: [:ipad, :iphone, :ios_marketing],
-      appicon_path: "Go Map!!/Images.xcassets"
+      appicon_path: "Completionist/AppIcon.xcassets"
     )
   end
 
