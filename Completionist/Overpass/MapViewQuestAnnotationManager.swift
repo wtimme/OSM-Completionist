@@ -14,6 +14,10 @@ import Foundation
 
 @objc class MapViewQuestAnnotationManager: NSObject, MapViewQuestAnnotationManaging {
     
+    // MARK: Public properties
+    
+    @objc static let shared = MapViewQuestAnnotationManager()
+    
     // MARK: Private properties
     
     private let questManager: QuestManaging

@@ -45,6 +45,8 @@ class MapViewModel: NSObject {
     
     @objc weak var delegate: MapViewModelDelegate?
     
+    @objc static let shared = MapViewModel()
+    
     // MARK: Private properties
     
     private let activeQuestBaseObjectMatcher: ActiveQuestBaseObjectMatching
