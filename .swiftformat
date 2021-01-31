@@ -1,0 +1,5 @@
+# Do not format the GoMap source code
+--exclude src
+
+# Do not format Ruby gems
+--exclude vendor
