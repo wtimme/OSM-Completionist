@@ -18,3 +18,6 @@ DerivedData/
 # Build results
 *.dSYM.zip
 *.ipa
+
+# Bundler
+vendor/
