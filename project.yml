@@ -43,6 +43,7 @@ targets:
     deploymentTarget: "10.0"
     sources:
       - path: src/iOS/GoMapTests
+      - path: CompletionistTests
     dependencies:
       - target: OSMCompletionist
   OSMCompletionistUITests:
