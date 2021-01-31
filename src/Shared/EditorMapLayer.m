@@ -36,8 +36,6 @@
 const double PATH_SCALING = (256*256.0);		// scale up sizes in paths so Core Animation doesn't round them off
 
 
-#define DEFAULT_LINECAP		kCALineCapSquare
-#define DEFAULT_LINEJOIN	kCALineJoinMiter
 
 static const CGFloat Pixels_Per_Character = 8.0;
 
@@ -1139,10 +1137,10 @@ const static CGFloat Z_OCEAN			= Z_BASE + 1 * ZSCALE;
 const static CGFloat Z_AREA				= Z_BASE + 2 * ZSCALE;
 const static CGFloat Z_HALO				= Z_BASE + 3 * ZSCALE;
 const static CGFloat Z_CASING			= Z_BASE + 4 * ZSCALE;
-const static CGFloat Z_LINE				= Z_BASE + 5 * ZSCALE;
+const CGFloat Z_LINE				= Z_BASE + 5 * ZSCALE;
 const static CGFloat Z_TEXT				= Z_BASE + 6 * ZSCALE;
 const static CGFloat Z_ARROW			= Z_BASE + 7 * ZSCALE;
-const static CGFloat Z_NODE				= Z_BASE + 8 * ZSCALE;
+const CGFloat Z_NODE				= Z_BASE + 8 * ZSCALE;
 const static CGFloat Z_TURN             = Z_BASE + 9 * ZSCALE;	// higher than street signals, etc
 const static CGFloat Z_BUILDING_WALL	= Z_BASE + 10 * ZSCALE;
 const static CGFloat Z_BUILDING_ROOF	= Z_BASE + 11 * ZSCALE;
